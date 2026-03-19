@@ -1,4 +1,4 @@
-# Casos de uso
+## Casos de uso
 
 ### 1. Crear Turno
 **Actor(es) involucrado(s):** Secretaria  
