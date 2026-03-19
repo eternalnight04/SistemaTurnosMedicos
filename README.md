@@ -1,44 +1,44 @@
-# SistemaTurnosMedicos
+# SistemaTurnosMedicos - Diseño Orientado a Objetos
 
-## Tecnicatura Universitaria en Programación de Sistemas  
-**Materia:** Diseño Orientado a Objetos  
-**Profesor:** Lic. Matías Velasquez  
-**Cuatrimestre:** 1° Cuatrimestre 2026  
-
----
-
-## Integrantes del Grupo
-
-- Nombre: Barrionuevo Luciano
-  Matrícula: 156398  
-- Nombre: Carreras Natalia  
-  Matrícula: 161517 
-- Nombre: De Marco Agustín
-  Matrícula: 157933 
-- Nombre: Ignacio nervi 
-  Matrícula: 155475 
+- **Materia:** Diseño Orientado a Objetos  
+- **Carrera:** Tecnicatura Universitaria en Programación de Sistemas  
+- **Profesor:** Lic. Matías Velasquez  
+- **Cuatrimestre:** 1° Cuatrimestre 2026  
 
 ---
 
-## Descripción del Proyecto
+## Introducción
 
-Este proyecto tiene como objetivo sentar las bases conceptuales y de diseño para el desarrollo de un sistema orientado a objetos destinado a la gestión de turnos de un consultorio médico.
+### Breve descripción del proyecto:
 
-El trabajo parte del análisis de información deliberadamente dispersa (mails, audios, notas y transcripciones), a partir de la cual se identifican requisitos funcionales y no funcionales, actores, casos de uso y un boceto inicial de clases.
+Este proyecto tiene como objetivo desarrollar el diseño orientado a objetos de un sistema para la gestión de turnos de un consultorio médico.
+
+El trabajo parte del análisis de información deliberadamente dispersa (mails, audios, notas y transcripciones), a partir de la cual se identifican requisitos funcionales y no funcionales, actores, casos de uso y un boceto inicial de clases, aplicando los fundamentos de la Programación Orientada a Objetos.
+
+---
+
+## Integrantes:
+
+| Nombre y Apellido        | Matrícula | Usuario de GitHub |
+|--------------------------|-----------|-------------------|
+| Barrionuevo Luciano      | 156398    | @LuchoBarrionuevo13 |
+| Carreras Natalia         | 161517    | @nataliacarreras96git |
+| De Marco Agustín         | 157933    | @ademarco97 |
+| Ignacio Nervi            | 155475    | @IgnacioNervi |
 
 ---
 
 ## Objetivo del Primer Entregable
 
-- Analizar información del cliente.
+- Analizar información proporcionada por el cliente.
 - Identificar requisitos funcionales y no funcionales.
 - Modelar casos de uso.
 - Diseñar un boceto inicial de clases.
-- Aplicar fundamentos de Programación Orientada a Objetos.
+- Aplicar los fundamentos de la Programación Orientada a Objetos.
 - Utilizar GitHub con GitFlow como metodología de trabajo colaborativo.
 
 ---
 
 ## Diagramas y Diseños
 
-- [Anexos del Proyecto](anexos/anexos.md)
+- [Anexos](anexos/anexos.md)
