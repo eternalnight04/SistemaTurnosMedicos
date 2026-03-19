@@ -9,14 +9,14 @@
 
 ## Integrantes del Grupo
 
-- Nombre: Natalia Belén Carreras  
-  Matrícula: XXXXX  
-- Nombre: git add README.md_______________________  
-  Matrícula: XXXXX  
-- Nombre: _______________________  
-  Matrícula: XXXXX  
-- Nombre: _______________________  
-  Matrícula: XXXXX  
+- Nombre: Barrionuevo Luciano
+  Matrícula: 156398  
+- Nombre: Carreras Natalia  
+  Matrícula: 161517 
+- Nombre: De Marco Agustín
+  Matrícula: 157933 
+- Nombre: Ignacio nervi 
+  Matrícula: 155475 
 
 ---
 
