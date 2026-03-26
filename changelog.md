@@ -1,15 +1,21 @@
-# Changelog
-
-Todos los cambios notables en este proyecto serán documentados en este archivo.
-El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
-
-## [1.0.0] - 2026-03-26
-
 ### Added
-- **Rol - Modelador:** Documentación de 5 Casos de Uso (UC-01 a UC-05) basados en el análisis de 10 fuentes de dominio (Audios, Slack y fotos de cuaderno).
-- **Trazabilidad:** - **Issue:** [A1 - Modelado de Casos de Uso #1](https://github.com/ademarco97/SistemaProductoraVideos/issues/1)
-  - **Pull Request:** [refactor: corregui estructura de carpeta a anexos/ y actualice carpet... #10](https://github.com/ademarco97/SistemaProductoraVideos/pull/10)
+
+[feature/modelador-casos-uso] Documentación de 5 Casos de Uso (UC-01 a UC-05) basados en análisis de 10 fuentes de dominio.
+
+PR: #6 (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/6#issue-4103868433) - @ademarco97 (Modelador)
+
+[docs/registro-rol] Registro de rol de Modelador y enlaces de trazabilidad para evaluación.
+
+PR: #13 (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/13#issue-4147029384) - @ademarco97 (Modelador)
 
 ### Changed
-- **Arquitectura:** Se movió el archivo `changelog.md` a la raíz del repositorio según la sección 4.2 de la consigna.
-- **Normalización:** Renombrado de carpeta `Anexo/` a `anexos/` para cumplir con el estándar de minúsculas.
+
+[refactor/estructura-proyecto] Reorganización del repositorio: se movió changelog.md a la raíz según sección 4.2 de la consigna.
+
+PR: #10 (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10#issue-4138268719) - @ademarco97 (Modelador)
+
+### Fixed
+
+[fix/formato-changelog] Corrección de ubicación y formato de texto en el Changelog según feedback de revisión.
+
+PR: #11 (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11#issue-4140007900) - @ademarco97 (Modelador)
