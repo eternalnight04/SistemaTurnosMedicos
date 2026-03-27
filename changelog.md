@@ -1,4 +1,3 @@
-fix/changelog-develop
 Changelog
 
 Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
@@ -22,19 +21,4 @@ Changed
 
 [Release Actividad Obligatoria N°1] - 2026-03-26
 
-Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico.
-# Changelog
-
-## [Release Actividad Obligatoria N°1] - 2026-03-26
-
-### Luciano Barrionuevo - Diseñador de Clases Iniciales
-
-### Added
-- [feature/diseniador-clases-add-boceto-inicial] Boceto inicial del diagrama de clases (.puml + imagen en carpeta Diagramas).  
-  PR: [#9](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - @luchobarrionuevo13 (Diseñador de Clases)
-  issue: [#5](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/issues/5)
-
-### Changed
-
-### Fixed
-develop
+Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico
