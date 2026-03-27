@@ -1,42 +1,24 @@
-## [Unreleased]
+Changelog
 
-### Added
-
-- [feature/readme] Documentación inicial del README con introducción, fundamentos de POO y anexos.  
-  PR: [#12](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - nataliacarreras96git (Documentadora)
-
-- [feature/casos-de-uso] Documentación de 5 casos de uso (UC-01 a UC-05) basados en análisis de dominio.  
-  PR: [#6](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/6) - ademarco97 (Modelador)
-
-- [feature/casos-de-uso] Ajustes y mejoras en documentación de casos de uso.  
-  PR: [#10](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - ademarco97 (Modelador)
-
-- [feature/casos-de-uso] Correcciones finales de casos de uso.  
-  PR: [#11](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - ademarco97 (Modelador)
-
-- [feature/casos-de-uso] Validación final de documentación de casos de uso.  
-  PR: [#13](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/13) - ademarco97 (Modelador)
-
-- [feature/diagrama-clases] Creación del diagrama de clases en formato .excalidraw, .png y .puml.  
-  PR: [#9](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - LuchoBarrionuevo13 (Diseñador)
-
-- [feature/requerimientos] Definición de requisitos funcionales (RF) y no funcionales (RNF).  
-  PR: [#8](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - nachonervi-design (Analista)
+Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 
-### Changed
+[Unreleased]
 
-- [refactor/estructura] Se movió el archivo changelog.md a la raíz del repositorio.  
-  PR: [#10](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - ademarco97 (Arquitectura)
+Added
 
-- [refactor/nombres] Renombrado de carpeta Diagramas/ a diagramas/.  
-  PR: [#10](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - ademarco97 (Normalización)
+- [feature/modelador-casos-uso] Documentación de 5 casos de uso completos (UC-01 a UC-05) a partir de fuentes de dominio. PR: [#6] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/6) - @ademarco97 (Modelador)
+- [feature/analista-requerimientos] Definición de requisitos funcionales y no funcionales del sistema. PR: [#8] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - @IgnacioNervi (Analista)
+- [feature/diseniador-clases-add-boceto-inicial] Creación del diagrama de clases en formatos .excalidraw, .png y .puml. PR: [#9] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - @LuchoBarrionuevo13 (Diseñador)
+- [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
 
-- [refactor/nombres] Renombrado de carpeta 01-Diagrama-Clases a 01-diagrama-clases.  
-  PR: [#10](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - ademarco97 (Normalización)
+Changed
+
+- [feature/doc-coord-repo-update-readme-md] Actualización del README e introducción para mejorar claridad. PR: [#12] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
+- [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: [#10] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
+- [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: [#11] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
 
 
-### Fixed
+[Release Actividad Obligatoria N°1] - 2026-03-26
 
-- [fix/rutas] Corrección de rutas en README.md.  
-  PR: [#12](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - nataliacarreras96git (Documentadora)
+Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico.
