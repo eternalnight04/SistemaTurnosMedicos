@@ -19,12 +19,12 @@ El trabajo parte del análisis de información deliberadamente dispersa (mails, 
 
 ## Integrantes:
 
-| Nombre y Apellido        | Matrícula | Usuario de GitHub |
-|--------------------------|-----------|-------------------|
-| Barrionuevo Luciano      | 156398    | @LuchoBarrionuevo13 |
-| Carreras Natalia         | 161517    | @nataliacarreras96git |
-| De Marco Agustín         | 157933    | @ademarco97 |
-| Ignacio Nervi            | 155475    | @IgnacioNervi |
+| Nombre y Apellido        |Matrícula | Usuario de GitHub              | Rol |
+|--------------------------|-----------|--------------------|----------------------------|
+| Barrionuevo Luciano      | 156398    | @LuchoBarrionuevo13 | **Diseñador de Clases Iniciales** |
+| Carreras Natalia         | 161517    | @nataliacarreras96git | **Documentador y Coordinador** |
+| De Marco Agustín         | 157933    | @ademarco97 | **Modelador de Casos de Uso** |
+| Ignacio Nervi            | 155475    | **@nachonervi-design** | **Analista de Requerimientos** |
 
 ---
 
