@@ -22,11 +22,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 [Release Actividad Obligatoria N°1] - 2026-03-26
 
 Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico.
-
----
+--
 
 ## [Unreleased]
 
 ### Added
 
-- [feature/modelador-casos-uso-correccion] Corrección y completado de los 5 casos de uso con actores, flujo principal, flujos alternativos y pre/postcondiciones. PR: pendiente — @ademarco97 (Modelador)
+PR: [#28](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/28) — @ademarco97 (Modelador) — Issue: [#27](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/issues/27)
+
