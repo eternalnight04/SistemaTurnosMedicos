@@ -1,6 +1,6 @@
-### Contribuciones del Analista de Requerimientos
-* **Integrante:** Ignacio Nervi
-* **Rol:** Analista de Requerimientos
-* **Descripción:** Realicé el análisis de los 10 archivos del consultorio médico (audios, notas y mails) utilizando NotebookLM. Identifiqué y redacté 5 Requisitos Funcionales y 5 No Funcionales con su debida numeración (RF1, RNF1, etc.)a partir del análisis crítico de los materiales del cliente en el archivo `anexos/introduccion.md`.
-* **Issue asociada:** #2 - A1 - Análisis de requerimientos
-* **Pull Request:** https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8
+### Contribuciones del equipo
+
+* **PR: [#8](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - @nachonervi-design (Analista de Requerimientos). issue: [#2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/issues/2)**
+    * **Descripción:** Realicé el análisis crítico de los 10 archivos dispersos del cliente (mails, audios de WhatsApp, transcripciones y notas) utilizando **NotebookLM** como herramienta de IA [5-7].
+    * **Documentación:** Identifiqué y redacté **5 Requisitos Funcionales (RF)** y **5 Requisitos No Funcionales (RNF)** con su debida numeración y descripción técnica en el archivo `anexos/introduccion.md` [3, 4].
+    * **Evidencia:** Vinculé el cuaderno compartido de NotebookLM en la sección de requisitos iniciales como respaldo del proceso de investigación [3, 4].
