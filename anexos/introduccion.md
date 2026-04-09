@@ -1,99 +1,71 @@
-# Introducción
+##  Casos de uso
 
----
+### 1. Crear Turno
+**Actor(es) involucrado(s):** Secretaria  
+**Descripción breve:** La secretaria agenda un nuevo turno para un paciente con un profesional en un horario disponible.
 
-## Descripción del Paradigma Orientado a Objetos
+**Flujo principal de eventos:**
+1. La secretaria selecciona el profesional y consulta su agenda.
+2. El sistema muestra los horarios disponibles.
+3. La secretaria ingresa los datos del paciente y el tipo de consulta.
+4. El sistema valida que no haya conflicto y calcula la duración.
+5. La secretaria confirma y el sistema crea el turno y programa notificación.
 
-El paradigma orientado a objetos (POO) es un modelo de programación basado en la representación de entidades del mundo real mediante objetos. Un objeto combina datos (atributos) y comportamientos (métodos) dentro de una misma estructura.
+**Precondiciones:** Secretaria autenticada y profesional con agenda definida.  
+**Postcondiciones:** Turno creado en estado "Programado" y notificación enviada.
 
-Este paradigma permite organizar sistemas complejos de forma modular, facilitando la reutilización, el mantenimiento y la escalabilidad del software.
+### 2. Reprogramar Turno
+**Actor(es) involucrado(s):** Secretaria  
+**Descripción breve:** La secretaria mueve un turno existente a otro horario disponible.
 
-En el sistema de turnos médicos, entidades como Paciente, Médico o Turno pueden representarse como clases con atributos y comportamientos propios.
+**Flujo principal de eventos:**
+1. La secretaria busca el turno por paciente o fecha.
+2. El sistema muestra el turno actual.
+3. La secretaria selecciona nuevo horario disponible.
+4. El sistema valida y libera el horario anterior.
+5. La secretaria confirma y el sistema actualiza el turno con notificación.
 
----
+**Precondiciones:** Turno existe y no está atendido.  
+**Postcondiciones:** Turno actualizado y notificación enviada.
 
-## Los Cuatro Fundamentos de la Programación Orientada a Objetos
+### 3. Cancelar Turno
+**Actor(es) involucrado(s):** Secretaria  
+**Descripción breve:** La secretaria cancela un turno y libera el horario.
 
-### 1. Abstracción
+**Flujo principal de eventos:**
+1. La secretaria busca el turno.
+2. El sistema muestra detalles.
+3. La secretaria selecciona motivo y confirma.
+4. El sistema marca el turno como "Cancelado" y libera el horario.
+5. El sistema registra el cambio y envía notificación.
 
-Consiste en representar solo las características esenciales de un objeto, ocultando detalles innecesarios.
+**Precondiciones:** Turno no está atendido.  
+**Postcondiciones:** Horario liberado y notificación enviada.
 
-Ejemplo: La clase Turno puede contener fecha, hora y estado, sin modelar detalles irrelevantes.
+### 4. Visualizar Agenda
+**Actor(es) involucrado(s):** Secretaria  
+**Descripción breve:** La secretaria ve la agenda de un profesional por día o semana.
 
----
+**Flujo principal de eventos:**
+1. La secretaria selecciona profesional y rango (día/semana).
+2. El sistema muestra todos los turnos y horarios bloqueados.
+3. La secretaria filtra por estado.
+4. El sistema resalta sobreturnos o conflictos.
+5. La secretaria puede ver detalle de cualquier turno.
 
-### 2. Encapsulamiento
+**Precondiciones:** Secretaria autenticada.  
+**Postcondiciones:** Agenda visualizada correctamente.
 
-Implica proteger los datos internos de un objeto y permitir el acceso mediante métodos definidos.
+### 5. Registrar Llegada de Paciente (Check-in)
+**Actor(es) involucrado(s):** Secretaria  
+**Descripción breve:** La secretaria marca que el paciente llegó al consultorio.
 
-Ejemplo: El historial médico de un paciente podría ser un atributo privado accesible mediante métodos controlados.
+**Flujo principal de eventos:**
+1. La secretaria busca el turno del paciente.
+2. El sistema muestra el turno programado.
+3. La secretaria registra la hora real de llegada.
+4. El sistema cambia el estado a "Presente / En sala de espera".
+5. El sistema actualiza la agenda y registra el evento.
 
----
-
-### 3. Herencia
-
-Permite que una clase derive de otra, heredando atributos y comportamientos.
-
-Ejemplo: Una clase Persona podría ser base de Médico y Paciente.
-
----
-
-### 4. Polimorfismo
-
-Permite que distintos objetos respondan de forma diferente ante el mismo método.
-
-Ejemplo: Un método calcularCosto() podría comportarse distinto según el tipo de consulta.
-
----
-
-## Requisitos Iniciales del Sistema
-
-El sistema de turnos médicos tiene como objetivo gestionar la asignación, modificación y cancelación de turnos entre pacientes y profesionales de la salud.
-
-### Requisitos Funcionales (RF)
-
-* RF01: Permitir a los pacientes solicitar turnos médicos.
-* RF02: Permitir a los pacientes cancelar o reprogramar turnos.
-* RF03: Permitir a los médicos visualizar su agenda de turnos.
-* RF04: Registrar información básica de pacientes y médicos.
-* RF05: Gestionar la disponibilidad horaria de los profesionales.
-
-### Requisitos No Funcionales (RNF)
-
-* RNF01: El sistema debe ser accesible y fácil de usar.
-* RNF02: Debe garantizar la seguridad y privacidad de los datos.
-* RNF03: Debe permitir escalabilidad ante aumento de usuarios.
-* RNF04: El tiempo de respuesta debe ser menor a 2 segundos en operaciones comunes.
-
----
-
-## Casos de Uso
-
-A partir del análisis de los requisitos, se definieron los siguientes casos de uso principales:
-
-* UC-01: Registrar paciente
-* UC-02: Solicitar turno
-* UC-03: Cancelar turno
-* UC-04: Reprogramar turno
-* UC-05: Visualizar agenda médica
-
-Cada caso de uso describe la interacción entre los actores (Paciente y Médico) y el sistema, permitiendo modelar el comportamiento esperado del mismo.
-
----
-
-## Boceto Inicial del Diseño de Clases
-
-El diseño inicial del sistema se representa mediante un diagrama de clases que modela las entidades principales y sus relaciones.
-
-Entre las clases identificadas se encuentran:
-
-* Paciente
-* Médico
-* Turno
-* Agenda
-
-Estas clases incluyen atributos y métodos que reflejan el comportamiento del sistema, así como relaciones de asociación entre ellas.
-
-El diagrama fue desarrollado en formato `.excalidraw`, `.png` y `.puml`, permitiendo su visualización y documentación dentro del repositorio.
-
----
+**Precondiciones:** Turno existe y está programado.  
+**Postcondiciones:** Turno en estado "Presente" y historial actualizado.
