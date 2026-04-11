@@ -19,6 +19,13 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: (#10) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
 - [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: (#11) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
 
+### Fixed
+
+- [fix/revert-pr-14] Revert de PR #14 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
+- [fix/revert-pr-23] Revert de PR #23 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
+- [feature/doc-coord-correccion-changelog-a1] Corrección de changelog.md - formato exacto según especificación del profesor y agregación de entradas faltantes. PR: (#31) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/31) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-correccion-readme-rnf] Corrección del README (tabla integrantes con Rol y matrículas actualizadas) e introduccion.md (Polimorfismo en lenguaje natural + 5 RNFs específicos). PR: (#32) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/32) - @nataliacarreras96git (Documentadora y Coordinadora)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
