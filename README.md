@@ -19,12 +19,12 @@ El trabajo parte del análisis de información deliberadamente dispersa (mails, 
 
 ## Integrantes:
 
-| Nombre y Apellido        | Matrícula | Usuario de GitHub |
-|--------------------------|-----------|-------------------|
-| Barrionuevo Luciano      | 156398    | @LuchoBarrionuevo13 |
-| Carreras Natalia         | 161517    | @nataliacarreras96git |
-| De Marco Agustín         | 157933    | @ademarco97 |
-| Ignacio Nervi            | 155475    | @IgnacioNervi |
+| Nombre y Apellido              | Matrícula | Usuario de GitHub               | Rol                              |
+|--------------------------------|-----------|--------------------------------|----------------------------------|
+| Carreras Natalia               | 161517    | @nataliacarreras96git          | Documentadora y Coordinadora     |
+| Ferreyra Santiago Joaquín      | TBD       | @ferreyrasantiagojoaquin-lab   | Analista de Requerimientos       |
+| Claudia Ponce Núñez            | TBD       | @claudiapnunez                 | Modeladora de Casos de Uso       |
+| Torres Tomás                   | 157744    | @TomasTorres27                 | Diseñador de Clases Iniciales    |
 
 ---
 

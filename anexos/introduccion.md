@@ -42,7 +42,7 @@ Ejemplo: Una clase Persona podría ser base de Médico y Paciente.
 
 Permite que distintos objetos respondan de forma diferente ante el mismo método.
 
-Ejemplo: Un método calcularCosto() podría comportarse distinto según el tipo de consulta.
+Ejemplo: La forma de calcular el costo de una consulta puede variar según si es un control médico o una primera consulta. El sistema invoca la misma operación "calcular costo", pero el resultado difiere según el tipo de consulta, sin que el resto del sistema necesite conocer esa diferencia.
 
 ---
 
@@ -60,10 +60,11 @@ El sistema de turnos médicos tiene como objetivo gestionar la asignación, modi
 
 ### Requisitos No Funcionales (RNF)
 
-* RNF01: El sistema debe ser accesible y fácil de usar.
-* RNF02: Debe garantizar la seguridad y privacidad de los datos.
-* RNF03: Debe permitir escalabilidad ante aumento de usuarios.
-* RNF04: El tiempo de respuesta debe ser menor a 2 segundos en operaciones comunes.
+* RNF01: El sistema debe garantizar la no-superposición de turnos: un profesional no puede tener dos turnos simultáneamente (restricción crítica del negocio).
+* RNF02: Toda modificación de turno debe registrarse con trazabilidad completa: quién realizó el cambio, cuándo y qué datos fueron modificados.
+* RNF03: El sistema debe implementar control de acceso diferenciado por rol: Secretaria (gestión de turnos) vs Profesional (visualización de agenda personal).
+* RNF04: El sistema debe permitir extensibilidad para agregar nuevos profesionales sin requerer rediseño arquitectónico.
+* RNF05: El tiempo de respuesta en operaciones críticas (crear turno, consultar agenda) debe ser ≤ 2 segundos en condiciones normales de carga.
 
 ---
 
