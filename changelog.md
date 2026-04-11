@@ -25,6 +25,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [fix/revert-pr-23] Revert de PR #23 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
 - [feature/doc-coord-correccion-changelog-a1] Corrección de changelog.md - formato exacto según especificación del profesor y agregación de entradas faltantes. PR: (#31) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/31) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [feature/doc-coord-correccion-readme-rnf] Corrección del README (tabla integrantes con Rol y matrículas actualizadas) e introduccion.md (Polimorfismo en lenguaje natural + 5 RNFs específicos). PR: (#32) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/32) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/changelog-completo-todos-los-pr] Agregación de entradas faltantes en changelog: reverts de PR #14 y #23, y correcciones de PR #31 y #32. PR: (#33) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/33) - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ---
 
