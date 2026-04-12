@@ -214,3 +214,6 @@ El sistema de turnos médicos tiene como objetivo gestionar la asignación, modi
 2. Localiza el turno del paciente que llegó.
 3. Selecciona "Registrar llegada".
 4. El sistema registra la hora real de lleg​​​​​​​​​​​​​​​​
+C A M B I O  
+ F I N A L  
+ 
