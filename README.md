@@ -19,23 +19,23 @@ El trabajo parte del analisis de información deliberadamente dispersa (mails, a
 
 ## Integrantes:
 
-| Nombre y Apellido              | Matr├¡cula | Usuario de GitHub               | Rol                              |
+| Nombre y Apellido              | Matricula | Usuario de GitHub               | Rol                              |
 |--------------------------------|-----------|--------------------------------|----------------------------------|
 | Carreras Natalia               | 161517    | @nataliacarreras96git          | Documentadora y Coordinadora  y   Modeladora de Casos de Uso  |
-| Ferreyra Santiago Joaqu├¡n      |   161304   | @ferreyrasantiagojoaquin-lab   | Analista de Requerimientos       |
-| Torres Tom├ís                   | 157744    | @TomasTorres27                 | Diseñador de Clases Iniciales    |
+| Ferreyra Santiago Joaquin      |   161304   | @ferreyrasantiagojoaquin-lab   | Analista de Requerimientos       |
+| Torres Tomas                   | 157744    | @TomasTorres27                 | Diseñador de Clases Iniciales    |
 
 ---
 
 ## Objetivo del Primer Entregable
 
-- Analizar informaci├│n proporcionada por el cliente.
+- Analizar informacion proporcionada por el cliente.
 - Identificar requisitos funcionales y no funcionales.
 - Modelar casos de uso.
 - Diseñar un boceto inicial de clases.
 - Aplicar los fundamentos de la Programación Orientada a Objetos.
 - Utilizar GitHub con GitFlow como metodología de trabajo colaborativo.
-
+- Realizar las correciones indicadas por el profesor
 ---
 
 ## Diagramas y Diseños
