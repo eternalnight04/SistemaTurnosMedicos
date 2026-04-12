@@ -213,4 +213,94 @@ El sistema de turnos médicos tiene como objetivo gestionar la asignación, modi
 1. La secretaria accede a la agenda del día.
 2. Localiza el turno del paciente que llegó.
 3. Selecciona "Registrar llegada".
-4. El sistema registra la hora real de lleg​​​​​​​​​​​​​​​​
+4. El sistema registra la hora real de llegada.
+5. El sistema cambia el estado a "Presente".
+6. El sistema registra en el historial la llegada con hora exacta.
+
+**Flujos alternativos:**
+- FA-05A: Si el turno no existe o está cancelado, el sistema informa que no puede registrar la llegada.
+- FA-05B: Si el paciente llega fuera del horario del turno, el sistema registra igual pero advierte la diferencia horaria.
+
+**Postcondiciones:**
+- El turno queda con estado "Presente".
+- El historial registra la llegada con timestamp exacto.
+- El profesional puede iniciar la atención.
+
+---
+
+## Diagrama de Clases del Sistema
+
+El diagrama de clases del Sistema de Turnos Médicos modela las entidades principales y sus relaciones para garantizar una gestión correcta de turnos con trazabilidad, validación de disponibilidad y notificaciones.
+
+### Entidades Centrales
+
+**Turno** es la entidad nuclear del sistema, que vincula pacientes con profesionales en un horario específico. Contiene:
+- Identificación única y rango horario (fecha-hora inicio/fin)
+- Estado del turno (Programado, Presente, Cancelado, Atendido)
+- Tipo de consulta (Control o Primera consulta) con duración determinada
+- Flag de sobreturno para autorización manual
+- Método de cancelación con registro de motivo
+- Métodos de reprogramación, registro de llegada y auditoria
+
+**Agenda** gestiona los turnos de un profesional específico y controla la disponibilidad:
+- Colección de turnos del profesional
+- Colección de bloqueos horarios (vacaciones, feriados, reuniones, capacitaciones)
+- Métodos para validar disponibilidad, crear/reprogramar/cancelar turnos
+- Generación de sobreturnos con autorización explícita
+
+**Profesional** define los datos del médico o especialista:
+- Identificación, nombre, apellido, especialidad
+- Métodos para definir disponibilidad, bloquear horarios y obtener agenda
+
+**Paciente** contiene información de contacto:
+- Identificación, datos personales (nombre, apellido, documento)
+- Teléfono y email para notificaciones
+- Método para actualizar datos
+
+**Secretaria** representa el usuario administrativo:
+- Autenticación (usuario, contraseña)
+- Rol para control de acceso
+- Métodos de gestión de turnos y visualización de agenda
+
+### Entidades de Soporte
+
+**TipoConsulta** define tipos de consulta con duración específica (control: 15 min, primera vez: 30 min).
+
+**TurnoEstado** es una enumeración de estados posibles: Programado, Presente, Cancelado, Atendido.
+
+**BloqueoHorario** registra períodos no disponibles con motivo y tipo específico.
+
+**BloqueoTipo** enumera: Vacaciones, Feriado, Reunion, Capacitación.
+
+**Notificación** gestiona comunicaciones al paciente:
+- Referencia a turno y destinatario
+- Medio de envío (Email, WhatsApp)
+- Mensaje y estado de envío (enviada/no enviada)
+
+**NotificacionMedio** enumera canales: Email y WhatsApp.
+
+**Auditoria** garantiza trazabilidad completa:
+- Referencia a turno, usuario, acción realizada
+- Timestamp y detalles de cambios
+
+### Relaciones Clave
+
+- **Paciente ↔ Turno**: Un paciente puede tener múltiples turnos (1 a N)
+- **Profesional ↔ Agenda**: Un profesional tiene exactamente una agenda (1 a 1)
+- **Agenda ↔ Turno**: Una agenda contiene múltiples turnos (1 a N)
+- **Agenda ↔ BloqueoHorario**: Una agenda puede tener múltiples bloqueos (1 a N)
+- **Turno ↔ TipoConsulta**: Cada turno está asociado a un tipo específico (N a 1)
+- **BloqueoHorario ↔ BloqueoTipo**: Cada bloqueo tiene un tipo específico (N a 1)
+- **Turno ↔ Notificación**: Un turno genera una o más notificaciones (1 a N)
+- **Notificación ↔ NotificacionMedio**: Cada notificación usa un medio específico (N a 1)
+- **Turno ↔ Auditoria**: Un turno registra múltiples cambios en auditoria (1 a N)
+- **Turno ↔ TurnoEstado**: Cada turno tiene un estado en cada momento (N a 1)
+
+### Principios de Diseño Garantizados
+
+- **No-superposición de turnos**: Validación de disponibilidad antes de crear turno (RNF01)
+- **Trazabilidad completa**: Registro de todas las acciones en Auditoria (RNF02)
+- **Control de acceso**: Roles diferenciados (Secretaria vs Profesional vs Profesional) (RNF03)
+- **Extensibilidad**: Fácil agregar nuevos profesionales sin rediseño (RNF04)
+- **Notificaciones**: Comunicación automática por múltiples canales
+- **Sobreturnos**: Generación manual solo con autorización explícita del profesional
