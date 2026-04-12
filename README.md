@@ -1,17 +1,17 @@
-﻿# SistemaTurnosMedicos - Dise├▒o Orientado a Objetos
+﻿# SistemaTurnosMedicos - Diseño Orientado a Objetos
 
-- **Materia:** Dise├▒o Orientado a Objetos  
-- **Carrera:** Tecnicatura Universitaria en Programaci├│n de Sistemas  
-- **Profesor:** Lic. Mat├¡as Velasquez  
-- **Cuatrimestre:** 1┬░ Cuatrimestre 2026  
+- **Materia:** Diseño Orientado a Objetos  
+- **Carrera:** Tecnicatura Universitaria en Programación de Sistemas  
+- **Profesor:** Lic. Matias Velasquez  
+- **Cuatrimestre:** 1er Cuatrimestre 2026  
 
 ---
 
-## Introducci├│n
+## Introducción
 
 ### Breve descripci├│n del proyecto:
 
-Este proyecto tiene como objetivo desarrollar el dise├▒o orientado a objetos de un sistema para la gesti├│n de turnos de un consultorio m├®dico.
+Este proyecto tiene como objetivo desarrollar el diseño orientado a objetos de un sistema para la gesti├│n de turnos de un consultorio médico.
 
 El trabajo parte del an├ílisis de informaci├│n deliberadamente dispersa (mails, audios, notas y transcripciones), a partir de la cual se identifican requisitos funcionales y no funcionales, actores, casos de uso y un boceto inicial de clases, aplicando los fundamentos de la Programaci├│n Orientada a Objetos.
 
@@ -21,10 +21,9 @@ El trabajo parte del an├ílisis de informaci├│n deliberadamente dispersa (
 
 | Nombre y Apellido              | Matr├¡cula | Usuario de GitHub               | Rol                              |
 |--------------------------------|-----------|--------------------------------|----------------------------------|
-| Carreras Natalia               | 161517    | @nataliacarreras96git          | Documentadora y Coordinadora     |
-| Ferreyra Santiago Joaqu├¡n      | TBD       | @ferreyrasantiagojoaquin-lab   | Analista de Requerimientos       |
-| Claudia Ponce N├║├▒ez            | TBD       | @claudiapnunez                 | Modeladora de Casos de Uso       |
-| Torres Tom├ís                   | 157744    | @TomasTorres27                 | Dise├▒ador de Clases Iniciales    |
+| Carreras Natalia               | 161517    | @nataliacarreras96git          | Documentadora y Coordinadora  y   Modeladora de Casos de Uso  |
+| Ferreyra Santiago Joaqu├¡n      |   161304   | @ferreyrasantiagojoaquin-lab   | Analista de Requerimientos       |
+| Torres Tom├ís                   | 157744    | @TomasTorres27                 | Diseñador de Clases Iniciales    |
 
 ---
 
@@ -33,12 +32,12 @@ El trabajo parte del an├ílisis de informaci├│n deliberadamente dispersa (
 - Analizar informaci├│n proporcionada por el cliente.
 - Identificar requisitos funcionales y no funcionales.
 - Modelar casos de uso.
-- Dise├▒ar un boceto inicial de clases.
-- Aplicar los fundamentos de la Programaci├│n Orientada a Objetos.
-- Utilizar GitHub con GitFlow como metodolog├¡a de trabajo colaborativo.
+- Diseñar un boceto inicial de clases.
+- Aplicar los fundamentos de la Programación Orientada a Objetos.
+- Utilizar GitHub con GitFlow como metodología de trabajo colaborativo.
 
 ---
 
-## Diagramas y Dise├▒os
+## Diagramas y Diseños
 
 - [Anexos](anexos/anexos.md)
