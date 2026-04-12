@@ -12,6 +12,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/analista-requerimientos] Definición de requisitos funcionales y no funcionales del sistema. PR: (#8) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - @nachonervi-design (Analista)
 - [feature/diseniador-clases-add-boceto-inicial] Creación del diagrama de clases en formatos .excalidraw, .png y .puml. PR: (#9) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - @LuchoBarrionuevo13 (Diseñador)
 - [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
+- [feature/casos-uso-completos-g4] Completar 5 casos de uso (CU-01 a CU-05) con flujos principal y alternativo, actores y decisiones específicas del dominio. PR: (#X) - @TomasTorres27 (Diseñador de Clases Iniciales)
 
 ### Changed
 
