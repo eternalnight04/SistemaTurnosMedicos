@@ -9,7 +9,7 @@
 
 ## Introducción
 
-### Breve descripci├│n del proyecto:
+### Breve descripción del proyecto:
 
 Este proyecto tiene como objetivo desarrollar el diseño orientado a objetos de un sistema para la gesti├│n de turnos de un consultorio médico.
 
