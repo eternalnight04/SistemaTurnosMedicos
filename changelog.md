@@ -14,6 +14,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
 - [feature/casos-uso-completos-g4] Completar 5 casos de uso (CU-01 a CU-05) con flujos principal y alternativo, actores y decisiones específicas del dominio. PR: (#34) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador de Clases Iniciales)
 - [feature/casos-uso-g6-contenido-g4] Aporte de contenido de casos de uso del Grupo 6 adaptado al dominio de Sistema de Turnos Médicos (CU-01 a CU-05) con actores reales, flujos principal y alternativo. PR: (#36) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/36) - @ferreyrasantiagojoaquin-lab (Modelador)
+- [feature/diagrama-mejorado-g4] Revisión y mejora del diagrama de clases en Excalidraw realizado por Natalia. Validación de entidades, relaciones y atributos según especificación del sistema de turnos médicos. PR:(https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/35) - @nataliacarreras96git (Coordinadora)
 
 ### Changed
 
