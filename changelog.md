@@ -14,12 +14,13 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
 - [feature/casos-uso-completos-g4] Completar 5 casos de uso (CU-01 a CU-05) con flujos principal y alternativo, actores y decisiones específicas del dominio. PR: (#34) - @TomasTorres27 (Diseñador de Clases Iniciales)
 
-### Changed
+### Added
 
-- [feature/doc-coord-repo-update-readme-md] Actualización del README e introducción para mejorar claridad. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
-- [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: (#10) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
-- [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: (#11) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
-
+- [feature/modelador-casos-uso] Documentación de 5 casos de uso...
+- [feature/analista-requerimientos] Definición de requisitos...
+- [feature/diseniador-clases-add-boceto-inicial] Creación del diagrama...
+- [feature/doc-coord-repo-update-readme-md] Creación del README...
+- [feature/casos-uso-g6-contenido-g4] Aporte de contenido de casos de uso del Grupo 6 adaptado al dominio de Sistema de Turnos Médicos (CU-01 a CU-05) con actores reales, flujos principal y alternativo. PR: (#X) - @ferreyrasantiagojoaquin-lab (Modelador)
 ### Fixed
 
 - [fix/revert-pr-14] Revert de PR #14 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
