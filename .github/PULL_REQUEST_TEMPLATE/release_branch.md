@@ -51,7 +51,7 @@ Esta Pull Request representa la **entrega final de la Actividad Obligatoria N°1
 
 Una vez creada esta Pull Request, notificamos en el canal:
 
-[Actividad Obligatoria N°1][GRUPO N°4](enlace a esta Pull Request)
+[Actividad Obligatoria N°1][GRUPO N°4](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/41)
 
 Posteriormente iniciamos un hilo mencionando a @Matias Velasquez, indicando el contenido general de la entrega.  
 Usaremos los siguientes emojis durante la revisión:
