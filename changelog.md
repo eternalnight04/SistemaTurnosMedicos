@@ -18,6 +18,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Changed
 
+- [composición-grupo] Claudia Pillhuaman Nuñez (@claudiapnunez) no participó en la Actividad Obligatoria N°1. El 27 de marzo de 2026, el profesor reorganizó los grupos. Claudia propuso una reunión con el equipo pero nunca se sumó a ella. Posteriormente, se intentaron múltiples contactos privados (WhatsApp, campus) sin recibir respuesta. Por este motivo, a último momento, Natalia Carreras asumió el rol de Diseñadora de Clases Iniciales de Claudia, completando todas sus responsabilidades. Participantes finales: Santiago Ferreyra (Modelador), Tomás Torres (Modelador co), Natalia Carreras (Documentadora/Coordinadora + Diseñadora). Documentado el 13/04/2026.
 - [feature/doc-coord-repo-update-readme-md] Actualización del README e introducción para mejorar claridad. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
 - [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: (#10) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
 - [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: (#11) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
