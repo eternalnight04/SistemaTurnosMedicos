@@ -1,52 +1,73 @@
-## 📋 Descripción de la Feature
-
-<!-- Descripción breve de qué hace esta feature y por qué es importante -->
-
-### Tipo de cambio
-
-- [ ] ✨ Nueva feature/funcionalidad
-- [ ] 🐛 Corrección de bug
-- [ ] 📚 Documentación
-- [ ] ♻️ Refactorización
-- [ ] ⚙️ Configuración/Dependencias
-
-## 🎯 Requisitos completados
-
-<!-- Marca los requisitos que se cumplen en esta feature -->
-
-- [ ] Requisito Funcional (RF)
-- [ ] Requisito No Funcional (RNF)
-- [ ] Caso de Uso (CU)
-
-### Descripción de cambios
-
-<!-- Lista los cambios principales realizados -->
-
-- 
-- 
-- 
-
-## ✅ Checklist
-
-- [ ] Código sigue las convenciones del proyecto
-- [ ] Tests (si aplica) han sido agregados/actualizados
-- [ ] Documentación actualizada
-- [ ] Sin conflictos con la rama base (develop)
-- [ ] Commits tienen mensajes claros
-
-## 📸 Screenshots/Evidencia (si aplica)
-
-<!-- Adjunta screenshots o capturas que demuestren la feature en funcionamiento -->
-
-## 🔗 Referencias
-
-<!-- Links a issues, requisitos, o documentación relacionada -->
-
-- Cierra #(issue number si aplica)
-- Relacionado a: [Requisito/Documentación]
+# � PULL REQUEST – Actividad Obligatoria N.º 1 – Diseño Orientado a Objetos
 
 ---
 
-**Autor:** @{username}  
-**Rama:** `feature/{nombre-de-la-feature}`  
-**Base:** `develop`
+## 📌 Datos del Estudiante
+
+- **Nombre y Apellido:**  
+- **Número de Matrícula:**  
+- **Carrera:** Tecnicatura Universitaria en Programación de Sistemas  
+- **Materia:** Diseño Orientado a Objetos  
+- **Profesor:** Lic. Matías Velasquez  
+- **Cuatrimestre/Año:** 1º Cuatrimestre / 2026  
+- **Rol asignado para esta entrega:** _(Ej.: Analista de Requerimientos, Diseñador de Clases, etc.)_
+
+---
+
+## 📂 Rama de trabajo
+
+- **Nombre de la rama:** `feature/<rol>-<descripcion>`  
+  _Ejemplo: `feature/analista-requisitos-introduccion-md`_
+
+---
+
+## 📝 Descripción del trabajo realizado
+
+_Describir brevemente qué tareas se llevaron a cabo en esta rama, qué archivos se modificaron o agregaron, y qué objetivo se cumplió según el rol asignado._
+
+---
+
+## 🔗 Archivos modificados / agregados
+
+- `anexos/introduccion.md`  
+- `diagramas/01-diagrama-clases/`  
+- `README.md`  
+- `anexos/anexos.md`  
+_(Agregar o eliminar según corresponda)_
+
+---
+
+## 🔗 Issues vinculados
+
+- Closes #  
+- Related to #
+
+---
+
+## ✅ Checklist
+
+- [ ] Trabajé sobre una rama `feature/` creada a partir de `develop`
+- [ ] Realicé commits claros y explicativos
+- [ ] La PR está vinculada a al menos un Issue
+- [ ] Completé mi sección asignada según el rol
+- [ ] El changelog será actualizado tras aprobación
+- [ ] Solicité revisión del compañero con el rol de Coordinador
+
+---
+
+## 🧠 Comentarios adicionales
+
+_(Opcional – Dejar aclaraciones, dificultades encontradas, o sugerencias)_
+
+---
+
+## 🧾 Enlace a la consigna
+
+[📄 Consigna Actividad Obligatoria N.º 1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos)
+
+---
+
+## ⚠ IMPORTANTE
+
+🚫 Sin esta Pull Request **no se justifica participación individual**.  
+✅ Recordá actualizar el archivo `changelog.md` con el resumen de esta PR una vez aprobada.
