@@ -30,6 +30,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/doc-coord-correccion-readme-rnf] Corrección del README (tabla integrantes con Rol y matrículas actualizadas) e introduccion.md (Polimorfismo en lenguaje natural + 5 RNFs específicos). PR: (#32) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/32) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/changelog-completo-todos-los-pr] Agregación de entradas faltantes en changelog: reverts de PR #14 y #23, y correcciones de PR #31 y #32. PR: (#33) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/33) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/casos-uso-completos-g4] Corrección de 5 casos de uso completos (CU-01: Crear Turno, CU-02: Reprogramar, CU-03: Cancelar, CU-04: Autorizar Sobreturno, CU-05: Registrar Llegada) con actores, flujos principal y alternativo, precondiciones y postcondiciones. PR: (#34) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador)
+- [fix/correccion-completa-actividad-1] Correcciones finales para la entrega: Agregar diagrama de clases (01-boceto-inicial.excalidraw y .png), enlace NotebookLM en anexos/introduccion.md, eliminar introduccion.md de raíz (versión correcta en anexos/), arreglar encoding UTF-8 en anexos/anexos.md. - @nataliacarreras96git (Coordinadora)
 
 ---
 
