@@ -1,0 +1,22 @@
+@startuml 02-caso-uso-reprogramar-turno
+left to right direction
+
+actor Paciente
+actor Secretaria
+
+rectangle "Sistema de Turnos Médicos" {
+
+  usecase "Reprogramar Turno" as UC02
+  usecase "Verificar Disponibilidad" as UC02_1
+  usecase "Cancelar Turno Actual" as UC02_2
+  usecase "Generar Nuevo Turno" as UC02_3
+
+  Paciente --> UC02
+  Secretaria --> UC02
+
+  UC02 ..> UC02_1 : <<include>>
+  UC02 ..> UC02_2 : <<include>>
+  UC02 ..> UC02_3 : <<include>>
+}
+
+@enduml
