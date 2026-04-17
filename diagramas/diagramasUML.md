@@ -1,47 +1,18 @@
-# Modelador de Diagramas de Casos de Uso
+# Índice de Diagramas de Casos de Uso
 
-## Objetivo
+## Diagramas implementados:
 
-Generar diagramas de casos de uso del Sistema de Turnos Médicos utilizando PlantUML, a partir del análisis de los requerimientos definidos en la Actividad Obligatoria N°1.
+1. *[CU-01: Crear Turno](02-caso-uso-crear-turno.puml)* 
+   - Diagrama: ![CU-01](02-caso-uso-crear-turno.png)
 
----
+2. *[CU-02: Reprogramar Turno](02-caso-uso-reprogramar-turno.puml)*
+   - Diagrama: ![CU-02](02-caso-uso-reprogramar-turno.png)
 
-## Prompt utilizado
+3. *[CU-03: Cancelar Turno](02-caso-uso-cancelar-turno.puml)*
+   - Diagrama: ![CU-03](02-caso-uso-cancelar-turno.png)
 
-Se utilizó Copilot en modo agente dentro de VS Code con el siguiente enfoque:
+4. *[CU-04: Autorizar Sobreturno](02-caso-uso-autorizar-sobreturno.puml)*
+   - Diagrama: ![CU-04](02-caso-uso-autorizar-sobreturno.png)
 
-"Generar diagramas de casos de uso en PlantUML para un sistema de turnos médicos, considerando actores como Paciente, Secretaria y Médico. Incluir relaciones de asociación, <<include>> y <<extend>> cuando corresponda."
-
----
-
-## Archivos de contexto utilizados
-
-- anexos/introduccion.md
-- Definiciones de casos de uso de la Actividad N°1
-
----
-
-## Resultado generado por IA
-
-Copilot generó estructuras base de diagramas de casos de uso, incluyendo actores y relaciones iniciales.
-
----
-
-## Ajustes y correcciones realizadas
-
-Se realizaron modificaciones manuales sobre el contenido generado por IA:
-
-- Se corrigieron actores mal asignados
-- Se agregaron relaciones <<include>> para reflejar dependencias obligatorias
-- Se incorporaron relaciones <<extend>> en casos opcionales
-- Se mejoró la división de responsabilidades entre casos de uso
-- Se ajustaron nombres para mayor claridad semántica
-- Se agregó el límite del sistema (rectangle) para mayor claridad conceptual
-
----
-
-## Reflexión
-
-El uso de Copilot permitió acelerar la generación inicial de los diagramas, pero fue necesario realizar ajustes para asegurar la coherencia con el dominio del problema y los requerimientos definidos.
-
-Esto evidencia que la IA es una herramienta de apoyo, pero requiere validación y corrección por parte del desarrollador.
+5. *[CU-05: Registrar Llegada](02-caso-uso-registrar-llegada.puml)*
+   - Diagrama: ![CU-05](02-caso-uso-registrar-llegada.png)
