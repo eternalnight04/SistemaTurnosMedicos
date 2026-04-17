@@ -1,0 +1,21 @@
+@startuml 02-caso-uso-autorizar-sobreturno
+left to right direction
+
+actor Secretaria
+actor Medico
+
+rectangle "Sistema de Turnos Médicos" {
+
+  usecase "Solicitar Sobreturno" as UC04
+  usecase "Autorizar Sobreturno" as UC04_1
+  usecase "Registrar Sobreturno" as UC04_2
+
+  Secretaria --> UC04
+  UC04 ..> UC04_1 : <<include>>
+
+  Medico --> UC04_1
+
+  UC04_1 ..> UC04_2 : <<include>>
+}
+
+@enduml

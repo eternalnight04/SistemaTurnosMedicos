@@ -1,0 +1,20 @@
+@startuml 02-caso-uso-cancelar-turno
+left to right direction
+
+actor Paciente
+actor Secretaria
+
+rectangle "Sistema de Turnos Médicos" {
+
+  usecase "Cancelar Turno" as UC03
+  usecase "Validar Turno Existente" as UC03_1
+  usecase "Notificar Cancelación" as UC03_2
+
+  Paciente --> UC03
+  Secretaria --> UC03
+
+  UC03 ..> UC03_1 : <<include>>
+  UC03 ..> UC03_2 : <<extend>>
+}
+
+@enduml
