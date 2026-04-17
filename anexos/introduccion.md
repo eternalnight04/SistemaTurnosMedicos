@@ -48,6 +48,8 @@ Ejemplo: La forma de calcular el costo de una consulta puede variar según si es
 
 ## Requisitos Iniciales del Sistema
 
+🔗 [Cuaderno grupal en NotebookLM](https://notebooklm.google.com/notebook/ae349fb5-874b-428f-9bb0-5822e5c8be15)
+
 El sistema de turnos médicos tiene como objetivo gestionar la asignación, modificación y cancelación de turnos entre pacientes y profesionales de la salud.
 
 ### Requisitos Funcionales (RF)
