@@ -1,0 +1,139 @@
+@startuml 01-solid-04-isp
+!define ABSTRACT_COLOR #E1D5FF
+!define INTERFACE_COLOR #FFE5B4
+!define CLASS_COLOR #B4E5FF
+
+skinparam class {
+    BackgroundColor<<interface>> INTERFACE_COLOR
+    BackgroundColor<<abstract>> ABSTRACT_COLOR
+    BackgroundColor CLASS_COLOR
+    BorderColor #333333
+    ArrowColor #333333
+}
+
+' Interfaces segregadas
+interface ICreadorTurnos <<interface>> {
+    +CrearTurno(paciente: Paciente, medico: Medico, fecha: DateTime): void
+    +CancelarTurno(turnoId: int): void
+    +ReprogramarTurno(turnoId: int, nuevaFecha: DateTime): void
+}
+
+interface IGestorAgenda <<interface>> {
+    +ConsultarDisponibilidad(medico: Medico, fecha: DateTime): bool
+    +ObtenerTurnosDelDia(medico: Medico, fecha: DateTime): List<Turno>
+    +VerificarConflicto(medico: Medico, fecha: DateTime, hora: TimeSpan): bool
+}
+
+interface IGestorTurnosPersonales <<interface>> {
+    +MisTurnos(): List<Turno>
+    +VerEstadoTurno(turnoId: int): string
+}
+
+interface IAutorizador <<interface>> {
+    +AutorizarSobreturno(medico: Medico, paciente: Paciente, fecha: DateTime): bool
+    +TieneAutorizacion(usuario: Usuario, accion: string): bool
+}
+
+interface IRegistrador <<interface>> {
+    +RegistrarLlegada(turnoId: int, horaReal: DateTime): void
+    +RegistrarObservaciones(turnoId: int, observacion: string): void
+    +ObtenerHistorial(turnoId: int): List<LogTurno>
+}
+
+' Clases concretas
+class Paciente <<class>> {
+    -pacienteId: int
+    -nombre: string
+    -apellido: string
+    -email: string
+    -telefono: string
+    --
+    +ObtenerDatos(): string
+    +ActualizarContacto(email, telefono): void
+}
+
+class Medico <<class>> {
+    -medicoId: int
+    -nombre: string
+    -especialidad: string
+    -matricula: string
+    ##
+    +ObtenerEspecialidad(): string
+    +ConfigurarDisponibilidad(horarios): void
+}
+
+class Secretaria <<class>> {
+    -secretariaId: int
+    -nombre: string
+    -departamento: string
+    --
+    +GestionarAcceso(): void
+    +GenerarReportes(): void
+}
+
+class Turno <<class>> {
+    -turnoId: int
+    -paciente: Paciente
+    -medico: Medico
+    -fecha: DateTime
+    -duracion: int
+    -estado: string
+    --
+    +ObtenerDetalles(): string
+    +CambiarEstado(nuevoEstado: string): void
+}
+
+class Agenda <<class>> {
+    -agendaId: int
+    -medico: Medico
+    -turnos: List<Turno>
+    --
+    +AgregarTurno(turno: Turno): bool
+    +RemoverTurno(turnoId: int): bool
+}
+
+' Implementaciones
+Paciente ..|> ICreadorTurnos : implements
+Paciente ..|> IGestorTurnosPersonales : implements
+
+Medico ..|> IGestorAgenda : implements
+Medico ..|> IRegistrador : implements
+
+Secretaria ..|> ICreadorTurnos : implements
+Secretaria ..|> IGestorAgenda : implements
+Secretaria ..|> IAutorizador : implements
+Secretaria ..|> IRegistrador : implements
+
+' Relaciones de asociación
+Paciente "1" --> "*" Turno : solicita
+Medico "1" --> "1" Agenda : mantiene
+Agenda "1" --> "*" Turno : contiene
+Turno "1" --> "1" Paciente : para
+Turno "1" --> "1" Medico : con
+
+' Notas
+note right of ICreadorTurnos
+  Responsable de crear, cancelar
+  y reprogramar turnos.
+  Implementada por: Paciente, Secretaria
+end note
+
+note right of IGestorAgenda
+  Responsable de consultar
+  disponibilidad y gestionar agenda.
+  Implementada por: Medico, Secretaria
+end note
+
+note right of IAutorizador
+  Responsable de autorizar
+  excepciones del sistema.
+  Implementada por: Secretaria
+end note
+
+note right of IRegistrador
+  Responsable de registrar
+  eventos y cambios en turnos.
+  Implementada por: Medico, Secretaria
+end note
+
+@enduml
