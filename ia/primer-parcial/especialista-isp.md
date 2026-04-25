@@ -176,8 +176,8 @@ public class Paciente : ICreadorTurnos, IGestorTurnosPersonales {
    - ISP no prohíbe implementar múltiples interfaces
 
 3. **¿Por qué crear IGestorTurnosPersonales separada de ICreadorTurnos?**
-   - ICreadorTurnos: MODIFICAR mis datos
-   - IGestorTurnosPersonales: CONSULTAR mis datos
+   - ICreadorTurnos: MODIFICAR mis turnos
+   - IGestorTurnosPersonales: CONSULTAR mis turnos
    - Separar lectura de escritura sigue el principio CQRS y mejora testabilidad
 
 ---
