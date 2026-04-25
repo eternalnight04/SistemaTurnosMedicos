@@ -207,7 +207,7 @@ public class MockCreadorTurnos : ICreadorTurnos {
     public void ReprogramarTurno(...) { /* mock */ }
 }
 
-// No necesitamos mockeae 7 métodos si solo probamos 3
+// No necesitamos mockear 7 métodos si solo probamos 3
 ```
 
 ---
