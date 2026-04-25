@@ -40,6 +40,9 @@ interface IRegistrador <<interface>> {
     +ObtenerHistorial(turnoId: int): List<LogTurno>
 }
 
+class Usuario <<class>>
+class LogTurno <<class>>
+
 ' Clases concretas
 class Paciente <<class>> {
     -pacienteId: int

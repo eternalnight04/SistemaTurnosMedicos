@@ -84,15 +84,15 @@ Copilot generó el siguiente análisis:
 
 ## Ajustes Realizados al Output
 
-### 1. **Separación de IGestorAgenda en dos contextos**
+### 1. **Revisión de IGestorAgenda según contexto de uso**
 
 **Output inicial:** Una sola interfaz `IGestorAgenda` para consultar disponibilidad
 
-**Ajuste:** Se refinó para considerar que:
+**Análisis realizado:** Se evaluó distinguir dos usos diferentes:
 - El Médico necesita ver su PROPIA agenda → método `MisTurnoDelDia()`
 - La Secretaria necesita ver la agenda de OTROS → método `ConsultarDisponibilidadMedico()`
 
-**Resultado:** Se propusieron dos interfaces en lugar de una, mejorando cohesión
+**Resultado:** Aunque se consideró esa separación, finalmente NO se dividió `IGestorAgenda` en dos interfaces. Se mantuvo una sola interfaz porque ambos casos siguen perteneciendo al mismo contexto funcional de gestión/consulta de agenda, y el diagrama final refleja esa decisión.
 
 ### 2. **Corrección: No forzar IRegistrador en Paciente**
 

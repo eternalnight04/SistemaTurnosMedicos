@@ -2,8 +2,6 @@
 
 ## Propósito y Tipo del Principio SOLID
 
-Una breve explicación del problema y cómo ISP ayuda a solucionarlo, destacando la importancia de interfaces cohesivas y especializadas.
-
 El **Principio de Segregación de Interfaces (ISP)** establece que los clientes no deben depender de interfaces que no utilizan. En otras palabras, es mejor tener muchas interfaces específicas que una sola interfaz general (gorda) que obligue a las clases a implementar métodos que no necesitan.
 
 En el contexto del Sistema de Turnos Médicos, ISP asegura que cada clase solo implemente las responsabilidades que realmente necesita, evitando dependencias innecesarias y mejorando la cohesión del diseño.
@@ -11,8 +9,6 @@ En el contexto del Sistema de Turnos Médicos, ISP asegura que cada clase solo i
 ---
 
 ## Motivación
-
-Detalle más profundo del problema que enfrentaba el sistema y cómo ISP ayuda a resolverlo. Incluir un ejemplo del proyecto que explique la necesidad de aplicar este principio y evitar interfaces "gordas" que obliguen a implementar métodos no utilizados.
 
 ### Problema Identificado
 
@@ -32,7 +28,7 @@ Si definiéramos una interfaz única "GestorTurnos" que incluya todos estos mét
 Dividimos las responsabilidades en **interfaces segregadas y cohesivas**:
 
 1. **ICreadorTurnos**: responsable de crear nuevos turnos
-2. **IGestorTurnosPersonales**: responsable de consultar y modificar turnos propios
+2. **IGestorTurnosPersonales**: responsable de consultar turnos propios
 3. **IGestorAgenda**: responsable de consultar la agenda de un profesional
 4. **IAutorizador**: responsable de autorizar excepciones como sobreturnos
 5. **IRegistrador**: responsable de registrar eventos (llegadas, observaciones)
@@ -48,7 +44,7 @@ De esta forma, cada clase tiene compromisos claros y no depende de métodos que 
 
 ## Explicación de Interfaces
 
-Explicar qué es una interfaz en el diseño orientado a objetos y cómo se aplica específicamente para cumplir con ISP en el diseño del sistema.
+En diseño orientado a objetos, una interfaz es un contrato que especifica qué operaciones ofrece una clase sin imponer cómo deben implementarse. En este sistema, las interfaces se utilizan para separar responsabilidades y asegurar que cada actor —como Paciente, Médico o Secretaria— dependa solo de las capacidades que realmente necesita, en línea con el Principio de Segregación de Interfaces.
 
 ### ¿Qué es una Interfaz?
 
@@ -89,7 +85,7 @@ public class Medico : IGestorAgenda, IRegistrador { ... }
 
 ## Estructura de Clases
 
-Incluir un diagrama UML que muestre cómo se han diseñado las interfaces segregadas y cómo las clases existentes implementan estas interfaces. Incluir la imagen incrustada con el enlace al diagrama.
+El siguiente diagrama UML muestra cómo se segregan las interfaces del sistema para que cada clase implemente únicamente las operaciones que necesita, evitando dependencias innecesarias y mejorando la cohesión del diseño.
 
 ### Diagrama de Segregación de Interfaces
 
@@ -131,7 +127,7 @@ Implementaciones:
 
 ## Justificación Técnica
 
-Explicar con palabras lo que se observa en el diagrama UML. Detallar cómo las interfaces y clases reflejan la aplicación del ISP y por qué la solución propuesta es correcta desde el punto de vista técnico.
+El diagrama UML muestra una separación clara de responsabilidades mediante interfaces pequeñas y específicas. En lugar de concentrar todas las operaciones en una única interfaz general, la solución divide el comportamiento en contratos cohesionados, como creación de turnos, gestión de agenda, autorización de excepciones y registro de eventos. De esta manera, cada clase implementa únicamente las interfaces que necesita según su rol dentro del sistema: **Paciente** solo gestiona sus turnos, **Medico** consulta su agenda y registra información clínica, y **Secretaria** coordina tareas administrativas más amplias. Esta organización refleja correctamente el ISP porque evita dependencias innecesarias, reduce el acoplamiento y mejora la mantenibilidad del diseño.
 
 ### Análisis de la Solución
 
@@ -199,7 +195,7 @@ public class Administrativo : IGestorTurnosPersonales, IRegistrador {
 }
 ```
 
-Sin ISP, hubieríamos tenido que crear una interfaz gigante que incluye todo, dificultando agregar nuevas funcionalidades sin afectar clases existentes.
+Sin ISP, habríamos tenido que crear una interfaz gigante que incluye todo, dificultando agregar nuevas funcionalidades sin afectar clases existentes.
 
 #### 5. **Testabilidad**
 
