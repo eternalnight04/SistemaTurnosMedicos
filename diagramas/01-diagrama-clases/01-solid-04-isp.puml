@@ -40,6 +40,9 @@ interface IRegistrador <<interface>> {
     +ObtenerHistorial(turnoId: int): List<LogTurno>
 }
 
+class Usuario <<class>>
+class LogTurno <<class>>
+
 ' Clases concretas
 class Paciente <<class>> {
     -pacienteId: int
@@ -90,12 +93,6 @@ class Agenda <<class>> {
     --
     +AgregarTurno(turno: Turno): bool
     +RemoverTurno(turnoId: int): bool
-}
-
-class Usuario <<class>> {
-}
-
-class LogTurno <<class>> {
 }
 
 ' Implementaciones
