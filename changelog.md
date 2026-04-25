@@ -8,6 +8,16 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 
+## [Primer Parcial] - 2026-04-25
+
+Se consolidan todos los cambios realizados para la entrega del Primer Parcial con aplicación de principios SOLID.
+
+### Added
+
+- [feature/esp-isp-add-anexo-isp] Especialista en Segregación de Interfaces (ISP): Análisis de 5 interfaces segregadas (ICreadorTurnos, IGestorAgenda, IGestorTurnosPersonales, IAutorizador, IRegistrador) aplicadas al Sistema de Turnos Médicos. Incluye diagrama UML PlantUML y documentación del proceso con Copilot Agent Mode. PR: (#67) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/67) - @nataliacarreras96git (Especialista ISP)
+
+---
+
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
 
 Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico.
