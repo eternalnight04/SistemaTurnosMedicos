@@ -95,6 +95,12 @@ class Agenda <<class>> {
     +RemoverTurno(turnoId: int): bool
 }
 
+class Usuario <<class>> {
+}
+
+class LogTurno <<class>> {
+}
+
 ' Implementaciones
 Paciente ..|> ICreadorTurnos : implements
 Paciente ..|> IGestorTurnosPersonales : implements
