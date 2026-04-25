@@ -12,7 +12,7 @@ Tu tarea es:
 1. Identificar responsabilidades en las clases actuales que podrían abstraerse en interfaces cohesivas
 2. Detectar posibles "interfaces gordas" que obligarían a implementar métodos no utilizados
 3. Proponer interfaces segregadas y específicas al dominio del sistema de turnos
-4. Criar un diagrama UML PlantUML que muestre las interfaces propuestas y cómo las clases existentes las implementan
+4. Crear un diagrama UML PlantUML que muestre las interfaces propuestas y cómo las clases existentes las implementan
 5. Generar un análisis técnico que explique por qué esta segregación de interfaces mejora el diseño
 
 Revisa críticamente tu resultado:
