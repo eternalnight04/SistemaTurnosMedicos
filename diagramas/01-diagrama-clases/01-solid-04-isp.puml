@@ -57,7 +57,7 @@ class Medico <<class>> {
     -nombre: string
     -especialidad: string
     -matricula: string
-    ##
+    --
     +ObtenerEspecialidad(): string
     +ConfigurarDisponibilidad(horarios): void
 }
