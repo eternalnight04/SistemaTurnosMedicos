@@ -48,8 +48,6 @@ De esta forma, cada clase tiene compromisos claros y no depende de métodos que 
 
 ## Explicación de Interfaces
 
-Explicar qué es una interfaz en el diseño orientado a objetos y cómo se aplica específicamente para cumplir con ISP en el diseño del sistema.
-
 ### ¿Qué es una Interfaz?
 
 Una interfaz es un contrato que define un conjunto de métodos públicos que una clase DEBE implementar. 
@@ -88,8 +86,6 @@ public class Medico : IGestorAgenda, IRegistrador { ... }
 ---
 
 ## Estructura de Clases
-
-Incluir un diagrama UML que muestre cómo se han diseñado las interfaces segregadas y cómo las clases existentes implementan estas interfaces. Incluir la imagen incrustada con el enlace al diagrama.
 
 ### Diagrama de Segregación de Interfaces
 
@@ -130,8 +126,6 @@ Implementaciones:
 ---
 
 ## Justificación Técnica
-
-Explicar con palabras lo que se observa en el diagrama UML. Detallar cómo las interfaces y clases reflejan la aplicación del ISP y por qué la solución propuesta es correcta desde el punto de vista técnico.
 
 ### Análisis de la Solución
 

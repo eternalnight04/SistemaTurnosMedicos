@@ -12,7 +12,7 @@ Tu tarea es:
 1. Identificar responsabilidades en las clases actuales que podrían abstraerse en interfaces cohesivas
 2. Detectar posibles "interfaces gordas" que obligarían a implementar métodos no utilizados
 3. Proponer interfaces segregadas y específicas al dominio del sistema de turnos
-4. Criar un diagrama UML PlantUML que muestre las interfaces propuestas y cómo las clases existentes las implementan
+4. Crear un diagrama UML PlantUML que muestre las interfaces propuestas y cómo las clases existentes las implementan
 5. Generar un análisis técnico que explique por qué esta segregación de interfaces mejora el diseño
 
 Revisa críticamente tu resultado:
@@ -84,15 +84,15 @@ Copilot generó el siguiente análisis:
 
 ## Ajustes Realizados al Output
 
-### 1. **Separación de IGestorAgenda en dos contextos**
+### 1. **Revisión de IGestorAgenda según contexto de uso**
 
 **Output inicial:** Una sola interfaz `IGestorAgenda` para consultar disponibilidad
 
-**Ajuste:** Se refinó para considerar que:
+**Análisis realizado:** Se evaluó distinguir dos usos diferentes:
 - El Médico necesita ver su PROPIA agenda → método `MisTurnoDelDia()`
 - La Secretaria necesita ver la agenda de OTROS → método `ConsultarDisponibilidadMedico()`
 
-**Resultado:** Se propusieron dos interfaces en lugar de una, mejorando cohesión
+**Resultado:** Aunque se consideró esa separación, finalmente NO se dividió `IGestorAgenda` en dos interfaces. Se mantuvo una sola interfaz porque ambos casos siguen perteneciendo al mismo contexto funcional de gestión/consulta de agenda, y el diagrama final refleja esa decisión.
 
 ### 2. **Corrección: No forzar IRegistrador en Paciente**
 
@@ -176,8 +176,8 @@ public class Paciente : ICreadorTurnos, IGestorTurnosPersonales {
    - ISP no prohíbe implementar múltiples interfaces
 
 3. **¿Por qué crear IGestorTurnosPersonales separada de ICreadorTurnos?**
-   - ICreadorTurnos: MODIFICAR mis datos
-   - IGestorTurnosPersonales: CONSULTAR mis datos
+   - ICreadorTurnos: MODIFICAR mis turnos
+   - IGestorTurnosPersonales: CONSULTAR mis turnos
    - Separar lectura de escritura sigue el principio CQRS y mejora testabilidad
 
 ---

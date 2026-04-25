@@ -57,7 +57,7 @@ class Medico <<class>> {
     -nombre: string
     -especialidad: string
     -matricula: string
-    ##
+    --
     +ObtenerEspecialidad(): string
     +ConfigurarDisponibilidad(horarios): void
 }
@@ -90,6 +90,12 @@ class Agenda <<class>> {
     --
     +AgregarTurno(turno: Turno): bool
     +RemoverTurno(turnoId: int): bool
+}
+
+class Usuario <<class>> {
+}
+
+class LogTurno <<class>> {
 }
 
 ' Implementaciones
