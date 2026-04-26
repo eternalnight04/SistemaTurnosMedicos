@@ -1,53 +1,10 @@
-# Escenarios de Casos de Uso - Índice
+# Escenarios de Casos de Uso
 
-## Descripción
-
-Este directorio contiene los escenarios detallados de los 5 casos de uso principales del Sistema de Turnos Médicos. Cada escenario describe un flujo específico de interacción entre actores, precondiciones, pasos del proceso y postcondiciones.
-
----
-
-## Escenarios Documentados
-
-### 1. **Crear Turno - Flujo Principal**
-- **Archivo:** [03-crear-turno-flujo-principal.md](03-crear-turno-flujo-principal.md)
-- **ID:** CU-01-FP
-- **Descripción:** Crear un turno de control médico exitosamente
-- **Actores principales:** Secretaria, Paciente, Sistema
-- **Resultado:** Turno confirmado registrado en la agenda del médico
-
-### 2. **Reprogramar Turno - Flujo Alterno**
-- **Archivo:** [03-reprogramar-turno-flujo-alterno.md](03-reprogramar-turno-flujo-alterno.md)
-- **ID:** CU-02-FA
-- **Descripción:** Reprogramar un turno cuando hay conflicto de horario
-- **Actores principales:** Secretaria, Paciente
-- **Desafío:** Manejo de conflictos de superposición de horarios
-- **Resultado:** Turno reprogramado a horario disponible
-
-### 3. **Cancelar Turno - Flujo Principal**
-- **Archivo:** [03-cancelar-turno-flujo-principal.md](03-cancelar-turno-flujo-principal.md)
-- **ID:** CU-03-FP
-- **Descripción:** Cancelar un turno a solicitud del paciente
-- **Actores principales:** Secretaria, Paciente
-- **Validaciones:** Confirmación de cancelación, cambio de estado
-- **Resultado:** Turno cancelado, horario liberado, paciente notificado
-
-### 4. **Autorizar Sobreturno - Flujo Principal**
-- **Archivo:** [03-autorizar-sobreturno-flujo-principal.md](03-autorizar-sobreturno-flujo-principal.md)
-- **ID:** CU-04-FP
-- **Descripción:** Agregar un sobreturno autorizado manualmente por el médico
-- **Actores principales:** Secretaria, Médico, Paciente
-- **Restricción crítica:** Solo con autorización explícita del médico presente
-- **Resultado:** Sobreturno registrado con indicador especial
-
-### 5. **Registrar Llegada del Paciente - Flujo Principal**
-- **Archivo:** [03-registrar-llegada-flujo-principal.md](03-registrar-llegada-flujo-principal.md)
-- **ID:** CU-05-FP
-- **Descripción:** Registrar la llegada física del paciente el día del turno
-- **Actores principales:** Secretaria, Paciente, Médico
-- **Datos capturados:** Hora real de llegada vs hora programada
-- **Resultado:** Turno en estado "Presente", listo para consulta
-
----
+- [Crear Turno - Flujo Principal](03-crear-turno-flujo-principal.md)
+- [Reprogramar Turno - Flujo Alterno](03-reprogramar-turno-flujo-alterno.md)
+- [Cancelar Turno - Flujo Principal](03-cancelar-turno-flujo-principal.md)
+- [Autorizar Sobreturno - Flujo Principal](03-autorizar-sobreturno-flujo-principal.md)
+- [Registrar Llegada del Paciente - Flujo Principal](03-registrar-llegada-flujo-principal.md)
 
 ## Nomenclatura de Archivos
 
