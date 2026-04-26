@@ -1,7 +1,7 @@
 |   |   |   |   |
 |---|---|---|---|
 | **Nombre de la Clase:** | Medico |   |   |
-| **Superclase:** |   |   |   |
+| **Superclase:** | UsuarioDelSistema |   |   |
 | **Subclase:** |   |   |   |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Consultar agenda de turnos | Agenda, Turno | Necesito ver mis turnos asignados | Matrícula, Especialidad |

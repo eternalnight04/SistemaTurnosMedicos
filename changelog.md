@@ -12,97 +12,16 @@ Consolidación de diseño refinado mediante tarjetas CRC, diagramas de casos de 
 
 ### Added
 
-#### 📋 Especialista en Escenarios de Casos de Uso - Natalia Carreras
-
-- [feature/especialista-escenarios-casos-uso] **Creación de 5 escenarios de casos de uso completos** (03-crear-turno-flujo-principal.md, 03-reprogramar-turno-flujo-alterno.md, 03-cancelar-turno-flujo-principal.md, 03-autorizar-sobreturno-flujo-principal.md, 03-registrar-llegada-flujo-principal.md) con los 16 campos requeridos cada uno:
-  - ID única, Área, Actor(es), Descripción, Evento activador, Tipo de señal
-  - Pasos desempeñados (ruta principal), Precondiciones, Poscondiciones
-  - Suposiciones, Requerimientos, Aspectos sobresalientes, Prioridad, Riesgo
-  - Carpeta: diagramas/03-escenarios-casos-de-uso/
-  - Índice: diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md
-  - Documentación Copilot: ia/a2/especialista-escenarios.md (336 líneas - muy completa)
-  - PR: (#48) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/48)
-  - @nataliacarreras96git (Especialista en Escenarios de Casos de Uso)
-
-#### 📊 Modelador de Diagramas de Casos de Uso - Tomás Torres
-
-- [feature/modelador-diagramas-casos-uso] **Generación de 5 diagramas PlantUML de casos de uso**:
-  - 02-caso-uso-crear-turno.puml / .png
-  - 02-caso-uso-reprogramar-turno.puml / .png
-  - 02-caso-uso-cancelar-turno.puml / .png
-  - 02-caso-uso-autorizar-sobreturno.puml / .png
-  - 02-caso-uso-registrar-llegada.puml / .png
-  - Cada diagrama incluye actores principales (Paciente, Médico, Secretaria, Sistema)
-  - Relaciones correctas: asociaciones, inclusiones (<<include>>), extensiones (<<extend>>)
-  - Carpeta: diagramas/02-casos-de-uso/
-  - Índices: diagramas/diagramasUML.md (general) + diagramas/02-casos-de-uso/diagramas_de_casos_de_uso.md (específico)
-  - Documentación Copilot: ia/a2/modelador-diagramas-casos-uso.md (47 líneas)
-  - PR: (#51) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/51)
-  - @TomasTorres27 (Modelador de Diagramas de Casos de Uso)
-  - Correcciones aplicadas: PNG extensions (.png.png → .png), folder structure (ia/a2/ia/a2/ → ia/a2/), índices creados
-
-#### 🎯 Diseñador de Tarjetas CRC - Santiago Ferreyra
-
-- [feature/disenador-tarjetas-crc-paciente] **Tarjeta CRC: Paciente** - Clase principal que representa a los usuarios del sistema con responsabilidades de autenticación y gestión de turnos propios. PR: (#54) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/54) - @ferreyrasantiagojoaquin-lab
-
-- [feature/disenador-tarjetas-crc-medico] **Tarjeta CRC: Médico** - Profesional que gestiona su agenda y atiende pacientes. Responsabilidades de validación y gestión de turnos. PR: (#60) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/60) - @ferreyrasantiagojoaquin-lab
-
-- [feature/disenador-tarjetas-crc-turno] **Tarjeta CRC: Turno** - Entidad central del dominio que representa la cita médica con atributos temporales y de estado. PR: (#61) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/61) - @ferreyrasantiagojoaquin-lab
-
-- [feature/disenador-tarjetas-crc-agenda] **Tarjeta CRC: Agenda** - Gestiona la disponibilidad temporal del médico y organiza los turnos asignados. PR: (#57) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab
-
-- [feature/disenador-tarjetas-crc-secretaria] **Tarjeta CRC: Secretaria** - Actor que administra turnos, autoriza sobreturno y registra llegadas de pacientes. PR: (#58) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab
-
-- [feature/disenador-tarjetas-crc-index] **Índice de Tarjetas CRC** - Se crea herramientas-agile/herramientas_agile.md vinculando las 5 tarjetas. PR: (#59) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/59) - @ferreyrasantiagojoaquin-lab
-
-  **Resumen Diseñador CRC (Santiago):**
-  - 5 tarjetas CRC completas (nombre, superclase/subclase, pensamiento del objeto, responsabilidades, colaboraciones, propiedades)
-  - Carpeta: herramientas-agile/tarjetas-crc/
-  - Índice: herramientas-agile/herramientas_agile.md
-  - PRs: #54, #60, #61, #57, #58, #59 (todas mergeadas a develop)
-
-- [feature/disenador-tarjetas-crc-documentation] **Documentación del proceso Copilot para Diseñador CRC**:
-  - Archivo: ia/a2/disenador-tarjetas-crc.md (25 líneas)
-  - Incluye prompts utilizados, archivos de contexto, ajustes realizados, decisiones de diseño, reflexión
-  - PR: (#63) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63)
-  - @ferreyrasantiagojoaquin-lab (Diseñador de Tarjetas CRC)
-  - Correcciones aplicadas: Se requirió iteración (nombre y contenido corregidos en 2do intento)
-
-#### 👥 Documentador y Coordinador de Repositorio - Natalia Carreras
-
-- [feature/doc-coord-repo-A2-README] **Actualización completa de README.md**:
-  - Información general mejorada (tabla con Materia, Carrera, Profesor, Cuatrimestre)
-  - Tabla de integrantes con Rol A1 y Rol A2 actualizada
-  - Secciones separadas para A1 y A2 con objetivos específicos
-  - Artefactos principales con enlaces directos a índices
-  - Documentación Copilot (enlaces a ia/a2/)
-  - Estructura de carpetas del proyecto documentada
-  - Metodología de trabajo explicada
-  - Guía de navegación para usuario final
-
-- [feature/doc-coord-repo-A2-documentation] **Documentación del proceso de Coordinación**:
-  - Archivo: ia/a2/documentador-coordinador.md (~200 líneas)
-  - 4 Code Reviews ejecutados con Copilot Agent Mode:
-    1. PR #51 (Tomás - Diagramas): Validación de 5 diagramas UML
-    2. PRs #54-61 (Santiago - CRC): Validación de 5 tarjetas CRC
-    3. PR #48 (Natalia - Escenarios): Validación de 5 escenarios completos
-    4. PR #63 (Santiago - Doc CRC): Validación de documentación Copilot
-  - Cada review incluye: prompt Copilot, validaciones realizadas, decisiones de coordinación
-  - Resumen de PRs gestionadas, issues creadas/cerradas, validaciones clave ejecutadas
-  - Reflexión sobre fortalezas, desafíos y recomendaciones
-
-- [feature/doc-coord-repo-A2-release] **Creación de rama release/actividad-obligatoria-2**:
-  - Rama creada desde develop después de mergear todas las PRs
-  - Contiene todos los cambios de A2 listos para entrega
-  - Commits: README.md, changelog.md, ia/a2/documentador-coordinador.md
-
-  **Resumen Documentador y Coordinador (Natalia):**
-  - Coordinó integración de 4 PRs principales (48, 51, 54-61, 63)
-  - Ejecutó 4+ code reviews con Copilot validando coherencia A1 → A2
-  - Documentó prompts y procesos en ia/a2/documentador-coordinador.md
-  - Actualizó README.md e integró índices nuevos
-  - Actualizó changelog.md con todas las contribuciones
-  - Creó rama release/actividad-obligatoria-2 para entrega final
+- [feature/especialista-escenarios-casos-uso] 5 escenarios de casos de uso completos con 16 campos cada uno. PR: [#48](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/48) - @nataliacarreras96git (Especialista en Escenarios)
+- [feature/modelador-diagramas-casos-uso] 5 diagramas PlantUML de casos de uso. PR: [#51](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/51) - @TomasTorres27 (Modelador de Diagramas)
+- [feature/disenador-tarjetas-crc-paciente] Tarjeta CRC: Paciente. PR: [#54](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/54) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-medico] Tarjeta CRC: Médico. PR: [#60](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/60) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-turno] Tarjeta CRC: Turno. PR: [#61](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/61) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-agenda] Tarjeta CRC: Agenda. PR: [#57](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-secretaria] Tarjeta CRC: Secretaria. PR: [#58](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-documentation] Documentación del proceso Copilot para Diseñador CRC. PR: [#63](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ### Changed
 
