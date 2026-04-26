@@ -1,0 +1,51 @@
+@startuml
+title Aplicación del DIP en Sistema de Turnos Médicos
+
+' ANTES (Acoplamientos concretos)
+package "Antes" {
+    class Agenda {
+        - turnos: List<Turno>
+        - notificador: NotificadorEmail
+    }
+    class Turno {
+        - paciente: Paciente
+        - especialista: Especialista
+    }
+    class NotificadorEmail
+    class Paciente
+    class Especialista
+
+    Agenda --> "1..*" Turno
+    Turno --> Paciente
+    Turno --> Especialista
+    Agenda --> NotificadorEmail
+}
+
+' DESPUÉS (Dependencias invertidas)
+package "Después" {
+    interface IAgenda
+    interface ITurno
+    interface IPaciente
+    interface IEspecialista
+    interface INotificador
+
+    class AgendaImpl
+    class TurnoImpl
+    class PacienteImpl
+    class EspecialistaImpl
+    class NotificadorEmailImpl
+    class NotificadorSMSImpl
+
+    IAgenda <|.. AgendaImpl
+    ITurno <|.. TurnoImpl
+    IPaciente <|.. PacienteImpl
+    IEspecialista <|.. EspecialistaImpl
+    INotificador <|.. NotificadorEmailImpl
+    INotificador <|.. NotificadorSMSImpl
+
+    AgendaImpl --> "1..*" ITurno
+    ITurno --> IPaciente
+    ITurno --> IEspecialista
+    AgendaImpl --> INotificador
+}
+@enduml
