@@ -49,3 +49,5 @@ package "Después" {
     AgendaImpl --> INotificador
 }
 @enduml
+
+![Diagrama DIP](<img width="1298" height="653" alt="diagramas01-diagrama-clases01-solid-05-dip png" src="https://github.com/user-attachments/assets/6e13677b-989e-4951-b5a4-482136fe99d2" />
