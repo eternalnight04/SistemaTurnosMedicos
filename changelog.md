@@ -8,8 +8,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 Consolidación de diseño refinado mediante tarjetas CRC, diagramas de casos de uso y escenarios detallados. Utilización de Copilot Agent Mode en cada rol con documentación completa del proceso.
 
-**Nota Importante:** Durante la reasignación de roles para A2, Claudia abandonó el grupo. Como consecuencia, Natalia asumió dos roles simultáneamente: Especialista en Escenarios de Casos de Uso + Documentadora y Coordinadora de Repositorio. A pesar de esta sobrecarga, Natalia completó exitosamente ambas responsabilidades sin comprometer la calidad de la entrega.
-
 ### Added
 
 - [feature/especialista-escenarios-casos-uso] 5 escenarios de casos de uso completos con 16 campos cada uno. PR: [#48](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/48) - @nataliacarreras96git (Especialista en Escenarios)
@@ -20,23 +18,17 @@ Consolidación de diseño refinado mediante tarjetas CRC, diagramas de casos de 
 - [feature/disenador-tarjetas-crc-agenda] Tarjeta CRC: Agenda. PR: [#57](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-secretaria] Tarjeta CRC: Secretaria. PR: [#58](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-documentation] Documentación del proceso Copilot para Diseñador CRC. PR: [#63](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
-- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. - @nataliacarreras96git (Documentadora y Coordinadora)
-- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ### Changed
 
-- [release/actividad-obligatoria-2] **Preparación de rama release para entrega**:
-  - Rama creada desde develop
-  - Integración de todos los cambios A2 listos para evaluación profesor
-  - README.md completamente reescrito
-  - changelog.md actualizado con sección [Released - A2]
-  - Todos los artefactos accesibles y bien documentados
-  - @nataliacarreras96git (Coordinadora)
+- [release/actividad-obligatoria-2] Preparación de rama release para entrega: rama creada desde develop, integración de todos los cambios A2 listos para evaluación profesor, README.md completamente reescrito, changelog.md actualizado con sección [Released - A2], todos los artefactos accesibles y bien documentados. @nataliacarreras96git (Coordinadora)
 
 ### Fixed
 
-- [release/actividad-obligatoria-2] Correcciones RC1–RC11 solicitadas en review: tarjeta paciente en release, escenarios a 4 tablas, índices, cancelar-turno <<include>>, documentación IA con triple backtick. Commit: [bd75211](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/bd75211) — @nataliacarreras96git (Documentadora y Coordinadora)
-- [release/actividad-obligatoria-2] Correcciones de formato adicionales: herramientas_agile, diagramasUML. Commit: [227174e](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/227174e) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones RC1–RC11 solicitadas en review: tarjeta paciente en release, escenarios a 4 tablas, índices, cancelar-turno <<include>>, documentación IA con triple backtick. Commit: [bd75211](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/bd75211) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones de formato adicionales: herramientas_agile, diagramasUML. Commit: [227174e](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/227174e) - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ---
 
