@@ -40,10 +40,6 @@ Consolidación de diseño refinado mediante tarjetas CRC, diagramas de casos de 
 
 ---
 
-## [Unreleased]
-
----
-
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
 
 Se consolidan todos los cambios realizados en la rama develop para la entrega final del trabajo práctico.
