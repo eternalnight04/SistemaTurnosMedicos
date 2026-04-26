@@ -33,6 +33,11 @@ Consolidación de diseño refinado mediante tarjetas CRC, diagramas de casos de 
   - Todos los artefactos accesibles y bien documentados
   - @nataliacarreras96git (Coordinadora)
 
+### Fixed
+
+- [release/actividad-obligatoria-2] Correcciones RC1–RC11 solicitadas en review: tarjeta paciente en release, escenarios a 4 tablas, índices, cancelar-turno <<include>>, documentación IA con triple backtick. Commit: [bd75211](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/bd75211) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones de formato adicionales: herramientas_agile, diagramasUML. Commit: [227174e](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/227174e) — @nataliacarreras96git (Documentadora y Coordinadora)
+
 ---
 
 ## [Unreleased]
