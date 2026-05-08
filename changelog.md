@@ -30,7 +30,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Entradas retroactivas en changelog para commits bd75211 y 227174e. Commit: [b5eae62](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/b5eae62) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Correcciones de índice tarjetas CRC, secciones de escenarios y formato changelog. Commit: [f335ed2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/f335ed2) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
-
+-[fix/correcciones-fix] Se hacen correcciones en changelog, en escenarios_de_casos_de_uso.md y se mueve archivo herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md. PR[#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @sofinestt
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
