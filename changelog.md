@@ -27,6 +27,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 - [release/actividad-obligatoria-2] Correcciones RC1–RC11 solicitadas en review: tarjeta paciente en release, escenarios a 4 tablas, índices, cancelar-turno <<include>>, documentación IA con triple backtick. Commit: [bd75211](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/bd75211) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Correcciones de formato adicionales: herramientas_agile, diagramasUML. Commit: [227174e](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/227174e) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Entradas retroactivas en changelog para commits bd75211 y 227174e. Commit: [b5eae62](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/b5eae62) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones de índice tarjetas CRC, secciones de escenarios y formato changelog. Commit: [f335ed2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/f335ed2) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
 
 ---
 
