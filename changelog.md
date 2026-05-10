@@ -30,7 +30,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Entradas retroactivas en changelog para commits bd75211 y 227174e. Commit: [b5eae62](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/b5eae62) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Correcciones de índice tarjetas CRC, secciones de escenarios y formato changelog. Commit: [f335ed2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/f335ed2) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
--[fix/correcciones-fix] Se hacen correcciones en changelog, en escenarios_de_casos_de_uso.md y se mueve archivo herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md. PR[#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @sofinestt
+- [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/resolver-rcs-a2-santiago] Correcciones del trabajo de Santiago (DIP): creación de 03-dip.md con estructura correcta, diagrama PUML 01-solid-03-dip.puml. PR: [#75](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/75) - @nataliacarreras96git (Documentadora y Coordinadora - Correcciones de Santiago)
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
