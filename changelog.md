@@ -16,12 +16,12 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/disenador-tarjetas-crc-agenda] Tarjeta CRC: Agenda. PR: [#57](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-secretaria] Tarjeta CRC: Secretaria. PR: [#58](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-documentation] Documentación del proceso Copilot para Diseñador CRC. PR: [#63](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
-- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. Commit: [58115f3](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/58115f3) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. Commit: [58115f3](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/58115f3) - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ### Changed
 
-- [release/actividad-obligatoria-2] Preparación de rama release para entrega: rama creada desde develop, integración de todos los cambios A2 listos para evaluación profesor, README.md completamente reescrito, changelog.md actualizado con sección [Released - A2], todos los artefactos accesibles y bien documentados. @nataliacarreras96git (Coordinadora)
+- [release/actividad-obligatoria-2] Preparación de rama release para entrega: rama creada desde develop, integración de todos los cambios A2 listos para evaluación profesor, README.md completamente reescrito, changelog.md actualizado con sección [Released - A2], todos los artefactos accesibles y bien documentados. Commit: [2f8a946](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/2f8a946) - @nataliacarreras96git (Coordinadora)
 
 ### Fixed
 
@@ -30,7 +30,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Entradas retroactivas en changelog para commits bd75211 y 227174e. Commit: [b5eae62](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/b5eae62) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Correcciones de índice tarjetas CRC, secciones de escenarios y formato changelog. Commit: [f335ed2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/f335ed2) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
--[fix/correcciones-fix] Se hacen correcciones en changelog, en escenarios_de_casos_de_uso.md y se mueve archivo herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md. PR[#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @sofinestt
+- [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @sofinestt (Documentadora)
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
