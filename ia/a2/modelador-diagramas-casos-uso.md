@@ -10,7 +10,9 @@ Generar diagramas de casos de uso del Sistema de Turnos Médicos utilizando Plan
 
 Se utilizó Copilot en modo agente dentro de VS Code con el siguiente enfoque:
 
-"Generar diagramas de casos de uso en PlantUML para un sistema de turnos médicos, considerando actores como Paciente, Secretaria y Médico. Incluir relaciones de asociación, <<include>> y <<extend>> cuando corresponda."
+```
+Generar diagramas de casos de uso en PlantUML para un sistema de turnos médicos, considerando actores como Paciente, Secretaria y Médico. Incluir relaciones de asociación, <<include>> y <<extend>> cuando corresponda.
+```
 
 ---
 
@@ -44,4 +46,4 @@ Se realizaron modificaciones manuales sobre el contenido generado por IA:
 
 El uso de Copilot permitió acelerar la generación inicial de los diagramas, pero fue necesario realizar ajustes para asegurar la coherencia con el dominio del problema y los requerimientos definidos.
 
-Esto evidencia que la IA es una herramienta de apoyo, pero requiere validación y corrección por parte del desarrollador.gu
+Esto evidencia que la IA es una herramienta de apoyo, pero requiere validación y corrección por parte del desarrollador.

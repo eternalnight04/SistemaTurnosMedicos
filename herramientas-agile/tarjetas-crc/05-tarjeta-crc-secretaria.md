@@ -1,7 +1,7 @@
 |   |   |   |   |
 |---|---|---|---|
 | **Nombre de la Clase:** | Secretaria |   |   |
-| **Superclase:** |   |   |   |
+| **Superclase:** | UsuarioDelSistema |   |   |
 | **Subclase:** |   |   |   |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Gestionar turnos (agendar, cancelar, reprogramar) | Paciente, Medico, Turno | Ayudo a administrar los turnos | Lista de turnos |

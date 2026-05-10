@@ -1,44 +1,48 @@
-# Escenario: Registrar Llegada del Paciente - Flujo Principal
+# 03-registrar-llegada-flujo-principal
 
-## ID
-03-CU05-FP
+## Tabla 1: Metadatos del Escenario
 
-## Nombre
-Registrar Llegada de Paciente en el Día de la Cita
+| Campo | Valor |
+|-------|-------|
+| **Nombre Escenario** | Registrar Llegada de Paciente en el Día de la Cita |
+| **Nombre Caso de Uso** | UC-05: Registrar Llegada Paciente |
+| **ID Única** | 03-CU05-FP |
+| **Área** | Gestión de Turnos |
+| **Actor(es)** | Secretaria (Carlos), Paciente (Diego Martínez), Médico (Dr. Molina), Sistema |
+| **Descripción** | La secretaria registra la llegada real del paciente en el consultorio, cambiando estado a "Presente" |
 
-## Actores
-- Secretaria (Carlos)
-- Paciente (Diego Martínez)
-- Médico (Dr. Molina)
-- Sistema de Turnos
+## Tabla 2: Evento/Señal Activador
 
-## Precondiciones
-- La secretaria Carlos está autenticada en el sistema
-- Es el día 2026-04-21 (día del turno)
-- Existe un turno confirmado para Diego Martínez a las 10:00 AM con el Dr. Molina
-- Diego Martínez acaba de llegar físicamente al consultorio
+| Campo | Valor |
+|-------|-------|
+| **Activar Evento** | Paciente se presenta en la recepción del consultorio |
+| **Identificadores e iniciadores** | Usuario: Carlos (Secretaria), Timestamp: 2026-04-21 09:58 AM, Arribo físico de Diego Martínez |
+| **Tipo Señal** | ☑ Usuario ☐ Sistema ☐ Externo |
 
-## Flujo Principal
-1. Diego Martínez llega a la recepción del consultorio a las 09:58 AM
-2. La secretaria Carlos accede a la agenda diaria
-3. Se muestra lista de turnos para 2026-04-21 (hoy)
-4. La secretaria ubica el turno: Diego Martínez - 10:00 AM - Dr. Molina - Estado:Confirmado
-5. La secretaria selecciona "Registrar llegada"
-6. El sistema registra automáticamente la hora real de llegada: 09:58 AM
-7. El sistema cambia el estado del turno a "Presente"
-8. El sistema guarda en historial: [2026-04-21 09:58, acción:registrar_llegada, hora_programada:10:00, hora_real:09:58, diferencia:-2_minutos]
-9. El sistema muestra confirmación: "Llegada registrada - Paciente presente"
-10. La agenda muestra el turno con estado "Presente" para que el Dr. Molina sepa que puede iniciar la atención
-11. La secretaria comunica al Dr. Molina que Diego Martínez está listo
+## Tabla 3: Pasos Desempeñados
 
-## Flujo Alterno
-FA-05B: Si Diego hubiera llegado a las 10:15 (15 minutos tarde)
-- El sistema igualmente registra la llegada real: 10:15 AM
-- El sistema advierte: "Paciente llegó 15 minutos después de lo programado"
-- El turno cambia a estado "Presente" (la diferencia horaria quedará registrada)
+| Pasos desempeñados | Información para los pasos |
+|--------------------|---------------------------|
+| 1. Paciente llega a recepción | Diego Martínez se presenta en consultorio a las 09:58 AM |
+| 2. Acceder a agenda diaria | Secretaria Carlos abre agenda del día 2026-04-21 |
+| 3. Mostrar turnos del día | Sistema lista todos los turnos programados para hoy |
+| 4. Ubicar turno del paciente | Carlos localiza: Diego Martínez - 10:00 AM - Dr. Molina - Estado: Confirmado |
+| 5. Seleccionar "Registrar llegada" | Carlos selecciona opción de llegada para Diego |
+| 6. Registrar hora real | Sistema registra automáticamente hora exacta: 09:58 AM |
+| 7. Cambiar estado del turno | Sistema cambia estado de "Confirmado" a "Presente" |
+| 8. Guardar en historial | [2026-04-21 09:58, acción:registrar_llegada, hora_programada:10:00, hora_real:09:58, diferencia:-2_minutos] |
+| 9. Mostrar confirmación | Sistema muestra: "Llegada registrada - Paciente presente" |
+| 10. Actualizar agenda | Dr. Molina ve turno con estado "Presente", puede iniciar consulta |
+| 11. Comunicar al médico | Secretaria informa al Dr. Molina que Diego está listo |
 
-## Postcondiciones
-- El turno queda con estado "Presente"
-- El historial registra la hora exacta de llegada con timestamp (09:58:00)
-- El Dr. Molina visualiza que Diego Martínez está presente y puede iniciar la consulta
-- La diferencia entre hora programada (10:00) e hora real (09:58) queda documentada en la trazabilidad
+## Tabla 4: Condiciones de Contexto
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Precondiciones** | Secretaria autenticada, Es el día 2026-04-21 (día del turno), Turno confirmado para Diego a las 10:00 AM con Dr. Molina, Diego se presenta físicamente |
+| **Poscondiciones** | Turno con estado "Presente", Historial registra hora exacta de llegada (09:58 AM), Dr. Molina visualiza disponibilidad del paciente, Diferencia temporal documentada (-2 minutos) |
+| **Suposiciones** | Reloj del sistema es preciso, Diego es la persona correcta del turno, Dr. Molina está disponible |
+| **Reunir Requerimientos** | R-01: Registrar llegada, R-02: Cambiar estado a Presente, R-03: Documentar hora real |
+| **Aspectos Sobresalientes** | Registro automático de hora real con precisión, Detección de diferencia temporal (adelanto/atraso), Notificación automática al médico, Trazabilidad completa |
+| **Prioridad** | Alta |
+| **Riesgo** | Bajo |

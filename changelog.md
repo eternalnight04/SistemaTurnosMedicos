@@ -4,8 +4,37 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 
-## [Unreleased]
+## [Released - Actividad Obligatoria N°2] - 2026-04-17
 
+### Added
+
+- [feature/especialista-escenarios-casos-uso] 5 escenarios de casos de uso completos con 16 campos cada uno. PR: [#48](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/48) - @nataliacarreras96git (Especialista en Escenarios)
+- [feature/modelador-diagramas-casos-uso] 5 diagramas PlantUML de casos de uso. PR: [#51](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/51) - @TomasTorres27 (Modelador de Diagramas)
+- [feature/disenador-tarjetas-crc-paciente] Tarjeta CRC: Paciente. PR: [#54](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/54) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-medico] Tarjeta CRC: Médico. PR: [#60](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/60) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-turno] Tarjeta CRC: Turno. PR: [#61](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/61) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-agenda] Tarjeta CRC: Agenda. PR: [#57](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-secretaria] Tarjeta CRC: Secretaria. PR: [#58](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/disenador-tarjetas-crc-documentation] Documentación del proceso Copilot para Diseñador CRC. PR: [#63](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
+- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
+
+### Changed
+
+- [release/actividad-obligatoria-2] Preparación de rama release para entrega: rama creada desde develop, integración de todos los cambios A2 listos para evaluación profesor, README.md completamente reescrito, changelog.md actualizado con sección [Released - A2], todos los artefactos accesibles y bien documentados. @nataliacarreras96git (Coordinadora)
+
+### Fixed
+
+- [release/actividad-obligatoria-2] Correcciones RC1–RC11 solicitadas en review: tarjeta paciente en release, escenarios a 4 tablas, índices, cancelar-turno <<include>>, documentación IA con triple backtick. Commit: [bd75211](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/bd75211) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones de formato adicionales: herramientas_agile, diagramasUML. Commit: [227174e](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/227174e) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Entradas retroactivas en changelog para commits bd75211 y 227174e. Commit: [b5eae62](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/b5eae62) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Correcciones de índice tarjetas CRC, secciones de escenarios y formato changelog. Commit: [f335ed2](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/f335ed2) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/resolver-rcs-a2-santiago] Correcciones del trabajo de Santiago (DIP): creación de 03-dip.md con estructura correcta, diagrama PUML 01-solid-03-dip.puml. PR: [#75](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/75) - @nataliacarreras96git (Documentadora y Coordinadora - Correcciones de Santiago)
+- [fix/resolver-rcs-a2-tomas] Creación de 01-srp.md: análisis del Principio de Responsabilidad Única con ejemplos Sistema de Turnos. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - SRP que faltaba)
+- [fix/resolver-rcs-a2-tomas] Creación de 02-ocp.md: análisis del Principio Abierto/Cerrado con patrones de extensión. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - OCP de Tomás)
+- [fix/resolver-rcs-a2-tomas] Creación de 05-lsp.md: análisis del Principio de Sustitución de Liskov con jerarquías de turnos. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - LSP de Tomás)
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
@@ -14,28 +43,28 @@ Se consolidan todos los cambios realizados en la rama develop para la entrega fi
 
 ### Added
 
-- [feature/modelador-casos-uso] Documentación de 5 casos de uso completos (UC-01 a UC-05) a partir de fuentes de dominio. PR: (#6) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/6) - @ademarco97 (Modelador)
-- [feature/analista-requerimientos] Definición de requisitos funcionales y no funcionales del sistema. PR: (#8) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - @nachonervi-design (Analista)
-- [feature/diseniador-clases-add-boceto-inicial] Creación del diagrama de clases en formatos .excalidraw, .png y .puml. PR: (#9) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - @LuchoBarrionuevo13 (Diseñador)
-- [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
-- [feature/casos-uso-completos-g4] Completar 5 casos de uso (CU-01 a CU-05) con flujos principal y alternativo, actores y decisiones específicas del dominio. PR: (#34) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador de Clases Iniciales)
-- [feature/casos-uso-g6-contenido-g4] Aporte de contenido de casos de uso del Grupo 6 adaptado al dominio de Sistema de Turnos Médicos (CU-01 a CU-05) con actores reales, flujos principal y alternativo. PR: (#36) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/36) - @ferreyrasantiagojoaquin-lab (Modelador)
-- [feature/diagrama-mejorado-g4] Revisión y mejora del diagrama de clases en Excalidraw realizado por Natalia. Validación de entidades, relaciones y atributos según especificación del sistema de turnos médicos. PR:(https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/35) - @nataliacarreras96git (Coordinadora)
+- [feature/modelador-casos-uso] Documentación de 5 casos de uso completos (UC-01 a UC-05) a partir de fuentes de dominio. PR: [#6](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/6) - @ademarco97 (Modelador)
+- [feature/analista-requerimientos] Definición de requisitos funcionales y no funcionales del sistema. PR: [#8](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/8) - @nachonervi-design (Analista)
+- [feature/diseniador-clases-add-boceto-inicial] Creación del diagrama de clases en formatos .excalidraw, .png y .puml. PR: [#9](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/9) - @LuchoBarrionuevo13 (Diseñador)
+- [feature/doc-coord-repo-update-readme-md] Creación del README, introducción POO y anexos. PR: [#12](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
+- [feature/casos-uso-completos-g4] Completar 5 casos de uso (CU-01 a CU-05) con flujos principal y alternativo, actores y decisiones específicas del dominio. PR: [#34] (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador de Clases Iniciales)
+- [feature/casos-uso-g6-contenido-g4] Aporte de contenido de casos de uso del Grupo 6 adaptado al dominio de Sistema de Turnos Médicos (CU-01 a CU-05) con actores reales, flujos principal y alternativo. PR: [#36](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/36) - @ferreyrasantiagojoaquin-lab (Modelador)
+- [feature/diagrama-mejorado-g4] Revisión y mejora del diagrama de clases en Excalidraw realizado por Natalia. Validación de entidades, relaciones y atributos según especificación del sistema de turnos médicos. PR: [#35](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/35) - @nataliacarreras96git (Coordinadora)
 
 ### Changed
 
-- [feature/doc-coord-repo-update-readme-md] Actualización del README e introducción para mejorar claridad. PR: (#12) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
-- [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: (#10) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
-- [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: (#11) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
-- [feature/diagrama-mejorado-g4] Revisión y mejora del diagrama de clases en Excalidraw realizado por Natalia. Validación de entidades, relaciones y atributos según especificación del sistema de turnos médicos. PR: (#35) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/35) - @nataliacarreras96git (Coordinadora)
+- [feature/doc-coord-repo-update-readme-md] Actualización del README e introducción para mejorar claridad. PR: [#12](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/12) - @nataliacarreras96git (Documentadora)
+- [feature/estructura-carpetas] Reorganización de carpetas (anexos/ y diagramas/). PR: [#10](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/10) - @nataliacarreras96git (Documentadora)
+- [feature/normalizacion-nombres] Renombrado de carpetas a minúsculas (Diagramas → diagramas, 01-Diagrama-Clases → 01-diagrama-clases). PR: [#11](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/11) - @nataliacarreras96git (Documentadora)
+- [feature/diagrama-mejorado-g4] Revisión y mejora del diagrama de clases en Excalidraw realizado por Natalia. Validación de entidades, relaciones y atributos según especificación del sistema de turnos médicos. PR: [#35](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/35) - @nataliacarreras96git (Coordinadora)
 
 ### Fixed
 
 - [fix/revert-pr-14] Revert de PR #14 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
 - [fix/revert-pr-23] Revert de PR #23 - Merge sin aprobación según corrección del profesor. Corrección de procedimiento GitFlow. - @nataliacarreras96git (Coordinadora)
-- [feature/doc-coord-correccion-changelog-a1] Corrección de changelog.md - formato exacto según especificación del profesor y agregación de entradas faltantes. PR: (#31) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/31) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [feature/doc-coord-correccion-readme-rnf] Corrección del README (tabla integrantes con Rol y matrículas actualizadas) e introduccion.md (Polimorfismo en lenguaje natural + 5 RNFs específicos). PR: (#32) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/32) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [fix/changelog-completo-todos-los-pr] Agregación de entradas faltantes en changelog: reverts de PR #14 y #23, y correcciones de PR #31 y #32. PR: (#33) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/33) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [fix/casos-uso-completos-g4] Corrección de 5 casos de uso completos (CU-01: Crear Turno, CU-02: Reprogramar, CU-03: Cancelar, CU-04: Autorizar Sobreturno, CU-05: Registrar Llegada) con actores, flujos principal y alternativo, precondiciones y postcondiciones. PR: (#34) (https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador)
+- [feature/doc-coord-correccion-changelog-a1] Corrección de changelog.md - formato exacto según especificación del profesor y agregación de entradas faltantes. PR: [#31](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/31) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [feature/doc-coord-correccion-readme-rnf] Corrección del README (tabla integrantes con Rol y matrículas actualizadas) e introduccion.md (Polimorfismo en lenguaje natural + 5 RNFs específicos). PR: [#32](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/32) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/changelog-completo-todos-los-pr] Agregación de entradas faltantes en changelog: reverts de PR #14 y #23, y correcciones de PR #31 y #32. PR: [#33](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/33) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/casos-uso-completos-g4] Corrección de 5 casos de uso completos (CU-01: Crear Turno, CU-02: Reprogramar, CU-03: Cancelar, CU-04: Autorizar Sobreturno, CU-05: Registrar Llegada) con actores, flujos principal y alternativo, precondiciones y postcondiciones. PR: [#34](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/34) - @TomasTorres27 (Diseñador)
 - [fix/correccion-completa-actividad-1] Correcciones finales para la entrega: Agregar diagrama de clases (01-boceto-inicial.excalidraw y .png), enlace NotebookLM en anexos/introduccion.md, eliminar introduccion.md de raíz (versión correcta en anexos/), arreglar encoding UTF-8 en anexos/anexos.md. PR: [#42](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/42) - @nataliacarreras96git (Coordinadora)
 
