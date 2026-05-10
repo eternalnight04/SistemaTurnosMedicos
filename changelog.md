@@ -32,6 +32,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/resolver-rcs-a2-santiago] Correcciones del trabajo de Santiago (DIP): creación de 03-dip.md con estructura correcta, diagrama PUML 01-solid-03-dip.puml. PR: [#75](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/75) - @nataliacarreras96git (Documentadora y Coordinadora - Correcciones de Santiago)
+- [fix/resolver-rcs-a2-tomas] Creación de 01-srp.md: análisis del Principio de Responsabilidad Única con ejemplos Sistema de Turnos. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - SRP que faltaba)
+- [fix/resolver-rcs-a2-tomas] Creación de 02-ocp.md: análisis del Principio Abierto/Cerrado con patrones de extensión. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - OCP de Tomás)
+- [fix/resolver-rcs-a2-tomas] Creación de 05-lsp.md: análisis del Principio de Sustitución de Liskov con jerarquías de turnos. PR: [#76](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/76) - @nataliacarreras96git (Documentadora y Coordinadora - LSP de Tomás)
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
