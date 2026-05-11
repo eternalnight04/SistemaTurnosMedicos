@@ -16,8 +16,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/disenador-tarjetas-crc-agenda] Tarjeta CRC: Agenda. PR: [#57](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/57) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-secretaria] Tarjeta CRC: Secretaria. PR: [#58](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/58) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
 - [feature/disenador-tarjetas-crc-documentation] Documentación del proceso Copilot para Diseñador CRC. PR: [#63](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/63) - @ferreyrasantiagojoaquin-lab (Diseñador CRC)
-- [feature/doc-coord-repo-A2-README] Actualización completa de README.md con tabla de integrantes y artefactos. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [feature/doc-coord-repo-A2-documentation] Documentación del proceso de Coordinación y 4 Code Reviews ejecutados. PR: [#?](https://github.com/nataliacarreras96git/SistemaTurnosMedicos) - @nataliacarreras96git (Documentadora y Coordinadora)
 
 ### Changed
 
