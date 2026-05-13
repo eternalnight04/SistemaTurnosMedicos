@@ -28,6 +28,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/resolver-rcs-a2-changelog]  Correccion de entradas en changelog con [#?] placeholder en ### Added y entrada en ### Changed sin PR link. Correccion de formato de PRs. PR [#78](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/78) - @nataliacarreras96git (Documentadora y Coordinadora)
+- [fix/correcciones-changelog-fix] Se elimina entrada de changelog de la parte "Changed" al ser texto plano y no corresponder a ninguna PR, se eliminan entradas de PRs #75 y #76 del changelog ya que correspondían a correcciones del parcial, se agrega entrada de PR #78. PR [#79] - @sofinestt 
 
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26
