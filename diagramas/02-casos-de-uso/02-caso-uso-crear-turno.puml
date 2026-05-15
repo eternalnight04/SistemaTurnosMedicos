@@ -1,0 +1,22 @@
+@startuml 02-caso-uso-crear-turno
+left to right direction
+
+actor Paciente
+actor Secretaria
+
+rectangle "Sistema de Turnos Médicos" {
+
+  usecase "Crear Turno" as UC01
+  usecase "Verificar Disponibilidad" as UC01_1
+  usecase "Registrar Paciente" as UC01_2
+  usecase "Confirmar Turno" as UC01_3
+
+  Paciente --> UC01
+  Secretaria --> UC01
+
+  UC01 ..> UC01_1 : <<include>>
+  UC01 ..> UC01_2 : <<extend>>
+  UC01 ..> UC01_3 : <<include>>
+}
+
+@enduml

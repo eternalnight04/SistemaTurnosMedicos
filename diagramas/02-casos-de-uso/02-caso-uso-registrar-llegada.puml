@@ -1,0 +1,18 @@
+@startuml 02-caso-uso-registrar-llegada
+left to right direction
+
+actor Secretaria
+
+rectangle "Sistema de Turnos Médicos" {
+
+  usecase "Registrar Llegada del Paciente" as UC05
+  usecase "Validar Turno del Día" as UC05_1
+  usecase "Actualizar Estado del Turno" as UC05_2
+
+  Secretaria --> UC05
+
+  UC05 ..> UC05_1 : <<include>>
+  UC05 ..> UC05_2 : <<include>>
+}
+
+@enduml
