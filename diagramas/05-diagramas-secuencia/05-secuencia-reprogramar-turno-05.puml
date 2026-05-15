@@ -1,0 +1,35 @@
+@startuml Diagrama de Secuencia - Reprogramar Turno
+' Nombre del escenario: Reprogramar Turno - Flujo Alterno
+' Archivo: diagramas/03-escenarios-casos-de-uso/03-reprogramar-turno-flujo-alterno.md
+' Objetivo: Representar la reprogramación de un turno por conflicto de horario, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno reprograma, Agenda verifica disponibilidad).
+
+actor Secretaria as victoria
+actor Paciente as maria
+participant "Agenda:agenda" as agenda
+participant "Turno:turno" as turno
+
+maria -> victoria: solicitarReprogramacion(turnoId)
+
+victoria -> agenda: buscarTurno(paciente, fecha)
+activate agenda
+
+agenda -> victoria: mostrarTurno(turnoActual)
+
+victoria -> turno: solicitarReprogramacion(nuevaFecha, nuevaHora)
+activate turno
+
+turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
+agenda --> turno: conflictoDetectado()
+
+turno -> agenda: sugerirHorariosAlternativos()
+victoria -> turno: seleccionarNuevoHorario(horarioSeleccionado)
+
+turno -> agenda: validarHorario(horarioSeleccionado)
+turno -> agenda: actualizarTurno(nuevaFecha, nuevaHora)
+turno -> agenda: registrarEnHistorial(horarioAnterior, horarioNuevo, usuario)
+
+agenda -> maria: enviarNotificacion(mensaje)
+
+deactivate turno
+deactivate agenda
+@enduml
