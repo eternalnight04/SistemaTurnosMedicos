@@ -1,42 +1,48 @@
-# Escenario: Autorizar Sobreturno - Flujo Principal
+# 03-autorizar-sobreturno-flujo-principal
 
-## ID
-03-CU04-FP
+## Tabla 1: Metadatos del Escenario
 
-## Nombre
-Agregar Sobreturno Autorizado por el Médico
+| Campo | Valor |
+|-------|-------|
+| **Nombre Escenario** | Agregar Sobreturno Autorizado por el Médico |
+| **Nombre Caso de Uso** | UC-04: Autorizar Sobreturno |
+| **ID Única** | 03-CU04-FP |
+| **Área** | Gestión de Turnos |
+| **Actor(es)** | Secretaria (Laura), Médico (Dr. Molina), Paciente (Patricia Gómez), Sistema |
+| **Descripción** | La secretaria crea un sobreturno fuera del horario normal cuando el médico lo autoriza para emergencias |
 
-## Actores
-- Secretaria (Laura)
-- Médico (Dr. Molina)
-- Paciente (Patricia Gómez)
-- Sistema de Turnos
+## Tabla 2: Evento/Señal Activador
 
-## Precondiciones
-- La secretaria Laura está autenticada en el sistema
-- El Dr. Molina está presente físicamente en el consultorio
-- Patricia Gómez tiene una emergencia y necesita ser atendida fuera del horario normal
-- El Dr. Molina verbalmente autoriza agregar un sobreturno para Patricia
-- Para ese horario ya existen otros turnos confirmados
+| Campo | Valor |
+|-------|-------|
+| **Activar Evento** | Paciente requiere atención médica urgente fuera de horario normal |
+| **Identificadores e iniciadores** | Usuario: Laura (Secretaria), Timestamp: 2026-04-16 16:20, Autorización verbal del Dr. Molina |
+| **Tipo Señal** | ☑ Sistema ☐ Usuario ☑ Externo (emergencia) |
 
-## Flujo Principal
-1. La secretaria Laura intenta crear un turno para Patricia Gómez en 2026-04-16 a las 16:30
-2. El sistema detecta que este horario está FUERA de la disponibilidad normal del Dr. Molina (cierra a las 16:00)
-3. El sistema advierte: "El horario 16:30 está fuera de disponibilidad. ¿Desea agregar un sobreturno?"
-4. Laura responde: "Sí, el Dr. Molina autoriza el sobreturno"
-5. El sistema pide confirmación explícita: "⚠️ Está a punto de crear un SOBRETURNO. Conforme que el médico lo autorizó. ¿Continuar?"
-6. Laura confirma haciendo click en "Sí, autorizar sobreturno"
-7. El sistema registra el turno con indicador "sobreturno = TRUE"
-8. El sistema guarda en historial: [2026-04-16 16:20, usuario:Laura, acción:crear_sobreturno, autorizado_por:Dr_Molina, turno_id:89012, observacion:Emergency]
-9. El sistema envía WhatsApp a Patricia: "Se le ha agendado un sobreturno para POY a las 16:30 con el Dr. Molina (EMERGENCIA)"
-10. La secretaria visualiza el turno en la agenda con indicador "SOBRETURNO" en color rojo
+## Tabla 3: Pasos Desempeñados
 
-## Flujo Alterno
-NA
+| Pasos desempeñados | Información para los pasos |
+|--------------------|---------------------------|
+| 1. Secretaria intenta crear turno | Laura intenta crear cita para Patricia en 2026-04-16 16:30 |
+| 2. Verificar horario | Sistema detecta que 16:30 **está FUERA de disponibilidad normal** (cierre a las 16:00) |
+| 3. Advertencia al usuario | Sistema advierte: "¿Desea agregar un sobreturno? (Fuera de disponibilidad)" |
+| 4. Secretaria confirma autorización | Laura responde: "Sí, el Dr. Molina autoriza el sobreturno" |
+| 5. Solicitar confirmación explícita | Sistema pide: "⚠️ SOBRETURNO. ¿Confirma autorización médica? ¿Continuar?" |
+| 6. Secretaria confirma | Laura hace click en "Sí, autorizar sobreturno" |
+| 7. Registrar turno con indicador | Sistema crea turno con bandera: sobreturno = TRUE |
+| 8. Asignar ID | Turno recibe turno_id:89012 |
+| 9. Guardar en historial | [2026-04-16 16:20, usuario:Laura, acción:crear_sobreturno, autorizado_por:Dr_Molina, turno_id:89012, observacion:Emergency] |
+| 10. Enviar notificación | WhatsApp a Patricia: "Se agendó sobreturno para HOY 16:30 con Dr. Molina (EMERGENCIA)" |
+| 11. Mostrar en agenda | Secretaria visualiza turno en agenda con indicador "SOBRETURNO" en color rojo |
 
-## Postcondiciones
-- El sobreturno queda registrado con su indicador "sobreturno = TRUE"
-- El historial deja trazabilidad de que fue autorizado manualmente por el Dr. Molina
-- La agenda muestra visualmente el sobreturno diferenciado del resto
-- NO se generaron sobreturnos automáticos (solo por autorización explícita)
-- Patricia Gómez es atendida en horario fuera de la disponibilidad normal
+## Tabla 4: Condiciones de Contexto
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Precondiciones** | Secretaria autenticada, Dr. Molina presente físicamente en consultorio, Patricia Gómez necesita emergencia, Dr. Molina verbalmente autoriza, Algunos turnos ya confirmados en ese horario |
+| **Poscondiciones** | Sobreturno registrado con indicador sobreturno=TRUE, Historial con trazabilidad de autorización, Agenda muestra diferenciación visual (rojo), NO se generan sobreturnos automáticos, Patricia Gómez atendida fuera de horario normal |
+| **Suposiciones** | Dr. Molina puede atender en horario extendido, Emergencia es válida y documentada, WhatsApp operativo |
+| **Reunir Requerimientos** | R-01: Crear sobreturno, R-02: Requerir autorización explícita, R-03: Indicador visual diferenciado, R-04: Trazabilidad de autorización |
+| **Aspectos Sobresalientes** | Sobreturno requiere autorización explícita del médico, Solo se generan manualmente (no automático), Indicador visual diferenciado en agenda, Trazabilidad completa de autorización, Emergencia documentada |
+| **Prioridad** | Alta |
+| **Riesgo** | Medio (requiere validación de emergencia) |
