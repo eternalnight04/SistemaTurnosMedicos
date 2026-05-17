@@ -1,0 +1,69 @@
+@startuml 04-actividad-registrar-llegada-caso-uso-05
+title Diagrama de Actividades - Registrar Llegada del Paciente (CU 5)
+
+skinparam ActivityBackgroundColor #FEFECE
+skinparam ActivityBorderColor #A80036
+skinparam ActivityFontColor #000000
+
+start
+partition Paciente {
+  :Llega a la recepción;
+  :Hora real: 09:58 AM;
+}
+
+partition Secretaria {
+  :Accede a la agenda diaria;
+  :Busca turnos de hoy;
+}
+
+partition Sistema {
+  :Muestra lista de turnos;
+  :Fecha: 2026-04-21;
+  :Hora, paciente, doctor, estado;
+}
+
+partition Secretaria {
+  :Ubica el turno;
+  :Diego Martínez - 10:00 AM;
+  :Estado: Confirmado;
+  :Selecciona "Registrar llegada";
+}
+
+partition Sistema {
+  :Registra timestamp;
+  :Hora real de llegada: 09:58 AM;
+  :Calcula diferencia;
+  :Diferencia: -2 minutos (temprano);
+}
+
+partition Sistema {
+  :Actualiza estado del turno;
+  :Nuevo estado: "Presente";
+  :Guarda en historial;
+  :timestamp, acción, hora_programada;
+  :hora_real, diferencia;
+}
+
+partition Sistema {
+  :Muestra confirmación;
+  :"Llegada registrada - Paciente presente";
+}
+
+partition Sistema {
+  :Actualiza vista del Dr. Molina;
+  :Muestra turno en estado "Presente";
+  :Médico puede iniciar consulta;
+}
+
+partition Secretaria {
+  if (¿Paciente llegó a tiempo?) then (Sí/Temprano)
+    :Comunica al doctor;
+    :"Paciente listo para atención";
+  else (Tarde)
+    :Comunica al doctor;
+    :"Paciente llegó [X] minutos tarde";
+  endif
+}
+
+end
+@enduml
