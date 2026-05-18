@@ -75,7 +75,6 @@ Obtener diagramas consistentes con los escenarios y alineados con las responsabi
 - Sintaxis PlantUML: Se usó sintaxis estándar con actores para humanos y participantes para clases, incluyendo activaciones para mostrar duración de interacciones.
 - Comentarios: Cada diagrama incluye comentarios con nombre del escenario, archivo fuente y objetivo para trazabilidad.
 
-
 ## Reflexión
 
 El proceso de generación de diagramas de secuencia fue efectivo al integrar los escenarios de casos de uso con las responsabilidades de las tarjetas CRC, asegurando que los diagramas fueran no solo técnicamente correctos sino también coherentes con el diseño del sistema. La referencia explícita a archivos fuente facilitó la validación y mantuvo la consistencia. Se identificó que algunos escenarios requerían más participantes para cubrir todas las colaboraciones, lo que enriqueció los diagramas. En futuras iteraciones, se podría considerar agregar más detalles como tipos de retorno o excepciones para mayor precisión.

@@ -2,13 +2,13 @@
 title Diagrama de Secuencia - Autorizar Sobreturno
 ' Nombre del escenario: Autorizar Sobreturno - Flujo Principal
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-autorizar-sobreturno-flujo-principal.md
-' Objetivo: Representar la autorización de un sobreturno por el médico, involucrando secretaria, médico, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Medico autoriza, Agenda registra disponibilidad, Turno maneja estados).
+' Objetivo: Representar la autorizaciÃ³n de un sobreturno por el mÃ©dico, involucrando secretaria, mÃ©dico, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Medico autoriza, Agenda registra disponibilidad, Turno maneja estados).
 
 actor Secretaria as victoria
 actor Medico as drMolina
 actor Paciente as patricia
-participant "Agenda" as agenda
-participant "Turno" as turno
+participant "Agenda:agenda" as agenda
+participant "Turno:turno" as turno
 
 victoria -> agenda: crearTurno(fecha, hora, paciente)
 activate agenda
@@ -20,9 +20,10 @@ drMolina -> victoria: autorizarSobreturno()
 victoria -> agenda: confirmarAutorizacion(autorizadoPor)
 
 create turno
-agenda -> turno: Turno(fecha, hora, paciente, sobreturno=true)
+agenda -> turno: crearTurno(fecha, hora, paciente, sobreturno=true)
 activate turno
 
+turno -> turno: cambiarEstado(confirmado)
 turno -> agenda: registrarEnHistorial(accion, usuario, autorizadoPor)
 agenda -> patricia: enviarNotificacion(mensaje)
 
