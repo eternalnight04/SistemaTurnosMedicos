@@ -1,4 +1,4 @@
-@startuml 04-actividad-cancelar-turno-caso-uso-03
+@startuml
 title Diagrama de Actividades - Cancelar Turno (CU 3)
 
 skinparam ActivityBackgroundColor #FEFECE
@@ -12,8 +12,13 @@ partition Secretaria {
 }
 
 partition Sistema {
-  :Muestra turno encontrado;
-  :turno_id, paciente, doctor, fecha, hora, estado;
+  if (¿Turno existe?) then (Sí)
+    :Muestra turno encontrado;
+    :turno_id, paciente, doctor, fecha, hora, estado;
+  else (No)
+    :Muestra error: "Turno no encontrado";
+    stop
+  endif
 }
 
 partition Secretaria {
@@ -36,19 +41,15 @@ partition Sistema {
     :Libera horario en la agenda;
     :Registra en historial;
     :timestamp, usuario, acción, motivo;
+    :Envía notificación a paciente;
+    :WhatsApp con fecha/hora/médico;
   else (No)
     :Cancela operación;
-    stop
   endif
 }
 
-partition Sistema {
-  :Envía notificación a paciente;
-  :WhatsApp con fecha/hora/médico;
-}
-
 partition Secretaria {
-  :Visualiza turno con estado "Cancelado";
+  :Visualiza resultado;
 }
 
 end

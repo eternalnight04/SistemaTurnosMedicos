@@ -1,4 +1,4 @@
-@startuml 04-actividad-registrar-llegada-caso-uso-05
+@startuml
 title Diagrama de Actividades - Registrar Llegada del Paciente (CU 5)
 
 skinparam ActivityBackgroundColor #FEFECE
@@ -13,7 +13,8 @@ partition Paciente {
 
 partition Secretaria {
   :Accede a la agenda diaria;
-  :Busca turnos de hoy;
+  :Busca turnos de hoy (2026-04-21);
+  :Consulta: hora, paciente, doctor, estado;
 }
 
 partition Sistema {
@@ -49,10 +50,10 @@ partition Sistema {
   :"Llegada registrada - Paciente presente";
 }
 
-partition Sistema {
-  :Actualiza vista del Dr. Molina;
-  :Muestra turno en estado "Presente";
-  :Médico puede iniciar consulta;
+partition Medico {
+  :Recibe notificación;
+  :Turno en estado "Presente";
+  :Puede iniciar consulta;
 }
 
 partition Secretaria {

@@ -8,7 +8,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/esp-actividades-3-4-5-add-diagramas-actividad-3-4-5] Agrega 3 diagramas de actividades UML para casos de uso 3, 4 y 5 (Cancelar Turno, Autorizar Sobreturno, Registrar Llegada) con documentación IA. Issues: #82 #83 #84 - @nataliacarreras96git (Especialista en Diagramas de Actividades)
+- [feature/esp-actividades-3-4-5-add-diagramas-actividad-3-4-5] Agrega 3 diagramas de actividades UML para casos de uso 3, 4, 5 (Cancelar Turno, Autorizar Sobreturno, Registrar Llegada) con documentación IA completa. Cierra #82, #83, #84. - @nataliacarreras96git (Especialista en Diagramas de Actividades)
 
 ---
 

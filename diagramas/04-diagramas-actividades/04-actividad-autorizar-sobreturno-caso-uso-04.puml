@@ -1,4 +1,4 @@
-@startuml 04-actividad-autorizar-sobreturno-caso-uso-04
+@startuml
 title Diagrama de Actividades - Autorizar Sobreturno (CU 4)
 
 skinparam ActivityBackgroundColor #FEFECE
@@ -15,16 +15,12 @@ partition Sistema {
   :Verifica disponibilidad;
   if (¿Horario disponible?) then (Sí)
     :Crea turno normal;
-    stop
   else (No - Fuera de horario)
     :Muestra advertencia;
     :Horario fuera de disponibilidad;
+    :Solicita confirmación;
+    :"¿Desea crear un SOBRETURNO?";
   endif
-}
-
-partition Sistema {
-  :Solicita confirmación;
-  :"¿Desea crear un SOBRETURNO?";
 }
 
 partition Secretaria {
