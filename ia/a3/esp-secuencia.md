@@ -56,7 +56,7 @@ Obtener diagramas consistentes con los escenarios y alineados con las responsabi
 - herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md
 - herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md
 - herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md
-- ia/ herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md
+- herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md
 
 ## Ajustes realizados
 

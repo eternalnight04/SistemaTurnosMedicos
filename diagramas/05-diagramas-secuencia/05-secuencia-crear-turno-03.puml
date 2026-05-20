@@ -18,6 +18,7 @@ agenda -> victoria: mostrarPaciente(datos)
 victoria -> agenda: seleccionarMedicoFechaHora(medico, fecha, hora, tipo)
 
 agenda -> agenda: verificarDisponibilidad(fecha, hora)
+agenda --> victoria: disponibilidadConfirmada()
 
 create turno
 agenda -> turno: crearTurno(fecha, hora, paciente, medico, estado=confirmado)

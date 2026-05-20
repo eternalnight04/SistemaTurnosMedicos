@@ -21,6 +21,7 @@ activate turno
 
 turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
 agenda --> turno: conflictoDetectado()
+note over agenda, turno : Horario no disponible - ofrecer alternativas
 
 agenda -> victoria: sugerirHorariosAlternativos()
 victoria -> turno: seleccionarNuevoHorario(horarioSeleccionado)

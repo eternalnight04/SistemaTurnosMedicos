@@ -8,7 +8,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/esp-secuencia-add-diagrama-secuencia] Se crean diagramas de secuencia en PlantUML para los principales casos de uso. Se crea archivo `esp-secuencia.md` con documentación asociada. PR: [#87](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/87) - @sofinestt (Especialista en Diagramas de Secuencia)
+- [feature/esp-secuencia-add-diagrama-secuencia] Se crean diagramas de secuencia en PlantUML para los principales casos de uso. Se crea archivo `esp-secuencia.md` con documentación asociada. Cierra #88, #89, #90, #91, #92. PR: [#87](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/87) - @sofinestt (Especialista en Diagramas de Secuencia)
 
 
 ## [Released - Actividad Obligatoria N°2] - 2026-04-17
