@@ -22,123 +22,186 @@ Partiendo del análisis de información deliberadamente dispersa (mails, audios,
 
 ## Integrantes del Equipo
 
-| Nombre y Apellido | Matrícula | Usuario GitHub | Rol A1 | Rol A2 |
+| Nombre y Apellido | Matrícula | Usuario GitHub | Rol A1 | Rol A2 | Rol A3
 |---|---|---|---|---|
-| Carreras, Natalia | 161517 | @nataliacarreras96git | Documentadora y Coordinadora | Especialista en Escenarios + Documentadora y Coordinadora |
-| Ferreyra Santiago, Joaquín | 161304 | @ferreyrasantiagojoaquin-lab | Analista de Requerimientos | Diseñador de Tarjetas CRC |
-| Torres, Tomás | 157744 | @TomasTorres27 | Diseñador de Clases Iniciales | Modelador de Diagramas de Casos de Uso |
+| Carreras, Natalia | 161517 | @nataliacarreras96git | Documentadora y Coordinadora | Especialista en Escenarios + Documentadora y Coordinadora | Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5 
+| Neicuan, Alejo | | @ANeicuan |  | |
+| Nestmann, Sofia| @sofinestt | Analista de Requerimentos| Diseñador de Casos de Uso | Especialista en diagramas de Secuencias 
 
 ---
 
-## Actividad Obligatoria N°1: Análisis y Diseño Inicial
+## Actividad Obligatoria N°3: Análisis y Diseño Inicial
 
 ### Objetivo
+ Profundizar en la dinámica del sistema mediante:
 
-- Analizar información proporcionada por el cliente
-- Identificar requisitos funcionales y no funcionales
-- Modelar casos de uso relevantes del sistema
-- Diseñar un boceto inicial de clases del dominio
-- Aplicar fundamentos de Programación Orientada a Objetos
-- Utilizar GitHub con GitFlow como metodología colaborativa
+Diagramas de Actividades
+Diagramas de Secuencia
+Integración de artefactos previos
+Trazabilidad entre requisitos, escenarios y diseño UML
+
+La actividad continúa el trabajo realizado en A1 y A2 utilizando los escenarios, casos de uso y tarjetas CRC como contexto de diseño.
+
 
 ### Artefactos Entregados
 
-- [📋 Introducción - Requisitos, Casos de Uso y Fundamentos](anexos/introduccion.md)
-- [📎 Anexos y Documentación Complementaria](anexos/anexos.md)
-- [📊 Boceto Inicial de Clases (Diagrama Excalidraw)](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw)
 
 ---
 
-## Actividad Obligatoria N°2: Refinamiento del Diseño y Modelado
+## Actividad Obligatoria N°3:Refinamiento del Diseño y Modelado
 
 ### Objetivo
 
-Refinar el diseño del sistema de gestión de turnos profundizando en el modelado orientado a objetos mediante tres artefactos concretos:
+Profundizar en la comprensión de la dinámica del sistema de gestión de turnos mediante el modelado de flujos de trabajo e interacciones entre objetos, utilizando como base los artefactos desarrollados en las Actividades Obligatorias N°1 y N°2.
 
-1. **Tarjetas CRC** - Análisis de responsabilidades y colaboraciones entre clases
-2. **Diagramas de Casos de Uso** - Representación visual de interacciones del sistema (PlantUML)
-3. **Escenarios de Casos de Uso** - Descripción detallada del flujo de interacción
+Para ello, se trabajó sobre cuatro ejes principales:
+
+Diagramas de Actividades - Modelado de los flujos de trabajo de cada caso de uso mediante actividades, decisiones, bifurcaciones y swimlanes.
+Diagramas de Secuencia - Representación temporal de las interacciones entre actores y objetos del sistema.
+Trazabilidad entre Artefactos - Integración coherente entre escenarios, casos de uso, tarjetas CRC y diagramas UML.
+Documentación del uso de IA - Registro del proceso de generación y refinamiento de diagramas utilizando GitHub Copilot como herramienta de asistencia.
 
 ### Artefactos Principales
 
-#### 📑 Tarjetas CRC
-- **Índice General:** [Herramientas Agile - Tarjetas CRC](herramientas-agile/herramientas_agile.md)
-- **Carpeta:** [herramientas-agile/tarjetas-crc/](herramientas-agile/tarjetas-crc/)
-- Análisis de 5 clases: responsabilidades, superclases/subclases, colaboraciones y propiedades
+📊 Diagramas de Actividades
+Índice General: diagramas/diagramasUML.md
+Índice Específico: diagramas/04-diagramas-actividades/diagramas_de_actividades.md
+Carpeta: diagramas/04-diagramas-actividades/
+5 diagramas PlantUML con flujos de actividades, decisiones, bifurcaciones y swimlanes que representan responsabilidades entre actores y componentes del sistema.
 
-#### 📊 Diagramas de Casos de Uso
-- **Índice General:** [Diagramas UML](diagramas/diagramasUML.md)
-- **Índice Específico:** [Diagramas de Casos de Uso](diagramas/02-casos-de-uso/diagramas_de_casos_de_uso.md)
-- **Carpeta:** [diagramas/02-casos-de-uso/](diagramas/02-casos-de-uso/)
-- 5 diagramas PlantUML con actores y relaciones (asociaciones, inclusiones, extensiones)
+📈 Diagramas de Secuencia
+Índice General: diagramas/diagramasUML.md
+Índice Específico: diagramas/05-diagramas-secuencia/diagramas_de_secuencias.md
+Carpeta: diagramas/05-diagramas-secuencia/
+5 diagramas PlantUML que representan interacciones temporales entre actores y objetos mediante mensajes, participantes y flujo cronológico de ejecución.
 
-#### 📋 Escenarios de Casos de Uso
-- **Índice General:** [Escenarios de Casos de Uso](diagramas/03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md)
-- **Carpeta:** [diagramas/03-escenarios-casos-de-uso/](diagramas/03-escenarios-casos-de-uso/)
-- 5 escenarios detallados (16 campos cada uno): ID, área, actores, descripción, flujo, pre/postcondiciones, prioridad, riesgo
+🤖 Documentación del Uso de IA
+Carpeta: ia/a3/
+Registro del proceso de generación y refinamiento de diagramas utilizando GitHub Copilot.
+Incluye prompts utilizados, archivos de contexto referenciados, iteraciones realizadas y ajustes aplicados sobre las respuestas generadas por IA.
 
 ### Documentación del Proceso con Copilot Agent Mode
 
 Cada integrante documentó su uso de Copilot, archivos de contexto y ajustes realizados:
 
-- [🤖 Diseñador de Tarjetas CRC](ia/a2/disenador-tarjetas-crc.md) - Santiago
-- [🤖 Modelador de Diagramas](ia/a2/modelador-diagramas-casos-uso.md) - Tomás
-- [🤖 Especialista en Escenarios](ia/a2/especialista-escenarios.md) - Natalia
-- [🤖 Documentador y Coordinador](ia/a2/documentador-coordinador.md) - Natalia
+- [🤖 Especialista en Diagramas de Actividades - Casos de Uso 1 y 2](ia/a3/esp-actividades-1-2.md) - Alejo
+- [🤖  Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5: ](ia/a3/esp-actividades-3-4-5.md) - Natalia 
+- [🤖 Especialista en Diagramas de Secuencia](ia/a3/esp-secuencia.md.md) - Sofia
+- [🤖 Documentador y Coordinador](ia/a2/documentador-coordinador.md) - Todos 
 
 ---
 
 ## Estructura de Carpetas del Proyecto
 
 ```
-SistemaTurnosMedicos/
-├── README.md (este archivo)
-├── changelog.md (registro de cambios y contribuciones)
-├── .github/
-│   └── PULL_REQUEST_TEMPLATE/
-│       ├── feature-template.md
-│       └── release-template.md
-├── ia/
-│   └── a2/
-│       ├── disenador-tarjetas-crc.md
-│       ├── modelador-diagramas-casos-uso.md
-│       ├── especialista-escenarios.md
-│       └── documentador-coordinador.md
-├── diagramas/
-│   ├── diagramasUML.md (índice general A2)
-│   ├── 01-diagrama-clases/
-│   │   ├── 01-boceto-inicial.excalidraw
-│   │   └── 01-boceto-inicial.png
-│   ├── 02-casos-de-uso/ (A2)
-│   │   ├── diagramas_de_casos_de_uso.md (índice)
-│   │   ├── 02-caso-uso-crear-turno.puml
-│   │   ├── 02-caso-uso-crear-turno.png
-│   │   ├── 02-caso-uso-reprogramar-turno.puml
-│   │   ├── 02-caso-uso-reprogramar-turno.png
-│   │   ├── 02-caso-uso-cancelar-turno.puml
-│   │   ├── 02-caso-uso-cancelar-turno.png
-│   │   ├── 02-caso-uso-autorizar-sobreturno.puml
-│   │   ├── 02-caso-uso-autorizar-sobreturno.png
-│   │   ├── 02-caso-uso-registrar-llegada.puml
-│   │   └── 02-caso-uso-registrar-llegada.png
-│   └── 03-escenarios-casos-de-uso/ (A2)
-│       ├── escenarios_de_casos_de_uso.md (índice)
-│       ├── 03-crear-turno-flujo-principal.md
-│       ├── 03-reprogramar-turno-flujo-alterno.md
-│       ├── 03-cancelar-turno-flujo-principal.md
-│       ├── 03-autorizar-sobreturno-flujo-principal.md
-│       └── 03-registrar-llegada-flujo-principal.md
-├── herramientas-agile/ (A2)
-│   ├── herramientas_agile.md (índice)
-│   └── tarjetas-crc/
-│       ├── 01-tarjeta-crc-paciente.md
-│       ├── 02-tarjeta-crc-medico.md
-│       ├── 03-tarjeta-crc-turno.md
-│       ├── 04-tarjeta-crc-agenda.md
-│       └── 05-tarjeta-crc-secretaria.md
-└── anexos/
-    ├── anexos.md
-    └── introduccion.md
+SistemaTurnosMedicos/ 
+├── README.md (actualizado) 
+├── changelog.md (actualizado) 
+├── .github/ 
+│   └── PULL_REQUEST_TEMPLATE/ 
+│       
+├── feature-template.md       
+│       
+└── release-template.md        
+├── diagramas/ 
+│   ├── diagramasUML.md (actualizado) 
+│   ├── 01-diagrama-clases/ 
+│   │   ├── 01-boceto-inicial.puml  
+│   │   ├── 01-boceto-inicial.png  
+│   │   ├── 01-solid-01-srp.puml 
+│   │   ├── 01-solid-01-srp.png 
+│   │   ├── 01-solid-02-ocp.puml 
+│   │   ├── 01-solid-02-ocp.png 
+│   │   ├── 01-solid-03-lsp.puml 
+│   │   ├── 01-solid-03-lsp.png 
+│   │   ├── 01-solid-04-isp.puml  
+│   │   ├── 01-solid-04-isp.png 
+│   │   ├── 01-solid-05-dip.puml 
+│   │   └── 01-solid-05-dip.png 
+│   ├── 02-casos-de-uso/ 
+│   │   ├── diagramas_de_casos_de_uso.md  
+│   │   ├── 02-caso-uso-nombre-caso-de-uso-01.puml  
+│   │   ├── 02-caso-uso-nombre-caso-de-uso-01.png  
+│   │   ├── 02-caso-uso-nombre-caso-de-uso-02.puml  
+│   │   ├── 02-caso-uso-nombre-caso-de-uso-02.png 
+│   │   └── ... (hasta 5 casos de uso) 
+│   ├── 03-escenarios-casos-de-uso/ 
+│   │   ├── escenarios_de_casos_de_uso.md  
+│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-01.md  
+│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-02.md 
+│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-03.md 
+│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-04.md 
+│   │   └── 03-nombre-caso-de-uso-nombre-escenario-05.md 
+│   ├── 04-diagramas-actividades/ 
+│   │   ├── diagramas_de_actividades.md (nuevo - índice) 
+│   │   ├── 04-actividad-nombre-caso-uso-01.puml 
+│   │   ├── 04-actividad-nombre-caso-uso-01.png 
+│   │   ├── 04-actividad-nombre-caso-uso-02.puml  
+│   │   ├── 04-actividad-nombre-caso-uso-02.png  
+│   │   ├── 04-actividad-nombre-caso-uso-03.puml  
+│   │   ├── 04-actividad-nombre-caso-uso-03.png  
+│   │   ├── 04-actividad-nombre-caso-uso-04.puml 
+│   │   ├── 04-actividad-nombre-caso-uso-04.png 
+│   │   ├── 04-actividad-nombre-caso-uso-05.puml 
+│   │   └── 04-actividad-nombre-caso-uso-05.png 
+│   └── 05-diagramas-secuencia/ 
+│       
+├── diagramas_de_secuencias.md (nuevo - índice) 
+│       
+│       
+│       
+│       
+│       
+│       
+│       
+│       
+│       
+│       
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-01.puml 
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-01.png 
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-02.puml  
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-02.png  
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-03.puml 
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-03.png 
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-04.puml  
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-04.png 
+├── 05-secuencia-nombre-caso-uso-nombre-escenario-05.puml 
+└── 05-secuencia-nombre-caso-uso-nombre-escenario-05.png  
+├── herramientas-agile/ 
+│   ├── herramientas_agile.md 
+│   └── tarjetas-crc/ 
+│       
+├── tarjetas_crc.md 
+│       
+│       
+│       
+│       
+│       
+│       
+├── 01-tarjeta-crc-nombre-clase1.md 
+├── 02-tarjeta-crc-nombre-clase2.md 
+├── 03-tarjeta-crc-nombre-clase3.md 
+├── 04-tarjeta-crc-nombre-clase4.md 
+└── 05-tarjeta-crc-nombre-clase5.md 
+└── ... (todas las tarjetas CRC de cada clase) 
+├── ia/ 
+│   ├── a2/ 
+│   │   ├── disenador-tarjetas-crc.md 
+│   │   ├── modelador-diagramas-casos-uso.md 
+│   │   ├── especialista-escenarios.md 
+│   │   └── documentador-coordinador.md 
+│   └── a3/ 
+│       
+├── esp-actividades-1-2.md 
+│       
+│       
+│       
+├── esp-actividades-3-4-5.md 
+├── esp-secuencia.md 
+└── documentador-coordinador.md 
+└── anexos/ 
+├── anexos.md 
+├── introduccion.md 
 ```
 
 ---
