@@ -25,8 +25,8 @@ Partiendo del análisis de información deliberadamente dispersa (mails, audios,
 | Nombre y Apellido | Matrícula | Usuario GitHub | Rol A1 | Rol A2 | Rol A3
 |---|---|---|---|---|
 | Carreras, Natalia | 161517 | @nataliacarreras96git | Documentadora y Coordinadora | Especialista en Escenarios + Documentadora y Coordinadora | Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5 
-| Neicuan, Alejo | | @ANeicuan |  | |
-| Nestmann, Sofia| @sofinestt | Analista de Requerimentos| Diseñador de Casos de Uso | Especialista en diagramas de Secuencias 
+| Neicuan, Alejo |159810 | @ANeicuan |Diseñador de Clases Iniciales + Documentador y coordinador del repositorio | Especialista en escenarios de casos de uso | Especialista en Diagramas de Actividades - Casos de Uso 1 y 2
+| Nestmann, Sofia| 160130 |@sofinestt | Analista de Requerimentos|  Modelador de diagramas de Casos de Uso + Documentador y coordinador del repositorio |Especialista en diagramas de Secuencias 
 
 ---
 
@@ -35,16 +35,25 @@ Partiendo del análisis de información deliberadamente dispersa (mails, audios,
 ### Objetivo
  Profundizar en la dinámica del sistema mediante:
 
-Diagramas de Actividades
-Diagramas de Secuencia
-Integración de artefactos previos
-Trazabilidad entre requisitos, escenarios y diseño UML
+1.Diagramas de Actividades
+2.Diagramas de Secuencia
+3.Integración de artefactos previos
+4.Trazabilidad entre requisitos, escenarios y diseño UML
 
 La actividad continúa el trabajo realizado en A1 y A2 utilizando los escenarios, casos de uso y tarjetas CRC como contexto de diseño.
 
 
 ### Artefactos Entregados
 
+Artefactos Entregados
+📊 Diagramas de Actividades
+Ruta: diagramas/04-diagramas-actividades/
+📈 Diagramas de Secuencia
+Ruta: diagramas/05-diagramas-secuencia/
+🤖 Documentación del Uso de IA
+Ruta: ia/a3/
+📚 Índice General de Diagramas UML
+Ruta: diagramas/diagramasUML.md
 
 ---
 
