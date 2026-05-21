@@ -1,0 +1,56 @@
+@startuml
+title Diagrama de Actividades - Cancelar Turno (CU 3)
+
+skinparam ActivityBackgroundColor #FEFECE
+skinparam ActivityBorderColor #A80036
+skinparam ActivityFontColor #000000
+
+start
+partition Secretaria {
+  :Accede al módulo "Buscar Turno";
+  :Busca el turno del paciente;
+}
+
+partition Sistema {
+  if (¿Turno existe?) then (Sí)
+    :Muestra turno encontrado;
+    :turno_id, paciente, doctor, fecha, hora, estado;
+  else (No)
+    :Muestra error: "Turno no encontrado";
+    stop
+  endif
+}
+
+partition Secretaria {
+  :Selecciona "Cancelar turno";
+}
+
+partition Sistema {
+  :Solicita motivo de cancelación;
+}
+
+partition Secretaria {
+  :Ingresa motivo;
+  :ej: "A pedido del paciente";
+}
+
+partition Sistema {
+  :Solicita confirmación;
+  if (¿Confirma cancelación?) then (Sí)
+    :Cambia estado a "Cancelado";
+    :Libera horario en la agenda;
+    :Registra en historial;
+    :timestamp, usuario, acción, motivo;
+    :Envía notificación a paciente;
+    :WhatsApp con fecha/hora/médico;
+  else (No)
+    :Cancela operación;
+  endif
+}
+
+partition Secretaria {
+  :Visualiza resultado;
+}
+
+end
+@enduml
