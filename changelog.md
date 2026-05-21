@@ -17,6 +17,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/esp-secuencia-add-diagrama-secuencia] Se crean diagramas de secuencia en PlantUML para los principales casos de uso. Se crea archivo `esp-secuencia.md` con documentación asociada. Cierra #88, #89, #90, #91, #92. PR: [#87](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/87) - @sofinestt (Especialista en Diagramas de Secuencia)
 
 
+## [Released - Actividad Obligatoria N°3 - 2026-05-17]
+
+### Added
+- [feature/doc-coord-repo-update-readme-md] Se actualiza el README y se agrega archivo de documentación de IA en ia/a3/documentador-coordinador.md. PR: [#96](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/96)
+
 ## [Unreleased]
 
 ### Added

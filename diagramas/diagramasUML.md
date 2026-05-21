@@ -2,4 +2,5 @@
 
 - [Diagramas de Casos de Uso](02-casos-de-uso/diagramas_de_casos_de_uso.md)
 - [Escenarios de Casos de Uso](03-escenarios-casos-de-uso/escenarios_de_casos_de_uso.md)
-- [Diagrama de Actividades](./04-diagrama-actividades/)
+- [Diagramas de Actividades - Casos de uso](04-diagramas-actividades/diagramas_de_actividades.md)
+- [Diagramas de Secuencias](05-diagramas-secuencia/diagramas_de_secuencias.md)
