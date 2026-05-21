@@ -4,7 +4,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 
-## [Released - Actividad Obligatoria N°2] - 2026-04-17
+## [Released - Actividad Obligatoria N°3 - 2026-05-17]
 
 ### Added
 - [feature/doc-coord-repo-update-readme-md] Se actualiza el README y se agrega archivo de documentación de IA en ia/a3/documentador-coordinador.md. PR: [#96](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/96)
