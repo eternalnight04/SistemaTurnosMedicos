@@ -3,6 +3,19 @@
 Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 ---
+## [Unreleased]
+
+### Added
+
+- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades para CU-01 Y CU-02
+    PR: [#95](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/95) - @ANeicuan (Especialista en Diagrama de Actividades 1 y 2)
+
+## [Released - Actividad Obligatoria N°3] - 2026-05-17
+
+### Added
+
+- [feature/esp-secuencia-add-diagrama-secuencia] Se crean diagramas de secuencia en PlantUML para los principales casos de uso. Se crea archivo `esp-secuencia.md` con documentación asociada. Cierra #88, #89, #90, #91, #92. PR: [#87](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/87) - @sofinestt (Especialista en Diagramas de Secuencia)
+
 
 ## [Released - Actividad Obligatoria N°3 - 2026-05-17]
 
@@ -34,7 +47,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [release/actividad-obligatoria-2] Corrección de formato Keep Changelog A2: eliminación de párrafos narrativos. Commit: [71ccbe1](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/commit/71ccbe1) — @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/resolver-rcs-a2-changelog]  Correccion de entradas en changelog con [#?] placeholder en ### Added y entrada en ### Changed sin PR link. Correccion de formato de PRs. PR [#78](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/78) - @nataliacarreras96git (Documentadora y Coordinadora)
-- [fix/correcciones-changelog-fix] Se elimina entrada de changelog de la parte "Changed" al ser texto plano y no corresponder a ninguna PR, se eliminan entradas de PRs #75 y #76 del changelog ya que correspondían a correcciones del parcial, se agrega entrada de PR #78. PR [#79] - @sofinestt 
+- [fix/correcciones-changelog-fix] Se elimina entrada de changelog de la parte "Changed" al ser texto plano y no corresponder a ninguna PR, se eliminan entradas de PRs #75 y #76 del changelog ya que correspondían a correcciones del parcial, se agrega entrada de PR #78. PR [#79](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/79) - @sofinestt 
 
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26

@@ -1,0 +1,34 @@
+@startuml CrearTurno
+|Secretaria|
+start
+:Seleccionar "Nuevo Turno";
+:Buscar o seleccionar paciente;
+if (Paciente existe?) then (sí)
+  :Seleccionar profesional, fecha, hora y tipo;
+  |Sistema|
+  if (Horario dentro de disponibilidad?) then (sí)
+    :Verificar que no exista otro turno en ese horario;
+    if (Horario libre?) then (sí)
+      :Registrar turno como "Confirmado";
+      :Guardar evento en historial;
+      :Notificar paciente por WhatsApp;
+      |Paciente|
+      :Recibir confirmación;
+      |Secretaria|
+      :Mostrar turno creado en agenda;
+      stop
+    else (no)
+      :Informar conflicto por superposición;
+      |Secretaria|
+      :Elegir otro horario o solicitar sobreturno;
+      --> [reintentar] :Seleccionar profesional, fecha, hora y tipo;
+    endif
+  else (no)
+    :Informar conflicto por fuera de disponibilidad;
+    stop
+  endif
+else (no)
+  :Registrar paciente en el sistema;
+  --> [continuar] :Seleccionar profesional, fecha, hora y tipo;
+endif
+@enduml
