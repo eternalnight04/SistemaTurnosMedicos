@@ -117,82 +117,67 @@ SistemaTurnosMedicos/
 │   ├── 01-diagrama-clases/ 
 │   │   ├── 01-boceto-inicial.puml  
 │   │   ├── 01-boceto-inicial.png  
-│   │   ├── 01-solid-01-srp.puml 
-│   │   ├── 01-solid-01-srp.png 
-│   │   ├── 01-solid-02-ocp.puml 
-│   │   ├── 01-solid-02-ocp.png 
-│   │   ├── 01-solid-03-lsp.puml 
-│   │   ├── 01-solid-03-lsp.png 
-│   │   ├── 01-solid-04-isp.puml  
-│   │   ├── 01-solid-04-isp.png 
-│   │   ├── 01-solid-05-dip.puml 
-│   │   └── 01-solid-05-dip.png 
+│   │   
 │   ├── 02-casos-de-uso/ 
 │   │   ├── diagramas_de_casos_de_uso.md  
-│   │   ├── 02-caso-uso-nombre-caso-de-uso-01.puml  
-│   │   ├── 02-caso-uso-nombre-caso-de-uso-01.png  
-│   │   ├── 02-caso-uso-nombre-caso-de-uso-02.puml  
-│   │   ├── 02-caso-uso-nombre-caso-de-uso-02.png 
-│   │   └── ... (hasta 5 casos de uso) 
+│   │   ├── 02-caso-uso-crear-turno.puml
+│   │   ├── 02-caso-uso-crear-turno.png
+│   │   ├── 02-caso-uso-reprogramar-turno.puml
+│   │   ├── 02-caso-uso-reprogramar-turno.png
+│   │   ├── 02-caso-uso-cancelar-turno.puml
+│   │   ├── 02-caso-uso-cancelar-turno.png
+│   │   ├── 02-caso-uso-autorizar-sobreturno.puml
+│   │   ├── 02-caso-uso-autorizar-sobreturno.png
+│   │   ├── 02-caso-uso-registrar-llegada.puml
+│   │   └── 02-caso-uso-registrar-llegada.png
 │   ├── 03-escenarios-casos-de-uso/ 
 │   │   ├── escenarios_de_casos_de_uso.md  
-│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-01.md  
-│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-02.md 
-│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-03.md 
-│   │   ├── 03-nombre-caso-de-uso-nombre-escenario-04.md 
-│   │   └── 03-nombre-caso-de-uso-nombre-escenario-05.md 
+│   │   ├── 03-crear-turno-flujo-principal.md
+│   │   ├── 03-reprogramar-turno-flujo-alterno.md
+│   │   ├── 03-cancelar-turno-flujo-principal.md
+│   │   ├── 03-autorizar-sobreturno-flujo-principal.md
+│   │   └── 03-registrar-llegada-flujo-principal.md
 │   ├── 04-diagramas-actividades/ 
 │   │   ├── diagramas_de_actividades.md (nuevo - índice) 
-│   │   ├── 04-actividad-nombre-caso-uso-01.puml 
-│   │   ├── 04-actividad-nombre-caso-uso-01.png 
+│   │   ├── 04-actividad-crear-turno-01.puml
+│   │   ├── 04-actividad-crear-turno-01.png
 │   │   ├── 04-actividad-nombre-caso-uso-02.puml  
-│   │   ├── 04-actividad-nombre-caso-uso-02.png  
-│   │   ├── 04-actividad-nombre-caso-uso-03.puml  
-│   │   ├── 04-actividad-nombre-caso-uso-03.png  
-│   │   ├── 04-actividad-nombre-caso-uso-04.puml 
-│   │   ├── 04-actividad-nombre-caso-uso-04.png 
-│   │   ├── 04-actividad-nombre-caso-uso-05.puml 
-│   │   └── 04-actividad-nombre-caso-uso-05.png 
+│   │   ├── 04-actividad-reprogramar-turno-02.puml
+│   │   ├── 04-actividad-reprogramar-turno-02.png
+│   │   ├── 04-actividad-cancelar-turno-caso-uso-03.puml
+│   │   ├── 04-actividad-cancelar-turno-caso-uso-03.png
+│   │   ├──04-actividad-autorizar-sobreturno-caso-uso-04.puml
+│   │   ├── 04-actividad-autorizar-sobreturno-caso-uso-04.png
+│   │   └── 04-actividad-nombre-caso-uso-05.png
+│   │   └── 04-actividad-nombre-caso-uso-05.png
 │   └── 05-diagramas-secuencia/ 
 │       
 ├── diagramas_de_secuencias.md (nuevo - índice) 
 │       
-│       
-│       
-│       
-│       
-│       
-│       
-│       
-│       
-│       
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-01.puml 
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-01.png 
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-02.puml  
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-02.png  
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-03.puml 
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-03.png 
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-04.puml  
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-04.png 
-├── 05-secuencia-nombre-caso-uso-nombre-escenario-05.puml 
-└── 05-secuencia-nombre-caso-uso-nombre-escenario-05.png  
+   
+├── 05-secuencia-autorizar-sobreturno-01.puml
+├── 05-secuencia-autorizar-sobreturno-01.png
+├── 05-secuencia-cancelar-turno-02.puml
+├── 05-secuencia-cancelar-turno-02.png
+├── 05-secuencia-crear-turno-03.puml
+├── 05-secuencia-crear-turno-03.png
+├── 05-secuencia-registrar-llegada-04.puml
+├── 05-secuencia-registrar-llegada-04.png
+├── 05-secuencia-reprogramar-turno-05.puml
+└── 05-secuencia-reprogramar-turno-05.png
 ├── herramientas-agile/ 
 │   ├── herramientas_agile.md 
 │   └── tarjetas-crc/ 
 │       
 ├── tarjetas_crc.md 
 │       
-│       
-│       
-│       
-│       
-│       
-├── 01-tarjeta-crc-nombre-clase1.md 
-├── 02-tarjeta-crc-nombre-clase2.md 
-├── 03-tarjeta-crc-nombre-clase3.md 
-├── 04-tarjeta-crc-nombre-clase4.md 
-└── 05-tarjeta-crc-nombre-clase5.md 
-└── ... (todas las tarjetas CRC de cada clase) 
+      
+├── 01-tarjeta-crc-paciente.md
+├── 02-tarjeta-crc-medico.md
+├── 03-tarjeta-crc-turno.md
+├── 04-tarjeta-crc-agenda.md
+└── 05-tarjeta-crc-secretaria.md
+
 ├── ia/ 
 │   ├── a2/ 
 │   │   ├── disenador-tarjetas-crc.md 
@@ -202,9 +187,7 @@ SistemaTurnosMedicos/
 │   └── a3/ 
 │       
 ├── esp-actividades-1-2.md 
-│       
-│       
-│       
+
 ├── esp-actividades-3-4-5.md 
 ├── esp-secuencia.md 
 └── documentador-coordinador.md 
