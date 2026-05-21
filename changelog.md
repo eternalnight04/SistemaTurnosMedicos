@@ -7,6 +7,12 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ## [Released - Actividad Obligatoria N°2] - 2026-04-17
 
 ### Added
+- [feature/doc-coord-repo-update-readme-md] Se actualiza el README y se agrega archivo de documentación de IA en ia/a3/documentador-coordinador.md. PR: [#96](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/96)
+
+
+## [Released - Actividad Obligatoria N°2] - 2026-04-17
+
+### Added
 
 - [feature/especialista-escenarios-casos-uso] 5 escenarios de casos de uso completos con 16 campos cada uno. PR: [#48](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/48) - @nataliacarreras96git (Especialista en Escenarios)
 - [feature/modelador-diagramas-casos-uso] 5 diagramas PlantUML de casos de uso. PR: [#51](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/51) - @TomasTorres27 (Modelador de Diagramas)
