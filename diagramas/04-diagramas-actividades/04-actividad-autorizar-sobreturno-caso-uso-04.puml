@@ -1,0 +1,63 @@
+@startuml
+title Diagrama de Actividades - Autorizar Sobreturno (CU 4)
+
+skinparam ActivityBackgroundColor #FEFECE
+skinparam ActivityBorderColor #A80036
+skinparam ActivityFontColor #000000
+
+start
+partition Secretaria {
+  :Intenta crear turno;
+  :Ingresa fecha y hora;
+}
+
+partition Sistema {
+  :Verifica disponibilidad;
+  if (¿Horario disponible?) then (Sí)
+    :Crea turno normal;
+  else (No - Fuera de horario)
+    :Muestra advertencia;
+    :Horario fuera de disponibilidad;
+    :Solicita confirmación;
+    :"¿Desea crear un SOBRETURNO?";
+  endif
+}
+
+partition Secretaria {
+  :Consulta con Médico;
+  :Médico autoriza verbalmente;
+}
+
+partition Secretaria {
+  if (¿Médico autorizó?) then (Sí)
+    :Selecciona "Autorizar sobreturno";
+    :Sistema pide confirmación explícita;
+    :Confirma haciendo click;
+  else (No)
+    :Cancela operación;
+    stop
+  endif
+}
+
+partition Sistema {
+  :Registra turno con;
+  :indicador "sobreturno = TRUE";
+  :Guarda en historial;
+  :usuario, acción, autorizado_por;
+  :médico, turno_id, fecha, hora;
+}
+
+partition Sistema {
+  :Envía notificación a paciente;
+  :WhatsApp con indicador EMERGENCIA;
+  :Horario fuera de disponibilidad normal;
+}
+
+partition Secretaria {
+  :Visualiza turno en agenda;
+  :Con indicador SOBRETURNO;
+  :Color rojo para diferenciación;
+}
+
+end
+@enduml
