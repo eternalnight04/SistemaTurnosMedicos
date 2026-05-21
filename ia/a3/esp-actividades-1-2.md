@@ -8,7 +8,7 @@ Generar diagramas de actividades utilizando PlantUML, a partir del análisis de 
 
 ## Prompt utilizado
 
-Se utilizó Copilot en modo agente dentro de VS Code con el siguiente enfoque:
+Se utilizó Copilot en modo agente dentro de VS Code con el siguiente prompt:
 
 ```
 Necesito que actúes como analista UML senior y generes 2 diagramas de actividades UML basados EXCLUSIVAMENTE en el contexto y documentación proporcionada del sistema.
@@ -84,6 +84,8 @@ No omitir interacciones entre usuario, sistema y servicios externos si aparecen 
 - `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.puml`
 - `diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png`
 - `diagramas/03-escenarios-casos-de-uso`
+- `diagramas/03-escenarios-casos-de-uso/03-crear-turno-flujo-principal.md`
+- `diagramas/03-escenarios-casos-de-uso/03-reprogramar-turno-flujo-principal.md`
 
 ---
 
@@ -91,6 +93,7 @@ No omitir interacciones entre usuario, sistema y servicios externos si aparecen 
 
 Copilot generó diagramas de actividades con el contexto proporcionado.
 
+### Resultado N°1
 ```
 Caso de Uso 1 — Crear Turno
 Objetivo
@@ -116,7 +119,7 @@ FA-01A: Si el horario está fuera de disponibilidad, el sistema informa el confl
 FA-01B: Si el horario ya está ocupado, el sistema advierte la superposición y bloquea el registro. La secretaria puede elegir otro horario o solicitar sobreturno.
 FA-01C: Si el paciente no existe, la secretaria da de alta al paciente antes de continuar.
 ```
-
+### Resultado N°2
 ```
 Caso de Uso 2 — Reprogramar Turno
 Objetivo

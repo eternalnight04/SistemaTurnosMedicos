@@ -4,9 +4,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 ## [Unreleased]
+
 ### Added
 
-- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades correspondientes a los casos de uso 1 y 2
+- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades para CU-01 Y CU-02
     PR: [#95](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/95) - @ANeicuan (Especialista en Diagrama de Actividades 1 y 2)
 
 ## [Released - Actividad Obligatoria N°2] - 2026-04-17
