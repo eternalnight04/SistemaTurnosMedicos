@@ -7,25 +7,18 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades para CU-01 Y CU-02
-    PR: [#95](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/95) - @ANeicuan (Especialista en Diagrama de Actividades 1 y 2)
+*No hay cambios sin liberar.*
+
+---
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
 
 - [feature/esp-secuencia-add-diagrama-secuencia] Se crean diagramas de secuencia en PlantUML para los principales casos de uso. Se crea archivo `esp-secuencia.md` con documentación asociada. Cierra #88, #89, #90, #91, #92. PR: [#87](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/87) - @sofinestt (Especialista en Diagramas de Secuencia)
-
-
-## [Released - Actividad Obligatoria N°3 - 2026-05-17]
-
-### Added
 - [feature/doc-coord-repo-update-readme-md] Se actualiza el README y se agrega archivo de documentación de IA en ia/a3/documentador-coordinador.md. PR: [#96](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/96)
-
-## [Unreleased]
-
-### Added
-
+- [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades para CU-01 Y CU-02
+    PR: [#95](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/95) - @ANeicuan (Especialista en Diagrama de Actividades 1 y 2)
 - [feature/esp-actividades-3-4-5-add-diagramas-actividad-3-4-5] Agrega 3 diagramas de actividades UML para casos de uso 3, 4, 5 (Cancelar Turno, Autorizar Sobreturno, Registrar Llegada) con documentación IA completa. Cierra #82, #83, #84. - @nataliacarreras96git (Especialista en Diagramas de Actividades)
 
 ---
