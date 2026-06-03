@@ -1,39 +1,44 @@
-@startuml
+@startuml 05-sequencia-reprogramar-turno-03
+
 title Diagrama de Secuencia - Reprogramar Turno
 ' Nombre del escenario: Reprogramar Turno - Flujo Alterno
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-reprogramar-turno-flujo-alterno.md
 ' Objetivo: Representar la reprogramación de un turno por conflicto de horario, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno reprograma, Agenda verifica disponibilidad).
 
-actor Secretaria as victoria
-actor Paciente as maria
+actor Secretaria as secretaria
+actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-maria -> victoria: solicitarReprogramacion(turnoId)
+paciente -> secretaria: solicitarReprogramacion(turnoId)
 
-victoria -> agenda: buscarTurno(paciente, fecha)
+secretaria -> agenda: buscarTurno(paciente, fecha)
 activate agenda
 
-agenda -> victoria: mostrarTurno(turnoActual)
+agenda -> secretaria: mostrarTurno(turnoActual)
 
-victoria -> turno: solicitarReprogramacion(nuevaFecha, nuevaHora)
+secretaria -> turno: solicitarReprogramacion(nuevaFecha, nuevaHora)
 activate turno
 
 turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
-agenda --> turno: conflictoDetectado()
+agenda --> turno: conflictoDetectado
 note over agenda, turno : Horario no disponible - ofrecer alternativas
 
-agenda -> victoria: sugerirHorariosAlternativos()
-victoria -> turno: seleccionarNuevoHorario(horarioSeleccionado)
+agenda -> secretaria: sugerirHorariosAlternativos()
+secretaria -> turno: seleccionarNuevoHorario(horarioSeleccionado)
 
 turno -> agenda: validarHorario(horarioSeleccionado)
-agenda --> turno: horarioValido()
+agenda --> turno: horarioValido
 turno -> agenda: actualizarTurno(nuevaFecha, nuevaHora)
 turno -> turno: cambiarEstado(reprogramado)
 turno -> agenda: registrarEnHistorial(horarioAnterior, horarioNuevo, usuario)
 
-agenda -> maria: enviarNotificacion(mensaje)
+agenda -> paciente: enviarNotificacion(mensaje)
 
 deactivate turno
 deactivate agenda
+
+destroy turno
+destroy agenda
+
 @enduml

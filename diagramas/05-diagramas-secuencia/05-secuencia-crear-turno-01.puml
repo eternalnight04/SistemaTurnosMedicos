@@ -1,24 +1,25 @@
-@startuml
+@startuml 05-diagrama-secuencia-crear-turno-01
+
 title Diagrama de Secuencia - Crear Turno
 ' Nombre del escenario: Crear Turno - Flujo Principal
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-crear-turno-flujo-principal.md
 ' Objetivo: Representar la creación exitosa de un turno de control médico, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Agenda registra disponibilidad, Turno asigna a paciente y médico).
 
-actor Secretaria as victoria
-actor Paciente as juan
+actor Secretaria as secretaria
+actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-juan -> victoria: solicitarTurno(tipo)
+paciente -> secretaria: solicitarTurno(tipo)
 
-victoria -> agenda: buscarPaciente(nombre)
+secretaria -> agenda: buscarPaciente(nombre)
 activate agenda
 
-agenda -> victoria: mostrarPaciente(datos)
-victoria -> agenda: seleccionarMedicoFechaHora(medico, fecha, hora, tipo)
+agenda -> secretaria: mostrarPaciente(datos)
+secretaria -> agenda: seleccionarMedicoFechaHora(medico, fecha, hora, tipo)
 
 agenda -> agenda: verificarDisponibilidad(fecha, hora)
-agenda --> victoria: disponibilidadConfirmada()
+agenda --> secretaria: disponibilidadConfirmada
 
 create turno
 agenda -> turno: crearTurno(fecha, hora, paciente, medico, estado=confirmado)
@@ -27,8 +28,12 @@ activate turno
 turno -> turno: cambiarEstado(confirmado)
 turno -> agenda: registrarEnHistorial(accion, usuario)
 
-agenda -> juan: enviarNotificacion(mensaje)
+agenda -> paciente: enviarNotificacion(mensaje)
 
 deactivate turno
 deactivate agenda
+
+destroy turno
+destroy agenda
+
 @enduml
