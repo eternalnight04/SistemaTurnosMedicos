@@ -1,63 +1,51 @@
-@startuml
-title Diagrama de Actividades - Autorizar Sobreturno (CU 4)
+@startuml AutorizarSobreturno
 
-skinparam ActivityBackgroundColor #FEFECE
-skinparam ActivityBorderColor #A80036
-skinparam ActivityFontColor #000000
+title Diagrama de Actividades - Autorizar Sobreturno (Caso de Uso 04)
 
+|Médico|
 start
-partition Secretaria {
-  :Intenta crear turno;
-  :Ingresa fecha y hora;
-}
+:Acceder al sistema;
+:Revisar agenda del día;
+:Solicitar asignar sobreturno;
 
-partition Sistema {
-  :Verifica disponibilidad;
-  if (¿Horario disponible?) then (Sí)
-    :Crea turno normal;
-  else (No - Fuera de horario)
-    :Muestra advertencia;
-    :Horario fuera de disponibilidad;
-    :Solicita confirmación;
-    :"¿Desea crear un SOBRETURNO?";
+|Sistema|
+:Mostrar formulario de sobreturno;
+
+|Sistema|
+if (Paciente está registrado?) then (sí)
+  :Solicitar selección de paciente existente;
+else (no)
+  :Solicitar datos de nuevo paciente;
+endif
+
+|Sistema|
+:Validar reglas del consultorio;
+if (Reglas cumplidas?) then (sí)
+  :Verificar cantidad de sobreturnos permitidos;
+  if (Sobreturno permitido?) then (sí)
+    :Solicitar confirmación médica;
+  else (no)
+    :Mostrar límite de sobreturnos;
+    end
   endif
-}
+else (no)
+  :Mostrar motivo de rechazo;
+  end
+endif
 
-partition Secretaria {
-  :Consulta con Médico;
-  :Médico autoriza verbalmente;
-}
+|Médico|
+:Confirmar autorización;
 
-partition Secretaria {
-  if (¿Médico autorizó?) then (Sí)
-    :Selecciona "Autorizar sobreturno";
-    :Sistema pide confirmación explícita;
-    :Confirma haciendo click;
-  else (No)
-    :Cancela operación;
-    stop
-  endif
-}
+|Sistema|
+:Registrar marca de sobreturno en la agenda;
+:Actualizar estado del turno;
+:Registrar quién autorizó el sobreturno;
 
-partition Sistema {
-  :Registra turno con;
-  :indicador "sobreturno = TRUE";
-  :Guarda en historial;
-  :usuario, acción, autorizado_por;
-  :médico, turno_id, fecha, hora;
-}
+|Paciente|
+:Notificar asignación del sobreturno;
 
-partition Sistema {
-  :Envía notificación a paciente;
-  :WhatsApp con indicador EMERGENCIA;
-  :Horario fuera de disponibilidad normal;
-}
+|Médico|
+:Mostrar confirmación de operación;
+stop
 
-partition Secretaria {
-  :Visualiza turno en agenda;
-  :Con indicador SOBRETURNO;
-  :Color rojo para diferenciación;
-}
-
-end
 @enduml
