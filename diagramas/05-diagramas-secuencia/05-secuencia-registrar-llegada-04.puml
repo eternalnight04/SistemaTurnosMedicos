@@ -11,19 +11,19 @@ actor Medico as medico
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: llegarAlConsultorio()
+paciente -> secretaria: llegarAlConsultorio
 
-secretaria -> agenda: accederAgendaDiaria(fecha)
+secretaria -> agenda: accederAgendaDiaria
 activate agenda
 
-agenda -> secretaria: mostrarTurnos(turnos)
-secretaria -> turno: registrarLlegada(horaReal)
+agenda -> secretaria: mostrarTurnos
+secretaria -> turno: registrarLlegada
 activate turno
 
-turno -> turno: cambiarEstado(presente)
-turno -> agenda: registrarEnHistorial(accion, horaProgramada, horaReal)
+turno -> turno: cambiarEstado
+turno -> agenda: registrarEnHistorial
 
-agenda -> medico: notificarPresencia(paciente)
+agenda -> medico: notificarPresencia
 
 deactivate turno
 deactivate agenda
