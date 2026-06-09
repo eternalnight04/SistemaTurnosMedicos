@@ -10,22 +10,22 @@ actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: solicitarCancelacion(turnoId)
+paciente -> secretaria: solicitarCancelacion
 
-secretaria -> agenda: buscarTurno(paciente, fecha)
+secretaria -> agenda: buscarTurno
 activate agenda
 
-agenda -> turno: obtenerTurno(turno)
-agenda -> secretaria: mostrarTurno(turno, estado)
+agenda -> turno: obtenerTurno
+agenda -> secretaria: mostrarTurno
 
-secretaria -> turno: cancelarTurno(motivo)
+secretaria -> turno: cancelarTurno
 activate turno
 
-turno -> turno: cambiarEstado(cancelado)
-turno -> agenda: liberarHorario(fecha, hora)
-turno -> agenda: registrarEnHistorial(accion, usuario, motivo)
+turno -> turno: cambiarEstado
+turno -> agenda: liberarHorario
+turno -> agenda: registrarEnHistorial
 
-agenda -> paciente: enviarNotificacion(mensaje)
+agenda -> paciente: enviarNotificacion
 
 deactivate turno
 deactivate agenda

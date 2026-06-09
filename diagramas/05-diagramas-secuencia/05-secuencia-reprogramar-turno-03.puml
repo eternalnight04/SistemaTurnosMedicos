@@ -1,4 +1,4 @@
-@startuml 05-sequencia-reprogramar-turno-03
+@startuml 05-secuencia-reprogramar-turno-03
 
 title Diagrama de Secuencia - Reprogramar Turno
 ' Nombre del escenario: Reprogramar Turno - Flujo Alterno
@@ -10,30 +10,30 @@ actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: solicitarReprogramacion(turnoId)
+paciente -> secretaria: solicitarReprogramacion
 
-secretaria -> agenda: buscarTurno(paciente, fecha)
+secretaria -> agenda: buscarTurno
 activate agenda
 
-agenda -> secretaria: mostrarTurno(turnoActual)
+agenda -> secretaria: mostrarTurno
 
-secretaria -> turno: solicitarReprogramacion(nuevaFecha, nuevaHora)
+secretaria -> turno: solicitarReprogramacion
 activate turno
 
-turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
+turno -> agenda: verificarDisponibilidad
 agenda --> turno: conflictoDetectado
 note over agenda, turno : Horario no disponible - ofrecer alternativas
 
-agenda -> secretaria: sugerirHorariosAlternativos()
-secretaria -> turno: seleccionarNuevoHorario(horarioSeleccionado)
+agenda -> secretaria: sugerirHorariosAlternativos
+secretaria -> turno: seleccionarNuevoHorario
 
-turno -> agenda: validarHorario(horarioSeleccionado)
+turno -> agenda: validarHorario
 agenda --> turno: horarioValido
-turno -> agenda: actualizarTurno(nuevaFecha, nuevaHora)
-turno -> turno: cambiarEstado(reprogramado)
-turno -> agenda: registrarEnHistorial(horarioAnterior, horarioNuevo, usuario)
+turno -> agenda: actualizarTurno
+turno -> turno: cambiarEstado
+turno -> agenda: registrarEnHistorial
 
-agenda -> paciente: enviarNotificacion(mensaje)
+agenda -> paciente: enviarNotificacion
 
 deactivate turno
 deactivate agenda

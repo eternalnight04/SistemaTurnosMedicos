@@ -1,4 +1,4 @@
-@startuml 05-diagrama-secuencia-crear-turno-01
+@startuml 05-secuencia-crear-turno-01
 
 title Diagrama de Secuencia - Crear Turno
 ' Nombre del escenario: Crear Turno - Flujo Principal
@@ -10,25 +10,25 @@ actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: solicitarTurno(tipo)
+paciente -> secretaria: solicitarTurno
 
-secretaria -> agenda: buscarPaciente(nombre)
+secretaria -> agenda: buscarPaciente
 activate agenda
 
-agenda -> secretaria: mostrarPaciente(datos)
-secretaria -> agenda: seleccionarMedicoFechaHora(medico, fecha, hora, tipo)
+agenda -> secretaria: mostrarPaciente
+secretaria -> agenda: seleccionarMedicoFechaHora
 
-agenda -> agenda: verificarDisponibilidad(fecha, hora)
+agenda -> agenda: verificarDisponibilidad
 agenda --> secretaria: disponibilidadConfirmada
 
 create turno
-agenda -> turno: crearTurno(fecha, hora, paciente, medico, estado=confirmado)
+agenda -> turno: crearTurno
 activate turno
 
-turno -> turno: cambiarEstado(confirmado)
-turno -> agenda: registrarEnHistorial(accion, usuario)
+turno -> turno: cambiarEstado
+turno -> agenda: registrarEnHistorial
 
-agenda -> paciente: enviarNotificacion(mensaje)
+agenda -> paciente: enviarNotificacion
 
 deactivate turno
 deactivate agenda
