@@ -1,6 +1,6 @@
 @startuml CrearTurno
 
-title Diagrama de Actividades - Crear Turno (Caso de Uso 1)
+title Diagrama de Actividades - Crear Turno
 
 |Paciente|
 start
