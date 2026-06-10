@@ -65,6 +65,7 @@ Obtener diagramas consistentes con los escenarios y alineados con las responsabi
 - Se aplicó notación Clase:objeto para instancias de clases del sistema (e.g., Agenda:agenda, Turno:turno). Para actores se utilizó alias en camelCase (e.g., Secretaria as victoria).
 - Los mensajes se nombraron en camelCase y se incluyeron argumentos cuando correspondía (e.g., crearTurno(fecha, hora, paciente)).
 - Se agregaron activaciones y desactivaciones para claridad en el flujo.
+- Se corrigieron algunas flechas y se cambiaron de lugar ciertos actores para una mejor organización.
 
 ## Iteraciones
 
