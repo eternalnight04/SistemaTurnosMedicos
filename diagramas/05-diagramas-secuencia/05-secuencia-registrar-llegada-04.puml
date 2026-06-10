@@ -5,25 +5,25 @@ title Diagrama de Secuencia - Registrar Llegada
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-registrar-llegada-flujo-principal.md
 ' Objetivo: Representar el registro de llegada de un paciente en el día de la cita, involucrando secretaria, paciente, médico y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno modifica estados, Medico atiende pacientes, Agenda muestra turnos).
 
-actor Secretaria as secretaria
 actor Paciente as paciente
+actor Secretaria as secretaria
 actor Medico as medico
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: llegarAlConsultorio
+paciente -> secretaria: confirmarAsistencia()
 
-secretaria -> agenda: accederAgendaDiaria
+secretaria -> agenda: accederAgendaDiaria()
 activate agenda
 
-agenda -> secretaria: mostrarTurnos
-secretaria -> turno: registrarLlegada
+agenda --> secretaria: mostrarTurnos
+secretaria -> turno: registrarLlegada()
 activate turno
 
 turno -> turno: cambiarEstado
-turno -> agenda: registrarEnHistorial
+turno -/ agenda: registrarEnHistorial
 
-agenda -> medico: notificarPresencia
+agenda --> medico: notificarPresencia
 
 deactivate turno
 deactivate agenda

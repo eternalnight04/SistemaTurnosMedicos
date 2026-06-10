@@ -5,30 +5,30 @@ title Diagrama de Secuencia - Crear Turno
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-crear-turno-flujo-principal.md
 ' Objetivo: Representar la creación exitosa de un turno de control médico, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Agenda registra disponibilidad, Turno asigna a paciente y médico).
 
-actor Secretaria as secretaria
 actor Paciente as paciente
+actor Secretaria as secretaria
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: solicitarTurno
+paciente -> secretaria: solicitarTurno()
 
-secretaria -> agenda: buscarPaciente
+secretaria -> agenda: buscarPaciente()
 activate agenda
 
-agenda -> secretaria: mostrarPaciente
-secretaria -> agenda: seleccionarMedicoFechaHora
+agenda --> secretaria: mostrarPaciente
+secretaria -> agenda: seleccionarMedicoFechaHora()
 
 agenda -> agenda: verificarDisponibilidad
 agenda --> secretaria: disponibilidadConfirmada
 
 create turno
-agenda -> turno: crearTurno
+agenda -> turno: crearTurno()
 activate turno
 
 turno -> turno: cambiarEstado
-turno -> agenda: registrarEnHistorial
+turno --> agenda: registrarEnHistorial
 
-agenda -> paciente: enviarNotificacion
+agenda --> paciente: enviarNotificacion
 
 deactivate turno
 deactivate agenda

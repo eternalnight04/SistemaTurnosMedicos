@@ -1,6 +1,6 @@
 @startuml ReprogramarTurno
 
-title Diagrama de Actividades - Reprogramar Turno
+title Diagrama de Actividades - Reprogramar Turno (Caso de Uso 2)
 
 |Paciente|
 start

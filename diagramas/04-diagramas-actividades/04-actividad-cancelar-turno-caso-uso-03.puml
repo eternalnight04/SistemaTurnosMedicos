@@ -1,6 +1,6 @@
 @startuml Cancelar Turno
 
-title Diagrama de Actividades - Cancelar Turno
+title Diagrama de Actividades - Cancelar Turno (Caso de Uso 3)
 |Paciente|
 
 start

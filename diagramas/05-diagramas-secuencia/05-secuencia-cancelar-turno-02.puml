@@ -5,27 +5,30 @@ title Diagrama de Secuencia - Cancelar Turno
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-cancelar-turno-flujo-principal.md
 ' Objetivo: Representar la cancelación de un turno a solicitud del paciente, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno modifica estados, Agenda libera horarios).
 
-actor Secretaria as secretaria
 actor Paciente as paciente
+actor Secretaria as secretaria
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: solicitarCancelacion
+paciente -> secretaria: solicitarCancelacion()
 
-secretaria -> agenda: buscarTurno
+secretaria -> agenda: buscarTurno()
 activate agenda
 
-agenda -> turno: obtenerTurno
-agenda -> secretaria: mostrarTurno
-
-secretaria -> turno: cancelarTurno
+agenda -> turno: obtenerTurno()
 activate turno
 
-turno -> turno: cambiarEstado
-turno -> agenda: liberarHorario
-turno -> agenda: registrarEnHistorial
+agenda --> secretaria: mostrarTurno
 
-agenda -> paciente: enviarNotificacion
+
+secretaria -> turno: cancelarTurno()
+
+
+turno -> turno: cambiarEstado
+turno --> agenda: liberarHorario
+turno -/ agenda: registrarEnHistorial()
+
+agenda --> paciente: enviarNotificacion
 
 deactivate turno
 deactivate agenda

@@ -14,25 +14,25 @@ actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-secretaria -> agenda: crearTurno
+secretaria -> agenda: crearTurno()
 activate agenda
 
 agenda --> secretaria: sobreturno detectado
 
-secretaria -> medico: solicitarAutorizacion
+secretaria -> medico: solicitarAutorizacion()
 medico --> secretaria: autorización concedida
 
-secretaria -> agenda: confirmarAutorizacion
+secretaria -> agenda: confirmarAutorizacion()
 
 create turno
-agenda -> turno: crearTurno
+agenda -> turno: crearTurno()
 activate turno
 
-turno -> turno: cambiarEstado
+turno -> turno: cambiarEstado()
 
-turno -> agenda: registrarEnHistorial
+turno -/ agenda: registrarEnHistorial
 
-agenda -> paciente: enviarNotificacion
+agenda --> paciente: enviarNotificacion(mensaje)
 
 deactivate turno
 deactivate agenda

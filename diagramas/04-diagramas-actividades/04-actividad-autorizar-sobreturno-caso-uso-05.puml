@@ -1,6 +1,6 @@
 @startuml AutorizarSobreturno
 
-title Diagrama de Actividades - Autorizar Sobreturno (Caso de Uso 04)
+title Diagrama de Actividades - Autorizar Sobreturno (Caso de Uso 05)
 
 |Médico|
 start
