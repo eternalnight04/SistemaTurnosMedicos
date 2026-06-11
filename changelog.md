@@ -21,6 +21,7 @@
 - [fix/correcciones-rc-4-5] Correcciones correspondientes a los RC 11, 20, 14, 15, 17, 18, 22 y 23. PR: [#103](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/103) - @britezacostaalexis-pixel
 - [fix/secuencias-correcciones-1] Correcciones del índice de diagramas de actividades y en los diagramas de secuencia. PR: [#104](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/104) - @eternalnight04
 - [fix/diagramas-secuencias-2] Correcciones en la numeración de los casos de uso, los mensajes de retorno de los diagramas de secuencias y se agregaron las últimas PR no registradas en el changelog. PR: [#105](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/105) - @eternalnight04
+-[fix/diagramas-numeracion] Corrección en la numeración del índice de los diagramas de secuencias. PR: [#106](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/106)
 
 
 ---
