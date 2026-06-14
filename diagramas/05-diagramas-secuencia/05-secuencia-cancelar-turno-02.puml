@@ -9,22 +9,22 @@ actor Paciente as roberto
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-roberto -> victoria: solicitarCancelacion(turnoId)
+roberto -> victoria: solicitarCancelacion(pacienteId, turnoId, motivo)
 
-victoria -> agenda: buscarTurno(paciente, fecha)
+victoria -> agenda: buscarTurno(turnoId)
 activate agenda
 
 agenda -> turno: obtenerTurno(turnoId)
-agenda -> victoria: mostrarTurno(turnoId, estado)
+agenda --> victoria: turno = id, fecha, hora, estado
 
-victoria -> turno: cancelarTurno(motivo)
+victoria -> turno: cancelarTurno(turnoId, motivo, usuario=secretariaId)
 activate turno
 
 turno -> turno: cambiarEstado(cancelado)
-turno -> agenda: liberarHorario(fecha, hora)
-turno -> agenda: registrarEnHistorial(accion, usuario, motivo)
+turno -> agenda: liberarHorario(turnoId, fecha, hora)
+turno -> agenda: registrarEnHistorial(turnoId, accion="cancelar", usuario=secretariaId, motivo)
 
-agenda -> roberto: enviarNotificacion(mensaje)
+agenda -> roberto: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda

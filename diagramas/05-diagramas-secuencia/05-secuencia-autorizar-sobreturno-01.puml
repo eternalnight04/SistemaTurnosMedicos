@@ -10,22 +10,22 @@ actor Paciente as patricia
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-victoria -> agenda: crearTurno(fecha, hora, paciente)
+victoria -> agenda: crearTurno(pacienteId, fecha, hora)
 activate agenda
 
-agenda -> victoria: advertirSobreturno()
-victoria -> drMolina: solicitarAutorizacion(fecha, hora, paciente)
-drMolina -> victoria: autorizarSobreturno()
+agenda --> victoria: sobreturno_detectado = true
+victoria -> drMolina: solicitarAutorizacion(solicitudId, pacienteId, fecha, hora)
+drMolina --> victoria: autorizado = true
 
-victoria -> agenda: confirmarAutorizacion(autorizadoPor)
+victoria -> agenda: confirmarAutorizacion(solicitudId, autorizadoPor=drMolinaId)
 
 create turno
-agenda -> turno: crearTurno(fecha, hora, paciente, sobreturno=true)
+agenda -> turno: crearTurno(pacienteId, fecha, hora, sobreturno=true)
 activate turno
 
 turno -> turno: cambiarEstado(confirmado)
-turno -> agenda: registrarEnHistorial(accion, usuario, autorizadoPor)
-agenda -> patricia: enviarNotificacion(mensaje)
+turno -> agenda: registrarEnHistorial(turnoId, accion="crear", usuario=secretariaId, autorizadoPor=drMolinaId)
+agenda -> patricia: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda

@@ -9,25 +9,25 @@ actor Paciente as juan
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-juan -> victoria: solicitarTurno(tipo)
+juan -> victoria: solicitarTurno(pacienteId, tipo)
 
-victoria -> agenda: buscarPaciente(nombre)
+victoria -> agenda: buscarPaciente(nombre_o_dni)
 activate agenda
 
-agenda -> victoria: mostrarPaciente(datos)
-victoria -> agenda: seleccionarMedicoFechaHora(medico, fecha, hora, tipo)
+agenda --> victoria: pacienteEncontrado = id, nombre, dni
+victoria -> agenda: seleccionarMedicoFechaHora(medicoId, fecha, hora, tipo)
 
-agenda -> agenda: verificarDisponibilidad(fecha, hora)
-agenda --> victoria: disponibilidadConfirmada()
+agenda -> agenda: verificarDisponibilidad(medicoId, fecha, hora)
+agenda --> victoria: disponibilidad = true
 
 create turno
-agenda -> turno: crearTurno(fecha, hora, paciente, medico, estado=confirmado)
+agenda -> turno: crearTurno(fecha, hora, pacienteId, medicoId, estado=confirmado)
 activate turno
 
 turno -> turno: cambiarEstado(confirmado)
-turno -> agenda: registrarEnHistorial(accion, usuario)
+turno -> agenda: registrarEnHistorial(turnoId, accion="crear", usuario=secretariaId)
 
-agenda -> juan: enviarNotificacion(mensaje)
+agenda -> juan: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda

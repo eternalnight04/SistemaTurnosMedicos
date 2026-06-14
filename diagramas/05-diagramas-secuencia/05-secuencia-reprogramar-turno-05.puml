@@ -9,30 +9,30 @@ actor Paciente as maria
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-maria -> victoria: solicitarReprogramacion(turnoId)
+maria -> victoria: solicitarReprogramacion(pacienteId, turnoId, motivo)
 
-victoria -> agenda: buscarTurno(paciente, fecha)
+victoria -> agenda: buscarTurno(turnoId)
 activate agenda
 
-agenda -> victoria: mostrarTurno(turnoActual)
+agenda --> victoria: turnoEncontrado = id, fecha, hora, estado
 
-victoria -> turno: solicitarReprogramacion(nuevaFecha, nuevaHora)
+victoria -> turno: solicitarReprogramacion(turnoId, nuevaFecha, nuevaHora)
 activate turno
 
 turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
-agenda --> turno: conflictoDetectado()
+agenda --> turno: disponibilidad = false
 note over agenda, turno : Horario no disponible - ofrecer alternativas
 
-agenda -> victoria: sugerirHorariosAlternativos()
-victoria -> turno: seleccionarNuevoHorario(horarioSeleccionado)
+agenda -> victoria: sugerirHorariosAlternativos(turnoId, alternativas)
+victoria -> turno: seleccionarNuevoHorario(turnoId, horarioSeleccionado)
 
-turno -> agenda: validarHorario(horarioSeleccionado)
-agenda --> turno: horarioValido()
-turno -> agenda: actualizarTurno(nuevaFecha, nuevaHora)
+turno -> agenda: validarHorario(turnoId, horarioSeleccionado)
+agenda --> turno: horarioValido = true
+turno -> agenda: actualizarTurno(turnoId, nuevaFecha, nuevaHora)
 turno -> turno: cambiarEstado(reprogramado)
-turno -> agenda: registrarEnHistorial(horarioAnterior, horarioNuevo, usuario)
+turno -> agenda: registrarEnHistorial(turnoId, horarioAnterior, horarioNuevo, usuario)
 
-agenda -> maria: enviarNotificacion(mensaje)
+agenda -> maria: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda
