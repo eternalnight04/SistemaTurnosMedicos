@@ -1,11 +1,6 @@
-@startuml 05-secuencia-autorizar-sobreturno-05
+@startuml 05-secuencia-autorizar-sobreturno-04
 
 title Diagrama de Secuencia - Autorizar Sobreturno
-
-' Nombre del escenario: Autorizar Sobreturno - Flujo Principal
-' Objetivo:
-' Representar la autorización de un sobreturno por el médico,
-' involucrando secretaria, médico, paciente y sistema.
 
 actor Secretaria as secretaria
 actor Medico as medico
@@ -14,30 +9,29 @@ actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-secretaria -> agenda: crearTurno()
+secretaria -> agenda: intentarCrearTurno(fecha, hora, paciente)
+
 activate agenda
 
-agenda --> secretaria: sobreturno detectado
-
+agenda --> secretaria: advertencia sobreturno no disponible
 secretaria -> medico: solicitarAutorizacion()
-medico --> secretaria: autorización concedida
-
-secretaria -> agenda: confirmarAutorizacion()
+medico --> secretaria: autorizar sobreturno
+secretaria -> agenda: confirmarAutorizacion(paciente, fecha, hora)
 
 create turno
-agenda -> turno: crearTurno()
+
+agenda -> turno: crearTurno(paciente, medico, sobreturno=true)
+
 activate turno
 
-turno -> turno: cambiarEstado()
-
-turno -/ agenda: registrarEnHistorial
-
-agenda --> paciente: enviarNotificacion(mensaje)
+turno -> turno: cambiarEstado("Confirmado")
+turno -/ agenda: registrarEnHistorial(usuario=secretaria, autorizadoPor=medico)
+agenda --> paciente: enviar notificacion
 
 deactivate turno
-deactivate agenda
-
 destroy turno
+
+deactivate agenda
 destroy agenda
 
 @enduml
