@@ -1,34 +1,34 @@
-@startuml 05-secuencia-registrar-llegada-04
+@startuml 05-secuencia-registrar-llegada-05
 
 title Diagrama de Secuencia - Registrar Llegada
-' Nombre del escenario: Registrar Llegada del Paciente - Flujo Principal
-' Archivo: diagramas/03-escenarios-casos-de-uso/03-registrar-llegada-flujo-principal.md
-' Objetivo: Representar el registro de llegada de un paciente en el día de la cita, involucrando secretaria, paciente, médico y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno modifica estados, Medico atiende pacientes, Agenda muestra turnos).
 
 actor Paciente as paciente
 actor Secretaria as secretaria
 actor Medico as medico
+
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-paciente -> secretaria: confirmarAsistencia()
+paciente -> secretaria: confirmarAsistencia(paciente, turno)
+secretaria -> agenda: accederAgendaDiaria(fecha)
 
-secretaria -> agenda: accederAgendaDiaria()
 activate agenda
 
-agenda --> secretaria: mostrarTurnos
-secretaria -> turno: registrarLlegada()
+agenda --> secretaria: mostrar turnos del dia
+secretaria -> turno: buscarTurno(paciente)
+
 activate turno
 
-turno -> turno: cambiarEstado
-turno -/ agenda: registrarEnHistorial
-
-agenda --> medico: notificarPresencia
+turno --> secretaria: turno confirmado
+secretaria -> turno: registrarLlegada(horaReal)
+turno -> turno: cambiarEstado("Presente")
+turno -/ agenda: registrarEnHistorial(horaReal)
+agenda --> medico: notificar presencia
 
 deactivate turno
-deactivate agenda
-
 destroy turno
+
+deactivate agenda
 destroy agenda
 
 @enduml
