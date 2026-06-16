@@ -1,0 +1,42 @@
+@startuml 05-secuencia-reprogramar-turno-02
+
+title Diagrama de Secuencia - Reprogramar Turno
+
+actor Paciente as paciente
+actor Secretaria as secretaria
+actor Medico as medico
+
+participant "Agenda:agenda" as agenda
+participant "Turno:turno" as turno
+
+paciente -> secretaria: solicitarReprogramacion(nuevoHorario)
+secretaria -> agenda: buscarTurno(paciente)
+
+activate agenda
+
+agenda -> turno: obtenerTurno(paciente)
+
+activate turno
+
+turno --> agenda: turno encontrado
+
+agenda --> secretaria: mostrar turno
+
+secretaria -> medico: consultarDisponibilidad(nuevoHorario)
+
+medico --> secretaria: disponibilidad confirmada
+
+secretaria -> turno: confirmarNuevoHorario(nuevoHorario)
+
+turno -> agenda: actualizarTurno(nuevoHorario)
+turno -> turno: cambiarEstado("Reprogramado")
+turno -/ agenda: registrarEnHistorial(usuario=secretaria)
+
+agenda --> paciente: enviar notificacion
+
+deactivate turno
+destroy turno
+deactivate agenda
+destroy agenda
+
+@enduml

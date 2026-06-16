@@ -1,17 +1,14 @@
 # Changelog
 
-Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
-
----
+=======
+>>>>>>> develop
 ## [Unreleased]
 
 ### Added
 
 *Se agrega diagrama de clases final, pilares POO y happy path global (arquitecto de dominio).* 
 
-
 ---
-
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
@@ -21,6 +18,19 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/esp-actividades-1-2-add-diagrama-actividad-1] Se agregan 2 diagramas de actividades para CU-01 Y CU-02
     PR: [#95](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/95) - @ANeicuan (Especialista en Diagrama de Actividades 1 y 2)
 - [feature/esp-actividades-3-4-5-add-diagramas-actividad-3-4-5] Agrega 3 diagramas de actividades UML para casos de uso 3, 4, 5 (Cancelar Turno, Autorizar Sobreturno, Registrar Llegada) con documentación IA completa. Cierra #82, #83, #84. - @nataliacarreras96git (Especialista en Diagramas de Actividades)
+
+### Fixed
+- [fix/correcciones-rc-1-2] Correcciones en diagramas de actividades para los casos de uso "Registrar Turno Médico", "Reprogramar Turno Existente" y "Cancelar Turno". Se ajustaron diagramas, documentación y artefactos asociados para resolver observaciones académicas detectadas durante la revisión. Correcciones aplicadas sobre los RC #1, #2, #3, #4, #5, #6, #16 y #21. PR: [#100](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/100) — @britezacostaalexis-pixel
+- [fix/correccion-readme] Simplificación y reorganización del README para cumplir las observaciones RC39. Se eliminó contenido no requerido para la entrega, manteniendo una estructura minimalista con integrantes actualizados, roles de la Actividad Obligatoria N°3 y navegación esencial del proyecto. PR: [#98](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/98) — @nachonervi-design
+- [fix/correccion-changelog] Corrección y normalización de la estructura de changelog.md. Se unificaron secciones duplicadas de Unreleased, Release y Added, reubicando la información en las secciones correspondientes sin pérdida de trazabilidad histórica, para cumplir las observaciones RC7 y RC8. PR: [#99](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/99) — @nachonervi-design
+- [fix/esp-secuencia-fix-diagramas-secuencias] Correcciones derivadas de las observaciones RC #24, #25, #26, #27, #28, #29, #30, #31, #32, #34, #35, #36, #37 y #38. Se actualizaron los diagramas de secuencia, sus archivos PlantUML, exportaciones gráficas e índice de navegación para asegurar consistencia, trazabilidad y cumplimiento de los requisitos de la Actividad Obligatoria N°3. PR: [#101](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/101) — @eternalnight04
+- [fix/correciones-diagramasUML-formato] Mínima corrección de formato en el archivo diagramasUML.md. PR: [#102](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/102) - @eternalnight04
+- [fix/correcciones-rc-4-5] Correcciones correspondientes a los RC 11, 20, 14, 15, 17, 18, 22 y 23. PR: [#103](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/103) - @britezacostaalexis-pixel
+- [fix/secuencias-correcciones-1] Correcciones del índice de diagramas de actividades y en los diagramas de secuencia. PR: [#104](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/104) - @eternalnight04
+- [fix/diagramas-secuencias-2] Correcciones en la numeración de los casos de uso, los mensajes de retorno de los diagramas de secuencias y se agregaron las últimas PR no registradas en el changelog. PR: [#105](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/105) - @eternalnight04
+-[fix/diagramas-numeracion] Corrección en la numeración del índice de los diagramas de secuencias. PR: [#106](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/106) - @eternalnight04
+-[fix/diagramas-correcciones-2] Correcciones en diagramas de secuencias, se hicieron retoques y corrigieron mensajes de metodos. PR: [#108](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/108) - @eternalnight04
+
 
 ---
 
@@ -49,7 +59,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [fix/correcciones-fix] Correcciones en changelog, escenarios_de_casos_de_uso.md y movimiento de tarjeta paciente a anexos/. PR: [#73](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/73) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/resolver-rcs-a2-changelog]  Correccion de entradas en changelog con [#?] placeholder en ### Added y entrada en ### Changed sin PR link. Correccion de formato de PRs. PR [#78](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/78) - @nataliacarreras96git (Documentadora y Coordinadora)
 - [fix/correcciones-changelog-fix] Se elimina entrada de changelog de la parte "Changed" al ser texto plano y no corresponder a ninguna PR, se eliminan entradas de PRs #75 y #76 del changelog ya que correspondían a correcciones del parcial, se agrega entrada de PR #78. PR [#79](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/79) - @sofinestt 
-
+- [fix/correciones-diagramasUML-formato] Corrección del archivo `diagramasUML.md` para adecuarlo al formato de entrega requerido por la cátedra. Se reorganizó la estructura y presentación del índice de diagramas UML para mantener consistencia con los estándares de documentación del proyecto y resolver la observación RC #40. PR: [#102](https://github.com/nataliacarreras96git/SistemaTurnosMedicos/pull/102) — @eternalnight04
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2026-03-26

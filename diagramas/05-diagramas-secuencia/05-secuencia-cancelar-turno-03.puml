@@ -1,0 +1,38 @@
+@startuml 05-secuencia-cancelar-turno-03
+
+title Diagrama de Secuencia - Cancelar Turno
+
+actor Paciente as paciente
+actor Secretaria as secretaria
+
+participant "Agenda:agenda" as agenda
+participant "Turno:turno" as turno
+
+paciente -> secretaria: solicitarCancelacion(turno)
+secretaria -> agenda: buscarTurno(turno)
+
+activate agenda
+
+agenda -> turno: obtenerTurno(turno)
+
+activate turno
+
+turno --> agenda: turno encontrado
+
+agenda --> secretaria: mostrar detalles de turno
+
+secretaria -> turno: confirmarCancelacion(motivo)
+
+turno -> turno: cambiarEstado("Cancelado")
+turno -> agenda: liberarHorario()
+turno -/ agenda: registrarEnHistorial(usuario=secretaria)
+
+agenda --> paciente: enviar notificacion
+
+deactivate turno
+destroy turno
+
+deactivate agenda
+destroy agenda
+
+@enduml

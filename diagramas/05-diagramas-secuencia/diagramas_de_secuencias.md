@@ -1,7 +1,7 @@
 # Diagramas de Secuencia
 
-- [Diagrama de Secuencia - autorizar-sobreturno - Autorizar Sobreturno - Flujo Principal](05-secuencia-autorizar-sobreturno-01.puml)
-- [Diagrama de Secuencia - cancelar-turno - Cancelar Turno - Flujo Principal](05-secuencia-cancelar-turno-02.puml)
-- [Diagrama de Secuencia - crear-turno - Crear Turno - Flujo Principal](05-secuencia-crear-turno-03.puml)
-- [Diagrama de Secuencia - registrar-llegada - Registrar Llegada del Paciente - Flujo Principal](05-secuencia-registrar-llegada-04.puml)
-- [Diagrama de Secuencia - reprogramar-turno - Reprogramar Turno - Flujo Alterno](05-secuencia-reprogramar-turno-05.puml)
+- [Diagrama de Secuencia - Crear Turno](05-secuencia-crear-turno-01.png)
+- [Diagrama de Secuencia - Reprogramar Turno](./05-secuencia-reprogramar-turno-02.png)
+- [Diagrama de Secuencia - Cancelar Turno](05-secuencia-cancelar-turno-03.png)
+- [Diagrama de Secuencia - Autorizar Sobreturno](05-secuencia-autorizar-sobreturno-04.png)
+- [Diagrama de Secuencia - Registrar Llegada](05-secuencia-registrar-llegada-05.png)

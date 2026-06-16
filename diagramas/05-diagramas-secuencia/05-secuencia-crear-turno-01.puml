@@ -1,0 +1,40 @@
+@startuml 05-secuencia-crear-turno-01
+
+title Diagrama de Secuencia - Crear Turno
+
+actor Paciente as paciente
+actor Secretaria as secretaria
+actor Medico as medico
+
+participant "Agenda:agenda" as agenda
+participant "Turno:turno" as turno
+
+paciente -> secretaria: solicitarTurno(fecha, motivo)
+secretaria -> agenda: buscarPaciente(paciente)
+
+activate agenda
+
+agenda --> secretaria: paciente encontrado
+secretaria -> medico: seleccionarProfesional(medico)
+medico --> secretaria: profesional confirmado
+secretaria -> agenda: validarDisponibilidad(fecha, hora)
+agenda --> secretaria: disponibilidad confirmada
+secretaria -> agenda: registrarTurno(paciente, medico, fecha, hora)
+
+create turno
+
+agenda -> turno: crearTurno(paciente, medico, estado=Confirmado)
+
+activate turno
+
+turno -> turno: asignarEstado("Confirmado")
+turno -/ agenda: registrarEnHistorial(usuario=secretaria)
+agenda --> paciente: enviar notificacion
+
+deactivate turno
+destroy turno
+
+deactivate agenda
+destroy agenda
+
+@enduml

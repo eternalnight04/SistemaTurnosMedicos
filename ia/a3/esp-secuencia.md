@@ -64,8 +64,59 @@ Obtener diagramas consistentes con los escenarios y alineados con las responsabi
 - Se utilizaron actores para representar usuarios humanos (Secretaria, Medico, Paciente) y participantes para clases del sistema (Agenda, Turno).
 - Se aplicó notación Clase:objeto para instancias de clases del sistema (e.g., Agenda:agenda, Turno:turno). Para actores se utilizó alias en camelCase (e.g., Secretaria as victoria).
 - Los mensajes se nombraron en camelCase y se incluyeron argumentos cuando correspondía (e.g., crearTurno(fecha, hora, paciente)).
-- No se incluyó destrucción de objetos (X) ya que en los escenarios modelados los objetos (e.g., Turno, Agenda) persisten en el sistema y no finalizan su ciclo de vida durante la interacción.
 - Se agregaron activaciones y desactivaciones para claridad en el flujo.
+- Se corrigieron algunas flechas y se cambiaron de lugar ciertos actores para una mejor organización.
+
+## Iteraciones
+
+### Iteración 1
+
+```
+Corrija los siguientes diagramas teniendo en cuenta que hay que indicar la finalización de los objetos que dejan de existir durante el escenario mediante una X al final de la línea de vida (destroy objeto). Esto es obligatorio para objetos que se crean temporalmente y no persisten.
+```
+
+### Respuesta
+
+✓ Completado. He agregado los símbolos de finalización (`destroy`) a todos los 5 diagramas de secuencia:
+
+- **05-secuencia-autorizar-sobreturno-05.puml**: `destroy turno` y `destroy agenda`
+- **05-secuencia-cancelar-turno-02.puml**: `destroy turno` y `destroy agenda`
+- **05-secuencia-crear-turno-01.puml**: `destroy turno` y `destroy agenda`
+- **05-secuencia-registrar-llegada-04.puml**: `destroy turno` y `destroy agenda`
+- **05-secuencia-reprogramar-turno-03.puml**: `destroy turno` y `destroy agenda`
+
+Ahora los diagramas mostrarán una **X** al final de la línea de vida de los objetos `Turno` y `Agenda`, indicando correctamente su finalización según la notación UML estándar.
+
+### Iteración 2
+
+```
+Corrija los siguientes diagramas teniendo en cuenta que los mensajes de retorno no deben tener formato de método (), ya que son respuestas a la invocación de un método, es decir, al mensaje que se recibió primero.
+```
+
+### Respuesta
+
+✓ Corregidos. He eliminado los paréntesis de los siguientes mensajes de retorno:
+
+- **05-secuencia-crear-turno-01.puml**: `disponibilidadConfirmada()` → `disponibilidadConfirmada`
+- **05-secuencia-reprogramar-turno-03.puml**: `conflictoDetectado()` → `conflictoDetectado` y `horarioValido()` → `horarioValido`
+
+Ahora los diagramas siguen la notación correcta de UML, donde los mensajes de retorno (`-->`) son respuestas simples sin formato de método.
+
+### Iteración 3
+
+```
+Elimina los nombres propios.
+```
+
+### Respuesta
+
+✓ Completado. He eliminado todos los nombres propios de los actores en los 5 diagramas de secuencia. Los cambios realizados:
+
+- **victoria** → `secretaria`
+- **drMolina** → `medico`
+- **patricia, roberto, juan, diego_martinez, maria** → `paciente`
+
+Ahora los diagramas utilizan nombres genéricos en minúsculas que representan los roles sin referencias a nombres específicos, haciendo los diagramas más profesionales y reutilizables.
 
 ## Decisiones de diseño
 
