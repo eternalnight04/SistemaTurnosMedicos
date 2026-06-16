@@ -6,7 +6,7 @@
 - Reprogramar turno: `Secretaria.reprogramarTurno()` / `Turno.reprogramar()` / `Agenda.verificarDisponibilidad()` → [05-secuencia-reprogramar-turno-05.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-05.puml)
 - Cancelar turno: `Secretaria.cancelarTurno()` / `Turno.cancelar()` / `Agenda.liberarHorario()` → [05-secuencia-cancelar-turno-02.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-02.puml)
 - Autorizar sobreturno: `Medico.autorizarSobreturno()` / `Agenda.confirmarAutorizacion()` / `Turno.crearTurno(sobreturno=true)` → [05-secuencia-autorizar-sobreturno-01.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-01.puml)
-- Registrar llegada: `Secretaria.registrarLlegada()` / `Turno.registrarLlegada()` / `LlegadaPaciente.calcularDiferencia()` → [05-secuencia-registrar-llegada-04.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml)
+- Registrar llegada: `Secretaria.registrarLlegada()` → `Agenda.buscarTurno()` → `Turno.registrarLlegada(horaReal)` (el cálculo de diferencia se realiza dentro de `Turno`) → [05-secuencia-registrar-llegada-04.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml)
 
 ## Pseudocódigo orientado a objetos (flujo happy path)
 
