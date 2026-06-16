@@ -1,5 +1,6 @@
 # Análisis de Casos de Uso
 
+<<<<<<< HEAD
 Este documento centraliza los anexos de análisis funcional desarrollados para los casos de uso del sistema.
 
 ## Casos de Uso Documentados
@@ -20,3 +21,8 @@ Los documentos referenciados incluyen:
 - Pseudocódigo orientado a objetos.
 
 Cada anexo fue elaborado siguiendo la plantilla establecida en `00-plantilla-anexo-caso-de-uso.md`.
+=======
+Este archivo agrupa trazabilidad y notas de los casos de uso del sistema.
+
+Ver `anexos/analisis-funcional/pilares-poo.md` y `anexos/analisis-funcional/happy-path-global.md` para detalles del diseño y flujos.
+>>>>>>> 8cff02c (feat: agrega diagrama de clases final, pilares POO y happy path global)

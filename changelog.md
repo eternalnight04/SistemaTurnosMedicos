@@ -8,6 +8,11 @@
 
 - [feature/analista-cu-2-3-add-anexo-cu2-cu3] Se agrega archivo analista-cu-2-3. PR: [#113](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/113)
 
+<<<<<<< HEAD
+=======
+*Se agrega diagrama de clases final, pilares POO y happy path global (arquitecto de dominio).* 
+
+>>>>>>> 8cff02c (feat: agrega diagrama de clases final, pilares POO y happy path global)
 
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
