@@ -7,7 +7,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-*No hay cambios sin liberar.*
+*Se agrega diagrama de clases final, pilares POO y happy path global (arquitecto de dominio).* 
+
 
 ---
 

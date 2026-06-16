@@ -42,6 +42,8 @@ Los roles para la Actividad Obligatoria N°3 están reflejados en la columna `Ro
 - Índice de Diagramas UML: [diagramas/diagramasUML.md](diagramas/diagramasUML.md)
 - Documentación uso de IA para esta entrega: [ia/a3/](ia/a3/)
 - Cambios y versiones: [changelog.md](changelog.md)
+ - Arquitectura de Dominio: [ia/a4/arquitecto-dominio.md](ia/a4/arquitecto-dominio.md)
+ - Análisis funcional (pilares POO y happy path): [anexos/analisis-funcional/](anexos/analisis-funcional/)
 
 ---
 

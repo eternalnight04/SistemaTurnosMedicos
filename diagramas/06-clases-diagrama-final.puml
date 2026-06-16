@@ -1,0 +1,120 @@
+@startuml
+title Diagrama de Clases - SistemaTurnosMedicos (final unificado)
+
+' Enumeraciones
+enum TurnoEstado {
+  PENDIENTE
+  CONFIRMADO
+  CANCELADO
+  REPROGRAMADO
+  PRESENTE
+  REALIZADO
+}
+
+' Clases principales
+abstract class UsuarioDelSistema {
+  - id: String
+  - nombre: String
+  - dni: String
+  - email: String
+  - telefono: String
+  - contrasena: String
+  + autenticar(password: String): boolean
+  + actualizarDatos(datos: Map): void
+}
+
+class Paciente {
+  - historiaClinicaId: String
+  + solicitarTurno(tipo: String): Turno
+  + confirmarTurno(turnoId: String): boolean
+  + cancelarTurno(turnoId: String): boolean
+  + recibirNotificacion(mensaje: String): void
+}
+
+class Medico {
+  - matricula: String
+  - especialidad: String
+  - horarioDisponible: List<String>
+  + consultarAgenda(fecha: Date): List<Turno>
+  + autorizarSobreturno(solicitudId: String): boolean
+  + registrarObservacion(turnoId: String, observacion: String): void
+  + modificarDisponibilidad(nuevoHorario: List<String>): void
+}
+
+class Secretaria {
+  - secretariaId: String
+  + agendarTurno(pacienteId: String, medicoId: String, fechaHora: DateTime): Turno
+  + cancelarTurno(turnoId: String, motivo: String): boolean
+  + reprogramarTurno(turnoId: String, nuevaFechaHora: DateTime): boolean
+  + darAltaPaciente(datos: Map): Paciente
+  + consultarAgenda(medicoId: String, fecha: Date): List<Turno>
+}
+
+class Agenda {
+  - id: String
+  - medico: Medico
+  - turnos: List<Turno>
+  + verificarDisponibilidad(medicoId: String, fecha: Date, hora: Time): boolean
+  + registrarDisponibilidad(medicoId: String, horario: String): void
+  + buscarTurno(turnoId: String): Turno
+  + accederAgendaDiaria(secretariaId: String, fecha: Date): List<Turno>
+  + sugerirHorariosAlternativos(medicoId: String, fecha: Date): List<DateTime>
+  + registrarEnHistorial(turnoId: String, descripcion: String): void
+  + buscarPaciente(identificador: String): Paciente
+}
+
+class Turno {
+  - id: String
+  - fechaHoraProgramada: DateTime
+  - paciente: Paciente
+  - medico: Medico
+  - estado: TurnoEstado
+  - sobreturno: boolean
+  - horaRealLlegada: DateTime
+  - historial: List<String>
+  + crearTurno(fechaHora: DateTime, paciente: Paciente, medico: Medico, sobreturno: boolean = false): Turno
+  + cambiarEstado(nuevoEstado: TurnoEstado): void
+  + reprogramar(nuevaFechaHora: DateTime): void
+  + cancelar(motivo: String, usuarioId: String): void
+  + registrarLlegada(horaReal: DateTime): void
+}
+
+class LlegadaPaciente {
+  - horaLlegada: DateTime
+  - presente: boolean
+  - diferenciaMinutos: int
+  + calcularDiferencia(horaProgramada: DateTime): int
+  + marcarPresente(): void
+}
+
+' Herencia
+Paciente --|> UsuarioDelSistema
+Medico --|> UsuarioDelSistema
+Secretaria --|> UsuarioDelSistema
+
+' Asociaciones y multiplicidades
+Medico "1" -- "1" Agenda : tiene
+Agenda "1" -- "0..*" Turno : contiene
+Turno "1" -- "1" Paciente : asigna_a
+Turno "1" -- "1" Medico : asignado_a
+Paciente "1" -- "0..*" Turno : turnos
+Medico "1" -- "0..*" Turno : turnos
+Secretaria "1" -- "0..*" Turno : gestiona
+Turno "1" -- "0..1" LlegadaPaciente : llegada
+
+' Notas de trazabilidad (coincide con tarjetas CRC y diagramas de secuencia)
+note right of Paciente
+  Responsabilidades según tarjetas CRC:
+  - solicitarTurno, confirmar/cancelar, recibirNotificacion
+end note
+
+note left of Agenda
+  Funciones clave vistas en diagramas de secuencia y actividades:
+  - verificarDisponibilidad, registrarEnHistorial, sugerirHorariosAlternativos
+end note
+
+note bottom of Turno
+  Estados usados por secuencias: CONFIRMADO, REPROGRAMADO, CANCELADO, PRESENTE, REALIZADO
+end note
+
+@enduml
