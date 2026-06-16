@@ -10,9 +10,11 @@
 8. Métodos con firmas diferentes: `solicitarTurno`, `crearTurno`, `agendarTurno` se usan indistintamente; conviene normalizar nombres y responsabilidades en la API.
 9. Flujo de autorización de sobreturno: el diagrama de secuencia indica interacción `solicitarAutorizacion(solicitudId, ...)` pero no hay un objeto Solicitud ni identificador consistente en CRC.
 
+Cambio aplicado:
+- La versión actual del modelo define que **`Agenda` es responsable de crear instancias de `Turno`**. `Secretaria` solicita a `Agenda` y `Agenda.crearTurno(...)` instancia `Turno` (se ajustó el PlantUML y el pseudocódigo en `happy-path-global.md`).
+
 Recomendaciones rápidas:
-- Normalizar nombres de métodos públicos (`agendarTurno` o `crearTurno`) y documentar su contrato.
+- Normalizar nombres de métodos públicos (`solicitarTurno` en `Secretaria` -> `Agenda.crearTurno`) y documentar su contrato.
 - Definir `UsuarioDelSistema` como superclase (abstracta) claramente en el modelo y en las tarjetas CRC.
-- Elegir un único lugar responsable de crear/guardar `Turno` (recomiendo `Agenda` como fuente de verdad, invocada por `Secretaria`).
-- Unificar el tipo y nombre para `horaRealLlegada` y representar `LlegadaPaciente` como un objeto de valor o como atributos de `Turno` (preferible última opción para simplicidad).
+- Unificar el tipo y nombre para `horaRealLlegada` y mover atributos de llegada dentro de `Turno` (se eliminó la clase `LlegadaPaciente`).
 - Definir estructura para `RegistroHistorial` si se requiere auditoría detallada.
