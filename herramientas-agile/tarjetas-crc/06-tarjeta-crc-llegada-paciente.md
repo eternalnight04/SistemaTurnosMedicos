@@ -1,10 +1,8 @@
 |   |   |   |   |
 |---|---|---|---|
-| **Nombre de la Clase:** | LlegadaPaciente |   |   |
+| **Nombre de la Clase:** | LlegadaPaciente (observación) |   |   |
 | **Superclase:** | — |   |   |
 | **Subclase:** |   |   |   |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Registrar hora real de llegada | Turno, Secretaria | Debo registrar cuándo llegó el paciente | horaLlegada |
-| Indicar si paciente está presente | Turno | Necesito confirmar la presencia del paciente | presente (boolean) |
-| Calcular diferencia temporal | Turno | Debo comparar hora programada vs. hora real | diferencia_minutos |
+| Nota: En el modelo unificado la llegada se modela como atributos y comportamientos de `Turno` (métodos `registrarLlegada`, atributos `horaRealLlegada`, `presente`, `diferenciaMinutos`). Esta tarjeta conserva la información por trazabilidad histórica pero la entidad `LlegadaPaciente` no se modela como clase independiente en el diagrama final. | | | |
 |   |   |   |   |
