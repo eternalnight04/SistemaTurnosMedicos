@@ -83,6 +83,15 @@ class Turno {
   + registrarLlegada(horaReal): void
 }
 
+' Soporte/servicios del dominio (para ejemplificar dependencia)
+class Notificador {
+  + enviar(destino, mensaje): void
+}
+
+class RegistroHistorial {
+  + registrar(entrada): void
+}
+
 ' Herencia
 Paciente --|> UsuarioDelSistema
 Medico --|> UsuarioDelSistema
@@ -103,6 +112,10 @@ Secretaria "1" -- "0..*" Turno : gestiona
 ' Dependencia: Secretaria depende de Agenda para buscar disponibilidad
 Secretaria ..> Agenda : usa
 
+' Dependencias adicionales: Agenda usa Notificador y RegistroHistorial
+Agenda ..> Notificador : usa
+Agenda ..> RegistroHistorial : registra
+
 ' Notas y trazabilidad
 note right of Paciente
   Responsabilidades según tarjetas CRC:
@@ -116,6 +129,7 @@ end note
 
 note bottom of Turno
   Se acomodó `Llegada` como atributos dentro de `Turno` (horaRealLlegada, presente, diferenciaMinutos).
+  La clase independiente `LlegadaPaciente` fue eliminada: los diagramas de secuencia registran la llegada mediante `Turno.registrarLlegada(...)`, por lo que modelarla como atributos del `Turno` mantiene coherencia y simplicidad.
 end note
 
 @enduml
