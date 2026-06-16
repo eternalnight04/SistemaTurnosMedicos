@@ -108,7 +108,7 @@ end
 1. **Primera versión:** Generada directamente por Copilot con estructura básica
 2. **Validación:** Comparada contra requisitos del TP:
    - ✅ 10+ actividades (12 actividades)
-   - ✅ 3+ swimlanes (2 swimlanes - cumple mínimo)
+   - ✅ 3+ swimlanes 
    - ✅ Nodos de decisión (1 decisión binaria)
    - ✅ Inicio y fin claros
 3. **Generación PNG:** Exportada exitosamente desde PlantUML Online Editor

@@ -1,13 +1,17 @@
 @startuml ReprogramarTurno
+
+title Diagrama de Actividades - Reprogramar Turno
+
 |Paciente|
 start
 :Solicitar cambio de horario;
 |Secretaria|
 :Acceder a "Buscar Turno";
 :Buscar y seleccionar turno existente;
+|sistema|
 if (Turno válido para reprogramar?) then (sí)
   :Seleccionar nueva fecha/hora;
-  |Sistema|
+
   if (Nuevo horario dentro de disponibilidad?) then (sí)
     if (Nuevo horario libre?) then (sí)
       :Actualizar turno con nuevo horario;
@@ -21,20 +25,23 @@ if (Turno válido para reprogramar?) then (sí)
     else (no)
       :Informar conflicto de superposición;
       :Sugerir horarios alternativos;
-      |Secretaria|
+      |sistema|
       :Seleccionar horario alternativo o cancelar;
       if (Seleccionó alternativa?) then (sí)
         --> [reintentar] :Seleccionar nueva fecha/hora;
+        end
       else (no)
-        stop
+        end
       endif
     endif
+    |sistema|
   else (no)
     :Informar conflicto por fuera de disponibilidad;
-    stop
+  end 
   endif
+
 else (no)
   :Informar que el turno no puede reprogramarse;
-  stop
+  end
 endif
 @enduml
