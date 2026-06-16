@@ -1,0 +1,50 @@
+@startuml RegistrarLlegadaPaciente
+
+title Diagrama de Actividades - Registrar Llegada del Paciente
+
+
+
+|Secretaria|
+start
+:Acceder al sistema;
+:Buscar turno del paciente;
+:Verificar identidad del paciente;
+
+|Sistema|
+if (¿ El paciente tiene turno asignado?) then (sí)
+  :Cargar datos del turno;
+else (no)
+  :Informar que no tiene turno asignado;
+  end
+endif
+
+:Validar estado del turno;
+
+|Secretaria|
+:Confirmar datos con el paciente;
+
+|Sistema|
+if (¿ El paciente llegó tarde?) then (sí)
+  :Registrar motivo de llegada tarde;
+  if (¿Motivo es válido?) then (sí)
+    :Aceptar motivo;
+  else (no)
+    :Registrar llegada como tardía sin justificación;
+  endif
+else (no)
+  :Registrar llegada a tiempo;
+endif
+
+:Actualizar estado del turno a "En sala de espera";
+:Registrar hora exacta de llegada;
+:Notificar al médico (opcional);
+
+|Paciente|
+:Esperar en sala de espera;
+
+|Secretaria|
+:Informar al paciente que su llegada fue registrada correctamente;
+
+stop
+
+@enduml
