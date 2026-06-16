@@ -2,7 +2,7 @@
 
 ## Tabla de trazabilidad (Caso de uso → Clases/métodos → Diagramas de secuencia)
 
-- Crear turno: `Secretaria.agendarTurno()` / `Agenda.verificarDisponibilidad()` / `Turno.crearTurno()` → [05-secuencia-crear-turno-03.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-03.puml)
+- Crear turno: `Secretaria.solicitarTurno()` → `Agenda.verificarDisponibilidad()` → `Agenda.crearTurno()` → `Turno` → [05-secuencia-crear-turno-03.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-03.puml)
 - Reprogramar turno: `Secretaria.reprogramarTurno()` / `Turno.reprogramar()` / `Agenda.verificarDisponibilidad()` → [05-secuencia-reprogramar-turno-05.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-05.puml)
 - Cancelar turno: `Secretaria.cancelarTurno()` / `Turno.cancelar()` / `Agenda.liberarHorario()` → [05-secuencia-cancelar-turno-02.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-02.puml)
 - Autorizar sobreturno: `Medico.autorizarSobreturno()` / `Agenda.confirmarAutorizacion()` / `Turno.crearTurno(sobreturno=true)` → [05-secuencia-autorizar-sobreturno-01.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-01.puml)
@@ -20,8 +20,7 @@ class Sistema {
       alternativas = agenda.sugerirHorariosAlternativos(medicoId, fechaHora.date)
       return alternativas
     }
-    turno = Turno.crearTurno(fechaHora, pacienteRepository.get(pacienteId), medicoRepository.get(medicoId), sobreturno=false)
-    agenda.turnos.add(turno)
+    turno = agenda.crearTurno(fechaHora, pacienteRepository.get(pacienteId), medicoRepository.get(medicoId), sobreturno=false)
     agenda.registrarEnHistorial(turno.id, "crear")
     pacienteRepository.notify(pacienteId, "Turno confirmado: " + turno.id)
     return turno
@@ -29,9 +28,8 @@ class Sistema {
 
   registrarLlegada(turnoId, horaReal) {
     turno = agenda.buscarTurno(turnoId)
-    llegada = new LlegadaPaciente(horaReal)
     turno.registrarLlegada(horaReal)
-    llegada.diferenciaMinutos = llegada.calcularDiferencia(turno.fechaHoraProgramada)
+    /* La llegada se registra dentro del Turno; los atributos horaRealLlegada, presente y diferenciaMinutos quedan en Turno */
     agenda.registrarEnHistorial(turno.id, "registrar_llegada")
     medico.notifyPresencia(turno.paciente.id, turno.id)
   }
