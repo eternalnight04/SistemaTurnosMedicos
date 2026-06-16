@@ -1,7 +1,5 @@
 # Changelog
 
-=======
->>>>>>> develop
 ## [Unreleased]
 
 ### Added
