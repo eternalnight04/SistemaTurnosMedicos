@@ -15,9 +15,9 @@ paciente -> secretaria: solicitarReprogramacion(pacienteId, turnoId, motivo)
 secretaria -> agenda: buscarTurno(turnoId)
 activate agenda
 
-agenda --> secretaria: turnoEncontrado = id, fecha, hora, estado
+agenda --> secretaria: turno
 
-secretaria -> turno: solicitarReprogramacion(turnoId, nuevaFecha, nuevaHora)
+secretaria -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
 activate turno
 
 turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
@@ -27,9 +27,9 @@ note over agenda, turno : Horario no disponible - ofrecer alternativas
 agenda -> secretaria: sugerirHorariosAlternativos(turnoId, alternativas)
 secretaria -> turno: seleccionarNuevoHorario(turnoId, horarioSeleccionado)
 
-turno -> agenda: validarHorario(turnoId, horarioSeleccionado)
+agenda -> agenda: verificarDisponibilidad(horarioSeleccionado)
 agenda --> turno: horarioValido = true
-turno -> agenda: actualizarTurno(turnoId, nuevaFecha, nuevaHora)
+turno -> turno: reprogramar(nuevaFecha, nuevaHora)
 turno -> turno: cambiarEstado(reprogramado)
 turno -> agenda: registrarEnHistorial(turnoId, horarioAnterior, horarioNuevo, usuario)
 

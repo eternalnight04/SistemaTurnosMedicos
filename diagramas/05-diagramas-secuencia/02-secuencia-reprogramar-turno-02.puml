@@ -20,7 +20,7 @@ activate turno
 
 turno --> agenda: turno encontrado
 
-agenda --> secretaria: mostrar turno
+agenda --> secretaria: turno
 
 secretaria -> medico: consultarDisponibilidad(nuevoHorario)
 
@@ -28,7 +28,7 @@ medico --> secretaria: disponibilidad confirmada
 
 secretaria -> turno: confirmarNuevoHorario(nuevoHorario)
 
-turno -> agenda: actualizarTurno(nuevoHorario)
+turno -> turno: reprogramar(nuevoHorario)
 turno -> turno: cambiarEstado("Reprogramado")
 turno -/ agenda: registrarEnHistorial(usuario=secretaria)
 

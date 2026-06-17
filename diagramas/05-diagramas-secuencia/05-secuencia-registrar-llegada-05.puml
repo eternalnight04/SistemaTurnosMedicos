@@ -15,6 +15,7 @@ secretaria -> agenda: accederAgendaDiaria(fecha)
 activate agenda
 
 agenda --> secretaria: mostrar turnos del dia
+agenda --> secretaria: turno
 secretaria -> turno: buscarTurno(paciente)
 
 activate turno
