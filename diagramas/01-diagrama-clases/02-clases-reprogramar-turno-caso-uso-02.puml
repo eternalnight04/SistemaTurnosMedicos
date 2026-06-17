@@ -1,0 +1,100 @@
+@startuml
+
+title Diagrama de Clases - Reprogramar Turno (CU-02)
+
+abstract class UsuarioDelSistema {
+  # id: Integer
+  # nombre: String
+  # email: String
+  # telefono: String
+  --
+  + autenticar(): Boolean
+  + actualizarDatos(): void
+}
+
+
+class Paciente {
+  + dni: String
+  + domicilio: String
+  --
+  + solicitarReprogramacion(nuevoHorario: Date): void
+  + confirmarTurno(): void
+  + cancelarTurno(): void
+  + recibirNotificacion(mensaje: String): Boolean
+}
+
+class Secretaria {
+  + legajo: String
+  --
+  + buscarTurno(paciente: Paciente): Turno
+  + consultarDisponibilidad(medico: Medico, horario: Date): Boolean
+  + reprogramarTurno(turno: Turno, nuevoHorario: Date): Boolean
+}
+
+class Medico {
+  + matricula: String
+  + especialidad: String
+  --
+  + consultarDisponibilidad(horario: Date): Boolean
+  + modificarDisponibilidad(inicio: Date, fin: Date): void
+  + atenderPaciente(turno: Turno): void
+}
+
+class Turno {
+  + idTurno: Integer
+  + fechaHora: Date
+  + estado: String
+  + sobreturno: Boolean
+  + notas: String
+  --
+  + confirmarNuevoHorario(nuevoHorario: Date): Boolean
+  + actualizarTurno(nuevoHorario: Date): void
+  + cambiarEstado(nuevoEstado: String): void
+  + validarReprogramacion(): Boolean
+  + obtenerTurno(paciente: Paciente): Turno
+}
+
+class Agenda {
+  - turnos: List<Turno>
+  --
+  + buscarTurno(paciente: Paciente): Turno
+  + obtenerTurno(paciente: Paciente): Turno
+  + sugerirHorariosAlternativos(horario: Date): List<Date>
+  + registrarEnHistorial(usuario: String, accion: String): void
+  + enviarNotificacion(paciente: Paciente, mensaje: String): Boolean
+}
+
+
+class Historial {
+  - eventos: List<String>
+  --
+  + guardarEvento(evento: String): void
+  + obtenerEventos(): List<String>
+}
+
+class Notificacion {
+  + tipo: String
+  + destinatario: String
+  + mensaje: String
+  --
+  + enviar(paciente: Paciente, mensaje: String): Boolean
+}
+
+
+UsuarioDelSistema <|-- Paciente : hereda
+UsuarioDelSistema <|-- Secretaria : hereda
+UsuarioDelSistema <|-- Medico : hereda
+
+Secretaria --> Agenda : administra
+Secretaria ..> Medico : consulta disponibilidad
+Secretaria ..> Turno : reprograma
+
+Agenda "1" o-- "0..*" Turno : contiene
+Agenda "1" *-- "1" Historial : compone
+Agenda ..> Notificacion : utiliza
+
+Turno "1" --> "1" Paciente : asigna a
+Turno "1" --> "1" Medico : asigna a
+Turno ..> Agenda : registra historial
+
+@enduml
