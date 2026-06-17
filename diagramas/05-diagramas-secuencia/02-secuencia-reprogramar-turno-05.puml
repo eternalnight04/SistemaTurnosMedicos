@@ -1,30 +1,31 @@
-@startuml
+@startuml 02-secuencia-reprogramar-turno-05
+
 title Diagrama de Secuencia - Reprogramar Turno
 ' Nombre del escenario: Reprogramar Turno - Flujo Alterno
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-reprogramar-turno-flujo-alterno.md
 ' Objetivo: Representar la reprogramación de un turno por conflicto de horario, involucrando secretaria, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Turno reprograma, Agenda verifica disponibilidad).
 
-actor Secretaria as victoria
-actor Paciente as maria
+actor Secretaria as secretaria
+actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-maria -> victoria: solicitarReprogramacion(pacienteId, turnoId, motivo)
+paciente -> secretaria: solicitarReprogramacion(pacienteId, turnoId, motivo)
 
-victoria -> agenda: buscarTurno(turnoId)
+secretaria -> agenda: buscarTurno(turnoId)
 activate agenda
 
-agenda --> victoria: turnoEncontrado = id, fecha, hora, estado
+agenda --> secretaria: turnoEncontrado = id, fecha, hora, estado
 
-victoria -> turno: solicitarReprogramacion(turnoId, nuevaFecha, nuevaHora)
+secretaria -> turno: solicitarReprogramacion(turnoId, nuevaFecha, nuevaHora)
 activate turno
 
 turno -> agenda: verificarDisponibilidad(nuevaFecha, nuevaHora)
 agenda --> turno: disponibilidad = false
 note over agenda, turno : Horario no disponible - ofrecer alternativas
 
-agenda -> victoria: sugerirHorariosAlternativos(turnoId, alternativas)
-victoria -> turno: seleccionarNuevoHorario(turnoId, horarioSeleccionado)
+agenda -> secretaria: sugerirHorariosAlternativos(turnoId, alternativas)
+secretaria -> turno: seleccionarNuevoHorario(turnoId, horarioSeleccionado)
 
 turno -> agenda: validarHorario(turnoId, horarioSeleccionado)
 agenda --> turno: horarioValido = true
@@ -32,7 +33,7 @@ turno -> agenda: actualizarTurno(turnoId, nuevaFecha, nuevaHora)
 turno -> turno: cambiarEstado(reprogramado)
 turno -> agenda: registrarEnHistorial(turnoId, horarioAnterior, horarioNuevo, usuario)
 
-agenda -> maria: enviarNotificacion(pacienteId, mensaje)
+agenda -> paciente: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda

@@ -1,4 +1,4 @@
-@startuml 05-secuencia-crear-turno-01
+@startuml 01-secuencia-crear-turno-01
 
 title Diagrama de Secuencia - Crear Turno
 

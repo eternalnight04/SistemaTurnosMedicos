@@ -1,31 +1,32 @@
-@startuml
+@startuml 04-secuencia-autorizar-sobreturno-01
+
 title Diagrama de Secuencia - Autorizar Sobreturno
 ' Nombre del escenario: Autorizar Sobreturno - Flujo Principal
 ' Archivo: diagramas/03-escenarios-casos-de-uso/03-autorizar-sobreturno-flujo-principal.md
 ' Objetivo: Representar la autorización de un sobreturno por el médico, involucrando secretaria, médico, paciente y sistema, basado en responsabilidades de CRC (Secretaria gestiona turnos, Medico autoriza, Agenda registra disponibilidad, Turno maneja estados).
 
-actor Secretaria as victoria
-actor Medico as drMolina
-actor Paciente as patricia
+actor Secretaria as secretaria
+actor Medico as medico
+actor Paciente as paciente
 participant "Agenda:agenda" as agenda
 participant "Turno:turno" as turno
 
-victoria -> agenda: crearTurno(pacienteId, fecha, hora)
+secretaria -> agenda: crearTurno(pacienteId, fecha, hora)
 activate agenda
 
-agenda --> victoria: sobreturno_detectado = true
-victoria -> drMolina: solicitarAutorizacion(solicitudId, pacienteId, fecha, hora)
-drMolina --> victoria: autorizado = true
+agenda --> secretaria: sobreturno_detectado = true
+secretaria -> medico: solicitarAutorizacion(solicitudId, pacienteId, fecha, hora)
+medico --> secretaria: autorizado = true
 
-victoria -> agenda: confirmarAutorizacion(solicitudId, autorizadoPor=drMolinaId)
+secretaria -> agenda: confirmarAutorizacion(solicitudId, autorizadoPor=medicoId)
 
 create turno
 agenda -> turno: crearTurno(pacienteId, fecha, hora, sobreturno=true)
 activate turno
 
 turno -> turno: cambiarEstado(confirmado)
-turno -> agenda: registrarEnHistorial(turnoId, accion="crear", usuario=secretariaId, autorizadoPor=drMolinaId)
-agenda -> patricia: enviarNotificacion(pacienteId, mensaje)
+turno -> agenda: registrarEnHistorial(turnoId, accion="crear", usuario=secretariaId, autorizadoPor=medicoId)
+agenda -> paciente: enviarNotificacion(pacienteId, mensaje)
 
 deactivate turno
 deactivate agenda

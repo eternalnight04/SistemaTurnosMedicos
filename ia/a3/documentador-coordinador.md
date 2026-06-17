@@ -71,14 +71,14 @@ Completa comentarios en la pull request en las líneas correspondientes.
 ### Review Diagramas de Actividades CU 1 y 2
 ======================
 Hallazgo #1
-
+  diagramas/05-diagramas-secuencia/01-secuencia-crear-turno-03.puml (línea 20)
 Author: ANeicuan
 Linea: Referenciado en la lista de archivos de la PR / changelog.md (entrada Unreleased)
 
 Tipo de problema: Archivos de diagramas declarados en la PR no accesibles (404 al intentar recuperar los .puml)
 Severidad: CRÍTICA (Rompe la entrega: los artefactos prometidos no están disponibles)
 Sugerencia de mejora: Confirmar que los archivos .puml se hayan commiteado en la rama feature/esp-actividades-1-2-add-diagrama-actividad-1 con la ruta exacta listada en la PR. Si la ruta está equivocada, mover los ficheros al directorio diagramas/04-diagramas-actividades/ o corregir las referencias en la PR y en changelog.md. Verificar con git show <branch>:<path> antes de pedir revisión.
-
+  diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno-05.puml (línea 23)
 Asegurarse de que el fichero exista y se publique en la rama
 git checkout feature/esp-actividades-1-2-add-diagrama-actividad-1
 git add diagramas/04-diagramas-actividades/04-actividad-crear-turno-01.puml
@@ -407,7 +407,7 @@ diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml (línea 
 Hallazgo #3
 
 Author: sofinestt
-Linea: 20 (05-secuencia-crear-turno-03.puml)
+Linea: 20 (01-secuencia-crear-turno-03.puml)
 
 Tipo de problema: Ausencia de mensaje de respuesta en validación
 Severidad: MEDIA (Incompleto según flujo principal)
@@ -420,7 +420,7 @@ agenda --> victoria: disponibilidadConfirmada()
 
 Archivo afectado:
 
-diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-03.puml (línea 20)
+diagramas/05-diagramas-secuencia/01-secuencia-crear-turno-03.puml (línea 20)
 ======================
 Hallazgo #4
 
@@ -441,7 +441,7 @@ changelog.md (línea 11)
 Hallazgo #5
 
 Author: sofinestt
-Linea: 23 (05-secuencia-reprogramar-turno-05.puml)
+Linea: 23 (02-secuencia-reprogramar-turno-05.puml)
 
 Tipo de problema: Mensaje de error sin documentación visual en diagrama
 Severidad: BAJA (Mejora de claridad UML)
@@ -455,7 +455,7 @@ note over agenda, turno : Horario no disponible - ofrecer alternativas
 
 Archivo afectado:
 
-diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-05.puml (línea 23)
+diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno-05.puml (línea 23)
 DECISION DE REVISION HUMANO
 
 [ ] Aceptar sugerencia
