@@ -17,7 +17,8 @@ secretaria -> agenda: accederAgendaDiaria(secretariaId, fecha)
 activate agenda
 
 agenda --> secretaria: turnos = [turnoId, horaProgramada, pacienteId]
-secretaria -> turno: registrarLlegada(turnoId, horaReal)
+agenda --> secretaria: turno
+secretaria -> turno: registrarLlegada(horaReal)
 activate turno
 
 turno -> turno: cambiarEstado(presente)

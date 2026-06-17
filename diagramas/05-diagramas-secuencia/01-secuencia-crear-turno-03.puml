@@ -16,9 +16,8 @@ secretaria -> agenda: buscarPaciente(nombre_o_dni)
 activate agenda
 
 agenda --> secretaria: pacienteEncontrado = id, nombre, dni
-secretaria -> agenda: seleccionarMedicoFechaHora(medicoId, fecha, hora, tipo)
+secretaria -> agenda: verificarDisponibilidad(medicoId, fecha, hora)
 
-agenda -> agenda: verificarDisponibilidad(medicoId, fecha, hora)
 agenda --> secretaria: disponibilidad = true
 
 create turno

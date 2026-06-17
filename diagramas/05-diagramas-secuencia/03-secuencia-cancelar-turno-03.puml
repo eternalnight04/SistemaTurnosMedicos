@@ -19,7 +19,7 @@ activate turno
 
 turno --> agenda: turno encontrado
 
-agenda --> secretaria: mostrar detalles de turno
+agenda --> secretaria: turno
 
 secretaria -> turno: confirmarCancelacion(motivo)
 
