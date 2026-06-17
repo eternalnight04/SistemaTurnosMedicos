@@ -2,11 +2,11 @@
 
 ## Tabla de trazabilidad (Caso de uso → Clases/métodos → Diagramas de secuencia)
 
-- Crear turno: `Secretaria.solicitarTurno()` → `Agenda.verificarDisponibilidad()` → `Agenda.crearTurno()` → `Turno` → [05-secuencia-crear-turno-03.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-03.puml)
-- Reprogramar turno: `Secretaria.reprogramarTurno()` / `Turno.reprogramar()` / `Agenda.verificarDisponibilidad()` → [05-secuencia-reprogramar-turno-05.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-05.puml)
-- Cancelar turno: `Secretaria.cancelarTurno()` / `Turno.cancelar()` / `Agenda.liberarHorario()` → [05-secuencia-cancelar-turno-02.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-02.puml)
-- Autorizar sobreturno: `Medico.autorizarSobreturno()` / `Agenda.confirmarAutorizacion()` / `Turno.crearTurno(sobreturno=true)` → [05-secuencia-autorizar-sobreturno-01.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-01.puml)
-- Registrar llegada: `Secretaria.registrarLlegada()` → `Agenda.buscarTurno()` → `Turno.registrarLlegada(horaReal)` (el cálculo de diferencia se realiza dentro de `Turno`) → [05-secuencia-registrar-llegada-04.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml)
+ - Crear turno: `Secretaria.solicitarTurno()` → `Agenda.verificarDisponibilidad()` → `Agenda.crearTurno()` → `Turno` → [01-secuencia-crear-turno-03.puml](../../diagramas/05-diagramas-secuencia/01-secuencia-crear-turno-03.puml)
+ - Reprogramar turno: `Secretaria.reprogramarTurno()` / `Turno.reprogramar()` / `Agenda.verificarDisponibilidad()` → [02-secuencia-reprogramar-turno-05.puml](../../diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno-05.puml)
+ - Cancelar turno: `Secretaria.cancelarTurno()` / `Turno.cancelar()` / `Agenda.liberarHorario()` → [03-secuencia-cancelar-turno-02.puml](../../diagramas/05-diagramas-secuencia/03-secuencia-cancelar-turno-02.puml)
+ - Autorizar sobreturno: `Medico.autorizarSobreturno()` / `Agenda.confirmarAutorizacion()` / `Turno.crearTurno(sobreturno=true)` → [04-secuencia-autorizar-sobreturno-01.puml](../../diagramas/05-diagramas-secuencia/04-secuencia-autorizar-sobreturno-01.puml)
+ - Registrar llegada: `Secretaria.registrarLlegada()` → `Agenda.buscarTurno()` → `Turno.registrarLlegada(horaReal)` (el cálculo de diferencia se realiza dentro de `Turno`) → [05-secuencia-registrar-llegada-04.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml)
 
 ## Pseudocódigo orientado a objetos (flujo happy path)
 

@@ -79,11 +79,11 @@ Corrija los siguientes diagramas teniendo en cuenta que hay que indicar la final
 
 ✓ Completado. He agregado los símbolos de finalización (`destroy`) a todos los 5 diagramas de secuencia:
 
-- **05-secuencia-autorizar-sobreturno-05.puml**: `destroy turno` y `destroy agenda`
-- **05-secuencia-cancelar-turno-02.puml**: `destroy turno` y `destroy agenda`
-- **05-secuencia-crear-turno-01.puml**: `destroy turno` y `destroy agenda`
-- **05-secuencia-registrar-llegada-04.puml**: `destroy turno` y `destroy agenda`
-- **05-secuencia-reprogramar-turno-03.puml**: `destroy turno` y `destroy agenda`
+ - **04-secuencia-autorizar-sobreturno-01.puml**: `destroy turno` y `destroy agenda`
+ - **03-secuencia-cancelar-turno-02.puml**: `destroy turno` y `destroy agenda`
+ - **01-secuencia-crear-turno-01.puml**: `destroy turno` y `destroy agenda`
+ - **05-secuencia-registrar-llegada-04.puml**: `destroy turno` y `destroy agenda`
+ - **02-secuencia-reprogramar-turno-02.puml**: `destroy turno` y `destroy agenda`
 
 Ahora los diagramas mostrarán una **X** al final de la línea de vida de los objetos `Turno` y `Agenda`, indicando correctamente su finalización según la notación UML estándar.
 
@@ -97,8 +97,8 @@ Corrija los siguientes diagramas teniendo en cuenta que los mensajes de retorno 
 
 ✓ Corregidos. He eliminado los paréntesis de los siguientes mensajes de retorno:
 
-- **05-secuencia-crear-turno-01.puml**: `disponibilidadConfirmada()` → `disponibilidadConfirmada`
-- **05-secuencia-reprogramar-turno-03.puml**: `conflictoDetectado()` → `conflictoDetectado` y `horarioValido()` → `horarioValido`
+ - **01-secuencia-crear-turno-01.puml**: `disponibilidadConfirmada()` → `disponibilidadConfirmada`
+ - **02-secuencia-reprogramar-turno-02.puml**: `conflictoDetectado()` → `conflictoDetectado` y `horarioValido()` → `horarioValido`
 
 Ahora los diagramas siguen la notación correcta de UML, donde los mensajes de retorno (`-->`) son respuestas simples sin formato de método.
 
