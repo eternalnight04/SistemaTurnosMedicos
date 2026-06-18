@@ -71,14 +71,14 @@ Completa comentarios en la pull request en las líneas correspondientes.
 ### Review Diagramas de Actividades CU 1 y 2
 ======================
 Hallazgo #1
-  diagramas/05-diagramas-secuencia/01-secuencia-crear-turno-03.puml (línea 20)
+  diagramas/05-diagramas-secuencia/01-secuencia-crear-turno.puml (línea 20)
 Author: ANeicuan
 Linea: Referenciado en la lista de archivos de la PR / changelog.md (entrada Unreleased)
 
 Tipo de problema: Archivos de diagramas declarados en la PR no accesibles (404 al intentar recuperar los .puml)
 Severidad: CRÍTICA (Rompe la entrega: los artefactos prometidos no están disponibles)
 Sugerencia de mejora: Confirmar que los archivos .puml se hayan commiteado en la rama feature/esp-actividades-1-2-add-diagrama-actividad-1 con la ruta exacta listada en la PR. Si la ruta está equivocada, mover los ficheros al directorio diagramas/04-diagramas-actividades/ o corregir las referencias en la PR y en changelog.md. Verificar con git show <branch>:<path> antes de pedir revisión.
-  diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno-05.puml (línea 23)
+  diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno.puml (línea 23)
 Asegurarse de que el fichero exista y se publique en la rama
 git checkout feature/esp-actividades-1-2-add-diagrama-actividad-1
 git add diagramas/04-diagramas-actividades/04-actividad-crear-turno-01.puml
@@ -385,7 +385,7 @@ ia/a3/esp-secuencia.md (línea 59)
 Hallazgo #2
 
 Author: sofinestt
-Linea: 8 (05-secuencia-registrar-llegada-04.puml)
+Linea: 8 (05-secuencia-registrar-llegada.puml)
 
 Tipo de problema: Inconsistencia en nomenclatura de actores vs escenario referenciado
 Severidad: MEDIA (Confusión en trazabilidad)
@@ -402,7 +402,7 @@ actor Paciente as diego
 
 Archivo afectado:
 
-diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-04.puml (línea 8)
+diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada.puml (línea 8)
 ======================
 Hallazgo #3
 
