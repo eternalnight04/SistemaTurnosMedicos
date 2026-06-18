@@ -25,9 +25,10 @@ class Paciente {
 class Secretaria {
   + legajo: String
   --
-  + buscarTurno(turno: Turno): Turno
+  + buscarTurno(paciente: Paciente): Turno 
   + confirmarCancelacion(turno: Turno, motivo: String): Boolean
   + cancelarTurno(turno: Turno, motivo: String): Boolean
+  + buscarTurnoPorId(idTurno: Integer): Turno
 }
 
 class Medico {
@@ -55,7 +56,7 @@ class Turno {
 class Agenda {
   - turnos: List<Turno>
   --
-  + buscarTurno(turno: Turno): Turno
+  + buscarTurno(paciente: Paciente): Turno
   + liberarHorario(turno: Turno): void
   + registrarEnHistorial(usuario: String, accion: String): void
   + enviarNotificacion(paciente: Paciente, mensaje: String): Boolean
