@@ -44,12 +44,11 @@ class Turno {
   + fechaHora: Date
   + estado: String
   + sobreturno: Boolean
-  + motivoCancelacion: String
+  + notas: String
   --
   + confirmarCancelacion(motivo: String): Boolean
   + cambiarEstado(nuevoEstado: String): void
   + liberarHorario(): void
-  + registrarEnHistorial(usuario: String, accion: String): void
   + validarMotivoCancelacion(motivo: String): Boolean
 }
 
