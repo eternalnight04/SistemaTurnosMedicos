@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [Released - Actividad Obligatoria N°4] - 2026-06-18
+
+### added
+
+- [feature/analista-cu-2-3-add-anexo-cu2-cu3] Se agrega archivo analista-cu-2-3. PR: [#113](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/113)
+
+
+
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
