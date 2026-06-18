@@ -42,7 +42,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno-02.png)
+![Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png)
 
 **Actores y relaciones:**
 
