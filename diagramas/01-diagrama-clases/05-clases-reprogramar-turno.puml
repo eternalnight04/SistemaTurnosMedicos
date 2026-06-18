@@ -1,0 +1,53 @@
+@startuml
+
+title Diagrama de Clases - Reprogramar Turno
+
+class Paciente {
+    -idPaciente: int
+    -nombre: String
+    -dni: String
+
+    +solicitarReprogramacion(turno: Turno): void
+}
+
+class Secretaria {
+    -idSecretaria: int
+    -nombre: String
+
+    +reprogramarTurno(turno: Turno, nuevaFecha: LocalDate): Turno
+}
+
+class Turno {
+    -idTurno: int
+    -fecha: LocalDate
+    -hora: String
+    -estado: String
+
+    +cancelar(): void
+    +crearNuevoTurno(fecha: LocalDate): Turno
+}
+
+class Agenda {
+    -idAgenda: int
+
+    +verificarDisponibilidad(fecha: LocalDate): boolean
+    +agregarTurno(turno: Turno): void
+}
+
+class Medico {
+    -idMedico: int
+    -nombre: String
+    -especialidad: String
+
+    +consultarDisponibilidad(): boolean
+}
+
+
+Paciente --> Turno
+Secretaria --> Turno
+Agenda --> Turno
+Medico --> Turno
+
+Turno ..> Agenda : verifica disponibilidad
+
+@enduml
