@@ -45,8 +45,7 @@ class Turno {
   + sobreturno: Boolean
   + notas: String
   --
-  + confirmarNuevoHorario(nuevoHorario: Date): Boolean
-  + actualizarTurno(nuevoHorario: Date): void
+  + reprogramarHorario(nuevoHorario: Date): Boolean
   + cambiarEstado(nuevoEstado: String): void
   + validarReprogramacion(): Boolean
 }
