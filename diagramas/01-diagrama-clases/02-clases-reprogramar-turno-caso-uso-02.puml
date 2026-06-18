@@ -13,15 +13,14 @@ abstract class UsuarioDelSistema {
 }
 
 
-class Paciente {
-  + dni: String
-  + domicilio: String
-  --
-  + solicitarReprogramacion(nuevoHorario: Date): void
-  + confirmarTurno(): void
-  + cancelarTurno(): void
-  + recibirNotificacion(mensaje: String): Boolean
-}
+class Paciente {  
+  + dni: String  
+  + domicilio: String  
+  --  
+  + solicitarReprogramacion(nuevoHorario: Date): void  
+  + confirmarTurno(): void  
+  + recibirNotificacion(mensaje: String): Boolean  
+}  
 
 class Secretaria {
   + legajo: String
@@ -39,7 +38,6 @@ class Medico {
   + modificarDisponibilidad(inicio: Date, fin: Date): void
   + atenderPaciente(turno: Turno): void
 }
-
 class Turno {
   + idTurno: Integer
   + fechaHora: Date
@@ -51,8 +49,8 @@ class Turno {
   + actualizarTurno(nuevoHorario: Date): void
   + cambiarEstado(nuevoEstado: String): void
   + validarReprogramacion(): Boolean
-  + obtenerTurno(paciente: Paciente): Turno
 }
+
 
 class Agenda {
   - turnos: List<Turno>

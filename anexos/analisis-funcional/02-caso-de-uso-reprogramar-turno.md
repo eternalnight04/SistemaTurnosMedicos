@@ -145,7 +145,17 @@ SI resultado es válido
     agenda.enviarNotificacion(paciente, "Turno reprogramado")
 SINO
     // Se detecta un conflicto y se ofrecen horarios alternativos
-    agenda.sugerirHorariosAlternativos(nuevoHorario)
+    alternativas = agenda.sugerirHorariosAlternativos(nuevoHorario)
+    
+    SI usuario selecciona una alternativa de la lista
+        turno.actualizarTurno(alternativaSeleccionada)
+        turno.cambiarEstado("Reprogramado")
+        agenda.registrarEnHistorial("Secretaria", "Reprogramación de turno")
+        agenda.enviarNotificacion(paciente, "Turno reprogramado")
+    SINO
+        // Flujo alternativo: usuario no selecciona alternativa
+        Retornar "Reprogramación cancelada - sin cambios"
+    
 FIN SI
 
 // El sistema finaliza con el turno actualizado o con alternativas propuestas
