@@ -3,23 +3,6 @@
 
 ## 1. Descripción y Trazabilidad con Requisitos Funcionales
 
-**Flujo principal:**
-1. La secretaria selecciona "Nuevo Turno".
-2. Busca o selecciona al paciente por nombre o identificador.
-3. Selecciona profesional, fecha, hora y tipo de consulta (control o primera vez).
-4. El sistema verifica que el horario esté dentro de la disponibilidad del profesional.
-5. El sistema verifica que no haya otro turno en ese horario.
-6. El sistema registra el turno como "Confirmado" con duración estimada (15 min control, 30 min primera vez).
-7. El sistema guarda el evento en el historial del turno.
-8. El sistema notifica al paciente por WhatsApp o mail.
-
-**Flujos alternativos:**
-- FA-01A: Si el horario está fuera de disponibilidad, el sistema informa el conflicto y no registra el turno.
-- FA-01B: Si ya existe un turno en ese horario, el sistema advierte la superposición y bloquea el registro. La secretaria puede elegir otro horario o solicitar sobreturno (ver CU-04).
-- FA-01C: Si el paciente no existe, la secretaria puede darlo de alta antes de continuar.
-
--------------------
-
 **Actor/es:** Secretaria (Laura), Paciente (Juan García), Sistema
 
 **Objetivo:** La secretaria registra un nuevo turno para un paciente con el profesional, verificando disponibilidad y evitando superposiciones.

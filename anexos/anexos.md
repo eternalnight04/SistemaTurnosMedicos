@@ -27,3 +27,6 @@ La información recolectada fue utilizada para:
 El contenido de los anexos representa información preliminar y de apoyo, utilizada como base para la toma de decisiones durante el desarrollo.
 
 ---
+
+- [Anexo - Introducción al Diseño Orientado a Objetos](./introduccion.md)
+- [Anexo - Análisis Funcional por Caso de Uso](./analisis-funcional/analisis_casos_uso.md)
