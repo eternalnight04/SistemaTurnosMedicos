@@ -7,7 +7,7 @@
 ### added
 
 - [feature/analista-cu-2-3-add-anexo-cu2-cu3] Se agrega archivo analista-cu-2-3. PR: [#113](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/113)
-
+- [feature/analista-cu-4-5-add-anexo-cu4-cu5] Se agrega el archivo analista-cu-4-5 y el diagrama de registrar llegada. PR:[#114](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/114)
 
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
