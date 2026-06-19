@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+<<<<<<< HEAD
+### Added
+
+* [feature/arquitecto-dominio-add-diagrama-final] Se crea el diagrama de clases final unificado del sistema en PlantUML (`06-clases-diagrama-final.puml`) y su imagen asociada (`06-clases-diagrama-final.png`). Se agregan los anexos `pilares-poo.md` y `happy-path-global.md`. Se documenta el uso de Copilot Agent Mode en `ia/a4/arquitecto-dominio.md` y se actualizan índices y documentación asociada. Cierra #110. PR: [#111](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/111) - @nachonervi-design (Arquitecto de Dominio)
+
+
+---
+=======
 ## [Released - Actividad Obligatoria N°4] - 2026-06-18
 
 ### added
@@ -16,6 +24,7 @@
 >>>>>>> 8cff02c (feat: agrega diagrama de clases final, pilares POO y happy path global)
 
 
+>>>>>>> ebe489dc06d93f620de06d33c643b34c867b1739
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
