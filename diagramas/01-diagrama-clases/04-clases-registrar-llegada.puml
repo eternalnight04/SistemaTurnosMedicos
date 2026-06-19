@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @startuml 04-clases-registrar-llegada
-=======
-@startuml 04-clases-registrar-llegada.puml
->>>>>>> ec62f20 (se agrego un nombre para el diagrama de clases de registrar llegada)
 
 title Diagrama de Clases - Registrar Llegada del Paciente
 
