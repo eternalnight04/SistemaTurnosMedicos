@@ -18,33 +18,38 @@ Este proyecto tiene como objetivo desarrollar el **diseño orientado a objetos**
 
 Partiendo del análisis de información deliberadamente dispersa (mails, audios, notas y transcripciones), identificamos requisitos funcionales y no funcionales, modelamos casos de uso, diseñamos un boceto inicial de clases, y refinamos el diseño mediante tarjetas CRC, diagramas de casos de uso y escenarios detallados.
 
+Esta entrega se destaca por la inclusión de diagramas de clases y analisis funcionales para cada caso de uso, pilares del paradigma orientado a objetos con ejemplos del sistema y un pseudocódigo.
+
 ---
 
 ## Integrantes del Equipo
 
-| Nombre y Apellido | Matrícula | Usuario GitHub | Rol A1 | Rol A2 | Rol A3
-|---|---|---|---|---|
-| Carreras, Natalia | 161517 | @nataliacarreras96git | Documentadora y Coordinadora | Especialista en Escenarios + Documentadora y Coordinadora | Especialista en Diagramas de Actividades - Casos de Uso 3, 4 y 5 
-| Neicuan, Alejo |159810 | @ANeicuan |Diseñador de Clases Iniciales + Documentador y coordinador del repositorio | Especialista en escenarios de casos de uso | Especialista en Diagramas de Actividades - Casos de Uso 1 y 2
-| Nestmann, Sofia| 160130 |@sofinestt | Analista de Requerimentos|  Modelador de diagramas de Casos de Uso + Documentador y coordinador del repositorio |Especialista en diagramas de Secuencias 
+| Nombre y Apellido | Rol asignado en esta entrega | Usuario GitHub |
+|-------|-------------|----------|
+| Milenka Vila | Analista Funcional del Caso de Uso 1 + Documentador y Coordinador | @eternalnight04 |
+| Alexis Matias Britez Acosta | Analista Funcional de Casos de Uso 2 y 3 | @britezacostaalexis-pixel |
+| Lautaro Chavez | Analista Funcional de Casos de Uso 4 y 5 | @lautarochavez14 |
+| Ignacio Nervi | Arquitecto de Dominio | @nachonervi-design |
 
 ---
 
-## Roles de la Actividad Obligatoria N°3
+## Roles de la Actividad Obligatoria N°4
 
-Los roles para la Actividad Obligatoria N°3 están reflejados en la columna `Rol A3` de la tabla de Integrantes.
+Los roles para la Actividad Obligatoria N°4 están reflejados en la columna `Rol asignado en esta entrega` de la tabla de Integrantes.
 
 ---
 
 ## Navegación mínima
 
-- Anexos (introducción y contexto): [anexos/introduccion.md](anexos/introduccion.md)
-- Índice de Diagramas UML: [diagramas/diagramasUML.md](diagramas/diagramasUML.md)
-- Documentación uso de IA para esta entrega: [ia/a3/](ia/a3/)
-- Cambios y versiones: [changelog.md](changelog.md)
+- Anexos (introducción y contexto): [anexos/introduccion.md](./anexos/introduccion.md)
+- Analisis Funcional de Casos de Uso: [analisis-funcional/](./anexos/analisis-funcional/analisis_casos_uso.md)
+- Diagramas de Clases de Casos de Uso: [diagramas_de_clases.md](./diagramas/01-diagrama-clases/diagramas_de_clases.md)
+- Índice de Diagramas UML actualizado: [diagramas/diagramasUML.md](./diagramas/diagramasUML.md)
+- Documentación uso de IA para esta entrega: [ia/a4/](./ia/a4/)
+- Cambios y versiones: [changelog.md](./changelog.md)
 
 ---
 
 ## Registro de Cambios
 
-Ver [changelog.md](changelog.md) para el historial completo de contribuciones por integrante y PR asociadas.
+Ver [changelog.md](./changelog.md) para el historial completo de contribuciones por integrante y PR asociadas.
