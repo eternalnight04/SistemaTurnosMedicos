@@ -1,10 +1,10 @@
-- [Analisis Funcional - Crear Turno 01](../analisis-funcional/01-caso-de-uso-crear-turno.md)
 # Análisis de Casos de Uso
 
 Este documento centraliza los anexos de análisis funcional desarrollados para los casos de uso del sistema.
 
 ## Casos de Uso Documentados
 
+- [Analisis Funcional - Crear Turno 01](../analisis-funcional/01-caso-de-uso-crear-turno.md)
 - [CU-02 - Reprogramar Turno](./02-caso-de-uso-reprogramar-turno.md)
 - [CU-03 - Cancelar Turno](./03-caso-de-uso-cancelar-turno.md)
 
@@ -19,4 +19,4 @@ Los documentos referenciados incluyen:
 - Diagrama de clases.
 - Pseudocódigo orientado a objetos.
 
-Cada anexo fue elaborado siguiendo la plantilla establecida en `00-plantilla-anexo-caso-de-uso.md`
+Cada anexo fue elaborado siguiendo la plantilla establecida en `00-plantilla-anexo-caso-de-uso.md`.
