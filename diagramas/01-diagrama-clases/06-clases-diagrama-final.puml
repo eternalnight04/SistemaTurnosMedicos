@@ -1,0 +1,135 @@
+
+@startuml 06-clases-diagrama-final
+title Diagrama de Clases - SistemaTurnosMedicos (refinado)
+
+' Enumeraciones (simples)
+enum TurnoEstado {
+  PENDIENTE
+  CONFIRMADO
+  CANCELADO
+  REPROGRAMADO
+  PRESENTE
+  REALIZADO
+}
+
+' Clases principales (tipos simplificados)
+abstract class UsuarioDelSistema {
+  - id: String
+  - nombre: String
+  - dni: String
+  - email: String
+  - telefono: String
+  - contrasena: String
+  + autenticar(password): boolean
+  + actualizarDatos(): void
+}
+
+class Paciente {
+  - historiaClinicaId: String
+  + solicitarTurno(tipo): void
+  + confirmarTurno(turnoId): boolean
+  + cancelarTurno(turnoId): boolean
+  + recibirNotificacion(mensaje): void
+}
+
+class Medico {
+  - matricula: String
+  - especialidad: String
+  - horarioDisponible
+  + consultarAgenda(fecha)
+  + autorizarSobreturno(solicitudId): boolean
+  + registrarObservacion(turnoId, observacion): void
+  + modificarDisponibilidad(nuevoHorario): void
+}
+
+class Secretaria {
+  - secretariaId: String
+  + solicitarTurno(pacienteId, tipo)
+  + cancelarTurno(turnoId, motivo): boolean
+  + reprogramarTurno(turnoId, nuevaFechaHora): boolean
+  + darAltaPaciente(datos): Paciente
+  + consultarAgenda(medicoId, fecha)
+}
+
+class Agenda {
+  - id: String
+  - medico: Medico
+  - turnos
+  + verificarDisponibilidad(medicoId, fecha, hora): boolean
+  + registrarDisponibilidad(medicoId, horario): void
+  + crearTurno(fechaHora, paciente, medico, sobreturno): Turno
+  + buscarTurno(turnoId): Turno
+  + accederAgendaDiaria(secretariaId, fecha)
+  + sugerirHorariosAlternativos(medicoId, fecha)
+  + registrarEnHistorial(turnoId, descripcion): void
+  + buscarPaciente(identificador): Paciente
+}
+
+class Turno {
+  - id: String
+  - fechaHoraProgramada
+  - paciente: Paciente
+  - medico: Medico
+  - estado: TurnoEstado
+  - sobreturno: boolean
+  - horaRealLlegada
+  - presente: boolean
+  - diferenciaMinutos: int
+  - historial
+  + Turno(fechaHora, paciente, medico, sobreturno)
+  + cambiarEstado(nuevoEstado): void
+  + reprogramar(nuevaFechaHora): void
+  + cancelar(motivo, usuarioId): void
+  + registrarLlegada(horaReal): void
+}
+
+' Soporte/servicios del dominio (para ejemplificar dependencia)
+class Notificador {
+  + enviar(destino, mensaje): void
+}
+
+class RegistroHistorial {
+  + registrar(entrada): void
+}
+
+' Herencia
+Paciente --|> UsuarioDelSistema
+Medico --|> UsuarioDelSistema
+Secretaria --|> UsuarioDelSistema
+
+' Relaciones: asociación, agregación, composición, dependencia
+' Agregación: Medico tiene una Agenda (la Agenda puede existir separada)
+Medico o-- Agenda : agenda
+
+' Composición: Agenda compone Turnos (si la Agenda se borra, sus turnos también)
+Agenda *-- Turno : contiene
+
+' Asociación normal (con multiplicidades)
+Paciente "1" -- "0..*" Turno : turnos
+Medico "1" -- "0..*" Turno : turnos
+Secretaria "1" -- "0..*" Turno : gestiona
+
+' Dependencia: Secretaria depende de Agenda para buscar disponibilidad
+Secretaria ..> Agenda : usa
+
+' Dependencias adicionales: Agenda usa Notificador y RegistroHistorial
+Agenda ..> Notificador : usa
+Agenda ..> RegistroHistorial : registra
+
+' Notas y trazabilidad
+note right of Paciente
+  Responsabilidades según tarjetas CRC:
+  - solicitarTurno, confirmar/cancelar, recibirNotificacion
+end note
+
+note left of Agenda
+  La `Agenda` es la responsable de crear instancias de `Turno` (ver secuencias).
+  `Secretaria` solicita a `Agenda` y ésta instancia `Turno`.
+end note
+
+note bottom of Turno
+  Se acomodó `Llegada` como atributos dentro de `Turno` (horaRealLlegada, presente, diferenciaMinutos).
+  La clase independiente `LlegadaPaciente` fue eliminada: los diagramas de secuencia registran la llegada mediante `Turno.registrarLlegada(...)`, por lo que modelarla como atributos del `Turno` mantiene coherencia y simplicidad.
+end note
+
+@enduml
