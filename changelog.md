@@ -4,7 +4,7 @@
 
 ## [Released - Actividad Obligatoria N°4] - 2026-06-18
 
-### added
+### Added
 
 - [feature/analista-cu-2-3-add-anexo-cu2-cu3] Se agrega archivo analista-cu-2-3. PR: [#113](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/113) - @britezacostaalexis-pixel (Analista Funcional de Casos de Uso 2 y 3)
 
@@ -18,6 +18,7 @@
 
 **Notas con respecto a la PR 118**: Es una PR creada para que se pudiera mergear sin problemas con develop, ya que la [PR original #111](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/111) tuvo conflictos de merge. El autor original de dicha PR fue @nachonervi-design (Arquitecto de Dominio).
 
+- [fix/develop-correcciones-1] Se aplican las últimas correcciones, se actualiza el README.md y el changelog. PR: [#119](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/119) - @eternalnight04 (Documentador y Coordinador)
 
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
