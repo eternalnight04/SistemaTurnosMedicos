@@ -1,5 +1,5 @@
 
-@startuml
+@startuml 06-clases-diagrama-final
 title Diagrama de Clases - SistemaTurnosMedicos (refinado)
 
 ' Enumeraciones (simples)
