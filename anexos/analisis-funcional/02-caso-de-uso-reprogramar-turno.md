@@ -1,4 +1,3 @@
-```md
 # Caso de Uso N° 02 - Reprogramar Turno
 
 ---
@@ -164,5 +163,6 @@ Retornar resultado
 FIN
 ````
 
-```
-```
+````
+````
+
