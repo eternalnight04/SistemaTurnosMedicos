@@ -67,22 +67,21 @@ class Agenda {
 
 class Turno {
   - id: String
-  - fechaHoraProgramada
+  - fechaHoraProgramada: DateTime
   - paciente: Paciente
   - medico: Medico
   - estado: TurnoEstado
   - sobreturno: boolean
-  - horaRealLlegada
+  - horaRealLlegada: DateTime
   - presente: boolean
   - diferenciaMinutos: int
-  - historial
+  - historial: List<String>  ' ✅ CORRECCIÓN: Le pusimos tipo List<String> ya que la clase Historial fue eliminada
   + Turno(fechaHora, paciente, medico, sobreturno)
   + cambiarEstado(nuevoEstado): void
   + reprogramar(nuevaFechaHora): void
   + cancelar(motivo, usuarioId): void
   + registrarLlegada(horaReal): void
 }
-
 ' Herencia
 Secretaria --|> UsuarioDelSistema
 Paciente --|> UsuarioDelSistema
