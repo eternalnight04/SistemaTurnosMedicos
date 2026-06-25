@@ -1,4 +1,4 @@
-@startuml diagrama de clases 01: crear turno
+@startuml 01-clases-crear-turno-01
 
 title Diagrama de Clases - Crear Turno (CU-01)
 
@@ -46,8 +46,8 @@ class Medico {
 
 class Turno {
   + idTurno: Integer
-  + fecha: LocalDate
-  + hora: LocalTime
+  + fechaProgramada: LocalDate
+  + horaProgramada: LocalTime
   + estado: String
   + tipo: String
   + duracion: Integer
@@ -73,37 +73,22 @@ class Agenda {
   + mostrarTurnosDelMedico(medico: Medico): List<Turno>
 }
 
-class Historial {
-  - eventos: List<String>
-  --
-  + guardarEvento(evento: String): void
-  + obtenerEventos(): List<String>
-}
-
-class Notificacion {
-  + tipo: String
-  + destinatario: String
-  + mensaje: String
-  + canal: String
-  --
-  + enviar(destinatario: String, mensaje: String): Boolean
-}
 
 UsuarioDelSistema <|-- Paciente : hereda
 UsuarioDelSistema <|-- Secretaria : hereda
 UsuarioDelSistema <|-- Medico : hereda
 
-Secretaria --> Agenda : administra
-Secretaria --> Paciente : busca/registra
-Secretaria --> Medico : selecciona
+Secretaria "1 "--> "1" Agenda : administra
+Secretaria "1 "--> "N" Paciente : busca/registra
+Secretaria "1 "--> "1" Medico : selecciona
+Secretaria "1 "--> "N" Turno : administra
 
-Agenda "1" o-- "0..*" Turno : contiene
-Agenda "1" *-- "1" Historial : compone
-Agenda ..> Notificacion : utiliza
+Agenda "1" --> "N" Turno : contiene
 
-Turno "1" --> "1" Paciente : asigna a
+Paciente "1" --> "N" Turno : solicita
+
 Turno "1" --> "1" Medico : asigna a
 
-Historial --> Notificacion : usa
+Medico "1" -->  "1" Agenda : tiene
 
 @enduml
