@@ -1,21 +1,21 @@
 # Anexos
 
-En esta secci├│n se recopila el material de apoyo utilizado durante el an├ílisis y desarrollo del sistema.
+En esta sección se recopila el material de apoyo utilizado durante el análisis y desarrollo del sistema.
 
-## Fuentes de informaci├│n
+## Fuentes de información
 
-Para la construcci├│n del sistema se utilizaron diversas fuentes de dominio, entre ellas:
+Para la construcción del sistema se utilizaron diversas fuentes de dominio, entre ellas:
 
 * Audios de relevamiento funcional
 * Conversaciones y definiciones registradas en Slack
-* Fotograf├¡as de apuntes y cuadernos
-* Notas de an├ílisis realizadas por el equipo
+* Fotografías de apuntes y cuadernos
+* Notas de análisis realizadas por el equipo
 
 Estas fuentes permitieron comprender el contexto del problema y definir los requisitos del sistema.
 
-## Uso de la informaci├│n
+## Uso de la información
 
-La informaci├│n recolectada fue utilizada para:
+La información recolectada fue utilizada para:
 
 * Identificar actores del sistema
 * Definir casos de uso (UC-01 a UC-05)
@@ -24,6 +24,9 @@ La informaci├│n recolectada fue utilizada para:
 
 ## Consideraciones
 
-El contenido de los anexos representa informaci├│n preliminar y de apoyo, utilizada como base para la toma de decisiones durante el desarrollo.
+El contenido de los anexos representa información preliminar y de apoyo, utilizada como base para la toma de decisiones durante el desarrollo.
 
 ---
+
+- [Anexo - Introducción al Diseño Orientado a Objetos](./introduccion.md)
+- [Anexo - Análisis Funcional por Caso de Uso](./analisis-funcional/analisis_casos_uso.md)

@@ -2,6 +2,25 @@
 
 ## [Unreleased]
 
+## [Released - Actividad Obligatoria N°4] - 2026-06-18
+
+### Added
+
+- [feature/analista-cu-2-3-add-anexo-cu2-cu3] Se agrega archivo analista-cu-2-3. PR: [#113](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/113) - @britezacostaalexis-pixel (Analista Funcional de Casos de Uso 2 y 3)
+
+- [feature/analista-cu-4-5-add-anexo-cu4-cu5] Se agrega el archivo analista-cu-4-5 y el diagrama de registrar llegada. PR: [#114](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/114) - @lautarochavez14 (Analista Funcional de Casos de Uso 4 y 5)
+
+- [feature/coordinador-devops-add-anexo-cu1] Se agrega el archivo analista-cu-1.md, un diagrama de crear turno y un analisis funcional del mismo. PR: [#116](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/116) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/analisis-correccion] Se corrige una linea de analisis_casos_uso.md. PR: [#117](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/117) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/arquitecto-dominio-merge-conflicto] Se agrega el archivo arquitecto-dominio.md, happy-path-global.md, pilares-poo.md, el diagrama de clases final y capturas-pilares/. PR: [#118](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/118) - @eternalnight04 (Documentador y Coordinador)
+
+**Notas con respecto a la PR 118**: Es una PR creada para que se pudiera mergear sin problemas con develop, ya que la [PR original #111](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/111) tuvo conflictos de merge. El autor original de dicha PR fue @nachonervi-design (Arquitecto de Dominio).
+
+- [fix/develop-correcciones-1] Se aplican las últimas correcciones, se actualiza el README.md y el changelog. PR: [#119](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/119) - @eternalnight04 (Documentador y Coordinador)
+
+
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added

@@ -1,4 +1,4 @@
-@startuml
+@startuml 04-clases-registrar-llegada
 
 title Diagrama de Clases - Registrar Llegada del Paciente
 
@@ -7,7 +7,14 @@ class Secretaria {
     -nombre: String
 
     +registrarLlegada(paciente: Paciente, turno: Turno): LlegadaPaciente
-    +actualizarEstadoTurno(turno: Turno, estado: String): void
+    +actualizarEstadoTurno(turno: Turno, estado: EstadoTurno): void
+}
+
+enum EstadoTurno {
+    PROGRAMADO
+    EN_PROGRESO
+    COMPLETADO
+    CANCELADO
 }
 
 class Paciente {
@@ -30,8 +37,8 @@ class Turno {
 
 class LlegadaPaciente {
     -idLlegada: int
-    -horaLlegada: String
-
+    -horaLlegada: LocalTime
+    
     +registrar(): void
 }
 
@@ -42,11 +49,11 @@ class Agenda {
 }
 
 
+Secretaria --> Paciente
 Secretaria --> LlegadaPaciente
 Secretaria --> Turno
 Paciente --> Turno
 Agenda --> Turno
-
 LlegadaPaciente *-- Turno
 
 @enduml
