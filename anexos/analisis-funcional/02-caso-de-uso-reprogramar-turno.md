@@ -84,7 +84,7 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-02.png)
+[Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-02.png)
 
 **Clases involucradas:**
 
