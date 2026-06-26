@@ -3,7 +3,6 @@
 title Diagrama de Clases - Reprogramar Turno (CU-02)
 
 abstract class UsuarioDelSistema {
-  # id: Integer
   # nombre: String
   # email: String
   # telefono: String
@@ -39,7 +38,6 @@ class Medico {
   + atenderPaciente(turno: Turno): void
 }
 class Turno {
-  + idTurno: Integer
   + fechaHora: Date
   + estado: String
   + sobreturno: Boolean

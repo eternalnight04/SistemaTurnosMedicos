@@ -26,6 +26,7 @@
 
 - [fix/crear-turno-correcciones-1] Se corrigen 01-caso-de-uso-crear-turno.md, 01-clases-crear-turno-01.puml, analisis_casos_uso.md y 06-clases-diagrama-final.puml. PR: [#121](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/121) - @eternalnight04 (Documentador y Coordinador)
 
+- [fix/crear-turno-correcciones-2] Se eliminan iDs de los diagramas y se agregaron tres nuevas tarjetas CRC: Auditoria, UsuarioDelSistema y Notificacion. PR: [#124](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/124) - @eternalnight04 (Documentador y Coordinador)
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
