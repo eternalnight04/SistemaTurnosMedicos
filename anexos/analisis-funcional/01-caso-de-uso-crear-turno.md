@@ -157,12 +157,15 @@
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| [Paciente] | Solicitar turno médico, autenticarse en el sistema, confirmar o cancelar turno, recibir notificaciones de turno y gestionar datos personales | [link al archivo .md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| UsuarioDelSistema | Autenticar en el sistema y gestionar datos personales | [link al archivo .md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
+| Paciente | Solicitar turno médico, confirmar o cancelar turno, recibir notificaciones de turno | [link al archivo .md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
 | Medico | Consultar agenda de turnos, atender pacientes, registrar observaciones médicas y modificar disponibilidad | [link al archivo .md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
 | Turno | Registrar solicitud de turno, asignar turno a paciente y médico, modificar estado del turno y reprogramar turno | [link al archivo .md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
 | Agenda | Registrar disponibilidad de médicos, mostrar turnos programados y permitir búsqueda de turnos | [link al archivo .md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
 | Secretaria | Gestionar turnos, dar alta y baja a pacientes y consultar/modificar agendar médicas | [link al archivo .md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
-| Llegada Paciente | Registrar hora real de llegada, indicar si el paciente está presente y calcular la diferencia temporal | [link al archivo .md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-llegada-paciente.md) |
+| Notificacion | Notificar cambios y detalles de turno a pacientes y medicos | [link al archivo .md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-notificacion.md) |
+| Auditoria | Registrar cambios junto con el usuario asociado | [link al archivo .md](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
+|
 
 **Relaciones UML:**
 
@@ -177,6 +180,8 @@
 | Agregación | Agenda ```"1" o--``` Turno ```0..*``` | Es agregación (no composición) porque Agenda contiene múltiples Turnos sin controlar su ciclo de vida completo. Los Turnos pueden existir lógicamente independientes de esta Agenda específica. |
 | Asociación | Turno ```"1"-->``` Paciente ```"1"``` | Cada Turno se asigna a exactamente un Paciente específico. Es asociación porque existe una relación de negocio significativa: el turno registra la cita médica del paciente. |
 | Asociación | Turno ```"1"-->``` Medico ```"1"``` | Cada Turno se asigna a exactamente un Medico que lo atiende. Es asociación porque la relación es fundamental para el dominio: identifica quién atiende la cita. |
+| Composición | Agenda ```"1"*-->``` Notificacion ```0..*``` | Cada vez que se registra un nuevo turno o cambio en la agenda, se envía una notificación tanto para el médico como para el paciente. Es composición ya que Notificación solo responde a Agenda. |
+| Composición | Agenda ```"1"*-->``` Auditoria ```0..*``` | Cada vez que se registra un nuevo turno o cambio en la agenda, se registra el cambio con todos los detalles a auditoria. Es composición ya que Auditoria solo responde a Agenda. |
 
 ---
 
@@ -193,12 +198,12 @@ Secretaria secretaria = nueva Secretaria()
 Medico medico
 Agenda agenda = nueva Agenda()
 Turno turno
-LocalDate fechaSolicitada
-LocalTime horaSolicitada
+LocalDate fechaProgramada
+LocalTime horaProgramada
 String motivoConsulta
 
 // El paciente solicita un turno, especificando fecha y motivo
-paciente.solicitarTurno(fechaSolicitada, motivoConsulta)
+paciente.solicitarTurno(fechaProgramada, motivoConsulta)
 
 // La secretaria busca el paciente en el sistema
 paciente = agenda.buscarPaciente(paciente)
@@ -213,7 +218,7 @@ medico = secretaria.seleccionarProfesional(medico)
 
 // La secretaria valida que el horario solicitado esté disponible
 // en la agenda del médico seleccionado
-Boolean disponibleDisponible = agenda.validarDisponibilidad(fechaSolicitada, horaSolicitada)
+Boolean disponibleDisponible = agenda.validarDisponibilidad(fechaProgramada, horaProgramada)
 
 SI disponible es FALSO
     // El horario está fuera de la disponibilidad del médico
@@ -224,7 +229,7 @@ FIN SI
 
 // Se verifica que no exista otro turno en el mismo horario
 // (validación de conflictos de superposición)
-Boolean horarioLibre = agenda.verificarConflicto(medico, fechaSolicitada, horaSolicitada)
+Boolean horarioLibre = agenda.verificarConflicto(medico, fechaProgramada, horaProgramada)
 
 SI horarioLibre es FALSO
     // El horario ya está ocupado por otro turno
@@ -233,7 +238,7 @@ SI horarioLibre es FALSO
 FIN SI
 
 // Se procede a registrar el nuevo turno en la agenda
-turno = agenda.registrarTurno(paciente, medico, fechaSolicitada, horaSolicitada)
+turno = agenda.registrarTurno(paciente, medico, fechaProgramada, horaProgramada)
 
 // Se crea el turno con estado inicial "Confirmado"
 turno = turno.crearTurno(paciente, medico, estado="Confirmado")
@@ -241,12 +246,12 @@ turno = turno.crearTurno(paciente, medico, estado="Confirmado")
 // Se asigna el estado al turno de forma explícita
 turno.asignarEstado("Confirmado")
 
-// Se registra el evento en el historial para mantener trazabilidad
+// Se registra el evento en auditoría para mantener trazabilidad
 // del usuario (Secretaria) que realizó la acción
-agenda.registrarEnHistorial(usuario="secretaria", accion="crear_turno")
+auditoria.guardarEvento(usuario="secretaria", accion="crear_turno")
 
 // Se envía notificación al paciente confirmando su turno
-agenda.enviarNotificacion(paciente, mensaje="Turno confirmado")
+notificacion.enviar(paciente, mensaje="Turno confirmado")
 
 // Se muestra la confirmación a la secretaria en la agenda del médico
 secretaria.consultarAgendaMedica(medico)

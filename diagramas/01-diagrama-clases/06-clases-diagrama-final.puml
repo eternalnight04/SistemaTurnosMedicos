@@ -1,8 +1,7 @@
-
 @startuml 06-clases-diagrama-final
 title Diagrama de Clases - SistemaTurnosMedicos (refinado)
 
-' Enumeraciones (simples)
+' Enumeraciones
 enum TurnoEstado {
   PENDIENTE
   CONFIRMADO
@@ -12,7 +11,7 @@ enum TurnoEstado {
   REALIZADO
 }
 
-' Clases principales (tipos simplificados)
+' Clases principales
 abstract class UsuarioDelSistema {
   - id: String
   - nombre: String
@@ -54,7 +53,7 @@ class Secretaria {
 class Agenda {
   - id: String
   - medico: Medico
-  - turnos
+  - turnos: List<Turno>
   + verificarDisponibilidad(medicoId, fecha, hora): boolean
   + registrarDisponibilidad(medicoId, horario): void
   + crearTurno(fechaHora, paciente, medico, sobreturno): Turno
@@ -67,15 +66,15 @@ class Agenda {
 
 class Turno {
   - id: String
-  - fechaHoraProgramada
+  - fechaHoraProgramada: DateTime
   - paciente: Paciente
   - medico: Medico
   - estado: TurnoEstado
   - sobreturno: boolean
-  - horaRealLlegada
+  - horaRealLlegada: DateTime
   - presente: boolean
   - diferenciaMinutos: int
-  - historial
+  - historial: List<String>
   + Turno(fechaHora, paciente, medico, sobreturno)
   + cambiarEstado(nuevoEstado): void
   + reprogramar(nuevaFechaHora): void
@@ -83,53 +82,40 @@ class Turno {
   + registrarLlegada(horaReal): void
 }
 
-' Soporte/servicios del dominio (para ejemplificar dependencia)
-class Notificador {
-  + enviar(destino, mensaje): void
-}
-
-class RegistroHistorial {
-  + registrar(entrada): void
-}
-
 ' Herencia
+Secretaria --|> UsuarioDelSistema
 Paciente --|> UsuarioDelSistema
 Medico --|> UsuarioDelSistema
-Secretaria --|> UsuarioDelSistema
 
-' Relaciones: asociación, agregación, composición, dependencia
-' Agregación: Medico tiene una Agenda (la Agenda puede existir separada)
-Medico o-- Agenda : agenda
+' Relaciones con cardinalidades RC11
+' Agregación: Medico tiene una Agenda
+Medico "1" o-- "1" Agenda : agenda
 
-' Composición: Agenda compone Turnos (si la Agenda se borra, sus turnos también)
-Agenda *-- Turno : contiene
+' Composición: Agenda compone Turnos
+Agenda "1" *-- "0..*" Turno : contiene
 
-' Asociación normal (con multiplicidades)
+' Asociaciones con multiplicidades
 Paciente "1" -- "0..*" Turno : turnos
 Medico "1" -- "0..*" Turno : turnos
 Secretaria "1" -- "0..*" Turno : gestiona
 
-' Dependencia: Secretaria depende de Agenda para buscar disponibilidad
+' Dependencia (sin cardinalidad)
 Secretaria ..> Agenda : usa
 
-' Dependencias adicionales: Agenda usa Notificador y RegistroHistorial
-Agenda ..> Notificador : usa
-Agenda ..> RegistroHistorial : registra
-
-' Notas y trazabilidad
+' Notas
 note right of Paciente
   Responsabilidades según tarjetas CRC:
   - solicitarTurno, confirmar/cancelar, recibirNotificacion
 end note
 
 note left of Agenda
-  La `Agenda` es la responsable de crear instancias de `Turno` (ver secuencias).
+  La `Agenda` es la responsable de crear instancias de `Turno`.
   `Secretaria` solicita a `Agenda` y ésta instancia `Turno`.
 end note
 
 note bottom of Turno
-  Se acomodó `Llegada` como atributos dentro de `Turno` (horaRealLlegada, presente, diferenciaMinutos).
-  La clase independiente `LlegadaPaciente` fue eliminada: los diagramas de secuencia registran la llegada mediante `Turno.registrarLlegada(...)`, por lo que modelarla como atributos del `Turno` mantiene coherencia y simplicidad.
+  Se acomodó `Llegada` como atributos dentro de `Turno`.
+  La clase `LlegadaPaciente` fue eliminada.
 end note
 
 @enduml

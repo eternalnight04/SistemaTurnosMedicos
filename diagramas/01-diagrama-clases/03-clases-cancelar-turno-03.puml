@@ -4,7 +4,6 @@ title Diagrama de Clases - Cancelar Turno (CU-03)
 
 
 abstract class UsuarioDelSistema {
-  # id: Integer
   # nombre: String
   # email: String
   # telefono: String
@@ -40,7 +39,6 @@ class Medico {
 
 
 class Turno {
-  + idTurno: Integer
   + fechaHora: Date
   + estado: String
   + sobreturno: Boolean
@@ -62,7 +60,7 @@ class Agenda {
   + enviarNotificacionMedico(medico: Medico, mensaje: String): Boolean
 }
 
-class Historial {
+class Auditoria {
   - eventos: List<String>
   --
   + guardarEvento(evento: String): void
@@ -86,10 +84,10 @@ Paciente "1" --> "0..*" Turno : solicita
 Medico "1" --> "0..*" Turno : atiende
 Secretaria --> Agenda : administra
 Secretaria ..> Turno : confirma/cancela
-Secretaria ..> Historial : registra
+Secretaria ..> Auditoria : registra
 
 Agenda "1" o-- "0..*" Turno : contiene
-Agenda "1" *-- "1" Historial : compone
+Agenda "1" *-- "1" Auditoria : compone
 Agenda ..> Notificacion : utiliza
 Agenda ..> Paciente : notifica
 Agenda ..> Medico : notifica

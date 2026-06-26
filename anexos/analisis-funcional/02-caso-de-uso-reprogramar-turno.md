@@ -1,4 +1,3 @@
-```md
 # Caso de Uso N° 02 - Reprogramar Turno
 
 ---
@@ -91,11 +90,14 @@
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| Paciente | Solicitar turno médico | ../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md |
-| Medico | Modificar disponibilidad | ../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md |
-| Turno | Reprogramar turno y modificar estado del turno | ../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md |
-| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | ../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md |
-| Secretaria | Gestionar turnos (reprogramar) | ../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md |
+| Paciente | Solicitar turno médico | [link al archivo md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| Medico | Modificar disponibilidad | [link al archivo md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| Turno | Reprogramar turno y modificar estado del turno | [link al archivo md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | [link al archivo md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
+| Secretaria | Gestionar turnos (reprogramar) | [link al archivo md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| UsuarioDelSistema | Autenticar y actualizar datos | [link al archivo md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
+| Auditoria | Registrar cambios y eventos | [link al archivo md](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
+| Notificacion | Enviar notificacion | [link al archivo md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-notificacion.md) |
 
 **Relaciones UML:**
 
@@ -108,7 +110,7 @@
 | Dependencia | Secretaria → Medico | La secretaria consulta la disponibilidad del médico antes de confirmar el cambio. |
 | Dependencia | Secretaria → Turno | La secretaria interactúa con el turno para ejecutar la reprogramación. |
 | Agregación | Agenda → Turno | La agenda administra múltiples turnos sin controlar completamente su ciclo de vida. |
-| Composición | Agenda → Historial | El historial forma parte de la agenda y depende de ella para existir. |
+| Composición | Agenda → Auditoria | Auditoria forma parte de la agenda y depende de ella para existir. |
 | Dependencia | Agenda → Notificacion | La agenda utiliza el servicio de notificaciones para informar cambios. |
 | Asociación | Turno → Paciente | Cada turno se encuentra asociado a un paciente. |
 | Asociación | Turno → Medico | Cada turno se encuentra asociado a un médico. |
@@ -117,8 +119,9 @@
 
 ## 6. Pseudocódigo
 
-```text
-INICIO Reprogramar Turno
+```
+
+ Reprogramar Turno
 
 // El paciente solicita modificar el horario de un turno existente
 
@@ -139,10 +142,10 @@ SI resultado es válido
     turno.cambiarEstado("Reprogramado")
 
     // Se registra la modificación para mantener trazabilidad
-    agenda.registrarEnHistorial("Secretaria", "Reprogramación de turno")
+    auditoria.guardarEvento("Secretaria", "Reprogramación de turno")
 
     // Se informa al paciente el nuevo horario asignado
-    agenda.enviarNotificacion(paciente, "Turno reprogramado")
+    notificacion.enviar(paciente, "Turno reprogramado")
 SINO
     // Se detecta un conflicto y se ofrecen horarios alternativos
     alternativas = agenda.sugerirHorariosAlternativos(nuevoHorario)
@@ -150,8 +153,8 @@ SINO
     SI usuario selecciona una alternativa de la lista
         turno.actualizarTurno(alternativaSeleccionada)
         turno.cambiarEstado("Reprogramado")
-        agenda.registrarEnHistorial("Secretaria", "Reprogramación de turno")
-        agenda.enviarNotificacion(paciente, "Turno reprogramado")
+        auditoria.guardarEvento("Secretaria", "Reprogramación de turno")
+        notificacion.enviar(paciente, "Turno reprogramado")
     SINO
         // Flujo alternativo: usuario no selecciona alternativa
         Retornar "Reprogramación cancelada - sin cambios"
@@ -162,7 +165,6 @@ FIN SI
 Retornar resultado
 
 FIN
-````
+```
 
-```
-```
+

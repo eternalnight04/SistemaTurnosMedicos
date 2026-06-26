@@ -1,49 +1,114 @@
-# Happy Path Global: creación de turno hasta llegada del paciente
+// =========================================================
+// HAPPY PATH GLOBAL - SISTEMA DE TURNOS MÉDICOS
+// Escenario: Atención médica completa con reprogramación
+// =========================================================
 
-## Tabla de trazabilidad (Caso de uso → Clases/métodos → Diagramas de secuencia)
+// 1. AUTENTICACIÓN DE LA SECRETARIA
+Secretaria secretaria = new Secretaria("SEC-001", "Laura", "12345678")
+boolean acceso = secretaria.autenticar("password123")
 
- - Crear turno: `Secretaria.solicitarTurno()` → `Agenda.verificarDisponibilidad()` → `Agenda.crearTurno()` → `Turno` → [01-secuencia-crear-turno.puml](../../diagramas/05-diagramas-secuencia/01-secuencia-crear-turno.puml)
- - Reprogramar turno: `Secretaria.reprogramarTurno()` / `Turno.reprogramar()` / `Agenda.verificarDisponibilidad()` → [02-secuencia-reprogramar-turno.puml](../../diagramas/05-diagramas-secuencia/02-secuencia-reprogramar-turno.puml)
- - Cancelar turno: `Secretaria.cancelarTurno()` / `Turno.cancelar()` / `Agenda.liberarHorario()` → [03-secuencia-cancelar-turno.puml](../../diagramas/05-diagramas-secuencia/03-secuencia-cancelar-turno.puml)
- - Autorizar sobreturno: `Medico.autorizarSobreturno()` / `Agenda.confirmarAutorizacion()` / `Turno.crearTurno(sobreturno=true)` → [04-secuencia-autorizar-sobreturno.puml](../../diagramas/05-diagramas-secuencia/04-secuencia-autorizar-sobreturno.puml)
- - Registrar llegada: `Secretaria.registrarLlegada()` → `Agenda.buscarTurno()` → `Turno.registrarLlegada(horaReal)` (el cálculo de diferencia se realiza dentro de `Turno`) → [05-secuencia-registrar-llegada.puml](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada.puml)
+SI (acceso == VERDADERO) ENTONCES
+    ESCRIBIR "Secretaria Laura ha iniciado sesión"
+FIN SI
 
-## Pseudocódigo orientado a objetos (flujo happy path)
+// 2. CREACIÓN DE TURNO (CU01)
+// La secretaria registra un nuevo turno para un paciente
+Paciente paciente = new Paciente("PAC-001", "Juan García", "30123456")
+Medico medico = new Medico("MED-001", "Dr. Molina", "Cardiología")
+Agenda agenda = new Agenda("AG-001", medico)
 
-class Sistema {
-  agenda: Agenda
-  secretaria: Secretaria
-  medico: Medico
+// Verificar disponibilidad del médico
+boolean disponible = agenda.verificarDisponibilidad("MED-001", "2026-06-30", "10:00")
 
-  crearTurno(pacienteId, medicoId, fechaHora, tipo) {
-    if (!agenda.verificarDisponibilidad(medicoId, fechaHora.date, fechaHora.time)) {
-      alternativas = agenda.sugerirHorariosAlternativos(medicoId, fechaHora.date)
-      return alternativas
-    }
-    turno = agenda.crearTurno(fechaHora, pacienteRepository.get(pacienteId), medicoRepository.get(medicoId), sobreturno=false)
-    agenda.registrarEnHistorial(turno.id, "crear")
-    pacienteRepository.notify(pacienteId, "Turno confirmado: " + turno.id)
-    return turno
-  }
+SI (disponible == VERDADERO) ENTONCES
+    // Crear el turno
+    Turno turno = agenda.crearTurno("2026-06-30 10:00", paciente, medico, FALSO)
+    turno.cambiarEstado(TurnoEstado.CONFIRMADO)
+    
+    // Registrar en historial y notificar
+    auditoria.guardarEvento(turno.id, "Turno creado y confirmado")
+    paciente.recibirNotificacion("Su turno ha sido confirmado para el 30/06 a las 10:00")
+    
+    ESCRIBIR "Turno creado: " + turno.id + " - Estado: CONFIRMADO"
+FIN SI
 
-  registrarLlegada(turnoId, horaReal) {
-    turno = agenda.buscarTurno(turnoId)
-    turno.registrarLlegada(horaReal)
-    /* La llegada se registra dentro del Turno; los atributos horaRealLlegada, presente y diferenciaMinutos quedan en Turno */
-    agenda.registrarEnHistorial(turno.id, "registrar_llegada")
-    medico.notifyPresencia(turno.paciente.id, turno.id)
-  }
-}
+// 3. REPROGRAMACIÓN DEL TURNO (CU02)
+// El paciente solicita cambiar el horario
+DateTime nuevaFechaHora = "2026-06-30 14:00"
 
-## Flujo completo (paso a paso)
+// Verificar si hay conflicto en el nuevo horario
+boolean hayConflicto = !agenda.verificarDisponibilidad("MED-001", "2026-06-30", "14:00")
 
-1. Paciente solicita turno a la `Secretaria` (o por interfaz paciente).
-2. `Secretaria` invoca `Agenda.verificarDisponibilidad(medicoId, fecha, hora)`.
-3. Si disponible: `Agenda` crea/encarga `Turno.crearTurno(...)` y `Turno.cambiarEstado(CONFIRMADO)`.
-4. `Agenda` registra la acción en historial y envía notificación al `Paciente`.
-5. Día del turno: `Paciente` se presenta y la `Secretaria` ejecuta `Turno.registrarLlegada(horaReal)`.
-6. `Turno` cambia estado a `PRESENTE` y `Agenda` notifica al `Medico`.
-7. `Medico` atiende y puede registrar observaciones en `Turno`.
+SI (hayConflicto == VERDADERO) ENTONCES
+    // Buscar horarios alternativos
+    Lista<DateTime> alternativas = agenda.sugerirHorariosAlternativos("MED-001", "2026-06-30")
+    nuevaFechaHora = alternativas[0] // Seleccionar primera alternativa disponible
+FIN SI
 
-***
-Los métodos y nombres usados en el pseudocódigo están alineados con las tarjetas CRC y diagramas de secuencia analizados.
+// Reprogramar el turno
+boolean reprogramado = turno.reprogramar(nuevaFechaHora)
+
+SI (reprogramado == VERDADERO) ENTONCES
+    turno.cambiarEstado(TurnoEstado.REPROGRAMADO)
+    auditoria.guardarEvento(turno.id, "Turno reprogramado al " + nuevaFechaHora)
+    paciente.recibirNotificacion("Su turno fue reprogramado para las 14:00")
+    
+    ESCRIBIR "Turno reprogramado exitosamente"
+FIN SI
+
+// 4. REGISTRO DE LLEGADA DEL PACIENTE (CU05)
+// El día del turno, el paciente llega al consultorio
+DateTime horaRealLlegada = "2026-06-30 13:50"
+
+turno.registrarLlegada(horaRealLlegada)
+
+// El sistema calcula si llegó a tiempo
+SI (turno.presente == VERDADERO) ENTONCES
+    turno.cambiarEstado(TurnoEstado.PRESENTE)
+    ESCRIBIR "Paciente presente. Diferencia: " + turno.diferenciaMinutos + " minutos"
+SINO
+    ESCRIBIR "Paciente ausente o llegó tarde"
+FIN SI
+
+// 5. ATENCIÓN MÉDICA Y CIERRE DEL TURNO
+// El médico consulta su agenda del día
+Lista<Turno> agendaDiaria = medico.consultarAgenda("2026-06-30")
+
+// El médico atiende al paciente y registra observaciones
+medico.registrarObservacion(turno.id, "Paciente presenta presión arterial normal. Se mantiene tratamiento.")
+
+// Marcar el turno como realizado
+turno.cambiarEstado(TurnoEstado.REALIZADO)
+auditoria.guardarEvento(turno.id, "Turno realizado - Atención completada")
+
+ESCRIBIR "Atención finalizada. Turno " + turno.id + " marcado como REALIZADO"
+
+// 6. AUTORIZACIÓN DE SOBRETURNO (CU04) - Escenario alternativo
+// Llega un paciente con urgencia y se necesita un sobreturno
+Paciente pacienteUrgencia = new Paciente("PAC-002", "María López", "31987654")
+
+// El médico debe autorizar el sobreturno
+boolean autorizado = medico.autorizarSobreturno("SOLICITUD-001")
+
+SI (autorizado == VERDADERO) ENTONCES
+    Turno sobreturno = agenda.crearTurno("2026-06-30 15:00", pacienteUrgencia, medico, VERDADERO)
+    sobreturno.cambiarEstado(TurnoEstado.CONFIRMADO)
+    
+    ESCRIBIR "Sobreturno autorizado y creado: " + sobreturno.id
+FIN SI
+
+
+| Paso | Clase | Método | Origen (CRC/Diagrama/CU) |
+|---|---|---|---|
+| 1. Autenticación | Secretaria | autenticar(password) | CRC UsuarioDelSistema |
+| 2. Crear Turno | Agenda | crearTurno(fecha, paciente, medico, sobreturno) | CRC Agenda / CU01 |
+| 2. Verificar disponibilidad | Agenda | verificarDisponibilidad(medicoId, fecha, hora) | CRC Agenda / CU01 |
+| 2. Cambiar estado | Turno | cambiarEstado(nuevoEstado) | CRC Turno / CU01 |
+| 2. Notificar | Paciente | recibirNotificacion(mensaje) | CRC Paciente / CU01 |
+| 3. Reprogramar | Turno | reprogramar(nuevaFechaHora) | CRC Turno / CU02 |
+| 3. Sugerir alternativas | Agenda | sugerirHorariosAlternativos(medicoId, fecha) | CRC Agenda / CU02 |
+| 4. Registrar llegada | Turno | registrarLlegada(horaReal) | CRC Turno / CU05 |
+| 5. Consultar agenda | Medico | consultarAgenda(fecha) | CRC Medico |
+| 5. Registrar observación | Medico | registrarObservacion(turnoId, observacion) | CRC Medico |
+| 6. Autorizar sobreturno | Medico | autorizarSobreturno(solicitudId) | CRC Medico / CU04 |
+
