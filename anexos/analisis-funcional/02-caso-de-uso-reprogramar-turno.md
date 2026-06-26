@@ -129,6 +129,8 @@ Paciente paciente = nuevo Paciente()
 Secretaria secretaria = nuevo Secretaria()
 Agenda agenda = nuevo Agenda()
 Turno turno = nuevo Turno()
+Auditoria auditoria = nuevo Auditoria()
+Notificacion notificacion = nuevo Notificacion()
 
 // La secretaria busca el turno solicitado por el paciente
 turno = agenda.obtenerTurno(paciente)

@@ -198,6 +198,8 @@ Secretaria secretaria = nueva Secretaria()
 Medico medico
 Agenda agenda = nueva Agenda()
 Turno turno
+Auditoria auditoria = nuevo Auditoria()
+Notificacion notificacion = nuevo Notificacion()
 LocalDate fechaProgramada
 LocalTime horaProgramada
 String motivoConsulta
