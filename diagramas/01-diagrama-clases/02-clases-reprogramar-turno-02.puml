@@ -62,7 +62,7 @@ class Agenda {
 }
 
 
-class Historial {
+class Auditoria {
   - eventos: List<String>
   --
   + guardarEvento(evento: String): void
@@ -87,7 +87,7 @@ Secretaria ..> Medico : consulta disponibilidad
 Secretaria ..> Turno : reprograma
 
 Agenda "1" o-- "0..*" Turno : contiene
-Agenda "1" *-- "1" Historial : compone
+Agenda "1" *-- "1" Auditoria : compone
 Agenda ..> Notificacion : utiliza
 
 Turno "1" --> "1" Paciente : asigna a

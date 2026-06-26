@@ -3,7 +3,6 @@
 title Diagrama de Clases - Crear Turno (CU-01)
 
 abstract class UsuarioDelSistema {
-  # id: Integer
   # nombre: String
   # email: String
   # telefono: String
@@ -45,10 +44,10 @@ class Medico {
 }
 
 class Turno {
-  + idTurno: Integer
   + fechaProgramada: LocalDate
   + horaProgramada: LocalTime
   + estado: String
+  + sobreturno: Boolean
   + tipo: String
   + duracion: Integer
   --
@@ -60,7 +59,6 @@ class Turno {
 }
 
 class Agenda {
-  - idAgenda: Integer
   - turnos: List<Turno>
   --
   + buscarPaciente(paciente: Paciente): Paciente
