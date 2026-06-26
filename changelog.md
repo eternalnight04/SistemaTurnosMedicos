@@ -28,6 +28,10 @@
 
 - [fix/crear-turno-correcciones-2] Se eliminan iDs de los diagramas y se agregaron tres nuevas tarjetas CRC: Auditoria, UsuarioDelSistema y Notificacion. PR: [#124](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/124) - @eternalnight04 (Documentador y Coordinador)
 
+- [fix/reprogramar-turno-correcciones-1] Se renombraron clases y métodos del happy path global. PR: [#125](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/125) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/reprogramar-turno-correcciones-2] Se renombraron clases y se agregaron links a las nuevas tarjetas crc. PR: [#126](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/126) - @eternalnight04 (Documentador y Coordinador)
+
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
