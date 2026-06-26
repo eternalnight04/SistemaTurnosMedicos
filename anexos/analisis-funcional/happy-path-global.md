@@ -26,7 +26,7 @@ SI (disponible == VERDADERO) ENTONCES
     turno.cambiarEstado(TurnoEstado.CONFIRMADO)
     
     // Registrar en historial y notificar
-    agenda.registrarEnHistorial(turno.id, "Turno creado y confirmado")
+    auditoria.guardarEvento(turno.id, "Turno creado y confirmado")
     paciente.recibirNotificacion("Su turno ha sido confirmado para el 30/06 a las 10:00")
     
     ESCRIBIR "Turno creado: " + turno.id + " - Estado: CONFIRMADO"
@@ -50,7 +50,7 @@ boolean reprogramado = turno.reprogramar(nuevaFechaHora)
 
 SI (reprogramado == VERDADERO) ENTONCES
     turno.cambiarEstado(TurnoEstado.REPROGRAMADO)
-    agenda.registrarEnHistorial(turno.id, "Turno reprogramado al " + nuevaFechaHora)
+    auditoria.guardarEvento(turno.id, "Turno reprogramado al " + nuevaFechaHora)
     paciente.recibirNotificacion("Su turno fue reprogramado para las 14:00")
     
     ESCRIBIR "Turno reprogramado exitosamente"
@@ -79,7 +79,7 @@ medico.registrarObservacion(turno.id, "Paciente presenta presión arterial norma
 
 // Marcar el turno como realizado
 turno.cambiarEstado(TurnoEstado.REALIZADO)
-agenda.registrarEnHistorial(turno.id, "Turno realizado - Atención completada")
+auditoria.guardarEvento(turno.id, "Turno realizado - Atención completada")
 
 ESCRIBIR "Atención finalizada. Turno " + turno.id + " marcado como REALIZADO"
 
