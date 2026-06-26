@@ -34,7 +34,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/03-caso-uso-cancelar-turno-03.png)
+![Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-cancelar-turno.png)
 
 **Actores y relaciones:**
 
@@ -77,17 +77,17 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-caso-uso-03.png)
+![Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-03.png)
 
 **Clases involucradas:**
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| Paciente | Confirmar o cancelar turno y recibir notificaciones de turno | ../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md |
-| Medico | Consultar agenda de turnos | ../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md |
-| Turno | Modificar estado del turno | ../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md |
-| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | ../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md |
-| Secretaria | Gestionar turnos (cancelar) | ../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md |
+| Paciente | Confirmar o cancelar turno y recibir notificaciones de turno | [Tarjeta CRC - paciente](/herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md)|
+| Medico | Consultar agenda de turnos | [Tarjeta CRC - Medico](/herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| Turno | Modificar estado del turno | [Tarjeta CRC - Turno](/herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | [Tarjeta CRC - Agenda](/herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
+| Secretaria | Gestionar turnos (cancelar) | [Tarjeta CRC - Secretaria](/herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
 
 **Relaciones UML:**
 

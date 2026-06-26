@@ -1,4 +1,3 @@
-```md
 # Caso de Uso N° 02 - Reprogramar Turno
 
 ---
@@ -117,8 +116,9 @@
 
 ## 6. Pseudocódigo
 
-```text
-INICIO Reprogramar Turno
+```
+
+ Reprogramar Turno
 
 // El paciente solicita modificar el horario de un turno existente
 
@@ -162,7 +162,6 @@ FIN SI
 Retornar resultado
 
 FIN
-````
+```
 
-```
-```
+
