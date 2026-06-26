@@ -71,6 +71,20 @@ class Agenda {
   + mostrarTurnosDelMedico(medico: Medico): List<Turno>
 }
 
+class Notificacion {
+  + tipo: String
+  + mensaje: String
+  --
+  + enviarNotificacion(paciente: Paciente, medico: Medico, mensaje: String): Boolean
+}
+
+class Auditoria {
+  - eventos: List<String>
+  --
+  + guardarEvento(evento: String): void
+  + obtenerEventos(): List<String>
+}
+
 
 UsuarioDelSistema <|-- Paciente : hereda
 UsuarioDelSistema <|-- Secretaria : hereda
@@ -82,6 +96,8 @@ Secretaria "1 "--> "1" Medico : selecciona
 Secretaria "1 "--> "N" Turno : administra
 
 Agenda "1" --> "N" Turno : contiene
+Agenda "1" *-- "1" Auditoria : compone
+Agenda "1" *-- "N" Notificacion : compone
 
 Paciente "1" --> "N" Turno : solicita
 

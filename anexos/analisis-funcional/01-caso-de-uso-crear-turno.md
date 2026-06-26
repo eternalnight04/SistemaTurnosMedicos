@@ -157,11 +157,14 @@
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| Paciente | Solicitar turno médico, autenticarse en el sistema, confirmar o cancelar turno, recibir notificaciones de turno y gestionar datos personales | [link al archivo .md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| UsuarioDelSistema | Autenticar en el sistema y gestionar datos personales | [link al archivo .md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
+| Paciente | Solicitar turno médico, confirmar o cancelar turno, recibir notificaciones de turno | [link al archivo .md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
 | Medico | Consultar agenda de turnos, atender pacientes, registrar observaciones médicas y modificar disponibilidad | [link al archivo .md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
 | Turno | Registrar solicitud de turno, asignar turno a paciente y médico, modificar estado del turno y reprogramar turno | [link al archivo .md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
 | Agenda | Registrar disponibilidad de médicos, mostrar turnos programados y permitir búsqueda de turnos | [link al archivo .md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
 | Secretaria | Gestionar turnos, dar alta y baja a pacientes y consultar/modificar agendar médicas | [link al archivo .md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| Notificacion | Notificar cambios y detalles de turno a pacientes y medicos | [link al archivo .md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-notificacion.md) |
+| Auditoria | Registrar cambios junto con el usuario asociado | [link al archivo .md](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
 |
 
 **Relaciones UML:**
@@ -177,6 +180,8 @@
 | Agregación | Agenda ```"1" o--``` Turno ```0..*``` | Es agregación (no composición) porque Agenda contiene múltiples Turnos sin controlar su ciclo de vida completo. Los Turnos pueden existir lógicamente independientes de esta Agenda específica. |
 | Asociación | Turno ```"1"-->``` Paciente ```"1"``` | Cada Turno se asigna a exactamente un Paciente específico. Es asociación porque existe una relación de negocio significativa: el turno registra la cita médica del paciente. |
 | Asociación | Turno ```"1"-->``` Medico ```"1"``` | Cada Turno se asigna a exactamente un Medico que lo atiende. Es asociación porque la relación es fundamental para el dominio: identifica quién atiende la cita. |
+| Composición | Agenda ```"1"*-->``` Notificacion ```0..*``` | Cada vez que se registra un nuevo turno o cambio en la agenda, se envía una notificación tanto para el médico como para el paciente. Es composición ya que Notificación solo responde a Agenda. |
+| Composición | Agenda ```"1"*-->``` Auditoria ```0..*``` | Cada vez que se registra un nuevo turno o cambio en la agenda, se registra el cambio con todos los detalles a auditoria. Es composición ya que Auditoria solo responde a Agenda. |
 
 ---
 
@@ -243,10 +248,10 @@ turno.asignarEstado("Confirmado")
 
 // Se registra el evento en auditoría para mantener trazabilidad
 // del usuario (Secretaria) que realizó la acción
-agenda.registrarEnHistorial(usuario="secretaria", accion="crear_turno")
+auditoria.guardarEvento(usuario="secretaria", accion="crear_turno")
 
 // Se envía notificación al paciente confirmando su turno
-agenda.enviarNotificacion(paciente, mensaje="Turno confirmado")
+notificacion.enviar(paciente, mensaje="Turno confirmado")
 
 // Se muestra la confirmación a la secretaria en la agenda del médico
 secretaria.consultarAgendaMedica(medico)
