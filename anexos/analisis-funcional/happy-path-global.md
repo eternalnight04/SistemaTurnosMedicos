@@ -175,17 +175,19 @@ La siguiente tabla vincula cada paso del pseudocódigo con los artefactos previo
 
 | Paso | Clase | Método | Origen (CRC/Diagrama/CU) |
 |------|-------|--------|--------------------------|
-| 1. Autenticación | `Secretaria` (hereda de `UsuarioDelSistema`) | `autenticar(password)` | CRC UsuarioDelSistema |
-| 2. Alta de paciente | `Secretaria` | `darAltaPaciente(datos)` | CRC Secretaria / CU01 |
-| 3. Verificar disponibilidad | `Agenda` | `verificarDisponibilidad(medicoId, fecha, hora)` | CRC Agenda / CU01 |
-| 4. Crear turno | `Agenda` | `crearTurno(fechaHora, paciente, medico, sobreturno)` | CRC Agenda / CU01 |
-| 4. Cambiar estado | `Turno` | `cambiarEstado(nuevoEstado)` | CRC Turno / CU01 |
-| 5. Notificar | `Paciente` | `recibirNotificacion(mensaje)` | CRC Paciente / CU01 |
-| 6. Confirmar turno | `Paciente` | `confirmarTurno(turnoId)` | CRC Paciente / CU01 |
-| 7. Reprogramar | `Turno` | `reprogramar(nuevaFechaHora)` | CRC Turno / CU02 |
-| 7. Sugerir alternativas | `Agenda` | `sugerirHorariosAlternativos(medicoId, fecha)` | CRC Agenda / CU02 |
-| 8. Registrar llegada | `Turno` | `registrarLlegada(horaReal)` | CRC Turno / CU05 |
-| 9. Consultar agenda | `Medico` | `consultarAgenda(fecha)` | CRC Medico |
-| 9. Registrar observación | `Medico` | `registrarObservacion(turnoId, observacion)` | CRC Medico |
-| 10. Finalizar turno | `Turno` | `cambiarEstado(TurnoEstado.REALIZADO)` | Enum TurnoEstado |
-| 11. Autorizar sobreturno | `Medico` | `autorizarSobreturno(solicitudId)` | CRC Medico / CU04 |
+| 1. Autenticación | [`Secretaria`](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) (hereda de [`UsuarioDelSistema`](../../herramientas-agile/tarjetas-crc/00-tarjeta-crc-usuario-del-sistema.md)) | `autenticar(password)` | [CRC UsuarioDelSistema](../../herramientas-agile/tarjetas-crc/00-tarjeta-crc-usuario-del-sistema.md) |
+| 2. Alta de paciente | [`Secretaria`](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) | `darAltaPaciente(datos)` | [CRC Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 3. Verificar disponibilidad | [`Agenda`](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) | `verificarDisponibilidad(medicoId, fecha, hora)` | [CRC Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 4. Crear turno | [`Agenda`](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) | `crearTurno(fechaHora, paciente, medico, sobreturno)` | [CRC Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 4. Cambiar estado | [`Turno`](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) | `cambiarEstado(nuevoEstado)` | [CRC Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 5. Notificar | [`Paciente`](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) | `recibirNotificacion(mensaje)` | [CRC Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 6. Confirmar turno | [`Paciente`](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) | `confirmarTurno(turnoId)` | [CRC Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) / [CU01](01-caso-de-uso-crear-turno.md) |
+| 7. Reprogramar | [`Turno`](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) | `reprogramar(nuevaFechaHora)` | [CRC Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) / [CU02](02-caso-de-uso-reprogramar-turno.md) |
+| 7. Sugerir alternativas | [`Agenda`](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) | `sugerirHorariosAlternativos(medicoId, fecha)` | [CRC Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) / [CU02](02-caso-de-uso-reprogramar-turno.md) |
+| 8. Registrar llegada | [`Turno`](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) | `registrarLlegada(horaReal)` | [CRC Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) / [CU05](05-caso-de-uso-registrar-llegada.md) |
+| 9. Consultar agenda | [`Medico`](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) | `consultarAgenda(fecha)` | [CRC Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| 9. Registrar observación | [`Medico`](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) | `registrarObservacion(turnoId, observacion)` | [CRC Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| 10. Finalizar turno | [`Turno`](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) | `cambiarEstado(TurnoEstado.REALIZADO)` | Enum TurnoEstado |
+| 11. Autorizar sobreturno | [`Medico`](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) | `autorizarSobreturno(solicitudId)` | [CRC Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) / [CU04](04-caso-de-uso-autorizar-sobreturno.md) |
+
+**Nota:** Todos los links apuntan a los archivos reales del repositorio. Si alguna tarjeta CRC no existe (ej: `00-tarjeta-crc-usuario-del-sistema.md`), eliminá el link y dejá solo el texto.

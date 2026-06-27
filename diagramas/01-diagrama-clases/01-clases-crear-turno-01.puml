@@ -12,8 +12,8 @@ abstract class UsuarioDelSistema {
 }
 
 class Paciente {
-  + dni: String
-  + domicilio: String
+  - dni: String
+  - domicilio: String
   --
   + solicitarTurno(fecha: LocalDate, motivo: String): void
   + confirmarTurno(): void
@@ -22,7 +22,7 @@ class Paciente {
 }
 
 class Secretaria {
-  + legajo: String
+  - legajo: String
   --
   + buscarPaciente(paciente: Paciente): Paciente
   + seleccionarProfesional(medico: Medico): Medico
@@ -34,8 +34,8 @@ class Secretaria {
 }
 
 class Medico {
-  + matricula: String
-  + especialidad: String
+  - matricula: String
+  - especialidad: String
   --
   + consultarAgenda(): List<Turno>
   + atenderPaciente(turno: Turno): void
@@ -44,12 +44,12 @@ class Medico {
 }
 
 class Turno {
-  + fechaProgramada: LocalDate
-  + horaProgramada: LocalTime
-  + estado: String
-  + sobreturno: Boolean
-  + tipo: String
-  + duracion: Integer
+  - fechaProgramada: LocalDate
+  - horaProgramada: LocalTime
+  - estado: String
+  - sobreturno: Boolean
+  - tipo: String
+  - duracion: Integer
   --
   + crearTurno(paciente: Paciente, medico: Medico, estado: String): Turno
   + asignarEstado(nuevoEstado: String): void
@@ -72,8 +72,8 @@ class Agenda {
 }
 
 class Notificacion {
-  + tipo: String
-  + mensaje: String
+  - tipo: String
+  - mensaje: String
   --
   + enviarNotificacion(paciente: Paciente, medico: Medico, mensaje: String): Boolean
 }
