@@ -26,11 +26,17 @@
 
 - [fix/crear-turno-correcciones-1] Se corrigen 01-caso-de-uso-crear-turno.md, 01-clases-crear-turno-01.puml, analisis_casos_uso.md y 06-clases-diagrama-final.puml. PR: [#121](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/121) - @eternalnight04 (Documentador y Coordinador)
 
+- [fix/correcciones-actividad-4] Se reescribieron archivos y request changes solicitados. PR: [#122](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/122) - @nachonervi-design (Arquitecto de Dominio)
+
+-[fix/correcciones-diagramas.md] Corregido link del diagrama de clases. PR: [#123](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/123) - @nachonervi-design (Arquitecto de Dominio)
+
 - [fix/crear-turno-correcciones-2] Se eliminan iDs de los diagramas y se agregaron tres nuevas tarjetas CRC: Auditoria, UsuarioDelSistema y Notificacion. PR: [#124](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/124) - @eternalnight04 (Documentador y Coordinador)
 
 - [fix/reprogramar-turno-correcciones-1] Se renombraron clases y métodos del happy path global. PR: [#125](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/125) - @eternalnight04 (Documentador y Coordinador)
 
 - [fix/reprogramar-turno-correcciones-2] Se renombraron clases y se agregaron links a las nuevas tarjetas crc. PR: [#126](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/126) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/actualizar-archivos-1] Se agregaron los casos de uso 4 y 5 y se corrigieron archivos y diagramas. PR: [#132](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/132) - @eternalnight04 (Documentador y Coordinador)
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
