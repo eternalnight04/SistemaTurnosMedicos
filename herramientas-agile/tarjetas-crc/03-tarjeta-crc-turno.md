@@ -1,7 +1,7 @@
 |   |   |   |   |
 |---|---|---|---|
 | **Nombre de la Clase:** | Turno |   |   |
-| **Superclase:** |   |   |   |
+| **Superclase:** | Sobreturno  |   |   |
 | **Subclase:** |   |   |   |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Registrar solicitud de turno | Paciente, Secretaria | Alguien quiere un turno médico | Fecha, Hora, Estado |

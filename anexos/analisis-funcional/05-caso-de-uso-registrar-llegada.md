@@ -63,7 +63,7 @@
 **Mensajes clave:**
 
 - informarLlegada()
-- buscarTurno(idTurno)
+- buscarTurno()
 - obtenerTurno()
 - marcarLlegada()
 - registrarHoraLlegada()

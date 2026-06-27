@@ -5,7 +5,7 @@ title Diagrama de Clases - Autorizar Sobreturno
 class Secretaria {
     -nombre: String
 
-    +autorizarSobreturno(paciente: Paciente, medico: Medico, motivo: String): Sobreturno
+    +autorizarSobreturno(paciente: Paciente, medico: Medico, motivo: String): Turno
 }
 
 class Paciente {
@@ -20,24 +20,38 @@ class Medico {
     +tieneDisponibilidad(): boolean
 }
 
-class Sobreturno {
+class Turno {
     -fechaHora: Date
     -motivo: String
     -estado: String
+    -sobreturno: boolean
+
+    +asignarSobreturno(turno: Turno): void
 }
 
 class Agenda {
+    - turnos: List<Turno>
+
     +verificarDisponibilidad(medico: Medico, fechaHora: Date): boolean
-    +registrarSobreturno(sobreturno: Sobreturno): void
+    +registrarSobreturno(turno: Turno): void
+}
+
+class Auditoria {
+    -eventos: List<String>
+
+    +guardarEvento(usuario: String, accion: String): void
 }
 
 Secretaria --> Agenda : consulta
-Secretaria --> Sobreturno : crea
+Secretaria --> Turno : crea
 Secretaria --> Paciente
 Secretaria --> Medico
 
 Agenda --> Medico
-Sobreturno --> Paciente
-Sobreturno --> Medico
+Turno --> Paciente
+Turno --> Medico
+
+Agenda --> Turno : contiene
+Auditoria --> Agenda : registra acciones
 
 @enduml

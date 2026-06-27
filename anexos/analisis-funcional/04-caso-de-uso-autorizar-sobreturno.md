@@ -94,7 +94,7 @@
 | Medico | Validar disponibilidad | [Tarjeta CRC - Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
 | Secretaria | Autorizar sobreturnos | [Tarjeta CRC - Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
 | Agenda | Gestionar disponibilidad | [Tarjeta CRC - Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
-| Sobreturno | Registrar sobreturno | (nuevo objeto del caso de uso) |
+| Auditoria | Registrar cambios | [Tarjeta CRC - Auditoria](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
 
 **Relaciones UML:**
 
@@ -103,45 +103,45 @@
 | Herencia | UsuarioDelSistema → Paciente | Estructura común del sistema |
 | Herencia | UsuarioDelSistema → Secretaria | Estructura común del sistema |
 | Herencia | UsuarioDelSistema → Medico | Estructura común del sistema |
-| Asociación | Paciente → Sobreturno | El paciente recibe el sobreturno |
-| Asociación | Medico → Sobreturno | El médico atiende el sobreturno |
+| Asociación | Paciente → Turno | El paciente recibe el sobreturno |
+| Asociación | Medico → Turno | El médico autoriza el sobreturno |
 | Asociación | Secretaria → Agenda | Gestiona la agenda de turnos |
-| Dependencia | Secretaria → Sobreturno | Crea y autoriza el sobreturno |
-| Agregación | Agenda → Sobreturno | La agenda contiene sobreturnos |
+| Dependencia | Secretaria → Turno | Crea el sobreturno |
+| Agregación | Agenda → Turno | La agenda contiene sobreturnos |
+| Asociación | Auditoria → Agenda | Auditoria guarda los cambios realizados en Agenda |
+
 
 ---
 
 ## 6. Pseudocódigo
 
-```text
-INICIO Autorizar Sobreturno
+```
 
-Secretaria secretaria = nuevo Secretaria()
-Paciente paciente = nuevo Paciente()
-Medico medico = nuevo Medico()
-Agenda agenda = nuevo Agenda()
-Sobreturno sobreturno = nuevo Sobreturno()
+INICIO
 
-entrada = secretaria.solicitarSobreturno()
+Secretaria solicita sobreturno (paciente, fecha, hora)
 
-SI agenda.verificarDisponibilidad(medico, entrada.fechaHora) = verdadero ENTONCES
+SI Agenda.intentarCrearTurno(fecha, hora, paciente) == NO DISPONIBLE EN HORARIO
 
-    SI medico.tieneDisponibilidad() = verdadero ENTONCES
+    MOSTRAR "Advertencia: sobreturno"
 
-        sobreturno.crear(paciente, medico, entrada.motivo, entrada.fechaHora)
+    Solicitar autorización al Médico
 
-        agenda.registrarSobreturno(sobreturno)
+    SI Medico.autorizarSobreturno(turno) == TRUE
 
-        agenda.actualizarDisponibilidad(medico)
+        Agenda.crearTurno(paciente, medico, sobreturno = TRUE)
+        Auditoria.guardarEvento(usuario = secretaria, autorizadoPor = medico)
+        Turno.asignarSobreturno(sobreturno=true)
+        Turno.cambiarEstado("Confirmado")
 
-        RETORNAR "Sobreturno autorizado correctamente"
+        MOSTRAR "Sobreturno confirmado"
 
     SINO
-        RETORNAR "El médico no puede aceptar sobreturnos"
-    FIN SI
 
-SINO
-    RETORNAR "No hay disponibilidad para sobreturno"
+        MOSTRAR "Sobreturno rechazado por el médico"
+
 FIN SI
 
 FIN
+
+```
