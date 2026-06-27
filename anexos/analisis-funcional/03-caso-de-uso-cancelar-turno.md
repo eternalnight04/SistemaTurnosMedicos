@@ -34,7 +34,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-[Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-cancelar-turno.png)
+![Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-cancelar-turno.png)
 
 **Actores y relaciones:**
 
@@ -46,7 +46,7 @@
 
 ## 3. Diagrama de Actividades
 
-[Diagrama de Actividades - Cancelar Turno](../../diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-caso-uso-03.png)
+![Diagrama de Actividades - Cancelar Turno](../../diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-caso-uso-03.png)
 
 **Swimlanes:** Paciente, Secretaria y Sistema. Cada carril representa las responsabilidades de los participantes involucrados durante el proceso de cancelación.
 
@@ -56,7 +56,7 @@
 
 ## 4. Diagrama de Secuencia
 
-[Diagrama de Secuencia - Cancelar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-03.png)
+![Diagrama de Secuencia - Cancelar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-03.png)
 
 **Participantes:** Paciente (actor), Secretaria (actor), Agenda:agenda, Turno:turno, Auditoria:auditoria, Notificacion:notificacion
 
@@ -77,7 +77,7 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-[Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-03.png)
+![Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-03.png)
 
 **Clases involucradas:**
 
