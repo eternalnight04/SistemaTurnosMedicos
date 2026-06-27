@@ -1,4 +1,3 @@
-```md
 # Caso de Uso N° 02 - Reprogramar Turno
 
 ---
@@ -42,7 +41,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png)
+[Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png)
 
 **Actores y relaciones:**
 
@@ -54,7 +53,7 @@
 
 ## 3. Diagrama de Actividades
 
-![Diagrama de Actividades - Reprogramar Turno](../../diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-caso-uso-02.png)
+[Diagrama de Actividades - Reprogramar Turno](../../diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-caso-uso-02.png)
 
 **Swimlanes:** Paciente, Secretaria y Sistema. Cada carril representa las responsabilidades de los participantes involucrados durante el proceso de reprogramación.
 
@@ -64,9 +63,9 @@
 
 ## 4. Diagrama de Secuencia
 
-![Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png)
+[Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png)
 
-**Participantes:** Paciente (actor), Secretaria (actor), Medico (actor), Agenda:agenda, Turno:turno.
+**Participantes:** Paciente (actor), Secretaria (actor), Medico (actor), Agenda:agenda, Turno:turno, Auditoria:auditoria, Notificacion:notificacion
 
 **Mensajes clave:**
 
@@ -76,7 +75,7 @@
 - confirmarNuevoHorario(nuevoHorario) → valida el horario elegido para la reprogramación.
 - actualizarTurno(nuevoHorario) → registra el nuevo horario del turno.
 - cambiarEstado("Reprogramado") → actualiza el estado del turno.
-- registrarEnHistorial(usuario=secretaria) → deja trazabilidad de la modificación realizada.
+- guardarEvento(usuario=secretaria) → deja trazabilidad de la modificación realizada.
 - enviar notificacion → informa al paciente el nuevo horario asignado.
 
 **Objetos temporales destruidos:** Turno:turno y Agenda:agenda finalizan su participación al concluir la interacción representada en el escenario.
@@ -85,17 +84,20 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-caso-uso-02.png)
+[Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-02.png)
 
 **Clases involucradas:**
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| Paciente | Solicitar turno médico | ../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md |
-| Medico | Modificar disponibilidad | ../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md |
-| Turno | Reprogramar turno y modificar estado del turno | ../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md |
-| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | ../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md |
-| Secretaria | Gestionar turnos (reprogramar) | ../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md |
+| Paciente | Solicitar turno médico | [link al archivo md](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| Medico | Modificar disponibilidad | [link al archivo md](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| Turno | Reprogramar turno y modificar estado del turno | [link al archivo md](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | [link al archivo md](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
+| Secretaria | Gestionar turnos (reprogramar) | [link al archivo md](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| UsuarioDelSistema | Autenticar y actualizar datos | [link al archivo md](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
+| Auditoria | Registrar cambios y eventos | [link al archivo md](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
+| Notificacion | Enviar notificacion | [link al archivo md](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-notificacion.md) |
 
 **Relaciones UML:**
 
@@ -108,7 +110,7 @@
 | Dependencia | Secretaria → Medico | La secretaria consulta la disponibilidad del médico antes de confirmar el cambio. |
 | Dependencia | Secretaria → Turno | La secretaria interactúa con el turno para ejecutar la reprogramación. |
 | Agregación | Agenda → Turno | La agenda administra múltiples turnos sin controlar completamente su ciclo de vida. |
-| Composición | Agenda → Historial | El historial forma parte de la agenda y depende de ella para existir. |
+| Composición | Agenda → Auditoria | Auditoria forma parte de la agenda y depende de ella para existir. |
 | Dependencia | Agenda → Notificacion | La agenda utiliza el servicio de notificaciones para informar cambios. |
 | Asociación | Turno → Paciente | Cada turno se encuentra asociado a un paciente. |
 | Asociación | Turno → Medico | Cada turno se encuentra asociado a un médico. |
@@ -117,8 +119,9 @@
 
 ## 6. Pseudocódigo
 
-```text
-INICIO Reprogramar Turno
+```
+
+ Reprogramar Turno
 
 // El paciente solicita modificar el horario de un turno existente
 
@@ -126,6 +129,8 @@ Paciente paciente = nuevo Paciente()
 Secretaria secretaria = nuevo Secretaria()
 Agenda agenda = nuevo Agenda()
 Turno turno = nuevo Turno()
+Auditoria auditoria = nuevo Auditoria()
+Notificacion notificacion = nuevo Notificacion()
 
 // La secretaria busca el turno solicitado por el paciente
 turno = agenda.obtenerTurno(paciente)
@@ -139,10 +144,10 @@ SI resultado es válido
     turno.cambiarEstado("Reprogramado")
 
     // Se registra la modificación para mantener trazabilidad
-    agenda.registrarEnHistorial("Secretaria", "Reprogramación de turno")
+    auditoria.guardarEvento("Secretaria", "Reprogramación de turno")
 
     // Se informa al paciente el nuevo horario asignado
-    agenda.enviarNotificacion(paciente, "Turno reprogramado")
+    notificacion.enviar(paciente, "Turno reprogramado")
 SINO
     // Se detecta un conflicto y se ofrecen horarios alternativos
     alternativas = agenda.sugerirHorariosAlternativos(nuevoHorario)
@@ -150,8 +155,8 @@ SINO
     SI usuario selecciona una alternativa de la lista
         turno.actualizarTurno(alternativaSeleccionada)
         turno.cambiarEstado("Reprogramado")
-        agenda.registrarEnHistorial("Secretaria", "Reprogramación de turno")
-        agenda.enviarNotificacion(paciente, "Turno reprogramado")
+        auditoria.guardarEvento("Secretaria", "Reprogramación de turno")
+        notificacion.enviar(paciente, "Turno reprogramado")
     SINO
         // Flujo alternativo: usuario no selecciona alternativa
         Retornar "Reprogramación cancelada - sin cambios"
@@ -162,7 +167,6 @@ FIN SI
 Retornar resultado
 
 FIN
-````
+```
 
-```
-```
+

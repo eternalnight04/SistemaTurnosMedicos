@@ -17,7 +17,7 @@ enum EstadoTurno {
     CANCELADO
 }
 
-class Paciente {
+class Paciente 
     -idPaciente: int
     -nombre: String
     -dni: String
@@ -44,6 +44,8 @@ class LlegadaPaciente {
 
 class Agenda {
     -idAgenda: int
+
+    - turnos: List<Turno>
 
     +buscarTurno(paciente: Paciente): Turno
 }

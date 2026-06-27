@@ -34,7 +34,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/03-caso-uso-cancelar-turno-03.png)
+[Diagrama de Casos de Uso - Cancelar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-cancelar-turno.png)
 
 **Actores y relaciones:**
 
@@ -46,7 +46,7 @@
 
 ## 3. Diagrama de Actividades
 
-![Diagrama de Actividades - Cancelar Turno](../../diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-caso-uso-03.png)
+[Diagrama de Actividades - Cancelar Turno](../../diagramas/04-diagramas-actividades/04-actividad-cancelar-turno-caso-uso-03.png)
 
 **Swimlanes:** Paciente, Secretaria y Sistema. Cada carril representa las responsabilidades de los participantes involucrados durante el proceso de cancelación.
 
@@ -56,9 +56,9 @@
 
 ## 4. Diagrama de Secuencia
 
-![Diagrama de Secuencia - Cancelar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-03.png)
+[Diagrama de Secuencia - Cancelar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-cancelar-turno-03.png)
 
-**Participantes:** Paciente (actor), Secretaria (actor), Agenda:agenda, Turno:turno.
+**Participantes:** Paciente (actor), Secretaria (actor), Agenda:agenda, Turno:turno, Auditoria:auditoria, Notificacion:notificacion
 
 **Mensajes clave:**
 
@@ -68,7 +68,7 @@
 - confirmarCancelacion(motivo) → valida la cancelación y registra el motivo.
 - cambiarEstado("Cancelado") → modifica el estado del turno.
 - liberarHorario() → deja disponible el horario previamente asignado.
-- registrarEnHistorial(usuario=secretaria) → registra la acción realizada para mantener trazabilidad.
+- guardarEvento(usuario=secretaria) → registra la acción realizada para mantener trazabilidad.
 - enviar notificacion → informa al paciente sobre la cancelación del turno.
 
 **Objetos temporales destruidos:** Turno:turno y Agenda:agenda finalizan su participación al concluir la interacción representada en el escenario.
@@ -77,17 +77,20 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-caso-uso-03.png)
+[Diagrama de Clases - Cancelar Turno](../../diagramas/01-diagrama-clases/03-clases-cancelar-turno-03.png)
 
 **Clases involucradas:**
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| Paciente | Confirmar o cancelar turno y recibir notificaciones de turno | ../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md |
-| Medico | Consultar agenda de turnos | ../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md |
-| Turno | Modificar estado del turno | ../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md |
-| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | ../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md |
-| Secretaria | Gestionar turnos (cancelar) | ../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md |
+| UsuarioDelSistema | Autenticar y actualizar datos | [Tarjeta CRC - UsuarioDelSistema](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
+| Paciente | Confirmar o cancelar turno y recibir notificaciones de turno | [Tarjeta CRC - paciente](/herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md)|
+| Medico | Consultar agenda de turnos | [Tarjeta CRC - Medico](/herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| Turno | Modificar estado del turno | [Tarjeta CRC - Turno](/herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| Agenda | Permitir búsqueda de turnos y mostrar turnos programados | [Tarjeta CRC - Agenda](/herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
+| Secretaria | Gestionar turnos (cancelar) | [Tarjeta CRC - Secretaria](/herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| Auditoria | Registrar cambios | [Tarjeta CRC - Auditoria](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
+| Notificacion | Enviar notificacion | [Tarjeta CRC - Notificacion](../../herramientas-agile/tarjetas-crc/07-tarjeta-crc-notificacion.md) |
 
 **Relaciones UML:**
 
@@ -100,9 +103,9 @@
 | Asociación | Medico → Turno | El médico se encuentra asociado a los turnos asignados. |
 | Asociación | Secretaria → Agenda | La secretaria utiliza la agenda para localizar y administrar turnos. |
 | Dependencia | Secretaria → Turno | La secretaria confirma y ejecuta la cancelación del turno. |
-| Dependencia | Secretaria → Historial | Registra las acciones realizadas durante la cancelación. |
+| Dependencia | Secretaria → Auditoria | Registra las acciones realizadas durante la cancelación. |
 | Agregación | Agenda → Turno | La agenda administra múltiples turnos sin controlar completamente su ciclo de vida. |
-| Composición | Agenda → Historial | El historial forma parte de la agenda y depende de ella para existir. |
+| Composición | Agenda → Auditoria | El historial forma parte de la agenda y depende de ella para existir. |
 | Dependencia | Agenda → Notificacion | La agenda utiliza el servicio de notificaciones para informar cambios. |
 | Dependencia | Agenda → Paciente | La agenda envía notificaciones al paciente. |
 | Dependencia | Agenda → Medico | La agenda envía notificaciones al médico. |
@@ -121,6 +124,8 @@ Paciente paciente = nuevo Paciente()
 Secretaria secretaria = nuevo Secretaria()
 Agenda agenda = nuevo Agenda()
 Turno turno = nuevo Turno()
+Notificacion notificacion = nuevo Notificacion()
+Auditoria auditoria = nuevo Auditoria()
 
 // La secretaria localiza el turno solicitado por el paciente
 turno = agenda.buscarTurno(turno)
@@ -136,10 +141,10 @@ SI resultado es válido
     agenda.liberarHorario(turno)
 
     // Se registra la acción para mantener trazabilidad
-    agenda.registrarEnHistorial("Secretaria", "Cancelación de turno")
+    auditoria.guardarEvento("Secretaria", "Cancelación de turno")
 
     // Se informa al paciente sobre la cancelación realizada
-    agenda.enviarNotificacion(paciente, "Turno cancelado")
+    notificacion.enviar(paciente, "Turno cancelado")
 SINO
     // La cancelación no puede completarse por datos inválidos
     Retornar "Cancelación rechazada"

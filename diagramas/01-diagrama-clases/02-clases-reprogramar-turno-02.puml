@@ -3,7 +3,6 @@
 title Diagrama de Clases - Reprogramar Turno (CU-02)
 
 abstract class UsuarioDelSistema {
-  # id: Integer
   # nombre: String
   # email: String
   # telefono: String
@@ -39,7 +38,6 @@ class Medico {
   + atenderPaciente(turno: Turno): void
 }
 class Turno {
-  + idTurno: Integer
   + fechaHora: Date
   + estado: String
   + sobreturno: Boolean
@@ -62,7 +60,7 @@ class Agenda {
 }
 
 
-class Historial {
+class Auditoria {
   - eventos: List<String>
   --
   + guardarEvento(evento: String): void
@@ -87,7 +85,7 @@ Secretaria ..> Medico : consulta disponibilidad
 Secretaria ..> Turno : reprograma
 
 Agenda "1" o-- "0..*" Turno : contiene
-Agenda "1" *-- "1" Historial : compone
+Agenda "1" *-- "1" Auditoria : compone
 Agenda ..> Notificacion : utiliza
 
 Turno "1" --> "1" Paciente : asigna a
