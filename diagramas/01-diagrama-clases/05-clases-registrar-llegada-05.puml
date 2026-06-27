@@ -3,6 +3,7 @@
 title Diagrama de Clases - Registrar Llegada del Paciente
 
 class Secretaria {
+    -idSecretaria: int
     -nombre: String
 
     +registrarLlegada(paciente: Paciente, turno: Turno): LlegadaPaciente
@@ -16,7 +17,8 @@ enum EstadoTurno {
     CANCELADO
 }
 
-class Paciente {
+class Paciente 
+    -idPaciente: int
     -nombre: String
     -dni: String
 
@@ -24,6 +26,7 @@ class Paciente {
 }
 
 class Turno {
+    -idTurno: int
     -fecha: LocalDate
     -hora: String
     -estado: String
@@ -33,12 +36,15 @@ class Turno {
 }
 
 class LlegadaPaciente {
+    -idLlegada: int
     -horaLlegada: LocalTime
     
     +registrar(): void
 }
 
 class Agenda {
+    -idAgenda: int
+
     - turnos: List<Turno>
 
     +buscarTurno(paciente: Paciente): Turno
