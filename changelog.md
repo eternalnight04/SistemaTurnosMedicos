@@ -12,6 +12,10 @@
 
 - [feature/coordinador-devops-add-anexo-cu1] Se agrega el archivo analista-cu-1.md, un diagrama de crear turno y un analisis funcional del mismo. PR: [#116](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/116) - @eternalnight04 (Documentador y Coordinador)
 
+- [feature/analista-cu-4-5-add-anexo-cu4-cu5] Agregados anexos de casos de uso CU04 (Autorizar Sobreturno) y CU05 (Registrar Llegada) con diagramas de secuencia completos. PR: [#129](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/129) - @lautarochavez14 (Analista Funcional de Casos de Uso 4 y 5)
+
+- [fix/rc9-happy-path-trazabilidad] RC9: Happy Path Global reescrito con tabla de trazabilidad completa vinculando pseudocódigo con CRC y Casos de Uso. PR: [#130](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/130) - @nachonervi-design (Arquitecto de Dominio)
+
 - [fix/correcciones-actividad-4] Se resuelven los Request Changes del docente para la reentrega de la Actividad Obligatoria N°4: Happy Path Global reescrito completamente con tabla de trazabilidad (RC9), formato markdown corregido en CU02 eliminando bloques ```md (RC5), IDs hardcodeados eliminados del diagrama final (RC10), cardinalidades y simbología UML corregidas en relaciones (RC11), índice de diagramas reestructurado según plantilla (RC13), y consistencia CRC restaurada eliminando tarjeta LlegadaPaciente e integrando sus atributos en Turno como List<String> (RC3/RC4). PR: [#122](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/122) - @nachonervi-design (Arquitecto de Dominio)
 
 - [fix/analisis-correccion] Se corrige una linea de analisis_casos_uso.md. PR: [#117](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/117) - @eternalnight04 (Documentador y Coordinador)
