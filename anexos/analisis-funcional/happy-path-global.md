@@ -111,35 +111,36 @@ SI NO disponibleNuevoHorario ENTONCES
     nuevaFechaHora = alternativas[0]
 
 SINO
+```
 
-    nuevaFechaHora = "2026-06-30 14:00"
+ nuevaFechaHora = "2026-06-30 14:00"
 
-FIN SI
+  FIN SI
 
+// Reprogramación del turno
 nuevoTurno.reprogramar(nuevaFechaHora: nuevaFechaHora)
-
 nuevoTurno.cambiarEstado(nuevoEstado: TurnoEstado.REPROGRAMADO)
 
 agenda.registrarEnHistorial(
-    turnoId: nuevoTurno.id,
+    turnoId: nuevoTurno.id, 
     descripcion: "Turno reprogramado al " + nuevaFechaHora
 )
 
 nuevoPaciente.recibirNotificacion(
     mensaje: "Su turno fue reprogramado para las " + nuevaFechaHora
 )
+```
 
-// ============================================================
+// =========================================== 
 // CU05 - Registrar Llegada
-// ============================================================
-
-// El día de la consulta el paciente llega al consultorio.
+// ===========================================
+// El día de la consulta el paciente llega al consultorio. 
 // El sistema registra su llegada y el médico realiza la atención.
+```
 
-nuevoTurno.registrarLlegada(horaReal: "2026-06-30 13:50")
+nuevoTurno.registrarLlegada(horaLlegada: "2026-06-30 13:50")
 
 SI nuevoTurno.presente ENTONCES
-
     nuevoTurno.cambiarEstado(nuevoEstado: TurnoEstado.PRESENTE)
 
 FIN SI
@@ -158,6 +159,7 @@ agenda.registrarEnHistorial(
     descripcion: "Atención médica completada"
 )
 
+```
 // ============================================================
 // CU04 - Autorizar Sobreturno
 // ============================================================
@@ -197,10 +199,11 @@ FIN
 
 ## 3. Trazabilidad del Pseudocódigo
 
-| Bloque     | Caso de uso    | Clases involucradas  | Diagrama de secuencia de  referencia |
-| -- | --------------------------- | ------------------------------------------- | --------------------------------------------------------------------------- |
-| Autenticación, alta del paciente y creación del turno | CU01 - Crear Turno   | Secretaria, Paciente, Medico, Agenda, Turno | [Diagrama de Secuencia - Crear Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-01.png)         |
-| Reprogramación del turno                              | CU02 - Reprogramar Turno    | Paciente, Agenda, Turno   | [Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png)
-   |
-| Registro de llegada y atención médica                 | CU05 - Registrar Llegada    | Paciente, Turno, Medico, Agenda             | [Diagrama de Secuencia - Registrar Llegada](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-05.png)    |
-| Autorización de sobreturno                            | CU04 - Autorizar Sobreturno | Medico, Agenda, Paciente, Turno             | [Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-04.png) |
+
+| Bloque | Caso de uso | Clases involucradas | Diagrama de secuencia de referencia |
+|---------|-------------|---------------------|-------------------------------------|
+| Autenticación, alta del paciente y creación del turno | CU01 - Crear Turno | Secretaria, Paciente, Medico, Agenda, Turno | [Diagrama de Secuencia - Crear Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-crear-turno-01.png) |
+| Reprogramación del turno | CU02 - Reprogramar Turno | Paciente, Agenda, Turno | [Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png) |
+| Registro de llegada y atención médica | CU05 - Registrar Llegada | Paciente, Turno, Medico, Agenda | [Diagrama de Secuencia - Registrar Llegada](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-05.png) |
+| Autorización de sobreturno | CU04 - Autorizar Sobreturno | Medico, Agenda, Paciente, Turno | [Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-04.png) |
+
