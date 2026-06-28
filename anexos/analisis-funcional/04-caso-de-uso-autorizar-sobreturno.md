@@ -30,8 +30,7 @@
 
 ## 2. Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/04-caso-uso-autorizar-sobreturno.png)
-
+![Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/02-caso-uso-autorizar-sobreturno.png)
 **Actores y relaciones:**
 
 - **Paciente:** Solicita atención médica cuando no encuentra disponibilidad.
@@ -43,7 +42,7 @@
 
 ## 3. Diagrama de Actividades
 
-![Diagrama de Actividades - Autorizar Sobreturno](../../diagramas/04-diagramas-actividades/04-actividad-autorizar-sobreturno.png)
+![Diagrama de Actividades - Autorizar Sobreturno](../../diagramas/04-diagramas-actividades/04-actividad-autorizar-sobreturno-caso-uso-04.png)
 
 **Swimlanes:**
 
@@ -61,7 +60,7 @@
 
 ## 4. Diagrama de Secuencia
 
-![Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-01.png)
+![Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-04.png)
 
 **Participantes:**
 
@@ -86,7 +85,7 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-clases-autorizar-sobreturno-01.png)
+![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-autorizar-sobreturno.png)
 
 **Clases involucradas:**
 
@@ -95,9 +94,10 @@
 | Medico | Autorizar o rechazar solicitudes de sobreturno | [Tarjeta CRC - Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
 | Secretaria | Crear y registrar solicitudes | [Tarjeta CRC - Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
 | Paciente | Solicitar atención médica | [Tarjeta CRC - Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
-| Sobreturno | Representar la solicitud de atención especial | - |
+| Sobreturno | Representar la solicitud de atención especial | [Tarjeta CRC -  Sobreturno](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-sobreturno.md) | |
 | Turno | Registrar el turno generado | [Tarjeta CRC - Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
 | Agenda | Verificar disponibilidad y administrar turnos | [Tarjeta CRC - Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
+
 
 **Relaciones UML:**
 
