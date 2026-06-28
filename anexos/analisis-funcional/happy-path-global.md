@@ -4,22 +4,39 @@
 
 Escenario: Atención completa de un paciente desde la autenticación de una secretaria hasta la finalización de una consulta médica. Este escenario fue elegido como Happy Path Global porque atraviesa la mayor cantidad de clases del Sistema de Turnos Médicos y demuestra la colaboración entre los principales objetos del dominio durante el ciclo completo de atención.
 
-Casos de uso involucrados: CU01 - Crear Turno, CU02 - Reprogramar Turno, CU04 - Autorizar Sobreturno y CU05 - Registrar Llegada.
+**Casos de uso involucrados:**
 
-Clases participantes:
+- CU01 - Crear Turno
 
-UsuarioDelSistema
-Secretaria
-Paciente
-Medico
-Agenda
-Turno
+- CU02 - Reprogramar Turno
+
+- CU04 - Autorizar Sobreturno
+
+- CU05 - Registrar Llegada
+
+**Clases participantes:**
+
+- UsuarioDelSistema
+
+- Secretaria
+
+- Paciente
+
+- Medico
+
+- Agenda
+
+- Turno
+
 ## 2. Pseudocódigo
+
+```
 INICIO Sistema de Turnos Médicos - Happy Path Global
 
-// ============================================================
+
+//------
 // CU01 - Crear Turno
-// ============================================================
+//--------------------
 
 // La secretaria inicia sesión en el sistema para poder gestionar
 // los turnos de los pacientes.
@@ -88,9 +105,11 @@ SI accesoConcedido ENTONCES
 
 FIN SI
 
-// ============================================================
+
+
+//---
 // CU02 - Reprogramar Turno
-// ============================================================
+//---------------
 
 // El paciente solicita modificar el horario de su turno.
 // Se verifica la disponibilidad del nuevo horario.
@@ -111,7 +130,7 @@ SI NO disponibleNuevoHorario ENTONCES
     nuevaFechaHora = alternativas[0]
 
 SINO
-```
+
 
  nuevaFechaHora = "2026-06-30 14:00"
 
@@ -129,14 +148,16 @@ agenda.registrarEnHistorial(
 nuevoPaciente.recibirNotificacion(
     mensaje: "Su turno fue reprogramado para las " + nuevaFechaHora
 )
-```
 
-// =========================================== 
+
+
+//---------
 // CU05 - Registrar Llegada
-// ===========================================
+//--------------------
+
 // El día de la consulta el paciente llega al consultorio. 
 // El sistema registra su llegada y el médico realiza la atención.
-```
+
 
 nuevoTurno.registrarLlegada(horaLlegada: "2026-06-30 13:50")
 
@@ -159,10 +180,10 @@ agenda.registrarEnHistorial(
     descripcion: "Atención médica completada"
 )
 
-```
-// ============================================================
+
+//--------
 // CU04 - Autorizar Sobreturno
-// ============================================================
+//---------------------
 
 // Como escenario complementario, un paciente de urgencia solicita
 // un sobreturno que debe ser autorizado por el médico.
@@ -196,6 +217,8 @@ FIN SI
 Retornar "Consulta médica finalizada y turno registrado correctamente."
 
 FIN
+
+```
 
 ## 3. Trazabilidad del Pseudocódigo
 
