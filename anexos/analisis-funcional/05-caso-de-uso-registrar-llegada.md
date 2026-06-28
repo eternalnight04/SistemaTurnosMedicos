@@ -105,14 +105,13 @@
 
 **Clases involucradas (según UML):**
 
-| Clase | Responsabilidad |
-|------|----------------|
-| Secretaria | Registra la llegada del paciente y actualiza el estado del turno |
-| Paciente | Se presenta al sistema y consulta su turno |
-| Turno | Representa la cita médica y su estado |
-| LlegadaPaciente | Registra la hora de llegada del paciente |
-| Agenda | Busca turnos asociados al paciente |
-| EstadoTurno | Define los estados posibles del turno |
+| Clase | Responsabilidad | Tarjeta CRC |
+|------|----------------|------|
+| Secretaria | Registra la llegada del paciente y actualiza el estado del turno | [05-tarjeta-crc-secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| Paciente | Se presenta al sistema y consulta su turno | [01-tarjeta-crc-paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| Turno | Representa la cita médica y su estado | [03-tarjeta-crc-turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| LlegadaPaciente | Registra la hora de llegada del paciente | [10-tarjeta-crc-turno](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-llegada-paciente.md) |
+| Agenda | Busca turnos asociados al paciente | [04-tarjeta-crc-agenda](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-llegada-paciente.md) |
 
 
 ---
