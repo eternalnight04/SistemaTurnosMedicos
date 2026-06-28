@@ -45,7 +45,13 @@
 
 - [fix/reprogramar-turno-correcciones-2] Se renombraron clases y se agregaron links a las nuevas tarjetas crc. PR: [#126](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/126) - @eternalnight04 (Documentador y Coordinador)
 
+- [feature/analista-cu-4-5-add-anexo-cu4-cu5] Agrega diagramas y archivos md de Registrar Llegada y Autorizar Sobreturno corregidos. PR: [#129](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/129) - @lautarochavez14 (Analista Funcional de Casos de Uso 4 y 5)
+
+- [fix/rc9-happy-path-pilares-poo] Correcciones en Happy Path Global. PR: [#130](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/130) - @nachonervi-design (Arquitecto de Dominio)
+
 - [fix/actualizar-archivos-1] Se agregaron los casos de uso 4 y 5 y se corrigieron archivos y diagramas. PR: [#132](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/132) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/registrar-llegada-correcciones-1] Se volvió a agregar la tarjeta CRC llegada paciente, se corrigió el Happy Path Global y el archivo md de Registrar Llegada. PR: [#139](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/139) - @eternalnight04 (Documentador y Coordinador)
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
