@@ -1,0 +1,70 @@
+@startuml 01-patron-comportamiento-observer
+
+title Patrón de Diseño de Comportamiento Observer
+
+abstract class Sujeto {
+    -notificadores: List<iNotificacion>
+    +suscribir(inotificacion: iNotificacion): void
+    +desuscribir(inotificacion: iNotificacion): void
+    +notificar()
+}
+
+Interface iNotificacion {
+    +actualizar()
+}
+
+class Turno{
+    -fecha: Date
+    -hora: Time
+    -paciente: Paciente
+    -medico: Medico
+    -estado: String
+
+    +getEstado()
+    +setEstado()
+}
+
+class NotificacionMedio{
+    +enviarNotificacion(sujeto: Sujeto): void
+    +actualizar()
+}
+
+class NotificacionEmail{
+    -email: String
+
+    +enviarNotificacion()
+    +actualizar()
+}
+
+class NotificacionWhatsapp{
+    -telefono: String
+
+    +enviarNotificacion()
+    +actualizar()
+}
+
+class Auditoria{
+    -eventos: List<String>
+
+    +guardarEvento()
+    +actualizar()
+}
+
+Sujeto <|-- Turno
+
+iNotificacion <|.. NotificacionMedio
+NotificacionMedio --> Turno : observa
+
+iNotificacion --* Sujeto
+
+NotificacionEmail --> Turno : observa
+NotificacionWhatsapp --> Turno : observa
+
+NotificacionMedio <|-- NotificacionEmail
+NotificacionMedio <|-- NotificacionWhatsapp
+
+iNotificacion <|.. Auditoria
+
+Auditoria --> Turno : observa
+
+@enduml
