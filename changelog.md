@@ -12,6 +12,17 @@
 
 - [feature/coordinador-devops-add-anexo-cu1] Se agrega el archivo analista-cu-1.md, un diagrama de crear turno y un analisis funcional del mismo. PR: [#116](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/116) - @eternalnight04 (Documentador y Coordinador)
 
+- [feature/analista-cu-4-5-add-anexo-cu4-cu5] Agregados anexos de casos de uso CU04 (Autorizar Sobreturno) y CU05 (Registrar Llegada) con diagramas de secuencia completos. PR: [#129](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/129) - @lautarochavez14 (Analista Funcional de Casos de Uso 4 y 5)
+
+- [fix/rc9-happy-path-pilares-poo] Correcciones completas de Request Changes del docente sobre Happy Path Global y Pilares POO. Se reescribió el pseudocódigo del Happy Path con tabla de trazabilidad obligatoria vinculando cada paso con las tarjetas CRC y Casos de Uso (RC9/RC21). Se regeneraron las 8 capturas de pilares POO (Encapsulamiento, Herencia, Abstracción, Polimorfismo) con contexto completo de las clases y coherencia con las descripciones del texto (RCN11/RCN12/RCN22/RCN23). Se restauró el encapsulamiento en el diagrama CU01 convirtiendo atributos públicos a privados en las clases Paciente, Secretaria, Medico, Turno y Notificacion (RCN1-RCN5). Se actualizaron las PRs #130 y #129 al changelog (RC23/RC24). PR: [#135](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/135) - @nachonervi-design (Arquitecto de Dominio)
+
+- [fix/rcn1-rcn4-casos-uso-imagenes-duplicadas] Correcciones de Request Changes del docente sobre casos de uso CU02-CU05. En CU02 Reprogramar Turno y CU03 Cancelar Turno se agregaron los caracteres `!` faltantes en los links de diagramas para que las imágenes se visualicen incrustadas correctamente en GitHub (RCN1/RCN2). En CU04 Autorizar Sobreturno y CU05 Registrar Llegada se eliminaron las secciones duplicadas del contenido, manteniendo una única versión coherente con el diagrama final y las tarjetas CRC (RCN3/RCN4). PR: [#136](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/136) - @nachonervi-design (Arquitecto de Dominio)
+
+
+- [fix/rc9-happy-path-trazabilidad] RC9: Happy Path Global reescrito con tabla de trazabilidad completa vinculando pseudocódigo con CRC y Casos de Uso. PR: [#130](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/130) - @nachonervi-design (Arquitecto de Dominio)
+
+- [fix/correcciones-actividad-4] Se resuelven los Request Changes del docente para la reentrega de la Actividad Obligatoria N°4: Happy Path Global reescrito completamente con tabla de trazabilidad (RC9), formato markdown corregido en CU02 eliminando bloques ```md (RC5), IDs hardcodeados eliminados del diagrama final (RC10), cardinalidades y simbología UML corregidas en relaciones (RC11), índice de diagramas reestructurado según plantilla (RC13), y consistencia CRC restaurada eliminando tarjeta LlegadaPaciente e integrando sus atributos en Turno como List<String> (RC3/RC4). PR: [#122](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/122) - @nachonervi-design (Arquitecto de Dominio)
+
 - [fix/analisis-correccion] Se corrige una linea de analisis_casos_uso.md. PR: [#117](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/117) - @eternalnight04 (Documentador y Coordinador)
 
 - [fix/arquitecto-dominio-merge-conflicto] Se agrega el archivo arquitecto-dominio.md, happy-path-global.md, pilares-poo.md, el diagrama de clases final y capturas-pilares/. PR: [#118](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/118) - @eternalnight04 (Documentador y Coordinador)
@@ -20,6 +31,21 @@
 
 - [fix/develop-correcciones-1] Se aplican las últimas correcciones, se actualiza el README.md y el changelog. PR: [#119](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/119) - @eternalnight04 (Documentador y Coordinador)
 
+### Fixed
+
+- [fix/crear-turno-correcciones-1] Se corrigen 01-caso-de-uso-crear-turno.md, 01-clases-crear-turno-01.puml, analisis_casos_uso.md y 06-clases-diagrama-final.puml. PR: [#121](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/121) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/correcciones-actividad-4] Se reescribieron archivos y request changes solicitados. PR: [#122](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/122) - @nachonervi-design (Arquitecto de Dominio)
+
+-[fix/correcciones-diagramas.md] Corregido link del diagrama de clases. PR: [#123](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/123) - @nachonervi-design (Arquitecto de Dominio)
+
+- [fix/crear-turno-correcciones-2] Se eliminan iDs de los diagramas y se agregaron tres nuevas tarjetas CRC: Auditoria, UsuarioDelSistema y Notificacion. PR: [#124](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/124) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/reprogramar-turno-correcciones-1] Se renombraron clases y métodos del happy path global. PR: [#125](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/125) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/reprogramar-turno-correcciones-2] Se renombraron clases y se agregaron links a las nuevas tarjetas crc. PR: [#126](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/126) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/actualizar-archivos-1] Se agregaron los casos de uso 4 y 5 y se corrigieron archivos y diagramas. PR: [#132](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/132) - @eternalnight04 (Documentador y Coordinador)
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 

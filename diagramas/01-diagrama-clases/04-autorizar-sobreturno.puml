@@ -1,0 +1,76 @@
+@startuml
+
+title Diagrama de Clases - Autorizar Sobreturno
+
+class Medico {
+    - idMedico: int
+    - nombre: String
+    - especialidad: String
+    
+    + autorizarSobreturno(sobreturno: Sobreturno): boolean
+    + rechazarSobreturno(sobreturno: Sobreturno): void
+}
+
+
+class Secretaria {
+    - idSecretaria: int
+    - nombre: String
+    
+    + solicitarSobreturno(paciente: Paciente, medico: Medico): Sobreturno
+    + registrarSobreturno(sobreturno: Sobreturno): void
+}
+
+
+class Paciente {
+    - idPaciente: int
+    - nombre: String
+    - apellido: String
+    
+    + solicitarTurno(): void
+}
+
+
+class Sobreturno {
+    - idSobreturno: int
+    - fechaSolicitud: Date
+    - estado: String
+    - motivo: String
+    
+    + cambiarEstado(estado: String): void
+}
+
+
+class Turno {
+    - idTurno: int
+    - fecha: Date
+    - hora: String
+    - estado: String
+    
+    + asignarTurno(): void
+}
+
+
+class Agenda {
+    - idAgenda: int
+    - fecha: Date
+    
+    + verificarDisponibilidad(): boolean
+    + agregarTurno(turno: Turno): void
+}
+
+
+' Relaciones
+
+Secretaria --> Sobreturno : solicita >
+Secretaria --> Paciente : gestiona >
+
+Medico --> Sobreturno : autoriza >
+Sobreturno --> Turno : genera >
+
+Paciente --> Turno : posee >
+
+Agenda --> Turno : administra >
+
+Medico --> Agenda : consulta >
+
+@enduml
