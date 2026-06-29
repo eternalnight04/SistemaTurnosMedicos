@@ -31,6 +31,7 @@
 ## 2. Diagrama de Casos de Uso
 
 ![Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/02-caso-uso-autorizar-sobreturno.png)
+
 **Actores y relaciones:**
 
 - **Paciente:** Solicita atención médica cuando no encuentra disponibilidad.
@@ -85,7 +86,7 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-autorizar-sobreturno.png)
+![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-clases-autorizar-sobreturno-04.png)
 
 **Clases involucradas:**
 
@@ -103,12 +104,14 @@
 
 | Relación | Clases | Justificación |
 |----------|--------|---------------|
-| Asociación | Secretaria → Sobreturno | La secretaria crea la solicitud de sobreturno |
-| Asociación | Medico → Sobreturno | El médico autoriza o rechaza la solicitud |
-| Asociación | Sobreturno → Paciente | El sobreturno está asociado a un paciente |
-| Asociación | Sobreturno → Medico | El sobreturno está asociado a un médico |
+| Composición | Secretaria → Sobreturno | La secretaria crea la solicitud de sobreturno |
+| Composición | Medico → Sobreturno | El médico autoriza o rechaza la solicitud |
+| Dependencia | Sobreturno → Paciente | El sobreturno está asignado a un paciente |
+| Composición | Sobreturno → Medico | El sobreturno está asociado a un médico |
 | Dependencia | Sobreturno → Turno | Si se autoriza, se genera un turno |
-| Agregación | Agenda → Turno | La agenda administra múltiples turnos |
+| Composición | Agenda → Turno | La agenda administra múltiples turnos |
+| Dependencia | Turno → Medico | El turno se asigna a un médico |
+| Dependencia | Turno → Paciente | El turno se asigna a un paciente |
 
 ---
 

@@ -100,7 +100,7 @@
 # 5. Diagrama de Clases del Caso de Uso
 
 
-![Diagrama de Clases - Registrar Llegada](../../diagramas/01-diagrama-clases/05-clases-registrar-llegada-05.png)
+![Diagrama de Clases - Registrar Llegada](../../diagramas/01-diagrama-clases/04-clases-registrar-llegada-05.png)
 
 
 **Clases involucradas (según UML):**
@@ -120,11 +120,11 @@
 
 | Relación | Clases | Justificación |
 |----------|--------|---------------|
-| Asociación | Secretaria → Paciente | La secretaria interactúa con el paciente en recepción |
-| Asociación | Secretaria → Turno | Registra y actualiza el turno |
-| Asociación | Secretaria → LlegadaPaciente | Crea el registro de llegada |
-| Asociación | Paciente → Turno | El paciente posee un turno asignado |
-| Asociación | Agenda → Turno | La agenda administra los turnos |
+| Agregación | Secretaria → Paciente | La secretaria interactúa con el paciente en recepción |
+| Composición | Secretaria → Turno | Registra y actualiza el turno |
+| Composición | Secretaria → LlegadaPaciente | Crea el registro de llegada |
+| Dependencia | Paciente → Turno | El paciente posee un turno asignado |
+| Composición | Agenda → Turno | La agenda administra los turnos |
 | Composición | LlegadaPaciente → Turno | La llegada depende del turno asociado |
 
 
