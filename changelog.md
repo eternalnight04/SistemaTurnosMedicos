@@ -53,6 +53,8 @@
 
 - [fix/registrar-llegada-correcciones-1] Se volvió a agregar la tarjeta CRC llegada paciente, se corrigió el Happy Path Global y el archivo md de Registrar Llegada. PR: [#139](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/139) - @eternalnight04 (Documentador y Coordinador)
 
+- [fix/atributos-correcciones-1] Se corrigieron las relaciones de cardinalidad, se privatizaron los atributos y se eliminaron las iDs de todas las clases de los diagramas de clases. PR: [#140](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/140) - @eternalnight04 (Documentador y Coordinador)
+
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
 ### Added
