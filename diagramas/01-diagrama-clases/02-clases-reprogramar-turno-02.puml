@@ -1,0 +1,95 @@
+@startuml 02-clases-reprogramar-turno-02
+
+title Diagrama de Clases - Reprogramar Turno (CU-02)
+
+abstract class UsuarioDelSistema {
+  # nombre: String
+  # email: String
+  # telefono: String
+  --
+  + autenticar(): Boolean
+  + actualizarDatos(): void
+}
+
+
+class Paciente {  
+  - dni: String  
+  - domicilio: String  
+  --  
+  + solicitarReprogramacion(nuevoHorario: Date): void  
+  + confirmarTurno(): void  
+  + recibirNotificacion(mensaje: String): Boolean  
+}  
+
+class Secretaria {
+  - legajo: String
+  --
+  + buscarTurno(paciente: Paciente): Turno
+  + consultarDisponibilidad(medico: Medico, horario: Date): Boolean
+  + reprogramarTurno(turno: Turno, nuevoHorario: Date): Boolean
+}
+
+class Medico {
+  - matricula: String
+  - especialidad: String
+  --
+  + consultarDisponibilidad(horario: Date): Boolean
+  + modificarDisponibilidad(inicio: Date, fin: Date): void
+  + atenderPaciente(turno: Turno): void
+}
+class Turno {
+  - fechaHora: Date
+  - estado: String
+  - sobreturno: Boolean
+  - notas: String
+  --
+  + reprogramarHorario(nuevoHorario: Date): Boolean
+  + cambiarEstado(nuevoEstado: String): void
+  + validarReprogramacion(): Boolean
+}
+
+
+class Agenda {
+  - turnos: List<Turno>
+  --
+  + buscarTurno(paciente: Paciente): Turno
+  + obtenerTurno(paciente: Paciente): Turno
+  + sugerirHorariosAlternativos(horario: Date): List<Date>
+  + registrarEnHistorial(usuario: String, accion: String): void
+  + enviarNotificacion(paciente: Paciente, mensaje: String): Boolean
+}
+
+
+class Auditoria {
+  - eventos: List<String>
+  --
+  + guardarEvento(evento: String): void
+  + obtenerEventos(): List<String>
+}
+
+class Notificacion {
+  - tipo: String
+  - destinatario: String
+  - mensaje: String
+  --
+  + enviar(paciente: Paciente, mensaje: String): Boolean
+}
+
+
+UsuarioDelSistema <|-- Paciente : hereda
+UsuarioDelSistema <|-- Secretaria : hereda
+UsuarioDelSistema <|-- Medico : hereda
+
+Secretaria "1" --> "1" Agenda : administra
+Secretaria "1" ..> "1" Medico : consulta disponibilidad
+Secretaria "1" ..> "..*" Turno : reprograma
+
+Agenda "1" o-- "0..*" Turno : contiene
+Agenda "1" *-- "1" Auditoria : compone
+Agenda "1" ..> "..*" Notificacion : utiliza
+
+Turno "1" --> "1" Paciente : asigna a
+Turno "1" --> "1" Medico : asigna a
+Turno "1" ..> "1" Agenda : registra historial
+
+@enduml

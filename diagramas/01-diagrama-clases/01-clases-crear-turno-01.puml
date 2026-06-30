@@ -1,0 +1,108 @@
+@startuml 01-clases-crear-turno-01
+
+title Diagrama de Clases - Crear Turno (CU-01)
+
+abstract class UsuarioDelSistema {
+  # nombre: String
+  # email: String
+  # telefono: String
+  --
+  + autenticar(): Boolean
+  + actualizarDatos(): void
+}
+
+class Paciente {
+  - dni: String
+  - domicilio: String
+  --
+  + solicitarTurno(fecha: LocalDate, motivo: String): void
+  + confirmarTurno(): void
+  + cancelarTurno(): void
+  + recibirNotificacion(mensaje: String): Boolean
+}
+
+class Secretaria {
+  - legajo: String
+  --
+  + buscarPaciente(paciente: Paciente): Paciente
+  + seleccionarProfesional(medico: Medico): Medico
+  + validarDisponibilidad(fecha: LocalDate, hora: LocalTime): Boolean
+  + registrarTurno(paciente: Paciente, medico: Medico, fecha: LocalDate, hora: LocalTime): Turno
+  + darAltaPaciente(paciente: Paciente): void
+  + darBajaPaciente(paciente: Paciente): void
+  + consultarAgendaMedica(medico: Medico): Agenda
+}
+
+class Medico {
+  - matricula: String
+  - especialidad: String
+  --
+  + consultarAgenda(): List<Turno>
+  + atenderPaciente(turno: Turno): void
+  + registrarObservaciones(turno: Turno, observaciones: String): void
+  + modificarDisponibilidad(inicio: LocalDateTime, fin: LocalDateTime): void
+}
+
+class Turno {
+  - fechaProgramada: LocalDate
+  - horaProgramada: LocalTime
+  - estado: String
+  - sobreturno: Boolean
+  - tipo: String
+  - duracion: Integer
+  --
+  + crearTurno(paciente: Paciente, medico: Medico, estado: String): Turno
+  + asignarEstado(nuevoEstado: String): void
+  + modificarEstado(nuevoEstado: String): void
+  + obtenerDetalles(): String
+  + reprogramar(nuevaFecha: LocalDate, nuevaHora: LocalTime): Boolean
+}
+
+class Agenda {
+  - turnos: List<Turno>
+  --
+  + buscarPaciente(paciente: Paciente): Paciente
+  + validarDisponibilidad(fecha: LocalDate, hora: LocalTime): Boolean
+  + verificarConflicto(medico: Medico, fecha: LocalDate, hora: LocalTime): Boolean
+  + registrarTurno(paciente: Paciente, medico: Medico, fecha: LocalDate, hora: LocalTime): Turno
+  + obtenerTurno(paciente: Paciente): List<Turno>
+  + registrarEnHistorial(usuario: String, accion: String): void
+  + enviarNotificacion(paciente: Paciente, mensaje: String): Boolean
+  + mostrarTurnosDelMedico(medico: Medico): List<Turno>
+}
+
+class Notificacion {
+  - tipo: String
+  - mensaje: String
+  --
+  + enviarNotificacion(paciente: Paciente, medico: Medico, mensaje: String): Boolean
+}
+
+class Auditoria {
+  - eventos: List<String>
+  --
+  + guardarEvento(evento: String): void
+  + obtenerEventos(): List<String>
+}
+
+
+UsuarioDelSistema <|-- Paciente : hereda
+UsuarioDelSistema <|-- Secretaria : hereda
+UsuarioDelSistema <|-- Medico : hereda
+
+Secretaria "1 "--> "1" Agenda : administra
+Secretaria "1 "--> "N" Paciente : busca/registra
+Secretaria "1 "--> "1" Medico : selecciona
+Secretaria "1 "--> "N" Turno : administra
+
+Agenda "1" --> "N" Turno : contiene
+Agenda "1" *-- "1" Auditoria : compone
+Agenda "1" *-- "N" Notificacion : compone
+
+Paciente "1" --> "N" Turno : solicita
+
+Turno "1" --> "1" Medico : asigna a
+
+Medico "1" -->  "1" Agenda : tiene
+
+@enduml

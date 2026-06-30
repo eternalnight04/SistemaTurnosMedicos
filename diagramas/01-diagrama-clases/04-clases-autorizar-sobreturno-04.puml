@@ -1,0 +1,74 @@
+@startuml 04-clases-autorizar-sobreturno-04
+
+title Diagrama de Clases - Autorizar Sobreturno
+
+class Medico {
+    - nombre: String
+    - especialidad: String
+    
+    + autorizarSobreturno(sobreturno: Sobreturno): boolean
+    + rechazarSobreturno(sobreturno: Sobreturno): void
+}
+
+
+class Secretaria {
+    - nombre: String
+    
+    + solicitarSobreturno(paciente: Paciente, medico: Medico): Sobreturno
+    + registrarSobreturno(sobreturno: Sobreturno): void
+}
+
+
+class Paciente {
+    - nombre: String
+    - apellido: String
+    
+    + solicitarTurno(): void
+}
+
+
+class Sobreturno {
+    - fechaSolicitud: Date
+    - estado: String
+    - motivo: String
+    
+    + cambiarEstado(estado: String): void
+}
+
+
+class Turno {
+    - fecha: Date
+    - hora: String
+    - estado: String
+    
+    + asignarTurno(): void
+}
+
+
+class Agenda {
+    - fecha: Date
+    
+    + verificarDisponibilidad(): boolean
+    + agregarTurno(turno: Turno): void
+}
+
+
+' Relaciones
+
+Secretaria "1 " o-- "..*" Sobreturno 
+Secretaria "1 " *-- "..*" Paciente 
+
+Medico "1 " ..> "..*" Sobreturno 
+Sobreturno "1 " ..> "1" Turno 
+
+Sobreturno "1 " ..> "1" Paciente
+
+Paciente "1 " <.. "..*" Turno 
+
+Medico "1 " <-- "..*" Turno 
+
+Agenda "1 " *-- "..*" Turno 
+
+Medico "..* " --o "1" Agenda 
+
+@enduml
