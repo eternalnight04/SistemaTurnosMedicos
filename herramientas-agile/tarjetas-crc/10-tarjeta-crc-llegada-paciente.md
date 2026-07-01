@@ -1,6 +1,6 @@
 |   |   |   |   |
 |---|---|---|---|
-| **Nombre de la Clase:** | LlegadaPaciente |   |   |
+| **Nombre de la Clase:** | Llegada Paciente |   |   |
 | **Superclase:** | — |   |   |
 | **Subclase:** |   |   |   |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
