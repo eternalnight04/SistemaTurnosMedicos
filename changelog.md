@@ -2,11 +2,13 @@
 
 ## [Unreleased]
 
-## [Released - Segundo Parcial]
+## [Released - Segundo Parcial] - 2026-06-27
 
-### Addeed
+### Added
 
 - [feature/esp-creacional-add-patron-builder] Patrón Builder aplicado a la clase Turno para resolver el constructor telescópico. Incluye diagrama UML, documentación completa con ejemplos para CU01/CU02/CU04/CU05, integración con Agenda, y documentación del proceso de IA. Principios SOLID (SRP, OCP, LSP, ISP, DIP) documentados con diagramas PlantUML específicos y ejemplos aplicados al Sistema de Turnos Médicos. PR: pendiente - @nachonervi-design (Especialista en Patrones Creacionales) PR: [#133](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/133)
+
+- [feature/esp-patron-comportamiento-add-observer] Se aplicó el patrón Observer al Sistema de Turnos Médicos para mejorar el rendimiento. PR: [#142](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/142) - @eternalnight04 (Especialista en Patrón de Diseño de Comportamiento)
 
 
 ## [Released - Actividad Obligatoria N°4] - 2026-06-18
