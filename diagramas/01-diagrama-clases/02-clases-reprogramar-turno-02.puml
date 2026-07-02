@@ -1,4 +1,4 @@
-@startuml
+@startuml 02-clases-reprogramar-turno-02
 
 title Diagrama de Clases - Reprogramar Turno (CU-02)
 
@@ -13,8 +13,8 @@ abstract class UsuarioDelSistema {
 
 
 class Paciente {  
-  + dni: String  
-  + domicilio: String  
+  - dni: String  
+  - domicilio: String  
   --  
   + solicitarReprogramacion(nuevoHorario: Date): void  
   + confirmarTurno(): void  
@@ -22,7 +22,7 @@ class Paciente {
 }  
 
 class Secretaria {
-  + legajo: String
+  - legajo: String
   --
   + buscarTurno(paciente: Paciente): Turno
   + consultarDisponibilidad(medico: Medico, horario: Date): Boolean
@@ -30,18 +30,18 @@ class Secretaria {
 }
 
 class Medico {
-  + matricula: String
-  + especialidad: String
+  - matricula: String
+  - especialidad: String
   --
   + consultarDisponibilidad(horario: Date): Boolean
   + modificarDisponibilidad(inicio: Date, fin: Date): void
   + atenderPaciente(turno: Turno): void
 }
 class Turno {
-  + fechaHora: Date
-  + estado: String
-  + sobreturno: Boolean
-  + notas: String
+  - fechaHora: Date
+  - estado: String
+  - sobreturno: Boolean
+  - notas: String
   --
   + reprogramarHorario(nuevoHorario: Date): Boolean
   + cambiarEstado(nuevoEstado: String): void
@@ -68,9 +68,9 @@ class Auditoria {
 }
 
 class Notificacion {
-  + tipo: String
-  + destinatario: String
-  + mensaje: String
+  - tipo: String
+  - destinatario: String
+  - mensaje: String
   --
   + enviar(paciente: Paciente, mensaje: String): Boolean
 }
@@ -80,16 +80,16 @@ UsuarioDelSistema <|-- Paciente : hereda
 UsuarioDelSistema <|-- Secretaria : hereda
 UsuarioDelSistema <|-- Medico : hereda
 
-Secretaria --> Agenda : administra
-Secretaria ..> Medico : consulta disponibilidad
-Secretaria ..> Turno : reprograma
+Secretaria "1" --> "1" Agenda : administra
+Secretaria "1" ..> "1" Medico : consulta disponibilidad
+Secretaria "1" ..> "..*" Turno : reprograma
 
 Agenda "1" o-- "0..*" Turno : contiene
 Agenda "1" *-- "1" Auditoria : compone
-Agenda ..> Notificacion : utiliza
+Agenda "1" ..> "..*" Notificacion : utiliza
 
 Turno "1" --> "1" Paciente : asigna a
 Turno "1" --> "1" Medico : asigna a
-Turno ..> Agenda : registra historial
+Turno "1" ..> "1" Agenda : registra historial
 
 @enduml

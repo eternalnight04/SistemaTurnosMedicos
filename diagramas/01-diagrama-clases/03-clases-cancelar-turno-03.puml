@@ -14,15 +14,15 @@ abstract class UsuarioDelSistema {
 
 
 class Paciente {
-  + dni: String
-  + domicilio: String
+  - dni: String
+  - domicilio: String
   --
   + solicitarCancelacion(turno: Turno): void
   + recibirNotificacion(mensaje: String): Boolean
 }
 
 class Secretaria {
-  + legajo: String
+  - legajo: String
   --
   + buscarTurno(paciente: Paciente): Turno 
   + confirmarCancelacion(turno: Turno, motivo: String): Boolean
@@ -31,18 +31,18 @@ class Secretaria {
 }
 
 class Medico {
-  + matricula: String
-  + especialidad: String
+  - matricula: String
+  - especialidad: String
   --
   + recibirNotificacion(mensaje: String): Boolean
 }
 
 
 class Turno {
-  + fechaHora: Date
-  + estado: String
-  + sobreturno: Boolean
-  + notas: String
+  - fechaHora: Date
+  - estado: String
+  - sobreturno: Boolean
+  - notas: String
   --
   + confirmarCancelacion(motivo: String): Boolean
   + cambiarEstado(nuevoEstado: String): void
@@ -68,9 +68,9 @@ class Auditoria {
 }
 
 class Notificacion {
-  + tipo: String
-  + destinatario: String
-  + mensaje: String
+  - tipo: String
+  - destinatario: String
+  - mensaje: String
   --
   + enviar(mensaje: String): Boolean
 }
@@ -82,16 +82,16 @@ UsuarioDelSistema <|-- Medico
 
 Paciente "1" --> "0..*" Turno : solicita
 Medico "1" --> "0..*" Turno : atiende
-Secretaria --> Agenda : administra
-Secretaria ..> Turno : confirma/cancela
-Secretaria ..> Auditoria : registra
+Secretaria "1" --> "1" Agenda : administra
+Secretaria "1" ..> "..*" Turno : confirma/cancela
+Secretaria "1" ..> "1" Auditoria : registra
 
 Agenda "1" o-- "0..*" Turno : contiene
 Agenda "1" *-- "1" Auditoria : compone
-Agenda ..> Notificacion : utiliza
-Agenda ..> Paciente : notifica
-Agenda ..> Medico : notifica
+Agenda "1" ..> "..*" Notificacion : utiliza
+Agenda "1" ..> "..*" Paciente : notifica
+Agenda "1" ..> "..*" Medico : notifica
 
-Turno ..> Agenda : libera en
+Turno "..*" ..> "1" Agenda : libera en
 
 @enduml

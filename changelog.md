@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [Released - Segundo Parcial]
+
+### Addeed
+
+- [feature/esp-creacional-add-patron-builder] Patrón Builder aplicado a la clase Turno para resolver el constructor telescópico. Incluye diagrama UML, documentación completa con ejemplos para CU01/CU02/CU04/CU05, integración con Agenda, y documentación del proceso de IA. Principios SOLID (SRP, OCP, LSP, ISP, DIP) documentados con diagramas PlantUML específicos y ejemplos aplicados al Sistema de Turnos Médicos. PR: pendiente - @nachonervi-design (Especialista en Patrones Creacionales) PR: [#133](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/133)
+
+
 ## [Released - Actividad Obligatoria N°4] - 2026-06-18
 
 ### Added
@@ -52,6 +59,8 @@
 - [fix/actualizar-archivos-1] Se agregaron los casos de uso 4 y 5 y se corrigieron archivos y diagramas. PR: [#132](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/132) - @eternalnight04 (Documentador y Coordinador)
 
 - [fix/registrar-llegada-correcciones-1] Se volvió a agregar la tarjeta CRC llegada paciente, se corrigió el Happy Path Global y el archivo md de Registrar Llegada. PR: [#139](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/139) - @eternalnight04 (Documentador y Coordinador)
+
+- [fix/atributos-correcciones-1] Se corrigieron las relaciones de cardinalidad, se privatizaron los atributos y se eliminaron las iDs de todas las clases de los diagramas de clases. PR: [#140](https://github.com/eternalnight04/SistemaTurnosMedicos/pull/140) - @eternalnight04 (Documentador y Coordinador)
 
 ## [Released - Actividad Obligatoria N°3] - 2026-05-17
 
