@@ -4,7 +4,7 @@
 Realice una introducción a los patrones de comportamiento y su relación con los principios SOLID en Programación Orientada a Objetos.
 ```
 
-## Output de la IA
+### Output de la IA
 
 ```
 Introducción a los Patrones de Comportamiento y su Relación con los Principios SOLID
@@ -34,6 +34,42 @@ Dependency Inversion Principle: Los módulos de alto nivel no deben depender de 
 Los patrones de comportamiento no solo ofrecen soluciones prácticas a problemas comunes, sino que también refuerzan los principios SOLID, logrando sistemas más robustos, escalables y fáciles de mantener. En esencia, los patrones son la aplicación concreta de los principios de diseño, y juntos forman la base de una arquitectura orientada a objetos de calidad.
 ```
 
-## Ajustes realizados a la IA
+### Ajustes realizados a la IA
 
 - Se eliminaron partes del texto para que quedara más presentable, tales como los emojis.
+
+## Iteración 2
+
+```
+Reescribe el archivo patron-de-diseno-de-comportamiento.md (NO MODIFIQUES NINGÚN ARCHIVO, ENVÍA EL TEXTO REESCRITO POR EL CHAT), teniendo en cuenta el diagrama de clases y los principios SOLID. Ten en cuenta también que el formato del archivo patron-de-diseno-de-comportamiento.md debe tener:
+
+- Introducción a los patrones de comportamiento y su relación con SOLID
+- Propósito y tipo del patrón seleccionado
+- Motivación detallada del problema y la solución
+- Estructura de clases con diagrama UML
+- Justificación técnica de la solución propuesta
+```
+
+### Archivos de Contexto
+
+- principios-solid/
+
+- patron-de-diseno-de-comportamiento.md
+
+### Ajustes Realizados
+
+- Se eliminó el diagrama de clases generado por la IA.
+
+## Iteración 3
+
+```
+Teniendo en cuenta la respuesta anterior con respecto a la reescritura de patron-de-diseno-de-comportamiento.md, realiza el diagrama de clases UML de este, aplicando Observer, tal como dice el archivo para que tenga coherencia.
+```
+
+### Archivo de Contexto
+
+- patron-de-diseno-de-comportamiento.md
+
+### Ajustes Realizados a la IA
+
+- Se eliminaron detalles del diagrama que eran innecesarios
