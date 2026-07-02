@@ -93,7 +93,7 @@ En el SistemaTurnosMedicos, los turnos se crean en diferentes contextos:
 
 ### 3.1 Diagrama de Clases del Patrón
 
-![Diagrama de Clases - Patrón Builder aplicado a Turno](../../diagramas/01-diagrama-clases/01-patron-creacional-builder.png)
+[Ver diagrama de clases del patrón Builder aplicado a Turno](../../diagramas/01-diagrama-clases/01-patron-creacional-builder.puml)
 
 ### 3.2 Descripción de las Clases Involucradas
 
