@@ -1,86 +1,274 @@
 # Patrones de Diseño de Comportamiento y su Relación con los Principios SOLID
-En la Programación Orientada a Objetos (POO), los patrones de comportamiento constituyen un conjunto de soluciones probadas para problemas recurrentes relacionados con la interacción y comunicación entre objetos. Su propósito es definir cómo los objetos colaboran y se reparten responsabilidades, garantizando que el sistema sea flexible, extensible y fácil de mantener.
+
+## Patrones de Comportamiento y su Relación con SOLID
+
+En la Programación Orientada a Objetos, los **patrones de comportamiento** representan soluciones probadas y documentadas para problemas recurrentes relacionados con la interacción, comunicación y distribución de responsabilidades entre objetos. Su propósito fundamental es definir cómo los objetos colaboran entre sí, asignando responsabilidades de forma clara y mantenible.
 
 ### ¿Qué son los Patrones de Comportamiento?
-Patrones de comportamiento: Se centran en algoritmos y en la asignación de responsabilidades entre objetos.
 
-**Ejemplos clásicos:** Observer, Strategy, Command, Mediator.
+Los patrones de comportamiento se centran en **algoritmos y asignación de responsabilidades**, facilitando que los sistemas sean:
+- **Flexibles:** Permiten cambios sin alterar código existente
+- **Extensibles:** Facilitan agregar nuevas funcionalidades
+- **Desacoplados:** Reducen dependencias innecesarias entre clases
+- **Mantenibles:** Mejoran la legibilidad y comprensión del código
 
-**Beneficio principal:** Reducen el acoplamiento y promueven la reutilización del código.
+Ejemplos clásicos incluyen: **Observer**, Strategy, Command, Mediator, State y Template Method.
 
-### Relación con los Principios SOLID
-Los principios SOLID son lineamientos que buscan mejorar la calidad del diseño en POO. Los patrones de comportamiento se alinean directamente con ellos:
+### Relación Directa entre Patrones de Comportamiento y Principios SOLID
 
-**Single Responsibility Principle:** Cada clase debe tener una única responsabilidad. Patrones como *Command* ayudan a encapsular acciones en objetos separados, evitando sobrecarga de responsabilidades.
+Los patrones de comportamiento no son independientes de los principios SOLID; de hecho, son la **materialización concreta** de estos principios en soluciones prácticas:
 
-**Open/Closed Principle:** Los sistemas deben estar abiertos a la extensión pero cerrados a la modificación. *Strategy* permite cambiar algoritmos sin alterar el código existente.
+| Principio SOLID | Patrón de Comportamiento | Beneficio |
+|-----------------|------------------------|-----------|
+| **Single Responsibility Principle (SRP)** | Command, Observer | Cada clase tiene una única razón para cambiar |
+| **Open/Closed Principle (OCP)** | Strategy, Observer | Extensión sin modificar código existente |
+| **Liskov Substitution Principle (LSP)** | Observer, State | Las implementaciones pueden sustituirse sin romper contrato |
+| **Interface Segregation Principle (ISP)** | Observer, Mediator | Interfaces específicas en lugar de generales |
+| **Dependency Inversion Principle (DIP)** | Observer, Strategy | Depender de abstracciones, no de implementaciones |
 
-**Liskov Substitution Principle:** Los objetos derivados deben poder sustituir a sus padres sin alterar el comportamiento esperado. Patrones como *Observer* garantizan que las clases puedan ser reemplazadas sin romper la comunicación.
+En el **Sistema de Turnos Médicos**, la aplicación del patrón Observer demuestra cómo estos principios trabajan en conjunto para resolver un problema real de comunicación entre componentes.
 
-**Interface Segregation Principle:** Los clientes no deben depender de interfaces que no usan. Patrones como *Mediator* organizan la comunicación evitando interfaces demasiado grandes.
+---
 
-**Dependency Inversion Principle:** Los módulos de alto nivel no deben depender de los de bajo nivel, sino de abstracciones. Patrones como *Strategy* y *Observer* fomentan este principio al depender de interfaces y no de implementaciones concretas.
+## Propósito y Tipo del Patrón Seleccionado
 
-Los patrones de comportamiento no solo ofrecen soluciones prácticas a problemas comunes, sino que también refuerzan los principios SOLID, logrando sistemas más robustos, escalables y fáciles de mantener. En esencia, los patrones son la aplicación concreta de los principios de diseño, y juntos forman la base de un programa de calidad.
+### Propósito
 
-## Propósito y Tipo del Patrón
+El Sistema de Turnos Médicos requiere **notificar cambios de estado** a múltiples entidades (pacientes, médicos y auditoría) cuando un turno experimenta cambios significativos (creación, reprogramación, cancelación, registro de llegada, autorización de sobreturno).
 
-**Propósito:** El sistema de turnos médicos actual estaba lidiando con un programa para notificar cambios de turno al paciente y médico asociados.
+Originalmente, la clase `Agenda` concentraba esta responsabilidad mediante el método `enviarNotificacion()`. Este enfoque generaba:
 
-Agenda, la cual ya estaba lidiando con varios métodos que podrían ralentizar el proceso del programa, tenía asignado este comportamiento.
+- **Violación de SRP:** Agenda asumía responsabilidades de comunicación además de gestión de disponibilidad
+- **Violación de OCP:** Agregar nuevos canales de notificación (Telegram, SMS, etc.) requeriría modificar Agenda
+- **Acoplamiento fuerte:** Agenda estaba acoplada directamente a las implementaciones específicas de notificación
+- **Escalabilidad limitada:** El método se sobrecargaba conforme aumentaban los requisitos
 
-El hecho de que este método esté en Agenda puede provocar problemas a la hora de decidir expandir o modificar el código, debido a que no cumple con el Principio de Responsabilidad Única y el Principio de Abierto/Cerrado.
+### Tipo de Patrón: Observer (Patrón de Comportamiento)
 
-**Tipo:** El patrón de diseño de comportamiento seleccionado para este problema es *Observer*. Este mismo establece una relación de dependencia de uno a muchos entre objetos, permitiendo que cuando un objeto cambie su estado, todos los objetos interesados sean notificados y actualizados automáticamente. 
+El **patrón Observer** establece una relación de **dependencia uno-a-muchos** entre objetos:
+- Cuando un objeto (Observable/Sujeto) cambia de estado, todos los objetos interesados (Observadores) son notificados y actualizados automáticamente
+- Desvincula completamente al **emisor del evento** de los **receptores**
+- Facilita la comunicación **dinámica** y **extensible** en sistemas orientados a objetos
 
-Sirve para desacoplar emisores de eventos de sus receptores, facilitando la extensibilidad y la comunicación dinámica en sistemas orientados a objetos.
+**Características Clave:**
+- Bajo acoplamiento entre componentes
+- Fácil de extender con nuevos observadores sin modificar existentes
+- Cumple con OCP y DIP de manera natural
 
-Por esta misma razón, la aplicación de este patrón sería beneficiosa no solo para Agenda, sino para la organización del programa en sí.
+---
 
-## Motivación
+## Motivación Detallada: Problema y Solución
 
-El sistema originalmente manejaba el sistema de notificaciones mediante un método en Agenda llamado 'enviarNotificacion()'. Aunque puede parecer algo sencillo, de hecho resulta ser algo impráctico después. No solo añade muchas más responsabilidades innecesarias a Agenda, haciendo conflicto con el Principio de Responsabilidad Única y el Principio de Abierto/Cerrado, sino que también puede ralentizar el proceso de registrar un turno por algo de lo que podrían encargarse otras clases de forma más eficientes.
+### El Problema Original
 
-El patrón introduce a las nuevas clases:
+En la arquitectura inicial, la clase `Agenda` asumía responsabilidades excesivas:
 
-- *Sujeto:* Contiene los métodos necesarios para notificar los nuevos cambios a las demás clases suscriptas.
+```
+Agenda (SOBRECARGADA)
+├── Gestionar disponibilidad de turnos
+├── Crear turnos
+├── Registrar cambios de estado
+└── Enviar notificaciones por email
+    └── Enviar notificaciones por WhatsApp
+```
 
-- *NotificacionMedio:* Adapta la información con respecto a los nuevos cambios en un mensaje.
+**Problemas técnicos generados:**
 
-- *NotificacionEmail:* Envía el mensaje transformado por *NotificacionMedio* al paciente y médico asociados al turno por Email.
+1. **Violación del SRP:** Agenda tenía múltiples razones para cambiar:
+   - Cambios en la lógica de disponibilidad
+   - Cambios en los formatos de notificación
+   - Cambios en los canales de comunicación
+   - Cambios en los requisitos de auditoría
 
-- *NotificacionWhatsapp:* Envía el mensaje transformado por *NotificacionMedio* al paciente y médico asociados al turno por Whatsapp.
+2. **Violación del OCP:** Para agregar nuevos observadores (p. ej., SMS, notificaciones push, integración con CRM), era necesario modificar Agenda directamente.
 
-De esta forma, se agregan más clases para manejar el nuevo sistema de notificaciones. Cumpliendo con el Principio de Responsabilidad Única y el Principio de Abierto/Cerrado, con este último se hace mucho más sencillo modificar alguna parte de este procedimiento sin tener que alterar las demás clases y comportamientos.
+3. **Acoplamiento fuerte:** Agenda estaba acoplada a clases concretas (`NotificacionEmail`, `NotificacionWhatsapp`, `Auditoria`), imposibilitando cambiar implementaciones sin afectar Agenda.
 
+4. **Difícil de probar:** Las pruebas unitarias de Agenda se complicaban al tener que mockear múltiples dependencias.
 
-## Estructura de Clases
+5. **Mantenibilidad reducida:** Cada cambio en notificaciones corría el riesgo de afectar la lógica de disponibilidad.
 
-[Diagrama de Clases con Observer](../../diagramas/01-diagrama-clases/01-patron-comportamiento-observer.png)
+### La Solución: Aplicación del Patrón Observer
 
-## Justificación Técnica de la Estructura de Clases
+El patrón Observer **desacoplada completamente** la responsabilidad de notificación, reorganizando así:
 
-### Explicación Detallada de Cada Clase Utilizada
+**Responsabilidades Redistribuidas:**
 
-- **Turno:** Su responsabilidad es vincular turnos con fecha y hora con su paciente y médico respectivos. Gestiona los métodos para registrar, asignar, modificar y reprogramar turnos. Interactúa con otras clases mediante el Notificador, que es el que observa el comportamiento de Turno y envía un mensaje recordatorio al Paciente y Medico asignados en el turno por medio de NotificadorMedio, al mismo tiempo que activa Auditoria para guardar los detalles del evento; esto ocurre cada vez que haya un cambio en el estado de Turno. Es indispensable para la implementación del patrón debido a que, en los requisitos funcionales, es el objeto observable.
+1. **Turno (Observable/Sujeto):**
+   - Responsabilidad única: Representar el ciclo de vida de un turno
+   - Hereda de `Sujeto` para obtener capacidad de notificación
+   - Notifica automáticamente cuando cambia su estado
 
-- **Auditoria:** Su responsabilidad es garantizar la trazabilidad completa con referencia al turno, usuario, acción realizada, timestamp y detalles de cambios. Gestiona los comportamientos para guardar los eventos con todos los detalles. Interactúa con Notificacion para avisarle que el estado de Turno cambió y obtiene los detalles desde el Turno. Es indispensable debido a que uno de los requisitos funcionales del sistema es que se tenga un registro de todos los cambios realizados con el usuario y acción realizada.
+2. **Sujeto (Clase Abstracta):**
+   - Responsabilidad única: Gestionar el mecanismo de suscripción/notificación
+   - Encapsula métodos: `suscribir()`, `desuscribir()`, `notificar()`
+   - Define el contrato que todos los observables deben cumplir
 
-- **Sujeto:** Clase abstracta que encapsula los métodos para suscribirse, desuscribirse y notificar acerca de cualquier cambio de estado del Turno. Sirve para que Turno herede sus comportamientos y pueda notificar los cambios a Notificacion.
+3. **iNotificacion (Interfaz):**
+   - Responsabilidad única: Definir el contrato de actualización
+   - Especifica el método `actualizar()` que todo observador debe implementar
+   - Ejemplo de ISP: Interfaz minimalista y específica
 
-- **NotificacionMedio:** Se encarga de enviar un mensaje recordatorio para los usuarios suscriptos a Sujeto.
+4. **NotificacionMedio (Clase Abstracta):**
+   - Responsabilidad única: Adaptación de información de turno a mensajes
+   - Implementa `iNotificacion`
+   - Encapsula la lógica común de transformación
+   - Permite extensión para nuevos tipos de notificaciones
 
-- **NotificacionEmail:** Envía el mensaje mediante Email para el Paciente o Médico asociados con el turno.
+5. **NotificacionEmail (Implementación Concreta):**
+   - Responsabilidad única: Enviar notificaciones vía Email
+   - No conoce sobre la lógica de disponibilidad
+   - Puede cambiar su implementación sin afectar Turno o Agenda
 
-- **NotificacionWhatsapp:** Envía el mensaje mediante Whatsapp para el Paciente o Médico asociados con el turno.
+6. **NotificacionWhatsapp (Implementación Concreta):**
+   - Responsabilidad única: Enviar notificaciones vía WhatsApp
+   - Independiente de Email y de otros componentes
+   - Fácil de reemplazar o extender
 
-- **iNotificacion:** Interfaz que sirve como el medio general por el cuál los objetos suscriptos a Sujeto se notifican con respecto a los cambios realizados en Turno.
+7. **Auditoria:**
+   - Responsabilidad única: Registrar todos los cambios de estado
+   - Se suscribe como observador
+   - Garantiza trazabilidad sin afectar la lógica de negocio
 
-### Descripcion del Flujo de Comportamiento
+### Cómo Cumple con los Principios SOLID
 
-Cada vez que se crea un nuevo turno que se asocia a un usuario y a un médico, el Turno automáticamente realiza la suscripción (ya que hereda estos comportamientos de Sujeto) de estos a la misma clase.
+| Principio | Aplicación | Beneficio |
+|-----------|-----------|----------|
+| **SRP** | Cada clase tiene una única responsabilidad claramente definida | Fácil de entender, probar y mantener |
+| **OCP** | Nuevos canales de notificación (SMS, Telegram) pueden agregarse sin modificar `Turno` o `Agenda` | Extensión sin modificación |
+| **LSP** | Todas las implementaciones de `iNotificacion` pueden usarse indistintamente | Sustitución segura entre observadores |
+| **ISP** | La interfaz `iNotificacion` solo especifica lo esencial (`actualizar()`) | Clientes no dependen de métodos innecesarios |
+| **DIP** | `Turno` depende de la abstracción `iNotificacion`, no de implementaciones concretas | Desacoplamiento máximo |
 
-Cuando Turno cambia de estado, la interfaz iNotificacion recibe estos datos y llama a las demás clases suscriptas, NotificacionMedio y Auditoria, para que accedan directamente al Turno.
+---
 
-En el caso de NotificacionMedio, transforma la información en un mensaje y lo pasa a NotificacionEmail y NotificacionWhatsapp para que lo manden en sus respectivos medios al paciente y médico asociados al Turno registrado.
+## Estructura de Clases con Diagrama UML
 
+![Diagrama de Clases del Patrón Observer](../../diagramas/01-diagrama-clases/01-patron-comportamiento-observer.png)
+
+---
+
+## Justificación Técnica de la Solución Propuesta
+
+### 1. Desacoplamiento mediante Abstracciones (DIP)
+
+**Problema:** `Turno` no debe conocer ni depender de clases concretas como `NotificacionEmail` o `NotificacionWhatsapp`.
+
+**Solución:**
+- `Turno` solo depende de `iNotificacion` (abstracción)
+- Los observadores específicos implementan `iNotificacion`
+- Cambiar o extender observadores no requiere modificar `Turno`
+
+```
+ANTES (acoplado):        DESPUÉS (desacoplado):
+Turno → NotificacionEmail   Turno → iNotificacion ← NotificacionEmail
+     → NotificacionWhatsapp          ← NotificacionWhatsapp
+     → Auditoria                     ← Auditoria
+```
+
+### 2. Extensibilidad sin Modificación (OCP)
+
+**Escenario:** Se requiere agregar notificaciones por SMS.
+
+**Solución:**
+1. Crear `NotificacionSMS` que implemente `iNotificacion`
+2. No es necesario modificar `Turno`, `Agenda` ni ninguna clase existente
+3. El nuevo observador se suscribe automáticamente
+
+### 3. Responsabilidad Única (SRP)
+
+Cada clase en la estructura tiene **una única razón para cambiar:**
+
+| Clase | Razón para Cambiar |
+|-------|-------------------|
+| `Turno` | Cambios en reglas de negocio de turnos |
+| `Sujeto` | Cambios en el mecanismo de suscripción |
+| `NotificacionEmail` | Cambios en configuración de Email (SMTP, plantillas) |
+| `NotificacionWhatsapp` | Cambios en API de WhatsApp |
+| `Auditoria` | Cambios en requisitos de auditoría |
+
+### 4. Segregación de Interfaces (ISP)
+
+**Problema:** Una interfaz genérica `IObserver` podría especificar múltiples métodos innecesarios.
+
+**Solución:**
+- `iNotificacion` solo especifica `actualizar()` 
+- Las subclases pueden implementar métodos adicionales específicos
+- Los clientes no dependen de métodos que no usan
+
+### 5. Sustitución de Liskov (LSP)
+
+Todas las implementaciones de `iNotificacion` respetan el contrato:
+- `NotificacionEmail` puede ser reemplazada por `NotificacionWhatsapp`
+- `Auditoria` puede ser reemplazada por otra implementación de auditoría
+- El comportamiento esperado se mantiene consistente
+
+**Garantía:** `Turno` puede suscribir cualquier implementación de `iNotificacion` sin conocer detalles específicos.
+
+### 6. Flujo de Ejecución
+
+**Cuando se crea un nuevo Turno:**
+```
+1. new Turno(fecha, paciente, medico)
+2. Turno hereda suscribir() de Sujeto
+3. paciente.suscribir(this)  // Paciente observa Turno
+4. medico.suscribir(this)    // Médico observa Turno
+5. auditoria.suscribir(this) // Auditoría observa Turno
+```
+
+**Cuando cambia el estado del Turno:**
+```
+1. turno.cambiarEstado(nuevoEstado)
+2. this.notificar()  // Turno notifica a todos sus observadores
+3. Para cada iNotificacion suscrita:
+   - notificacion.actualizar()
+   - En NotificacionEmail: enviarNotificacion(email, mensaje)
+   - En NotificacionWhatsapp: enviarNotificacion(celular, mensaje)
+   - En Auditoria: guardarEvento(turno, cambio)
+```
+
+### 7. Ventajas Técnicas Concretas
+
+| Ventaja | Beneficio |
+|---------|----------|
+| **Bajo Acoplamiento** | Cambios independientes entre componentes |
+| **Extensibilidad** | Agregar observadores sin modificar código existente |
+| **Testabilidad** | Mockear observadores para pruebas unitarias |
+| **Reusabilidad** | `Sujeto` puede usarse en otras clases observables |
+| **Mantenibilidad** | Código claro, fácil de entender y modificar |
+| **Escalabilidad** | Sistema crece sin complejidad acumulada |
+
+### 8. Comparación: Antes vs. Después
+
+**ANTES (violando SOLID):**
+```
+✗ Agenda contiene lógica de notificación
+✗ Agregar nuevo canal requiere modificar Agenda
+✗ Acoplamiento fuerte a implementaciones concretas
+✗ Difícil de probar aisladamente
+✗ Violaciones: SRP, OCP, DIP
+```
+
+**DESPUÉS (aplicando Observer + SOLID):**
+```
+✓ Turno es observable, notificadores son independientes
+✓ Nuevos observadores se agregan sin modificaciones
+✓ Desacoplamiento total mediante abstracciones
+✓ Cada componente es testeable en aislamiento
+✓ Cumplimiento de SRP, OCP, ISP, LSP, DIP
+```
+
+---
+
+## Conclusión
+
+El patrón Observer implementado en el Sistema de Turnos Médicos demuestra cómo los principios SOLID y los patrones de comportamiento trabajan conjuntamente para resolver problemas reales de diseño. 
+
+**Resultado final:**
+- Sistema flexible y extensible
+- Código limpio y fácil de mantener
+- Nuevos requisitos pueden implementarse sin afectar código existente
+- Cada componente tiene clara responsabilidad
+- Máxima reutilización y testabilidad
+
+La combinación de patrón Observer + principios SOLID convierte el Sistema de Turnos Médicos en una solución robusta, profesional y escalable.
