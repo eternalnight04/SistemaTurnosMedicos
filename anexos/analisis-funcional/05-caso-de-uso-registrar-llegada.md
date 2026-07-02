@@ -20,75 +20,14 @@
 8. Se guarda la hora de llegada.
 9. El paciente queda habilitado para ser atendido por el médico.
 
-
----
-
-## Tabla 1: Metadatos del Escenario
-
-| Campo | Valor |
-|------|------|
-| **Nombre Escenario** | Registrar Llegada del Paciente - Caso Exitoso |
-| **Nombre Caso de Uso** | UC-05: Registrar Llegada |
-| **ID Única** | 05-CU05-FP |
-| **Área** | Gestión de Turnos |
-| **Actor(es)** | Secretaria, Paciente, Sistema |
-| **Descripción** | El sistema registra la llegada del paciente y actualiza el estado del turno para iniciar la atención médica |
-
-
----
-
-## Tabla 2: Evento/Señal Activador
-
-| Campo | Valor |
-|------|------|
-| **Activar Evento** | Paciente se presenta en recepción |
-| **Identificadores e iniciadores** | Usuario: Secretaria, Timestamp: 2026-04-16 09:45 |
-| **Tipo Señal** | ☑ Usuario ☑ Sistema ☐ Externo |
-
-
----
-
-## Tabla 3: Pasos Desempeñados
-
-| Pasos desempeñados | Información para los pasos |
-|--------------------|---------------------------|
-| 1. Identificación del paciente | El paciente llega y se identifica en recepción |
-| 2. Búsqueda de turno | Secretaria utiliza Agenda.buscarTurno(paciente) |
-| 3. Validación del turno | Sistema verifica que el turno sea válido y del día |
-| 4. Registro de llegada | Secretaria ejecuta registrarLlegada(paciente, turno) |
-| 5. Creación del registro | Se crea la entidad LlegadaPaciente |
-| 6. Registro de hora | Se almacena horaLlegada |
-| 7. Actualización de estado | Turno cambia a EN_PROGRESO |
-| 8. Persistencia de datos | Se guarda la llegada en el sistema |
-| 9. Habilitación de atención | El médico puede comenzar la consulta |
-
-
----
-
-## Tabla 4: Condiciones de Contexto
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Precondiciones** | El paciente debe tener un turno programado |
-| **Poscondiciones** | Turno actualizado a EN_PROGRESO y llegada registrada |
-| **Suposiciones** | El paciente llega en el horario asignado |
-| **Requisitos funcionales** | RF-06: Registrar llegada del paciente |
-| **Prioridad** | Alta |
-| **Riesgo** | Bajo |
-
-
----
-
-## Flujos alternativos
+**Flujos alternativos:**
 
 - **FA-05A:** Si el turno no existe → se informa error y no se registra la llegada.
 - **FA-05B:** Si el turno no es del día → no se permite el registro.
 - **FA-05C:** Si el paciente llega tarde → se registra igual pero se mantiene trazabilidad.
 
 
----
-
-## Requisitos funcionales que satisface
+**Requisitos funcionales que satisface:**
 
 | CU | Requisito funcional | Descripción |
 |----|---------------------|-------------|
@@ -100,10 +39,10 @@
 # 2. Diagrama de Casos de Uso
 
 
-![Diagrama de Casos de Uso - Registrar Llegada](../../diagramas/02-casos-de-uso/05-caso-uso-registrar-llegada.png)
+![Diagrama de Casos de Uso - Registrar Llegada](../../diagramas/02-casos-de-uso/02-caso-uso-registrar-llegada.png)
 
 
-**Actores:**
+**Actores y relaciones:**
 
 - Paciente → Se presenta al turno.
 - Secretaria → Registra la llegada.
@@ -115,7 +54,7 @@
 # 3. Diagrama de Actividades
 
 
-![Diagrama de Actividades - Registrar Llegada](../../diagramas/04-diagramas-actividades/05-actividad-registrar-llegada.png)
+![Diagrama de Actividades - Registrar Llegada](../../diagramas/04-diagramas-actividades/04-actividad-registrar-llegada-caso-uso-05.png)
 
 
 **Swimlanes:**
@@ -128,27 +67,14 @@
 
 ---
 
-## Decisiones clave del flujo
-
-
-### ¿Existe turno válido?
-
-- Sí → continuar registro de llegada  
-- No → finalizar proceso  
-
-
-### ¿Turno es del día?
-
-- Sí → registrar llegada  
-- No → rechazar registro  
-
+**Decisiones clave del flujo:** Validar si el turno puede agendarse, verificar que el horario se encuentre dentro de la disponibilidad del profesional, comprobar que no exista superposición con otros turnos y determinar si la notificación fue enviada correctamente.
 
 ---
 
 # 4. Diagrama de Secuencia
 
 
-![Diagrama de Secuencia - Registrar Llegada](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada.png)
+![Diagrama de Secuencia - Registrar Llegada](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-05.png)
 
 
 **Participantes:**
@@ -174,19 +100,18 @@
 # 5. Diagrama de Clases del Caso de Uso
 
 
-![Diagrama de Clases - Registrar Llegada](../../diagramas/01-diagrama-clases/04-clases-registrar-llegada.png)
+![Diagrama de Clases - Registrar Llegada](../../diagramas/01-diagrama-clases/04-clases-registrar-llegada-05.png)
 
 
 **Clases involucradas (según UML):**
 
-| Clase | Responsabilidad |
-|------|----------------|
-| Secretaria | Registra la llegada del paciente y actualiza el estado del turno |
-| Paciente | Se presenta al sistema y consulta su turno |
-| Turno | Representa la cita médica y su estado |
-| LlegadaPaciente | Registra la hora de llegada del paciente |
-| Agenda | Busca turnos asociados al paciente |
-| EstadoTurno | Define los estados posibles del turno |
+| Clase | Responsabilidad | Tarjeta CRC |
+|------|----------------|------|
+| Secretaria | Registra la llegada del paciente y actualiza el estado del turno | [05-tarjeta-crc-secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| Paciente | Se presenta al sistema y consulta su turno | [01-tarjeta-crc-paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| Turno | Representa la cita médica y su estado | [03-tarjeta-crc-turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| LlegadaPaciente | Registra la hora de llegada del paciente | [10-tarjeta-crc-turno](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-llegada-paciente.md) |
+| Agenda | Busca turnos asociados al paciente | [04-tarjeta-crc-agenda](../../herramientas-agile/tarjetas-crc/10-tarjeta-crc-llegada-paciente.md) |
 
 
 ---
@@ -195,124 +120,15 @@
 
 | Relación | Clases | Justificación |
 |----------|--------|---------------|
-| Asociación | Secretaria → Paciente | La secretaria interactúa con el paciente en recepción |
-| Asociación | Secretaria → Turno | Registra y actualiza el turno |
-| Asociación | Secretaria → LlegadaPaciente | Crea el registro de llegada |
-| Asociación | Paciente → Turno | El paciente posee un turno asignado |
-| Asociación | Agenda → Turno | La agenda administra los turnos |
+| Agregación | Secretaria → Paciente | La secretaria interactúa con el paciente en recepción |
+| Composición | Secretaria → Turno | Registra y actualiza el turno |
+| Composición | Secretaria → LlegadaPaciente | Crea el registro de llegada |
+| Dependencia | Paciente → Turno | El paciente posee un turno asignado |
+| Composición | Agenda → Turno | La agenda administra los turnos |
 | Composición | LlegadaPaciente → Turno | La llegada depende del turno asociado |
 
 
----
 
-# 6. Pseudocódigo
-
-=======
-# Caso de Uso N° 05 - Registrar Llegada
-
----
-
-## 1. Descripción y Trazabilidad con Requisitos Funcionales
-
-**Actor/es:** Secretaria (Carlos), Paciente, Sistema
-
-**Objetivo:** La secretaria registra la llegada de un paciente cuando este se presenta en el establecimiento para su turno.
-
-**Flujo principal:**
-
-1. Acceder al módulo "Buscar Turno".
-2. Buscar turno del paciente.
-3. Mostrar detalles del turno.
-4. Seleccionar opción "Registrar llegada".
-5. Confirmar identidad del paciente.
-6. Validar que el turno exista.
-7. Marcar turno como "Paciente presente".
-8. Registrar hora de llegada.
-9. Guardar modificación en el sistema.
-10. Actualizar estado del turno.
-11. Registrar en historial.
-12. Mostrar confirmación.
-
-**Requisitos funcionales que satisface:**
-
-| ID | Requisito Funcional (texto exacto de introduccion.md) | Cómo lo satisface este caso de uso |
-|----|------------------------------------------------------|-------------------------------------|
-| RF01 | Gestionar turnos de pacientes. | Permite actualizar el estado del turno cuando el paciente llega. |
-| RF05 | Gestionar la disponibilidad horaria de los profesionales. | Permite actualizar el estado del turno para continuar la atención. |
-
----
-
-## 2. Diagrama de Casos de Uso
-
-[Diagrama de Casos de Uso - Registrar Llegada](../../diagramas/02-casos-de-uso/05-caso-uso-registrar-llegada.png)
-
-**Actores y relaciones:**
-
-- Paciente → se presenta al sistema para su atención.
-- Secretaria → busca el turno y registra la llegada.
-- Include/Extend: incluye validar turno, registrar llegada y actualizar estado.
-
----
-
-## 3. Diagrama de Actividades
-
-[Diagrama de Actividades - Registrar Llegada](../../diagramas/04-diagramas-actividades/05-actividad-registrar-llegada-caso-uso-05.png)
-
-**Swimlanes:** Paciente, Secretaria y Sistema.
-
-**Decisiones clave del flujo:** Verificar existencia del turno, confirmar identidad del paciente y validar estado del turno.
-
----
-
-## 4. Diagrama de Secuencia
-
-[Diagrama de Secuencia - Registrar Llegada](../../diagramas/05-diagramas-secuencia/05-secuencia-registrar-llegada-05.png)
-
-**Participantes:** Paciente (actor), Secretaria (actor), Sistema, Agenda:agenda, Turno:turno
-
-**Mensajes clave:**
-
-- informarLlegada()
-- buscarTurno()
-- obtenerTurno()
-- marcarLlegada()
-- registrarHoraLlegada()
-- actualizarEstado()
-- confirmarRegistro()
-
-**Objetos temporales destruidos:** No se eliminan objetos, solo se actualiza el estado del turno.
-
----
-
-## 5. Diagrama de Clases del Caso de Uso
-
-[Diagrama de Clases - Registrar Llegada](../../diagramas/01-diagrama-clases/05-clases-registrar-llegada-05.png)
-
-**Clases involucradas:**
-
-| Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
-|-------|-------------------------------------|-------------|
-| UsuarioDelSistema | Autenticar y actualizar datos | [Tarjeta CRC - UsuarioDelSistema](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
-| Paciente | Confirmar llegada | [Tarjeta CRC - Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
-| Medico | Atender pacientes | [Tarjeta CRC - Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
-| Turno | Actualizar estado del turno | [Tarjeta CRC - Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
-| Agenda | Gestionar turnos | [Tarjeta CRC - Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
-| Secretaria | Registrar llegada | [Tarjeta CRC - Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
-
-**Relaciones UML:**
-
-| Relación | Clases | Justificación |
-|----------|--------|---------------|
-| Herencia | UsuarioDelSistema → Paciente | Comparte estructura base del sistema |
-| Herencia | UsuarioDelSistema → Secretaria | Comparte estructura base del sistema |
-| Herencia | UsuarioDelSistema → Medico | Comparte estructura base del sistema |
-| Asociación | Paciente → Turno | El paciente tiene un turno asignado |
-| Asociación | Medico → Turno | El médico atiende turnos |
-| Asociación | Secretaria → Agenda | La secretaria gestiona la agenda |
-| Dependencia | Secretaria → Turno | Registra la llegada del paciente |
-| Agregación | Agenda → Turno | La agenda contiene turnos |
-
----
 
 ## 6. Pseudocódigo
 

@@ -1,12 +1,10 @@
 # Caso de Uso N°4 - Autorizar Sobreturno
 
-
 ## 1. Descripción y Trazabilidad con Requisitos Funcionales
 
 **Actor/es:** Secretaria, Médico, Paciente, Sistema
 
 **Objetivo:** Permitir que la secretaria solicite un sobreturno para un paciente cuando no existen turnos disponibles, y que el médico pueda autorizar o rechazar dicha solicitud verificando la disponibilidad de su agenda.
-
 
 **Flujo principal:**
 
@@ -21,94 +19,18 @@
 9. Si el médico autoriza, el sistema genera un nuevo turno.
 10. El sistema actualiza el estado del sobreturno y notifica el resultado.
 
+**Requisitos funcionales que satisface:**
+
+| ID | Requisito Funcional | Cómo lo satisface este caso de uso |
+|----|---------------------|-------------------------------------|
+| RF04 | Gestionar solicitudes de sobreturno | Permite registrar, consultar y resolver solicitudes de sobreturno médico |
+| RF05 | Autorizar o rechazar sobreturnos | Permite al médico aceptar o rechazar solicitudes según disponibilidad |
 
 ---
 
-## Tabla 1: Metadatos del Escenario
+## 2. Diagrama de Casos de Uso
 
-| Campo | Valor |
-|-------|-------|
-| **Nombre Escenario** | Autorizar Sobreturno Médico - Caso Exitoso |
-| **Nombre Caso de Uso** | UC-04: Autorizar Sobreturno |
-| **ID Única** | 04-CU04-FP |
-| **Área** | Gestión de Sobreturnos |
-| **Actor(es)** | Secretaria, Médico, Paciente, Sistema |
-| **Descripción** | El sistema permite gestionar solicitudes de sobreturno cuando no existe disponibilidad normal en la agenda médica |
-
-
----
-
-## Tabla 2: Evento/Señal Activador
-
-| Campo | Valor |
-|-------|-------|
-| **Activar Evento** | Secretaria solicita un sobreturno para un paciente |
-| **Identificadores e iniciadores** | Usuario: Secretaria, Timestamp: 2026-04-16 15:00, Hora sistema |
-| **Tipo Señal** | ☑ Usuario ☑ Sistema ☐ Externo |
-
-
----
-
-## Tabla 3: Pasos Desempeñados
-
-| Pasos desempeñados | Información para los pasos |
-|--------------------|---------------------------|
-| 1. Solicitar sobreturno | Paciente solicita atención médica fuera de los turnos disponibles |
-| 2. Verificar disponibilidad | Sistema consulta la agenda del médico seleccionado |
-| 3. Detectar falta de disponibilidad | Sistema informa que no existen horarios libres |
-| 4. Crear solicitud de sobreturno | Secretaria registra paciente, médico, fecha y motivo |
-| 5. Registrar sobreturno | Sistema crea solicitud con estado "Pendiente" |
-| 6. Consultar solicitud | Médico visualiza solicitudes pendientes |
-| 7. Evaluar agenda médica | Médico verifica si puede atender al paciente |
-| 8. Autorizar o rechazar | Médico ejecuta autorizarSobreturno() o rechazarSobreturno() |
-| 9. Generar turno | Si se acepta, el sistema crea un nuevo turno |
-| 10. Actualizar estado | El sobreturno cambia a "Autorizado" o "Rechazado" |
-| 11. Notificar resultado | Sistema informa la decisión al paciente y secretaria |
-
-
----
-
-## Tabla 4: Condiciones de Contexto
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Precondiciones** | Paciente registrado, médico existente y solicitud de sobreturno creada |
-| **Poscondiciones** | Sobreturno autorizado o rechazado, turno generado si corresponde y estado actualizado |
-| **Suposiciones** | Médico con acceso a agenda y solicitudes pendientes |
-| **Reunir Requerimientos** | RF04: Gestionar solicitudes de sobreturno, RF05: Autorizar o rechazar solicitudes |
-| **Aspectos Sobresalientes** | Validación de agenda, control de disponibilidad y trazabilidad |
-| **Prioridad** | Media |
-| **Riesgo** | Medio |
-
-
----
-
-## Flujos alternativos
-
-- **FA-04A:** Si el médico no tiene disponibilidad, rechaza el sobreturno y el sistema actualiza el estado a "Rechazado".
-
-- **FA-04B:** Si los datos del paciente son incorrectos, la secretaria corrige la información antes de enviar la solicitud.
-
-- **FA-04C:** Si existe otro turno asignado en el horario solicitado, el sistema bloquea la creación del sobreturno.
-
-
----
-
-## Requisitos funcionales que satisface
-
-| CU | Requisito funcional | Descripción |
-|----|---------------------|-------------|
-| CU-04 | RF04: Gestionar solicitudes de sobreturno | Permite registrar, consultar y resolver solicitudes de sobreturno médico |
-| CU-04 | RF05: Autorizar o rechazar sobreturnos | Permite al médico aceptar o rechazar solicitudes según disponibilidad |
-
-
----
-
-# 2. Diagrama de Casos de Uso
-
-
-![Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/04-caso-uso-autorizar-sobreturno.png)
-
+![Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/02-caso-uso-autorizar-sobreturno.png)
 
 **Actores y relaciones:**
 
@@ -117,14 +39,11 @@
 - **Medico:** Evalúa la solicitud y decide autorizar o rechazar.
 - **Sistema:** Valida información, registra cambios y genera el turno.
 
-
 ---
 
-# 3. Diagrama de Actividades
+## 3. Diagrama de Actividades
 
-
-![Diagrama de Actividades - Autorizar Sobreturno](../../diagramas/04-diagramas-actividades/04-actividad-autorizar-sobreturno.png)
-
+![Diagrama de Actividades - Autorizar Sobreturno](../../diagramas/04-diagramas-actividades/04-actividad-autorizar-sobreturno-caso-uso-04.png)
 
 **Swimlanes:**
 
@@ -133,35 +52,16 @@
 - **Medico:** Analiza la solicitud y toma la decisión final.
 - **Sistema:** Controla validaciones, estados y generación del turno.
 
-
 **Decisiones clave del flujo:**
 
-
-### ¿Existe disponibilidad en agenda?
-
-**Condición SÍ:**  
-Se asigna un turno normal y finaliza el proceso.
-
-**Condición NO:**  
-Se genera una solicitud de sobreturno.
-
-
-### ¿El médico autoriza el sobreturno?
-
-**Condición SÍ:**  
-Se crea el turno asociado y el estado cambia a "Autorizado".
-
-**Condición NO:**  
-El sistema rechaza la solicitud y actualiza el estado.
-
+- ¿Existe disponibilidad en agenda? → SÍ: turno normal / NO: solicitud de sobreturno
+- ¿El médico autoriza el sobreturno? → SÍ: crear turno / NO: rechazar solicitud
 
 ---
 
-# 4. Diagrama de Secuencia
+## 4. Diagrama de Secuencia
 
-
-![Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-01.png)
-
+![Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/05-secuencia-autorizar-sobreturno-04.png)
 
 **Participantes:**
 
@@ -171,7 +71,6 @@ El sistema rechaza la solicitud y actualiza el estado.
 - **Sobreturno:sobreturno:** Objeto que representa la solicitud.
 - **Turno:turno:** Objeto generado si la solicitud es aprobada.
 - **Agenda:agenda:** Objeto encargado de validar disponibilidad.
-
 
 **Mensajes clave:**
 
@@ -183,235 +82,81 @@ El sistema rechaza la solicitud y actualiza el estado.
 - `cambiarEstado(estado)` → Actualiza el estado del sobreturno.
 - `asignarTurno()` → Genera un nuevo turno.
 
-
----
-
-# 5. Diagrama de Clases del Caso de Uso
-
-
-![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-clases-autorizar-sobreturno-01.png)
-
-
-**Clases involucradas:**
-
-| Clase | Responsabilidad |
-|-------|----------------|
-| Medico | Autorizar o rechazar solicitudes de sobreturno |
-| Secretaria | Crear y registrar solicitudes |
-| Paciente | Solicitar atención médica |
-| Sobreturno | Representar la solicitud de atención especial |
-| Turno | Registrar el turno generado |
-| Agenda | Verificar disponibilidad y administrar turnos |
-
-
-# Caso de Uso N° 04 - Autorizar Sobreturno
-
----
-
-## 1. Descripción y Trazabilidad con Requisitos Funcionales
-
-**Actor/es:** Secretaria, Paciente, Médico, Sistema
-
-**Objetivo:** La secretaria autoriza un sobreturno cuando no hay disponibilidad en la agenda normal o se requiere una excepción para atención médica.
-
-**Flujo principal:**
-
-1. Acceder al módulo “Gestión de Turnos”.
-2. Buscar disponibilidad del médico.
-3. Detectar falta de turnos disponibles o necesidad de excepción.
-4. Seleccionar opción “Autorizar sobreturno”.
-5. Ingresar datos del paciente.
-6. Ingresar médico asignado.
-7. Ingresar motivo del sobreturno.
-8. Validar disponibilidad especial del médico.
-9. Crear registro de sobreturno.
-10. Asignar fecha y hora del sobreturno.
-11. Guardar sobreturno en el sistema.
-12. Actualizar agenda del médico.
-13. Notificar confirmación de autorización.
-
-**Requisitos funcionales que satisface:**
-
-| ID | Requisito Funcional | Cómo lo satisface este caso de uso |
-|----|---------------------|-------------------------------------|
-| RF01 | Gestionar turnos de pacientes. | Permite crear un turno excepcional (sobreturno) para el paciente. |
-| RF05 | Gestionar la disponibilidad horaria de los profesionales. | Permite validar y modificar la disponibilidad del médico para aceptar el sobreturno. |
-
----
-
-## 2. Diagrama de Casos de Uso
-
-[Diagrama de Casos de Uso - Autorizar Sobreturno](../../diagramas/02-casos-de-uso/04-caso-uso-autorizar-sobreturno.png)
-
-**Actores y relaciones:**
-
-- Paciente → recibe el sobreturno autorizado.
-- Secretaria → gestiona y autoriza el sobreturno.
-- Médico → valida disponibilidad.
-- Include/Extend: incluye verificar disponibilidad, crear sobreturno y actualizar agenda.
-
----
-
-## 3. Diagrama de Actividades
-
-[Diagrama de Actividades - Autorizar Sobreturno](../../diagramas/04-diagramas-actividades/04-actividad-autorizar-sobreturno.png)
-
-**Swimlanes:** Secretaria, Sistema, Médico, Paciente.
-
-**Decisiones clave del flujo:**
-
-- Verificar disponibilidad del médico.
-- Validar datos del paciente.
-- Confirmar motivo del sobreturno.
-- Autorizar o rechazar sobreturno.
-
----
-
-## 4. Diagrama de Secuencia
-
-[Diagrama de Secuencia - Autorizar Sobreturno](../../diagramas/05-diagramas-secuencia/04-secuencia-autorizar-sobreturno.png)
-
-**Participantes:** Secretaria, Paciente, Médico, Sistema, Agenda:agenda, Sobreturno:sobreturno
-
-**Mensajes clave:**
-
-- solicitarSobreturno()
-- verificarDisponibilidad()
-- tieneDisponibilidad()
-- crearSobreturno()
-- registrarSobreturno()
-- actualizarAgenda()
-- confirmarAutorizacion()
-
-**Objetos temporales destruidos:** No se eliminan objetos, solo se crea y registra el sobreturno.
-
 ---
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-[Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-clases-autorizar-sobreturno.png)
+![Diagrama de Clases - Autorizar Sobreturno](../../diagramas/01-diagrama-clases/04-clases-autorizar-sobreturno-04.png)
 
 **Clases involucradas:**
 
 | Clase | Responsabilidad (según tarjeta CRC) | Tarjeta CRC |
 |-------|-------------------------------------|-------------|
-| UsuarioDelSistema | Base común de usuarios del sistema | [Tarjeta CRC - UsuarioDelSistema](../../herramientas-agile/tarjetas-crc/06-tarjeta-crc-usuariodelsistema.md) |
-| Paciente | Solicitar atención | [Tarjeta CRC - Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
-| Medico | Validar disponibilidad | [Tarjeta CRC - Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
-| Secretaria | Autorizar sobreturnos | [Tarjeta CRC - Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
-| Agenda | Gestionar disponibilidad | [Tarjeta CRC - Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
-| Auditoria | Registrar cambios | [Tarjeta CRC - Auditoria](../../herramientas-agile/tarjetas-crc/08-tarjeta-crc-auditoria.md) |
+| Medico | Autorizar o rechazar solicitudes de sobreturno | [Tarjeta CRC - Medico](../../herramientas-agile/tarjetas-crc/02-tarjeta-crc-medico.md) |
+| Secretaria | Crear y registrar solicitudes | [Tarjeta CRC - Secretaria](../../herramientas-agile/tarjetas-crc/05-tarjeta-crc-secretaria.md) |
+| Paciente | Solicitar atención médica | [Tarjeta CRC - Paciente](../../herramientas-agile/tarjetas-crc/01-tarjeta-crc-paciente.md) |
+| Sobreturno | Representar la solicitud de atención especial | [Tarjeta CRC -  Sobreturno](../../herramientas-agile/tarjetas-crc/09-tarjeta-crc-sobreturno.md) | |
+| Turno | Registrar el turno generado | [Tarjeta CRC - Turno](../../herramientas-agile/tarjetas-crc/03-tarjeta-crc-turno.md) |
+| Agenda | Verificar disponibilidad y administrar turnos | [Tarjeta CRC - Agenda](../../herramientas-agile/tarjetas-crc/04-tarjeta-crc-agenda.md) |
 
 
 **Relaciones UML:**
 
 | Relación | Clases | Justificación |
 |----------|--------|---------------|
-| Asociación | Secretaria → Sobreturno | La secretaria crea y registra solicitudes |
-| Asociación | Secretaria → Paciente | La secretaria gestiona solicitudes del paciente |
-| Asociación | Medico → Sobreturno | El médico decide la aprobación |
-| Asociación | Sobreturno → Turno | Un sobreturno autorizado genera un turno |
-| Asociación | Paciente → Turno | El turno pertenece al paciente |
-| Asociación | Agenda → Turno | La agenda administra los turnos |
-| Asociación | Medico → Agenda | El médico consulta disponibilidad |
-
-
----
-
-# 6. Pseudocódigo
-
-
-```text
-INICIO Autorizar Sobreturno
-
-Paciente paciente
-Secretaria secretaria
-Medico medico
-Sobreturno sobreturno
-Turno turno
-Agenda agenda
-
-
-paciente.solicitarTurno()
-
-
-disponible = agenda.verificarDisponibilidad()
-
-
-SI disponible ES FALSO
-
-    sobreturno = secretaria.solicitarSobreturno(paciente, medico)
-
-    sobreturno.cambiarEstado("Pendiente")
-
-
-    decision = medico.autorizarSobreturno(sobreturno)
-
-
-    SI decision ES VERDADERO
-
-        sobreturno.cambiarEstado("Autorizado")
-
-        turno = nuevo Turno()
-
-        turno.asignarTurno()
-
-
-    SINO
-
-        sobreturno.cambiarEstado("Rechazado")
-
-
-    FIN SI
-
-
-FIN SI
-
-
-FIN Autorizar Sobreturno
-=======
-| Herencia | UsuarioDelSistema → Paciente | Estructura común del sistema |
-| Herencia | UsuarioDelSistema → Secretaria | Estructura común del sistema |
-| Herencia | UsuarioDelSistema → Medico | Estructura común del sistema |
-| Asociación | Paciente → Turno | El paciente recibe el sobreturno |
-| Asociación | Medico → Turno | El médico autoriza el sobreturno |
-| Asociación | Secretaria → Agenda | Gestiona la agenda de turnos |
-| Dependencia | Secretaria → Turno | Crea el sobreturno |
-| Agregación | Agenda → Turno | La agenda contiene sobreturnos |
-| Asociación | Auditoria → Agenda | Auditoria guarda los cambios realizados en Agenda |
-
+| Composición | Secretaria → Sobreturno | La secretaria crea la solicitud de sobreturno |
+| Composición | Medico → Sobreturno | El médico autoriza o rechaza la solicitud |
+| Dependencia | Sobreturno → Paciente | El sobreturno está asignado a un paciente |
+| Composición | Sobreturno → Medico | El sobreturno está asociado a un médico |
+| Dependencia | Sobreturno → Turno | Si se autoriza, se genera un turno |
+| Composición | Agenda → Turno | La agenda administra múltiples turnos |
+| Dependencia | Turno → Medico | El turno se asigna a un médico |
+| Dependencia | Turno → Paciente | El turno se asigna a un paciente |
 
 ---
 
 ## 6. Pseudocódigo
 
-```
+```text
+INICIO Autorizar Sobreturno
 
-INICIO
+// El paciente solicita un turno y no hay disponibilidad
+Paciente paciente = nuevo Paciente()
+Secretaria secretaria = nuevo Secretaria()
+Medico medico = nuevo Medico()
+Agenda agenda = nuevo Agenda()
+Sobreturno sobreturno = nuevo Sobreturno()
 
-Secretaria solicita sobreturno (paciente, fecha, hora)
+// La secretaria verifica la disponibilidad del médico
+disponible = agenda.verificarDisponibilidad(medico, fecha, hora)
 
-SI Agenda.intentarCrearTurno(fecha, hora, paciente) == NO DISPONIBLE EN HORARIO
-
-    MOSTRAR "Advertencia: sobreturno"
-
-    Solicitar autorización al Médico
-
-    SI Medico.autorizarSobreturno(turno) == TRUE
-
-        Agenda.crearTurno(paciente, medico, sobreturno = TRUE)
-        Auditoria.guardarEvento(usuario = secretaria, autorizadoPor = medico)
-        Turno.asignarSobreturno(sobreturno=true)
-        Turno.cambiarEstado("Confirmado")
-
-        MOSTRAR "Sobreturno confirmado"
-
+SI disponible == FALSO
+    // No hay turnos disponibles, se crea solicitud de sobreturno
+    sobreturno = secretaria.crearSobreturno(paciente, medico, fecha, motivo)
+    sobreturno.cambiarEstado("Pendiente")
+    
+    // El médico consulta las solicitudes pendientes
+    solicitudes = medico.consultarSolicitudesPendientes()
+    
+    // El médico evalúa la solicitud
+    SI medico.autorizarSobreturno(sobreturno) == VERDADERO
+        // Se autoriza el sobreturno
+        sobreturno.cambiarEstado("Autorizado")
+        
+        // Se genera un nuevo turno
+        turno = agenda.crearTurno(paciente, medico, fecha, hora, sobreturno=VERDADERO)
+        turno.cambiarEstado("Confirmado")
+        
+        // Se notifica al paciente
+        notificacion.enviar(paciente, "Sobreturno autorizado")
     SINO
-
-        MOSTRAR "Sobreturno rechazado por el médico"
-
+        // Se rechaza el sobreturno
+        sobreturno.cambiarEstado("Rechazado")
+        notificacion.enviar(paciente, "Sobreturno rechazado")
+    FIN SI
+SINO
+    // Hay disponibilidad normal, se crea turno regular
+    turno = agenda.crearTurno(paciente, medico, fecha, hora, sobreturno=FALSO)
 FIN SI
 
 FIN
-
-```

@@ -41,7 +41,8 @@
 
 ## 2. Diagrama de Casos de Uso
 
-[Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png)
+![Diagrama de Casos de Uso - Reprogramar Turno](../../diagramas/02-casos-de-uso/02-caso-uso-reprogramar-turno.png)
+
 
 **Actores y relaciones:**
 
@@ -53,7 +54,7 @@
 
 ## 3. Diagrama de Actividades
 
-[Diagrama de Actividades - Reprogramar Turno](../../diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-caso-uso-02.png)
+![Diagrama de Actividades - Reprogramar Turno](../../diagramas/04-diagramas-actividades/04-actividad-reprogramar-turno-caso-uso-02.png)
 
 **Swimlanes:** Paciente, Secretaria y Sistema. Cada carril representa las responsabilidades de los participantes involucrados durante el proceso de reprogramación.
 
@@ -63,7 +64,8 @@
 
 ## 4. Diagrama de Secuencia
 
-[Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png)
+![Diagrama de Secuencia - Reprogramar Turno](../../diagramas/05-diagramas-secuencia/05-secuencia-reprogramar-turno-02.png)
+
 
 **Participantes:** Paciente (actor), Secretaria (actor), Medico (actor), Agenda:agenda, Turno:turno, Auditoria:auditoria, Notificacion:notificacion
 
@@ -84,7 +86,7 @@
 
 ## 5. Diagrama de Clases del Caso de Uso
 
-[Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-02.png)
+![Diagrama de Clases - Reprogramar Turno](../../diagramas/01-diagrama-clases/02-clases-reprogramar-turno-02.png)
 
 **Clases involucradas:**
 
